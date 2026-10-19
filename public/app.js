@@ -1,15 +1,26 @@
-import { CATEGORIES, PRODUCTS, filterProducts, formatCurrency, calculateCartTotal } from '/catalog-logic.js';
+import {
+  CATEGORIES,
+  PRODUCTS,
+  filterProducts,
+  formatCurrency,
+  calculateCartTotal,
+  transitionCatalogView
+} from '/catalog-logic.js';
+import { renderProductDetailMarkup } from '/product-detail.js';
 
 const state = {
   products: PRODUCTS,
   search: '',
   category: 'all',
   sort: 'featured',
+  selectedProductId: null,
   cart: []
 };
 
+const pageTitle = document.querySelector('#page-title');
 const productList = document.querySelector('#product-list');
 const categoryFilters = document.querySelector('#category-filters');
+const toolbar = document.querySelector('.toolbar');
 const searchInput = document.querySelector('#search-input');
 const sortSelect = document.querySelector('#sort-select');
 const cartItems = document.querySelector('#cart-items');
@@ -42,6 +53,21 @@ function renderCategoryFilters() {
 }
 
 function renderProducts() {
+  if (state.selectedProductId !== null) {
+    const product = state.products.find((item) => item.id === state.selectedProductId);
+
+    if (product) {
+      renderProductDetail(product);
+      return;
+    }
+
+    state.selectedProductId = null;
+  }
+
+  pageTitle.textContent = 'Scopri';
+  toolbar.hidden = false;
+  categoryFilters.hidden = false;
+
   const filteredProducts = filterProducts(state.products, {
     search: state.search,
     category: state.category,
@@ -62,21 +88,36 @@ function renderProducts() {
 
     return `
       <article class="product-card">
-        <div class="product-image" aria-hidden="true">${emojiMap[product.category]}</div>
-        <div class="product-body">
-          <div class="product-top">
-            <span class="badge">${product.badge}</span>
+        <button class="product-detail-button" type="button" data-product-id="${product.id}">
+          <div class="product-image" aria-hidden="true">${emojiMap[product.category]}</div>
+          <div class="product-body">
+            <div class="product-top">
+              <span class="badge">${product.badge}</span>
+            </div>
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
           </div>
-          <h3>${product.name}</h3>
-          <p>${product.description}</p>
-          <div class="product-footer">
-            <span class="price">${formatCurrency(product.price)}</span>
-            <button class="add-button" type="button" data-product-id="${product.id}">Aggiungi</button>
-          </div>
+        </button>
+        <div class="product-footer">
+          <span class="price">${formatCurrency(product.price)}</span>
+          <button class="add-button" type="button" data-product-id="${product.id}">Aggiungi</button>
         </div>
       </article>
     `;
   }).join('');
+
+  productList.querySelectorAll('.product-detail-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      Object.assign(
+        state,
+        transitionCatalogView(state, {
+          type: 'open-product',
+          productId: Number(button.dataset.productId)
+        })
+      );
+      renderProducts();
+    });
+  });
 
   productList.querySelectorAll('.add-button').forEach((button) => {
     button.addEventListener('click', () => {
@@ -97,6 +138,19 @@ function renderProducts() {
 
       renderCart();
     });
+  });
+}
+
+function renderProductDetail(product) {
+  pageTitle.textContent = product.name;
+  toolbar.hidden = true;
+  categoryFilters.hidden = true;
+
+  productList.innerHTML = renderProductDetailMarkup(product);
+
+  productList.querySelector('.back-button').addEventListener('click', () => {
+    Object.assign(state, transitionCatalogView(state, { type: 'back-to-catalog' }));
+    renderProducts();
   });
 }
 

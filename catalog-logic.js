@@ -11,7 +11,7 @@ export const PRODUCTS = [
     name: 'Lampada Lume',
     category: 'arredo',
     price: 89,
-    description: 'Lampada dal design essenziale per creare una luce calda e accogliente.',
+    description: 'Paralume in lino e base in metallo. Luce calda e diffusa.',
     badge: 'Design'
   },
   {
@@ -19,7 +19,7 @@ export const PRODUCTS = [
     name: 'Specchio Orbita',
     category: 'arredo',
     price: 119,
-    description: 'Specchio decorativo dalle linee morbide, perfetto per ogni ambiente.',
+    description: 'Specchio tondo con bordo sottile in metallo.',
     badge: 'Novità'
   },
   {
@@ -27,7 +27,7 @@ export const PRODUCTS = [
     name: 'Portavaso Trama',
     category: 'arredo',
     price: 45,
-    description: 'Portavaso decorativo con una raffinata trama materica.',
+    description: 'Intreccio in rattan naturale con fondo impermeabile.',
     badge: 'Artigianale'
   },
   {
@@ -35,7 +35,7 @@ export const PRODUCTS = [
     name: 'Vaso Duna',
     category: 'oggettistica',
     price: 34,
-    description: 'Vaso dalle forme ispirate alle dune, ideale anche come elemento decorativo.',
+    description: 'Ceramica smaltata a mano con finitura opaca.',
     badge: 'Naturale'
   },
   {
@@ -43,7 +43,7 @@ export const PRODUCTS = [
     name: 'Candela Vaniglia',
     category: 'oggettistica',
     price: 22,
-    description: 'Candela profumata alla vaniglia per un’atmosfera rilassante.',
+    description: 'Cera vegetale in vasetto di vetro riutilizzabile.',
     badge: 'Profumata'
   },
   {
@@ -51,7 +51,7 @@ export const PRODUCTS = [
     name: 'Cornice Atelier',
     category: 'cornici',
     price: 29,
-    description: 'Cornice dal profilo elegante per valorizzare i tuoi ricordi preferiti.',
+    description: 'Profilo in legno con vetro antiriflesso.',
     badge: 'Elegante'
   }
 ];
@@ -90,6 +90,17 @@ export function filterProducts(items = PRODUCTS, options = {}) {
   }
 
   return filtered;
+}
+
+export function transitionCatalogView(state, action) {
+  switch (action.type) {
+    case 'open-product':
+      return { ...state, selectedProductId: action.productId };
+    case 'back-to-catalog':
+      return { ...state, selectedProductId: null };
+    default:
+      return state;
+  }
 }
 
 export function calculateCartTotal(items = []) {
