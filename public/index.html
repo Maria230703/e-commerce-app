@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo E-commerce</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="logo">E</div>
+        <div>
+          <p class="eyebrow">Shop</p>
+          <h1>Scopri</h1>
+        </div>
+      </div>
+      <div class="cart-pill">
+        <span>Carrello</span>
+        <strong id="cart-count">0</strong>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="catalog-panel">
+        <div class="toolbar">
+          <div class="search-box">
+            <label for="search-input">Cerca prodotto</label>
+            <input id="search-input" type="search" placeholder="Es. laptop, cuffie..." />
+          </div>
+
+          <div class="select-box">
+            <label for="sort-select">Ordina per</label>
+            <select id="sort-select">
+              <option value="featured">In evidenza</option>
+              <option value="price-asc">Prezzo: basso - alto</option>
+              <option value="price-desc">Prezzo: alto - basso</option>
+              <option value="name">Nome</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="category-filters" class="category-filters" aria-label="Filtri categoria"></div>
+        <div id="product-list" class="product-list" aria-live="polite"></div>
+      </section>
+
+      <aside class="cart-panel">
+        <div class="cart-header">
+          <h2>Il tuo carrello</h2>
+          <span id="items-count">0 articoli</span>
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="totals">
+          <div class="row">
+            <span>Subtotale</span>
+            <strong id="subtotal">€ 0,00</strong>
+          </div>
+          <div class="row">
+            <span>Spedizione</span>
+            <strong id="shipping">€ 0,00</strong>
+          </div>
+          <div class="row total-row">
+            <span>Totale</span>
+            <strong id="total">€ 0,00</strong>
+          </div>
+        </div>
+
+        <button class="checkout-button" type="button">Procedi al checkout</button>
+      </aside>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
