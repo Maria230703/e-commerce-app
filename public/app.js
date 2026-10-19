@@ -55,10 +55,8 @@ function renderProducts() {
 
   productList.innerHTML = filteredProducts.map((product) => {
     const emojiMap = {
-      smartphone: '📱',
-      informatica: '💻',
-      audio: '🎧',
-      accessori: '⌚',
+      arredo: '💡',
+      oggettistica: '🏺',
       cornici: '🖼️'
     };
 

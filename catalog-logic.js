@@ -1,60 +1,58 @@
 export const CATEGORIES = [
-  { value: 'all', label: 'Tutti i prodotti' },
-  { value: 'smartphone', label: 'Smartphone' },
-  { value: 'informatica', label: 'Informatica' },
-  { value: 'audio', label: 'Audio' },
-  { value: 'accessori', label: 'Accessori' },
+  { value: 'all', label: 'Tutti' },
+  { value: 'arredo', label: 'Arredo' },
+  { value: 'oggettistica', label: 'Oggettistica' },
   { value: 'cornici', label: 'Cornici' }
 ];
 
 export const PRODUCTS = [
   {
     id: 1,
-    name: 'Smartphone Apex X5',
-    category: 'smartphone',
-    price: 499,
-    description: 'Display AMOLED da 6,7", fotocamera triple 50MP e batteria da 5000mAh.',
-    badge: 'Nuovo'
+    name: 'Lampada Lume',
+    category: 'arredo',
+    price: 89,
+    description: 'Lampada dal design essenziale per creare una luce calda e accogliente.',
+    badge: 'Design'
   },
   {
     id: 2,
-    name: 'Laptop Nova 14',
-    category: 'informatica',
-    price: 899,
-    description: 'Notebook ultrasottile per lavoro e creatività, con SSD 1TB e 16GB RAM.',
-    badge: 'Top seller'
+    name: 'Specchio Orbita',
+    category: 'arredo',
+    price: 119,
+    description: 'Specchio decorativo dalle linee morbide, perfetto per ogni ambiente.',
+    badge: 'Novità'
   },
   {
     id: 3,
-    name: 'Cuffie SoundWave Pro',
-    category: 'audio',
-    price: 149,
-    description: 'Audio immersivo con cancellazione attiva del rumore e 30 ore di autonomia.',
-    badge: 'Hot'
+    name: 'Portavaso Trama',
+    category: 'arredo',
+    price: 45,
+    description: 'Portavaso decorativo con una raffinata trama materica.',
+    badge: 'Artigianale'
   },
   {
     id: 4,
-    name: 'Smartwatch Pulse 3',
-    category: 'accessori',
-    price: 199,
-    description: 'Monitora attività fisica, sonno e frequenza cardiaca con precisione.',
-    badge: 'Fitness'
+    name: 'Vaso Duna',
+    category: 'oggettistica',
+    price: 34,
+    description: 'Vaso dalle forme ispirate alle dune, ideale anche come elemento decorativo.',
+    badge: 'Naturale'
   },
   {
     id: 5,
-    name: 'Auricolari Echo Mini',
-    category: 'audio',
-    price: 59,
-    description: 'Design leggero e suono chiaro, perfetto per la giornata da casa o in viaggio.',
-    badge: 'Essenziale'
+    name: 'Candela Vaniglia',
+    category: 'oggettistica',
+    price: 22,
+    description: 'Candela profumata alla vaniglia per un’atmosfera rilassante.',
+    badge: 'Profumata'
   },
   {
     id: 6,
-    name: 'Cornice Aura',
+    name: 'Cornice Atelier',
     category: 'cornici',
-    price: 59,
-    description: 'Cornice elegante per esporre i tuoi ricordi preferiti in ogni ambiente.',
-    badge: 'Novità'
+    price: 29,
+    description: 'Cornice dal profilo elegante per valorizzare i tuoi ricordi preferiti.',
+    badge: 'Elegante'
   }
 ];
 
