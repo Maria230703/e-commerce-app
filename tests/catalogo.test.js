@@ -10,6 +10,7 @@ import {
   transitionCatalogView
 } from '../catalog-logic.js';
 import { renderProductDetailMarkup } from '../public/product-detail.js';
+import { LOOK_SCENE_PRODUCTS, renderLookScene } from '../public/look-scene.js';
 
 test('il catalogo contiene i 6 articoli di arredamento richiesti', () => {
   assert.equal(PRODUCTS.length, 6);
@@ -31,6 +32,48 @@ test('il catalogo contiene i 6 articoli di arredamento richiesti', () => {
     ]
   );
   assert.equal(filterProducts(PRODUCTS, { category: 'cornici' }).length, 1);
+});
+
+test('la scena Compra il look compare prima del catalogo con quattro pulsanti accessibili', () => {
+  const markup = renderLookScene();
+
+  assert.match(markup, /<h2 id="look-scene-title">Compra il look<\/h2>/);
+  assert.match(markup, /<span>Angolo soggiorno<\/span>/);
+  assert.match(markup, /Tocca i punti per scoprire gli oggetti della scena\./);
+  assert.match(markup, /<svg class="look-room-drawing"/);
+  assert.equal((markup.match(/class="look-hotspot look-hotspot-/g) ?? []).length, 4);
+  assert.ok(
+    LOOK_SCENE_PRODUCTS.every(({ id, name }) =>
+      markup.includes(`data-product-id="${id}"`) && markup.includes(`aria-label="Scopri ${name}"`)
+    )
+  );
+});
+
+test('i punti della scena aprono le schede dei quattro articoli associati', () => {
+  assert.deepEqual(
+    LOOK_SCENE_PRODUCTS.map(({ id, name }) => {
+      const product = PRODUCTS.find((item) => item.id === id);
+      const detailMarkup = renderProductDetailMarkup(product);
+
+      assert.ok(detailMarkup.includes(`<h2 id="product-detail-title">${name}</h2>`));
+      assert.ok(detailMarkup.includes(formatCurrency(product.price)));
+      return name;
+    }),
+    ['Cornice Atelier', 'Vaso Duna', 'Lampada Lume', 'Portavaso Trama']
+  );
+});
+
+test('la scena resta sul catalogo e il ritorno dalla scheda ripristina Scopri con sei articoli', () => {
+  const detailView = transitionCatalogView(
+    { category: 'all', selectedProductId: null },
+    { type: 'open-product', productId: 1 }
+  );
+  const catalogView = transitionCatalogView(detailView, { type: 'back-to-catalog' });
+
+  assert.equal(PRODUCTS.length, 6);
+  assert.equal(catalogView.selectedProductId, null);
+  assert.equal(catalogView.category, 'all');
+  assert.match(renderLookScene(), /Compra il look/);
 });
 
 test('filtra prodotti per categoria arredo', () => {

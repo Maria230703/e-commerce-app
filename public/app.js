@@ -7,6 +7,7 @@ import {
   transitionCatalogView
 } from '/catalog-logic.js';
 import { renderProductDetailMarkup } from '/product-detail.js';
+import { renderLookScene } from '/look-scene.js';
 
 const state = {
   products: PRODUCTS,
@@ -18,6 +19,7 @@ const state = {
 };
 
 const pageTitle = document.querySelector('#page-title');
+const lookSceneContainer = document.querySelector('#look-scene-container');
 const productList = document.querySelector('#product-list');
 const categoryFilters = document.querySelector('#category-filters');
 const toolbar = document.querySelector('.toolbar');
@@ -57,6 +59,7 @@ function renderProducts() {
     const product = state.products.find((item) => item.id === state.selectedProductId);
 
     if (product) {
+      lookSceneContainer.hidden = true;
       renderProductDetail(product);
       return;
     }
@@ -65,6 +68,7 @@ function renderProducts() {
   }
 
   pageTitle.textContent = 'Scopri';
+  lookSceneContainer.hidden = false;
   toolbar.hidden = false;
   categoryFilters.hidden = false;
 
@@ -141,6 +145,17 @@ function renderProducts() {
   });
 }
 
+function openProduct(productId) {
+  Object.assign(
+    state,
+    transitionCatalogView(state, {
+      type: 'open-product',
+      productId
+    })
+  );
+  renderProducts();
+}
+
 function renderProductDetail(product) {
   pageTitle.textContent = product.name;
   toolbar.hidden = true;
@@ -153,6 +168,13 @@ function renderProductDetail(product) {
     renderProducts();
   });
 }
+
+lookSceneContainer.innerHTML = renderLookScene();
+lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
+  button.addEventListener('click', () => {
+    openProduct(Number(button.dataset.productId));
+  });
+});
 
 function renderCart() {
   const { subtotal, shipping, total, itemCount } = calculateCartTotal(state.cart);

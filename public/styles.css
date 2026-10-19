@@ -105,6 +105,86 @@ h1 {
   padding: 22px;
 }
 
+.look-scene {
+  margin-bottom: 28px;
+}
+
+.look-scene-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.look-scene-header h2 {
+  margin: 0;
+}
+
+.look-scene-header span,
+.look-scene-hint {
+  color: var(--muted);
+}
+
+.look-room {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: #e8e1d6;
+}
+
+.look-room-drawing {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.look-hotspot {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: white;
+  color: var(--text);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.look-hotspot:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.look-hotspot-frame {
+  left: 54%;
+  top: 12%;
+}
+
+.look-hotspot-vase {
+  left: 53%;
+  top: 49%;
+}
+
+.look-hotspot-lamp {
+  left: 74%;
+  top: 38%;
+}
+
+.look-hotspot-plant {
+  left: 15%;
+  top: 59%;
+}
+
+.look-scene-hint {
+  margin: 12px 0 0;
+}
+
 .toolbar {
   display: grid;
   grid-template-columns: 1.5fr 0.8fr;
