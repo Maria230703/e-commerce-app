@@ -110,6 +110,15 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   assert.match(markup, /<p class="product-detail-description">Ceramica smaltata a mano con finitura opaca\.<\/p>/);
 });
 
+test('la scheda di Lampada Lume mostra nome, prezzo di 89 euro e descrizione', () => {
+  const product = PRODUCTS.find(({ name }) => name === 'Lampada Lume');
+  const markup = renderProductDetailMarkup(product);
+
+  assert.match(markup, /<h2 id="product-detail-title">Lampada Lume<\/h2>/);
+  assert.ok(markup.includes(`<p class="price">${formatCurrency(89)}</p>`));
+  assert.match(markup, /<p class="product-detail-description">Paralume in lino e base in metallo\. Luce calda e diffusa\.<\/p>/);
+});
+
 test('il catalogo usa le descrizioni aggiornate per tutti gli articoli', () => {
   assert.deepEqual(
     PRODUCTS.map(({ name, description }) => ({ name, description })),
@@ -126,12 +135,13 @@ test('il catalogo usa le descrizioni aggiornate per tutti gli articoli', () => {
 
 test('Indietro torna al catalogo mantenendo la categoria scelta', () => {
   const view = transitionCatalogView(
-    { category: 'oggettistica', selectedProductId: 4 },
+    { category: 'cornici', selectedProductId: 6 },
     { type: 'back-to-catalog' }
   );
 
   assert.equal(view.selectedProductId, null);
-  assert.equal(view.category, 'oggettistica');
+  assert.equal(view.category, 'cornici');
+  assert.equal(filterProducts(PRODUCTS, { category: view.category }).length, 1);
 });
 
 test('ordina per prezzo crescente', () => {
