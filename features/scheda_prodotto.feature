@@ -1,4 +1,4 @@
-## language: it
+# language: it
 Funzionalità: Scheda prodotto
   Come cliente del negozio
   voglio vedere i dettagli di un articolo
