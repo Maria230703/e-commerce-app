@@ -11,6 +11,14 @@ import {
 } from '../catalog-logic.js';
 import { renderProductDetailMarkup } from '../public/product-detail.js';
 import { LOOK_SCENE_PRODUCTS, renderLookScene } from '../public/look-scene.js';
+import {
+  EMPTY_FAVORITES_MESSAGE,
+  FAVORITES_STORAGE_KEY,
+  readFavoriteIds,
+  renderFavoriteButtonMarkup,
+  renderFavoritesMarkup,
+  toggleFavoriteId
+} from '../public/favorites.js';
 
 test('il catalogo contiene i 6 articoli di arredamento richiesti', () => {
   assert.equal(PRODUCTS.length, 6);
@@ -108,6 +116,55 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   assert.match(markup, /<h2 id="product-detail-title">Vaso Duna<\/h2>/);
   assert.ok(markup.includes(`<p class="price">${formatCurrency(product.price)}</p>`));
   assert.match(markup, /<p class="product-detail-description">Ceramica smaltata a mano con finitura opaca\.<\/p>/);
+});
+
+test('il cuore della scheda ha stato e nome accessibile e resta accanto al prezzo', () => {
+  const product = PRODUCTS.find(({ id }) => id === 1);
+  const inactiveMarkup = renderProductDetailMarkup(product);
+  const activeMarkup = renderProductDetailMarkup(product, true);
+
+  assert.match(inactiveMarkup, /class="favorite-button "/);
+  assert.match(inactiveMarkup, /aria-label="Aggiungi Lampada Lume ai preferiti"/);
+  assert.match(inactiveMarkup, /aria-pressed="false"/);
+  assert.match(activeMarkup, /aria-label="Rimuovi Lampada Lume dai preferiti"/);
+  assert.match(activeMarkup, /aria-pressed="true"/);
+  assert.match(inactiveMarkup, /product-detail-price-row/);
+  assert.ok(inactiveMarkup.indexOf('€') < inactiveMarkup.indexOf('favorite-button'));
+});
+
+test('il cuore del catalogo è un pulsante accessibile e gli articoli si aggiungono e rimuovono', () => {
+  const product = PRODUCTS.find(({ id }) => id === 4);
+  const inactiveMarkup = renderFavoriteButtonMarkup(product, false);
+  const activeMarkup = renderFavoriteButtonMarkup(product, true);
+
+  assert.match(inactiveMarkup, /<button/);
+  assert.match(inactiveMarkup, /aria-label="Aggiungi Vaso Duna ai preferiti"/);
+  assert.match(inactiveMarkup, /aria-pressed="false"/);
+  assert.match(activeMarkup, /aria-label="Rimuovi Vaso Duna dai preferiti"/);
+  assert.deepEqual(toggleFavoriteId([], product.id), [product.id]);
+  assert.deepEqual(toggleFavoriteId([product.id], product.id), []);
+});
+
+test('i preferiti vengono mantenuti in localStorage e i prodotti rimossi dal catalogo vengono ignorati', () => {
+  const storage = {
+    values: new Map([[FAVORITES_STORAGE_KEY, JSON.stringify([4, 6, 999, 4])]]),
+    getItem(key) {
+      return this.values.get(key) ?? null;
+    }
+  };
+
+  assert.deepEqual(readFavoriteIds(storage, PRODUCTS), [4, 6]);
+  assert.deepEqual(readFavoriteIds({ getItem: () => null }, PRODUCTS), []);
+});
+
+test('la pagina Preferiti mostra nome e prezzo oppure il messaggio vuoto richiesto', () => {
+  const markup = renderFavoritesMarkup(PRODUCTS.filter(({ id }) => [4, 6].includes(id)));
+
+  assert.match(markup, /Vaso Duna/);
+  assert.match(markup, /€ 34,00/);
+  assert.match(markup, /Cornice Atelier/);
+  assert.match(markup, /€ 29,00/);
+  assert.equal(renderFavoritesMarkup([]), `<p class="empty-favorites">${EMPTY_FAVORITES_MESSAGE}</p>`);
 });
 
 test('la scheda di Lampada Lume mostra nome, prezzo di 89 euro e descrizione', () => {

@@ -8,6 +8,13 @@ import {
 } from '/catalog-logic.js';
 import { renderProductDetailMarkup } from '/product-detail.js';
 import { renderLookScene } from '/look-scene.js';
+import {
+  FAVORITES_STORAGE_KEY,
+  readFavoriteIds,
+  renderFavoriteButtonMarkup,
+  renderFavoritesMarkup,
+  toggleFavoriteId
+} from '/favorites.js';
 
 const state = {
   products: PRODUCTS,
@@ -15,9 +22,11 @@ const state = {
   category: 'all',
   sort: 'featured',
   selectedProductId: null,
+  favoriteIds: readFavoriteIds(window.localStorage, PRODUCTS),
   cart: []
 };
 
+const isFavoritesPage = window.location.pathname === '/preferiti';
 const pageTitle = document.querySelector('#page-title');
 const lookSceneContainer = document.querySelector('#look-scene-container');
 const productList = document.querySelector('#product-list');
@@ -31,6 +40,38 @@ const shippingEl = document.querySelector('#shipping');
 const totalEl = document.querySelector('#total');
 const cartCountEl = document.querySelector('#cart-count');
 const itemsCountEl = document.querySelector('#items-count');
+const favoritesCountEl = document.querySelector('#favorites-count');
+
+function renderFavoriteCount() {
+  favoritesCountEl.textContent = String(state.favoriteIds.length);
+}
+
+function renderFavoritesPage() {
+  pageTitle.textContent = 'Preferiti';
+  lookSceneContainer.hidden = true;
+  toolbar.hidden = true;
+  categoryFilters.hidden = true;
+  productList.innerHTML = `
+    <div class="favorites-page">
+      ${renderFavoritesMarkup(
+        state.products.filter((product) => state.favoriteIds.includes(product.id))
+      )}
+      <a class="back-button favorites-back-link" href="/scopri">Torna a Scopri</a>
+    </div>
+  `;
+}
+
+function toggleFavorite(productId) {
+  state.favoriteIds = toggleFavoriteId(state.favoriteIds, productId);
+  window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favoriteIds));
+  renderFavoriteCount();
+
+  if (state.selectedProductId !== null) {
+    renderProducts();
+  } else {
+    renderProducts();
+  }
+}
 
 function renderCategoryFilters() {
   categoryFilters.innerHTML = CATEGORIES.map(
@@ -55,6 +96,11 @@ function renderCategoryFilters() {
 }
 
 function renderProducts() {
+  if (isFavoritesPage) {
+    renderFavoritesPage();
+    return;
+  }
+
   if (state.selectedProductId !== null) {
     const product = state.products.find((item) => item.id === state.selectedProductId);
 
@@ -105,6 +151,7 @@ function renderProducts() {
         <div class="product-footer">
           <span class="price">${formatCurrency(product.price)}</span>
           <button class="add-button" type="button" data-product-id="${product.id}">Aggiungi</button>
+          ${renderFavoriteButtonMarkup(product, state.favoriteIds.includes(product.id))}
         </div>
       </article>
     `;
@@ -143,6 +190,12 @@ function renderProducts() {
       renderCart();
     });
   });
+
+  productList.querySelectorAll('.favorite-button').forEach((button) => {
+    button.addEventListener('click', () => {
+      toggleFavorite(Number(button.dataset.favoriteProductId));
+    });
+  });
 }
 
 function openProduct(productId) {
@@ -161,11 +214,18 @@ function renderProductDetail(product) {
   toolbar.hidden = true;
   categoryFilters.hidden = true;
 
-  productList.innerHTML = renderProductDetailMarkup(product);
+  productList.innerHTML = renderProductDetailMarkup(
+    product,
+    state.favoriteIds.includes(product.id)
+  );
 
   productList.querySelector('.back-button').addEventListener('click', () => {
     Object.assign(state, transitionCatalogView(state, { type: 'back-to-catalog' }));
     renderProducts();
+  });
+
+  productList.querySelector('.favorite-button').addEventListener('click', () => {
+    toggleFavorite(product.id);
   });
 }
 
@@ -213,5 +273,6 @@ sortSelect.addEventListener('change', (event) => {
 });
 
 renderCategoryFilters();
+renderFavoriteCount();
 renderProducts();
 renderCart();
