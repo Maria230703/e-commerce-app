@@ -15,7 +15,7 @@ Funzionalità: Carrello
   Scenario: Aggiungere un articolo dalla scheda
     Dato che il carrello è vuoto
     E sto guardando la scheda di "Vaso Duna"
-    Quando tocco "Aggiungi al carrello"
+    Quando tocco "Acquista"
     Allora il carrello contiene 1 articolo "Vaso Duna" a 34,00 euro
     E l'icona del carrello mostra 1
 
@@ -83,3 +83,13 @@ Funzionalità: Carrello
     Dato che nel carrello c'è 1 articolo "Vaso Duna"
     Quando ricarico la pagina
     Allora il carrello contiene ancora 1 articolo "Vaso Duna"
+      Scenario: Il pulsante cambia dopo l'aggiunta
+    Dato che sono sulla pagina Scopri e il carrello è vuoto
+    Quando tocco "Acquista" su "Lampada Lume"
+    Allora il pulsante di "Lampada Lume" diventa verde e mostra "Aggiunto"
+    E gli altri articoli mantengono il pulsante "Acquista"
+
+  Scenario: Il pulsante torna normale se l'articolo esce dal carrello
+    Dato che "Lampada Lume" è nel carrello
+    Quando tolgo "Lampada Lume" dal carrello
+    Allora il pulsante di "Lampada Lume" torna "Acquista"
