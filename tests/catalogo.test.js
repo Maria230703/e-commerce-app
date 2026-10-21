@@ -10,6 +10,13 @@ import {
   transitionCatalogView
 } from '../catalog-logic.js';
 import { renderProductDetailMarkup } from '../public/product-detail.js';
+import { renderAddToCartButton } from '../public/cart-ui.js';
+import {
+  CART_STORAGE_KEY,
+  isItemInCart,
+  persistCart,
+  restoreCart
+} from '../public/cart-logic.js';
 import { LOOK_SCENE_PRODUCTS, renderLookScene } from '../public/look-scene.js';
 import {
   EMPTY_FAVORITES_MESSAGE,
@@ -116,6 +123,45 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   assert.match(markup, /<h2 id="product-detail-title">Vaso Duna<\/h2>/);
   assert.ok(markup.includes(`<p class="price">${formatCurrency(product.price)}</p>`));
   assert.match(markup, /<p class="product-detail-description">Ceramica smaltata a mano con finitura opaca\.<\/p>/);
+});
+
+test('le schede hanno Acquista con etichetta accessibile e riflettono lo stato aggiunto', () => {
+  const product = PRODUCTS.find(({ id }) => id === 1);
+  const inactiveMarkup = renderProductDetailMarkup(product);
+  const addedMarkup = renderProductDetailMarkup(product, false, true);
+  const cardButton = renderAddToCartButton(product, false);
+  const addedCardButton = renderAddToCartButton(product, true);
+
+  assert.match(inactiveMarkup, />Acquista<\/button>/);
+  assert.match(inactiveMarkup, /aria-label="Aggiungi Lampada Lume al carrello"/);
+  assert.match(addedMarkup, /class="add-button product-detail-add-button is-added"/);
+  assert.match(addedMarkup, />✓ Aggiunto<\/button>/);
+  assert.match(cardButton, /aria-label="Aggiungi Lampada Lume al carrello"/);
+  assert.match(cardButton, />Acquista<\/button>/);
+  assert.match(addedCardButton, /class="add-button is-added"/);
+  assert.match(addedCardButton, />✓ Aggiunto<\/button>/);
+});
+
+test('lo stato Aggiunto resta sincronizzato col carrello persistente e torna Acquista a quantità zero', () => {
+  const product = PRODUCTS.find(({ id }) => id === 2);
+  const storage = {
+    value: JSON.stringify([{ id: product.id, quantity: 1 }]),
+    getItem(key) {
+      return key === CART_STORAGE_KEY ? this.value : null;
+    },
+    setItem(key, value) {
+      if (key === CART_STORAGE_KEY) this.value = value;
+    }
+  };
+  const restoredCart = restoreCart(storage);
+
+  assert.equal(isItemInCart(restoredCart, product.id), true);
+  assert.match(renderAddToCartButton(product, isItemInCart(restoredCart, product.id)), /✓ Aggiunto/);
+
+  persistCart(storage, []);
+  const emptyCart = restoreCart(storage);
+  assert.equal(isItemInCart(emptyCart, product.id), false);
+  assert.match(renderAddToCartButton(product, isItemInCart(emptyCart, product.id)), />Acquista<\/button>/);
 });
 
 test('il cuore della scheda ha stato e nome accessibile e resta accanto al prezzo', () => {

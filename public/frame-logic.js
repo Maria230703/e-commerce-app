@@ -73,3 +73,15 @@ export function describeFrameSelection(selection) {
 
   return `${measure.label} cm, ${finish.label}, ${profile.label}, ${matDescription}`;
 }
+
+export function getFrameSelectionPriceCents(selection) {
+  if (!selection || typeof selection !== 'object') {
+    return null;
+  }
+
+  const validSelection = Object.keys(FRAME_OPTIONS).every((group) =>
+    FRAME_OPTIONS[group].some(({ value }) => value === selection[group])
+  );
+
+  return validSelection ? calculateFramePriceCents(selection) : null;
+}

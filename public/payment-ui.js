@@ -15,7 +15,7 @@ function renderOrderSummary(items) {
   const totals = calculateCartTotalCents(items);
   const rows = items.map((item) => `
     <div class="payment-summary-row">
-      <span>${escapeHtml(item.name)} × ${item.quantity}</span>
+      <span>${escapeHtml(item.name)}${item.frameDescription ? ` — ${escapeHtml(item.frameDescription)}` : ''} × ${item.quantity}</span>
       <strong>${formatCurrencyCents(Math.round(item.price * 100) * item.quantity)}</strong>
     </div>
   `).join('');
@@ -152,6 +152,7 @@ export function renderCartPageMarkup(items) {
           <div class="cart-item">
             <div class="cart-item-name">
               <strong>${escapeHtml(item.name)}</strong>
+              ${item.frameDescription ? `<span>${escapeHtml(item.frameDescription)}</span>` : ''}
               <span>Qtà: ${item.quantity}</span>
             </div>
             <div class="cart-item-price">

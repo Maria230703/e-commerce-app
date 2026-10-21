@@ -17,6 +17,8 @@ import {
   renderPaymentPageMarkup
 } from '../public/payment-ui.js';
 import { createOrder } from '../orders.js';
+import { INITIAL_FRAME_SELECTION } from '../public/frame-logic.js';
+import { createFrameCartItem } from '../public/cart-logic.js';
 
 const validAddress = {
   name: 'Maria Rossi',
@@ -152,6 +154,26 @@ test('gli ordini salvati non includono dati di carta e il bonifico resta in atte
     assert.equal(order.totalCents, 3890);
     assert.deepEqual(storedOrders, [order]);
     assert.doesNotMatch(storedText, /cardNumber|expiry|code|4242/);
+  } finally {
+    await fs.rm(temporaryDirectory, { recursive: true, force: true });
+  }
+});
+
+test('il carrello e il pagamento accettano una cornice configurata', async () => {
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'ecommerce-frame-order-'));
+  const ordersFile = path.join(temporaryDirectory, 'orders.json');
+
+  try {
+    const frame = createFrameCartItem(INITIAL_FRAME_SELECTION);
+    const order = await createOrder({
+      items: [{ id: frame.id, quantity: 1, frameSelection: frame.frameSelection }],
+      address: validAddress,
+      paymentMethod: 'card'
+    }, ordersFile);
+
+    assert.equal(order.items[0].name, 'Cornice su misura');
+    assert.equal(order.items[0].frameDescription, '13x18 cm, Noce, Classico, passe-partout Bianco');
+    assert.equal(order.totalCents, 4380);
   } finally {
     await fs.rm(temporaryDirectory, { recursive: true, force: true });
   }

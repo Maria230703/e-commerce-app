@@ -342,10 +342,10 @@ input[type="radio"] {
 
 .product-footer {
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  padding: 0 16px 18px;
+  gap: 6px;
+  padding: 0 12px 18px;
 }
 
 .price {
@@ -356,7 +356,16 @@ input[type="radio"] {
 }
 
 .product-footer .price {
+  flex: 1 0 max-content;
   margin-right: auto;
+  white-space: nowrap;
+}
+
+.product-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
 }
 
 .favorite-button {
@@ -406,8 +415,16 @@ input[type="radio"] {
 }
 
 .add-button {
-  padding: 9px 12px;
-  font-size: 0.95rem;
+  width: auto;
+  min-height: 44px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.add-button.is-added {
+  background: #2F6B3A;
+  color: white;
 }
 
 .add-button:hover,

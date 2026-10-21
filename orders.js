@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { calculateCartTotalCents, PRODUCTS } from './catalog-logic.js';
+import { getFrameSelectionPriceCents, describeFrameSelection } from './public/frame-logic.js';
 import { PAYMENT_METHODS, validateShippingAddress } from './public/payment-logic.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,6 +24,23 @@ function parseItems(items) {
     }
 
     const { id, quantity } = item;
+    if (typeof id === 'string' && id.startsWith('frame:')) {
+      const priceCents = getFrameSelectionPriceCents(item.frameSelection);
+      if (priceCents === null || !Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
+        throw new OrderInputError('Articolo non valido');
+      }
+
+      const selection = item.frameSelection;
+      return {
+        id: `frame:${[selection.measure, selection.finish, selection.profile, selection.mat].join('|')}`,
+        name: 'Cornice su misura',
+        price: priceCents / 100,
+        quantity,
+        frameSelection: { ...selection },
+        frameDescription: describeFrameSelection(selection)
+      };
+    }
+
     const product = PRODUCTS.find((item) => item.id === Number(id));
     if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
       throw new OrderInputError('Articolo non valido');

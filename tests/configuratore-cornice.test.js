@@ -8,9 +8,11 @@ import {
   FRAME_OPTIONS,
   INITIAL_FRAME_SELECTION,
   MAX_FRAME_PHOTO_BYTES,
-  validateFramePhoto
+  validateFramePhoto,
+  getFrameSelectionPriceCents
 } from '../public/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '../public/frame-configurator.js';
+import { createFrameCartItem, isItemInCart } from '../public/cart-logic.js';
 
 function selectionWith(overrides = {}) {
   return { ...INITIAL_FRAME_SELECTION, ...overrides };
@@ -125,7 +127,19 @@ test('la combinazione richiesta aggiorna riepilogo e prezzo e rispetta la propor
   assert.match(markup, /--frame-ratio: 50 \/ 70/);
   assert.match(markup, /aria-pressed="false"/);
   assert.match(markup, /<button/);
-  assert.doesNotMatch(markup, /Aggiungi al carrello/);
+  assert.match(markup, /class="add-button frame-add-button"/);
+  assert.match(markup, />\s*Acquista\s*<\/button>/);
+});
+
+test('aggiunge una cornice configurata al carrello e mantiene lo stato Aggiunto', () => {
+  const frame = createFrameCartItem(INITIAL_FRAME_SELECTION);
+  const cart = [frame];
+
+  assert.equal(frame.name, 'Cornice su misura');
+  assert.equal(frame.price, 38.9);
+  assert.equal(frame.frameDescription, '13x18 cm, Noce, Classico, passe-partout Bianco');
+  assert.equal(isItemInCart(cart, frame.id), true);
+  assert.equal(getFrameSelectionPriceCents(frame.frameSelection), 3890);
 });
 
 test('la validazione accetta JPG, PNG e WebP fino a 10 MiB', () => {

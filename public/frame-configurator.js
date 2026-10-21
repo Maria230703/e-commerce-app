@@ -71,6 +71,9 @@ export function renderFrameConfiguratorMarkup(selection, photo = null, photoErro
           <button class="back-button frame-upload-photo" type="button">Carica la tua foto</button>
           <p class="frame-print-included">Stampa su carta fotografica inclusa nel prezzo</p>
           <p class="frame-photo-error" role="alert"${photoError ? '' : ' hidden'}>${escapeHtml(photoError)}</p>
+          <button class="add-button frame-add-button" type="button" aria-label="Aggiungi cornice su misura al carrello">
+            Acquista
+          </button>
         </div>
         <div class="frame-options">
           ${renderOptionGroup('measure', 'Misura (cm)', selection)}

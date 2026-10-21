@@ -8,11 +8,23 @@ import {
   transitionCatalogView
 } from '/catalog-logic.js';
 import { renderProductDetailMarkup } from '/product-detail.js';
+import { renderAddToCartButton } from '/cart-ui.js';
 import { renderLookScene } from '/look-scene.js';
-import { INITIAL_FRAME_SELECTION, validateFramePhoto } from '/frame-logic.js';
+import {
+  describeFrameSelection,
+  INITIAL_FRAME_SELECTION,
+  validateFramePhoto
+} from '/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
 import { validateCardPayment, validateShippingAddress } from '/payment-logic.js';
 import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js';
+import {
+  createFrameCartItem,
+  getFrameCartId,
+  isItemInCart,
+  persistCart as saveCart,
+  restoreCart
+} from '/cart-logic.js';
 import {
   FAVORITES_STORAGE_KEY,
   readFavoriteIds,
@@ -20,8 +32,6 @@ import {
   renderFavoritesMarkup,
   toggleFavoriteId
 } from '/favorites.js';
-
-const CART_STORAGE_KEY = 'e-commerce-cart';
 
 const state = {
   products: PRODUCTS,
@@ -33,7 +43,7 @@ const state = {
   framePhoto: null,
   framePhotoError: '',
   favoriteIds: readFavoriteIds(window.localStorage, PRODUCTS),
-  cart: readCart(),
+  cart: restoreCart(window.localStorage, PRODUCTS),
   selectedPaymentMethod: '',
   shippingAddress: {},
   paymentErrors: {},
@@ -63,31 +73,23 @@ const itemsCountEl = document.querySelector('#items-count');
 const favoritesCountEl = document.querySelector('#favorites-count');
 const checkoutButton = document.querySelector('#cart-checkout-button');
 
-function readCart() {
-  const storedValue = window.localStorage.getItem(CART_STORAGE_KEY);
-
-  if (storedValue === null) {
-    return [];
-  }
-
-  const storedItems = JSON.parse(storedValue);
-  if (!Array.isArray(storedItems)) {
-    throw new TypeError('Il carrello salvato deve essere un elenco di articoli.');
-  }
-
-  return storedItems.flatMap(({ id, quantity }) => {
-    const product = PRODUCTS.find((item) => item.id === id);
-    if (!product || !Number.isInteger(quantity) || quantity < 1) {
-      return [];
-    }
-    return [{ ...product, quantity }];
-  });
+function persistCart() {
+  saveCart(window.localStorage, state.cart);
 }
 
-function persistCart() {
-  window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(
-    state.cart.map(({ id, quantity }) => ({ id, quantity }))
-  ));
+function parseCartItemId(value) {
+  return value.startsWith('frame:') ? value : Number(value);
+}
+
+function refreshCurrentCartView() {
+  renderCart();
+  if (isCartPage) {
+    renderCartPage();
+  } else if (isFrameConfiguratorPage) {
+    renderFrameConfiguratorPage();
+  } else if (!isPaymentPage && !isFavoritesPage) {
+    renderProducts();
+  }
 }
 
 function setCartQuantity(productId, change) {
@@ -101,10 +103,7 @@ function setCartQuantity(productId, change) {
     state.cart = state.cart.filter(({ id }) => id !== productId);
   }
   persistCart();
-  renderCart();
-  if (isCartPage) {
-    renderCartPage();
-  }
+  refreshCurrentCartView();
 }
 
 function renderFavoriteCount() {
@@ -217,6 +216,25 @@ function renderFrameConfiguratorPage() {
     state.framePhotoError = '';
     renderFrameConfiguratorPage();
   });
+
+  const frameId = getFrameCartId(state.frameSelection);
+  const frameInCart = isItemInCart(state.cart, frameId);
+  const addFrameButton = productList.querySelector('.frame-add-button');
+  addFrameButton.classList.toggle('is-added', frameInCart);
+  addFrameButton.textContent = frameInCart ? '✓ Aggiunto' : 'Acquista';
+  addFrameButton.addEventListener('click', () => {
+    const selection = { ...state.frameSelection };
+    const id = getFrameCartId(selection);
+    const existingItem = state.cart.find((item) => item.id === id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      state.cart.push(createFrameCartItem(selection));
+    }
+    persistCart();
+    renderCart();
+    renderFrameConfiguratorPage();
+  });
 }
 
 function renderCartPage() {
@@ -231,7 +249,7 @@ function renderCartPage() {
 
   productList.querySelectorAll('[data-cart-action]').forEach((button) => {
     button.addEventListener('click', () => {
-      const productId = Number(button.dataset.productId);
+      const productId = parseCartItemId(button.dataset.productId);
       if (button.dataset.cartAction === 'remove') {
         state.cart = state.cart.filter(({ id }) => id !== productId);
         persistCart();
@@ -276,7 +294,11 @@ async function createOrder(paymentMethod) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        items: state.cart.map(({ id, quantity }) => ({ id, quantity })),
+        items: state.cart.map(({ id, quantity, frameSelection }) => ({
+          id,
+          quantity,
+          frameSelection
+        })),
         address: state.shippingAddress,
         paymentMethod
       })
@@ -464,8 +486,10 @@ function renderProducts() {
         </button>
         <div class="product-footer">
           <span class="price">${formatCurrency(product.price)}</span>
-          <button class="add-button" type="button" data-product-id="${product.id}">Aggiungi al carrello</button>
-          ${renderFavoriteButtonMarkup(product, state.favoriteIds.includes(product.id))}
+          <div class="product-footer-actions">
+            ${renderAddToCartButton(product, isItemInCart(state.cart, product.id))}
+            ${renderFavoriteButtonMarkup(product, state.favoriteIds.includes(product.id))}
+          </div>
         </div>
       </article>
     `;
@@ -486,23 +510,15 @@ function renderProducts() {
 
   productList.querySelectorAll('.add-button').forEach((button) => {
     button.addEventListener('click', () => {
-      const productId = Number(button.dataset.productId);
+      const productId = parseCartItemId(button.dataset.productId);
       const product = state.products.find((item) => item.id === productId);
 
       if (!product) {
         return;
       }
 
-      const existingItem = state.cart.find((item) => item.id === productId);
-
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        state.cart.push({ ...product, quantity: 1 });
-      }
-
-      persistCart();
-      renderCart();
+      addProductToCart(product);
+      renderProducts();
     });
   });
 
@@ -531,7 +547,8 @@ function renderProductDetail(product) {
 
   productList.innerHTML = renderProductDetailMarkup(
     product,
-    state.favoriteIds.includes(product.id)
+    state.favoriteIds.includes(product.id),
+    isItemInCart(state.cart, product.id)
   );
 
   productList.querySelector('.back-button').addEventListener('click', () => {
@@ -542,6 +559,22 @@ function renderProductDetail(product) {
   productList.querySelector('.favorite-button').addEventListener('click', () => {
     toggleFavorite(product.id);
   });
+
+  productList.querySelector('.product-detail-add-button').addEventListener('click', () => {
+    addProductToCart(product);
+    renderProductDetail(product);
+  });
+}
+
+function addProductToCart(product) {
+  const existingItem = state.cart.find((item) => item.id === product.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    state.cart.push({ ...product, quantity: 1 });
+  }
+  persistCart();
+  renderCart();
 }
 
 lookSceneContainer.innerHTML = renderLookScene();
@@ -562,6 +595,7 @@ function renderCart() {
       <div class="cart-item">
         <div class="cart-item-name">
           <strong>${item.name}</strong>
+          ${item.frameDescription ? `<span>${item.frameDescription}</span>` : ''}
           <span>Qtà: ${item.quantity}</span>
         </div>
         <div class="cart-item-price">
@@ -583,11 +617,11 @@ function renderCart() {
 
   cartItems.querySelectorAll('[data-cart-action]').forEach((button) => {
       button.addEventListener('click', () => {
-        const productId = Number(button.dataset.productId);
+        const productId = parseCartItemId(button.dataset.productId);
         if (button.dataset.cartAction === 'remove') {
           state.cart = state.cart.filter(({ id }) => id !== productId);
           persistCart();
-          renderCart();
+          refreshCurrentCartView();
         } else {
           setCartQuantity(productId, button.dataset.cartAction === 'increase' ? 1 : -1);
         }
