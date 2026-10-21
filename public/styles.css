@@ -92,7 +92,15 @@ h1 {
 }
 
 .favorites-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  box-shadow: var(--shadow);
   text-decoration: none;
 }
 
