@@ -65,12 +65,7 @@ function toggleFavorite(productId) {
   state.favoriteIds = toggleFavoriteId(state.favoriteIds, productId);
   window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favoriteIds));
   renderFavoriteCount();
-
-  if (state.selectedProductId !== null) {
-    renderProducts();
-  } else {
-    renderProducts();
-  }
+  renderProducts();
 }
 
 function renderCategoryFilters() {

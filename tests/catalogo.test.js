@@ -161,9 +161,9 @@ test('la pagina Preferiti mostra nome e prezzo oppure il messaggio vuoto richies
   const markup = renderFavoritesMarkup(PRODUCTS.filter(({ id }) => [4, 6].includes(id)));
 
   assert.match(markup, /Vaso Duna/);
-  assert.match(markup, /€ 34,00/);
+  assert.ok(markup.includes(formatCurrency(34)));
   assert.match(markup, /Cornice Atelier/);
-  assert.match(markup, /€ 29,00/);
+  assert.ok(markup.includes(formatCurrency(29)));
   assert.equal(renderFavoritesMarkup([]), `<p class="empty-favorites">${EMPTY_FAVORITES_MESSAGE}</p>`);
 });
 
