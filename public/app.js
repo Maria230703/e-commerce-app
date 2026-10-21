@@ -3,13 +3,16 @@ import {
   PRODUCTS,
   filterProducts,
   formatCurrency,
-  calculateCartTotal,
+  formatCurrencyCents,
+  calculateCartTotalCents,
   transitionCatalogView
 } from '/catalog-logic.js';
 import { renderProductDetailMarkup } from '/product-detail.js';
 import { renderLookScene } from '/look-scene.js';
 import { INITIAL_FRAME_SELECTION, validateFramePhoto } from '/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
+import { validateCardPayment, validateShippingAddress } from '/payment-logic.js';
+import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js';
 import {
   FAVORITES_STORAGE_KEY,
   readFavoriteIds,
@@ -17,6 +20,8 @@ import {
   renderFavoritesMarkup,
   toggleFavoriteId
 } from '/favorites.js';
+
+const CART_STORAGE_KEY = 'e-commerce-cart';
 
 const state = {
   products: PRODUCTS,
@@ -28,11 +33,18 @@ const state = {
   framePhoto: null,
   framePhotoError: '',
   favoriteIds: readFavoriteIds(window.localStorage, PRODUCTS),
-  cart: []
+  cart: readCart(),
+  selectedPaymentMethod: '',
+  shippingAddress: {},
+  paymentErrors: {},
+  paymentStage: 'form',
+  orderSubmitting: false
 };
 
 const isFavoritesPage = window.location.pathname === '/preferiti';
 const isFrameConfiguratorPage = window.location.pathname === '/configuratore-cornice';
+const isCartPage = window.location.pathname === '/carrello';
+const isPaymentPage = window.location.pathname === '/pagamento';
 const pageTitle = document.querySelector('#page-title');
 const layout = document.querySelector('.layout');
 const lookSceneContainer = document.querySelector('#look-scene-container');
@@ -49,6 +61,51 @@ const totalEl = document.querySelector('#total');
 const cartCountEl = document.querySelector('#cart-count');
 const itemsCountEl = document.querySelector('#items-count');
 const favoritesCountEl = document.querySelector('#favorites-count');
+const checkoutButton = document.querySelector('#cart-checkout-button');
+
+function readCart() {
+  const storedValue = window.localStorage.getItem(CART_STORAGE_KEY);
+
+  if (storedValue === null) {
+    return [];
+  }
+
+  const storedItems = JSON.parse(storedValue);
+  if (!Array.isArray(storedItems)) {
+    throw new TypeError('Il carrello salvato deve essere un elenco di articoli.');
+  }
+
+  return storedItems.flatMap(({ id, quantity }) => {
+    const product = PRODUCTS.find((item) => item.id === id);
+    if (!product || !Number.isInteger(quantity) || quantity < 1) {
+      return [];
+    }
+    return [{ ...product, quantity }];
+  });
+}
+
+function persistCart() {
+  window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(
+    state.cart.map(({ id, quantity }) => ({ id, quantity }))
+  ));
+}
+
+function setCartQuantity(productId, change) {
+  const item = state.cart.find(({ id }) => id === productId);
+  if (!item) {
+    return;
+  }
+
+  item.quantity += change;
+  if (item.quantity <= 0) {
+    state.cart = state.cart.filter(({ id }) => id !== productId);
+  }
+  persistCart();
+  renderCart();
+  if (isCartPage) {
+    renderCartPage();
+  }
+}
 
 function renderFavoriteCount() {
   favoritesCountEl.textContent = String(state.favoriteIds.length);
@@ -162,6 +219,178 @@ function renderFrameConfiguratorPage() {
   });
 }
 
+function renderCartPage() {
+  pageTitle.textContent = 'Il tuo carrello';
+  lookSceneContainer.hidden = true;
+  toolbar.hidden = true;
+  categoryFilters.hidden = true;
+  cartPanel.hidden = true;
+  layout.classList.add('payment-layout');
+  productList.classList.add('payment-page-container');
+  productList.innerHTML = renderCartPageMarkup(state.cart);
+
+  productList.querySelectorAll('[data-cart-action]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = Number(button.dataset.productId);
+      if (button.dataset.cartAction === 'remove') {
+        state.cart = state.cart.filter(({ id }) => id !== productId);
+        persistCart();
+        renderCart();
+        renderCartPage();
+      } else {
+        setCartQuantity(productId, button.dataset.cartAction === 'increase' ? 1 : -1);
+      }
+    });
+  });
+}
+
+function showOrderConfirmation(order) {
+  state.cart = [];
+  persistCart();
+  renderCart();
+  state.paymentStage = 'confirmation';
+  state.paymentErrors = {
+    orderNumber: order.number,
+    orderStatus: order.status,
+    totalCents: order.totalCents,
+    customerName: order.address.name,
+    customerAddress: order.address.address,
+    customerPostalCode: order.address.postalCode,
+    customerCity: order.address.city,
+    customerEmail: order.address.email,
+    bankTransfer: order.paymentMethod === 'bank-transfer'
+  };
+  renderPaymentPage();
+}
+
+async function createOrder(paymentMethod) {
+  if (state.orderSubmitting) {
+    return;
+  }
+
+  state.orderSubmitting = true;
+  state.paymentErrors = {};
+
+  try {
+    const response = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: state.cart.map(({ id, quantity }) => ({ id, quantity })),
+        address: state.shippingAddress,
+        paymentMethod
+      })
+    });
+    const result = await response.json();
+
+    if (!response.ok) {
+      state.orderSubmitting = false;
+      state.paymentErrors.request = result.error || 'Non è stato possibile salvare l’ordine. Riprova.';
+      state.paymentStage = 'form';
+      renderPaymentPage();
+      return;
+    }
+
+    showOrderConfirmation(result.order);
+  } catch {
+    state.orderSubmitting = false;
+    state.paymentErrors.request = 'Non è stato possibile contattare il server. Riprova.';
+    state.paymentStage = 'form';
+    renderPaymentPage();
+  }
+}
+
+function renderPaymentPage() {
+  pageTitle.textContent = 'Pagamento';
+  lookSceneContainer.hidden = true;
+  toolbar.hidden = true;
+  categoryFilters.hidden = true;
+  cartPanel.hidden = true;
+  layout.classList.add('payment-layout');
+  productList.classList.add('payment-page-container');
+  productList.innerHTML = renderPaymentPageMarkup({
+    items: state.cart,
+    selectedMethod: state.selectedPaymentMethod,
+    errors: state.paymentErrors,
+    stage: state.paymentStage,
+    address: state.shippingAddress
+  });
+
+  if (state.paymentStage === 'confirmation' || !state.cart.length) {
+    return;
+  }
+
+  const form = productList.querySelector('#payment-form');
+  if (form) {
+    form.querySelectorAll('#shipping-name, #shipping-address, #shipping-postalCode, #shipping-city, #shipping-email').forEach((input) => {
+      input.addEventListener('input', () => {
+        state.shippingAddress[input.name] = input.value;
+        const fieldErrors = validateShippingAddress(state.shippingAddress);
+        const error = form.querySelector(`#${input.id} + [role="alert"]`);
+        if (error) {
+          error.textContent = fieldErrors[input.name] ?? '';
+          error.hidden = !fieldErrors[input.name];
+        }
+      });
+    });
+
+    form.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
+      radio.addEventListener('change', () => {
+        state.selectedPaymentMethod = radio.value;
+        state.paymentErrors = {};
+        renderPaymentPage();
+      });
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      state.shippingAddress = {
+        name: formData.get('name')?.toString() ?? '',
+        address: formData.get('address')?.toString() ?? '',
+        postalCode: formData.get('postalCode')?.toString() ?? '',
+        city: formData.get('city')?.toString() ?? '',
+        email: formData.get('email')?.toString() ?? ''
+      };
+      state.selectedPaymentMethod = formData.get('paymentMethod')?.toString() ?? '';
+      state.paymentErrors = validateShippingAddress(state.shippingAddress);
+
+      if (!state.selectedPaymentMethod) {
+        state.paymentErrors.paymentMethod = 'Scegli un metodo di pagamento';
+      }
+
+      if (Object.keys(state.paymentErrors).length > 0) {
+        renderPaymentPage();
+        return;
+      }
+
+      if (state.selectedPaymentMethod === 'card') {
+        const cardError = validateCardPayment({
+          number: formData.get('cardNumber')?.toString() ?? '',
+          expiry: formData.get('cardExpiry')?.toString() ?? '',
+          code: formData.get('cardCode')?.toString() ?? ''
+        });
+        if (cardError) {
+          const alert = form.querySelector('.payment-card-general-error');
+          alert.textContent = cardError;
+          alert.hidden = false;
+          return;
+        }
+        createOrder('card');
+      } else if (state.selectedPaymentMethod === 'paypal') {
+        state.paymentStage = 'paypal-approval';
+        renderPaymentPage();
+      } else {
+        createOrder('bank-transfer');
+      }
+    });
+  }
+
+  productList.querySelector('.paypal-approve')?.addEventListener('click', () => {
+    createOrder('paypal');
+  });
+}
+
 function renderProducts() {
   if (isFavoritesPage) {
     renderFavoritesPage();
@@ -170,6 +399,16 @@ function renderProducts() {
 
   if (isFrameConfiguratorPage) {
     renderFrameConfiguratorPage();
+    return;
+  }
+
+  if (isCartPage) {
+    renderCartPage();
+    return;
+  }
+
+  if (isPaymentPage) {
+    renderPaymentPage();
     return;
   }
 
@@ -225,7 +464,7 @@ function renderProducts() {
         </button>
         <div class="product-footer">
           <span class="price">${formatCurrency(product.price)}</span>
-          <button class="add-button" type="button" data-product-id="${product.id}">Aggiungi</button>
+          <button class="add-button" type="button" data-product-id="${product.id}">Aggiungi al carrello</button>
           ${renderFavoriteButtonMarkup(product, state.favoriteIds.includes(product.id))}
         </div>
       </article>
@@ -262,6 +501,7 @@ function renderProducts() {
         state.cart.push({ ...product, quantity: 1 });
       }
 
+      persistCart();
       renderCart();
     });
   });
@@ -312,7 +552,8 @@ lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
 });
 
 function renderCart() {
-  const { subtotal, shipping, total, itemCount } = calculateCartTotal(state.cart);
+  const { subtotalCents, shippingCents, totalCents } = calculateCartTotalCents(state.cart);
+  const itemCount = state.cart.reduce((count, item) => count + item.quantity, 0);
 
   if (!state.cart.length) {
     cartItems.innerHTML = '<div class="empty-cart">Il carrello è vuoto.</div>';
@@ -324,17 +565,34 @@ function renderCart() {
           <span>Qtà: ${item.quantity}</span>
         </div>
         <div class="cart-item-price">
-          <strong>${formatCurrency(item.price * item.quantity)}</strong>
+          <strong>${formatCurrencyCents(Math.round(item.price * 100) * item.quantity)}</strong>
+          <button class="cart-quantity-button" type="button" data-cart-action="decrease" data-product-id="${item.id}" aria-label="Diminuisci ${item.name}">−</button>
+          <button class="cart-quantity-button" type="button" data-cart-action="increase" data-product-id="${item.id}" aria-label="Aumenta ${item.name}">+</button>
+          <button class="cart-remove-button" type="button" data-cart-action="remove" data-product-id="${item.id}">Rimuovi</button>
         </div>
       </div>
-    `).join('');
+      `).join('');
   }
 
-  subtotalEl.textContent = formatCurrency(subtotal);
-  shippingEl.textContent = formatCurrency(shipping);
-  totalEl.textContent = formatCurrency(total);
+  subtotalEl.textContent = formatCurrencyCents(subtotalCents);
+  shippingEl.textContent = formatCurrencyCents(shippingCents);
+  totalEl.textContent = formatCurrencyCents(totalCents);
   cartCountEl.textContent = String(itemCount);
   itemsCountEl.textContent = `${itemCount} articoli`;
+  checkoutButton.hidden = state.cart.length === 0;
+
+  cartItems.querySelectorAll('[data-cart-action]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const productId = Number(button.dataset.productId);
+        if (button.dataset.cartAction === 'remove') {
+          state.cart = state.cart.filter(({ id }) => id !== productId);
+          persistCart();
+          renderCart();
+        } else {
+          setCartQuantity(productId, button.dataset.cartAction === 'increase' ? 1 : -1);
+        }
+      });
+  });
 }
 
 searchInput.addEventListener('input', (event) => {

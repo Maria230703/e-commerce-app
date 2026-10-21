@@ -9,6 +9,7 @@ Web app e-commerce per piccoli complementi d'arredo, oggettistica e cornici, rea
 - Preferiti salvati nel browser, accessibili dal catalogo e dalla scheda prodotto.
 - Scena «Compra il look» con punti cliccabili per aprire le schede dei prodotti.
 - Configuratore di cornici con anteprima, riepilogo e prezzo aggiornati a ogni scelta.
+- Carrello persistente nel browser e flusso di pagamento simulato con ordini salvati in `orders.json`.
 
 ## Requisiti
 

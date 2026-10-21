@@ -104,12 +104,36 @@ export function transitionCatalogView(state, action) {
 }
 
 export function calculateCartTotal(items = []) {
-  const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = subtotal > 0 && subtotal < 100 ? 9.9 : 0;
+  const totals = calculateCartTotalCents(items);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
-  const total = subtotal + shipping;
 
-  return { subtotal, shipping, total, itemCount };
+  return {
+    subtotal: totals.subtotalCents / 100,
+    shipping: totals.shippingCents / 100,
+    total: totals.totalCents / 100,
+    itemCount
+  };
+}
+
+export function calculateCartTotalCents(items = []) {
+  const subtotalCents = items.reduce(
+    (sum, item) => sum + Math.round(item.price * 100) * item.quantity,
+    0
+  );
+  const shippingCents = subtotalCents > 0 && subtotalCents < 7900 ? 490 : 0;
+
+  return {
+    subtotalCents,
+    shippingCents,
+    totalCents: subtotalCents + shippingCents
+  };
+}
+
+export function formatCurrencyCents(valueCents) {
+  return new Intl.NumberFormat('it-IT', {
+    style: 'currency',
+    currency: 'EUR'
+  }).format(valueCents / 100);
 }
 
 export function formatCurrency(value) {

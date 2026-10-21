@@ -84,6 +84,11 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.cart-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .header-actions {
   display: flex;
   flex-direction: column;
@@ -233,6 +238,12 @@ select {
   border-radius: 12px;
   padding: 12px 14px;
   color: var(--text);
+}
+
+input[type="radio"] {
+  width: auto;
+  padding: 0;
+  border: 0;
 }
 
 .category-filters {
@@ -704,6 +715,111 @@ select {
   align-items: flex-end;
   justify-content: center;
   gap: 6px;
+}
+
+.cart-quantity-button,
+.cart-remove-button {
+  min-height: 32px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.cart-page,
+.payment-page {
+  display: grid;
+  gap: 18px;
+}
+
+.cart-page h2,
+.payment-page h2,
+.payment-section h2 {
+  margin: 0;
+}
+
+.payment-layout {
+  grid-template-columns: 1fr;
+}
+
+.payment-page-container {
+  display: block;
+}
+
+.payment-section,
+.payment-confirmation,
+.paypal-simulation {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.payment-field {
+  display: grid;
+  gap: 6px;
+}
+
+.payment-field-error,
+.payment-request-error {
+  margin: 0;
+  color: #b42318;
+}
+
+.payment-summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.payment-methods {
+  border: 1px solid var(--border);
+}
+
+.payment-methods legend,
+.payment-card-fields legend {
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--text);
+}
+
+.payment-method input {
+  width: auto;
+}
+
+.payment-card-fields {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.cart-checkout-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.payment-confirmation p {
+  margin: 0;
+}
+
+.payment-confirmation h3 {
+  margin: 8px 0 0;
 }
 
 .empty-cart {

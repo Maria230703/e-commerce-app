@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS } from './catalog-logic.js';
+import { createOrder, OrderInputError } from './orders.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,8 +37,43 @@ function serveFile(res, filePath) {
   });
 }
 
-const server = http.createServer((req, res) => {
+async function readJsonBody(req) {
+  const chunks = [];
+  let size = 0;
+
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > 1024 * 1024) {
+      throw new OrderInputError('Richiesta troppo grande');
+    }
+    chunks.push(chunk);
+  }
+
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  } catch {
+    throw new OrderInputError('Richiesta non valida');
+  }
+}
+
+const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, 'http://localhost');
+
+  if (url.pathname === '/api/orders' && req.method === 'POST') {
+    try {
+      const input = await readJsonBody(req);
+      const order = await createOrder(input);
+      sendJson(res, 201, { order });
+    } catch (error) {
+      if (error instanceof OrderInputError) {
+        sendJson(res, 400, { error: error.message });
+        return;
+      }
+
+      sendJson(res, 500, { error: 'Non è stato possibile salvare l’ordine.' });
+    }
+    return;
+  }
 
   if (url.pathname === '/api/products') {
     sendJson(res, 200, PRODUCTS);
