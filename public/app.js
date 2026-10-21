@@ -8,7 +8,7 @@ import {
 } from '/catalog-logic.js';
 import { renderProductDetailMarkup } from '/product-detail.js';
 import { renderLookScene } from '/look-scene.js';
-import { INITIAL_FRAME_SELECTION } from '/frame-logic.js';
+import { INITIAL_FRAME_SELECTION, validateFramePhoto } from '/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
 import {
   FAVORITES_STORAGE_KEY,
@@ -25,6 +25,8 @@ const state = {
   sort: 'featured',
   selectedProductId: null,
   frameSelection: { ...INITIAL_FRAME_SELECTION },
+  framePhoto: null,
+  framePhotoError: '',
   favoriteIds: readFavoriteIds(window.localStorage, PRODUCTS),
   cart: []
 };
@@ -106,7 +108,11 @@ function renderFrameConfiguratorPage() {
   cartPanel.hidden = true;
   layout.classList.add('frame-configurator-layout');
   productList.classList.add('frame-configurator-container');
-  productList.innerHTML = renderFrameConfiguratorMarkup(state.frameSelection);
+  productList.innerHTML = renderFrameConfiguratorMarkup(
+    state.frameSelection,
+    state.framePhoto,
+    state.framePhotoError
+  );
 
   productList.querySelectorAll('.frame-option').forEach((button) => {
     button.addEventListener('click', () => {
@@ -114,6 +120,45 @@ function renderFrameConfiguratorPage() {
       state.frameSelection[group] = button.dataset.frameValue;
       renderFrameConfiguratorPage();
     });
+  });
+
+  const photoInput = productList.querySelector('.frame-photo-input');
+  productList.querySelector('.frame-upload-photo').addEventListener('click', () => {
+    photoInput.click();
+  });
+
+  photoInput.addEventListener('change', () => {
+    const [file] = photoInput.files;
+
+    if (!file) {
+      return;
+    }
+
+    const validationError = validateFramePhoto(file);
+
+    if (validationError) {
+      state.framePhotoError = validationError;
+      renderFrameConfiguratorPage();
+      return;
+    }
+
+    if (state.framePhoto) {
+      URL.revokeObjectURL(state.framePhoto.url);
+    }
+
+    state.framePhoto = {
+      name: file.name,
+      url: URL.createObjectURL(file)
+    };
+    state.framePhotoError = '';
+    renderFrameConfiguratorPage();
+  });
+
+  productList.querySelector('.frame-remove-photo')?.addEventListener('click', () => {
+    URL.revokeObjectURL(state.framePhoto.url);
+    state.framePhoto = null;
+    state.framePhotoError = '';
+    renderFrameConfiguratorPage();
   });
 }
 

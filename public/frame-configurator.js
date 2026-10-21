@@ -24,19 +24,30 @@ function renderOptionGroup(group, title, selection) {
   `;
 }
 
-export function renderFrameConfiguratorMarkup(selection) {
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}
+
+export function renderFrameConfiguratorMarkup(selection, photo = null, photoError = '') {
   const measure = FRAME_OPTIONS.measure.find(({ value }) => value === selection.measure);
   const finish = FRAME_OPTIONS.finish.find(({ value }) => value === selection.finish);
   const profile = FRAME_OPTIONS.profile.find(({ value }) => value === selection.profile);
   const mat = FRAME_OPTIONS.mat.find(({ value }) => value === selection.mat);
-  const previewContent = `
-    <div class="frame-photo">
-      <span>La tua foto</span>
-    </div>
-  `;
+  const previewContent = photo
+    ? `<div class="frame-photo"><img src="${photo.url}" alt="La tua foto nella cornice"></div>`
+    : '<div class="frame-photo"><span>La tua foto</span></div>';
   const preview = mat.color
     ? `<div class="frame-mat" style="--mat-color: ${mat.color}">${previewContent}</div>`
     : previewContent;
+  const summary = photo
+    ? `${describeFrameSelection(selection)}, Stampa foto su carta fotografica: omaggio`
+    : describeFrameSelection(selection);
 
   return `
     <section class="frame-configurator" aria-labelledby="frame-configurator-title">
@@ -50,7 +61,16 @@ export function renderFrameConfiguratorMarkup(selection) {
             aria-label="Anteprima cornice ${finish.label}, profilo ${profile.label}, misura ${measure.label} cm${mat.color ? `, passe-partout ${mat.label}` : ', senza passe-partout'}"
             style="--frame-color: ${finish.color}; --frame-border-width: ${profile.borderWidth}px; --frame-ratio: ${measure.width} / ${measure.height}"
           >${preview}</div>
-          <p class="frame-summary" aria-live="polite">${describeFrameSelection(selection)}</p>
+          <p class="frame-summary" aria-live="polite">${summary}</p>
+          ${photo ? `
+            <p class="frame-photo-name">Foto: ${escapeHtml(photo.name)}</p>
+            <p class="frame-print-type">Tipo di stampa: Carta fotografica</p>
+            <button class="back-button frame-remove-photo" type="button">Rimuovi foto</button>
+          ` : ''}
+          <input class="frame-photo-input" type="file" accept="image/jpeg,image/png,image/webp" aria-label="Scegli una foto">
+          <button class="back-button frame-upload-photo" type="button">Carica la tua foto</button>
+          <p class="frame-print-included">Stampa su carta fotografica inclusa nel prezzo</p>
+          <p class="frame-photo-error" role="alert"${photoError ? '' : ' hidden'}>${escapeHtml(photoError)}</p>
         </div>
         <div class="frame-options">
           ${renderOptionGroup('measure', 'Misura (cm)', selection)}

@@ -6,7 +6,9 @@ import {
   describeFrameSelection,
   formatFramePrice,
   FRAME_OPTIONS,
-  INITIAL_FRAME_SELECTION
+  INITIAL_FRAME_SELECTION,
+  MAX_FRAME_PHOTO_BYTES,
+  validateFramePhoto
 } from '../public/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '../public/frame-configurator.js';
 
@@ -123,5 +125,68 @@ test('la combinazione richiesta aggiorna riepilogo e prezzo e rispetta la propor
   assert.match(markup, /--frame-ratio: 50 \/ 70/);
   assert.match(markup, /aria-pressed="false"/);
   assert.match(markup, /<button/);
-  assert.doesNotMatch(markup, /Aggiungi al carrello|type="file"/);
+  assert.doesNotMatch(markup, /Aggiungi al carrello/);
+});
+
+test('la validazione accetta JPG, PNG e WebP fino a 10 MiB', () => {
+  for (const type of ['image/jpeg', 'image/png', 'image/webp']) {
+    assert.equal(
+      validateFramePhoto({ type, size: MAX_FRAME_PHOTO_BYTES }),
+      null
+    );
+  }
+});
+
+test('la validazione rifiuta formati non supportati e file oltre 10 MiB', () => {
+  assert.equal(
+    validateFramePhoto({ type: 'application/pdf', size: 100 }),
+    'Formato non supportato. Carica un\'immagine JPG, PNG o WebP.'
+  );
+  assert.equal(
+    validateFramePhoto({ type: 'image/jpeg', size: MAX_FRAME_PHOTO_BYTES + 1 }),
+    'La foto supera i 10 MB. Scegline una più leggera.'
+  );
+});
+
+test('la foto appare nell’anteprima e nel riepilogo senza modificare il prezzo', () => {
+  const priceBefore = calculateFramePriceCents(INITIAL_FRAME_SELECTION);
+  const markup = renderFrameConfiguratorMarkup(INITIAL_FRAME_SELECTION, {
+    name: 'mare.jpg',
+    url: 'blob:photo-preview'
+  });
+
+  assert.match(markup, /<img src="blob:photo-preview" alt="La tua foto nella cornice">/);
+  assert.match(markup, /Foto: mare\.jpg/);
+  assert.match(markup, /Stampa foto su carta fotografica: omaggio/);
+  assert.match(markup, /Tipo di stampa: Carta fotografica/);
+  assert.match(markup, /Rimuovi foto/);
+  assert.doesNotMatch(markup, /<(?:select|option)(?:\s|>)/);
+  assert.equal(calculateFramePriceCents(INITIAL_FRAME_SELECTION), priceBefore);
+
+  const emptyMarkup = renderFrameConfiguratorMarkup(INITIAL_FRAME_SELECTION);
+  assert.match(emptyMarkup, /La tua foto/);
+  assert.match(emptyMarkup, /Carica la tua foto/);
+  assert.match(emptyMarkup, /Stampa su carta fotografica inclusa nel prezzo/);
+  assert.match(emptyMarkup, /role="alert" hidden><\/p>/);
+  assert.doesNotMatch(emptyMarkup, /Stampa foto su carta fotografica: omaggio/);
+  assert.doesNotMatch(emptyMarkup, /Tipo di stampa: Carta fotografica/);
+});
+
+test('gli errori della foto sono annunciati e il nome file viene escapato', () => {
+  const errorMarkup = renderFrameConfiguratorMarkup(
+    INITIAL_FRAME_SELECTION,
+    null,
+    'Formato non supportato. Carica un\'immagine JPG, PNG o WebP.'
+  );
+  const unsafeFilenameMarkup = renderFrameConfiguratorMarkup(INITIAL_FRAME_SELECTION, {
+    name: '<img src=x onerror=alert(1)>.jpg',
+    url: 'blob:photo-preview'
+  });
+
+  assert.match(
+    errorMarkup,
+    /role="alert">Formato non supportato\. Carica un&#39;immagine JPG, PNG o WebP\.<\/p>/
+  );
+  assert.match(unsafeFilenameMarkup, /&lt;img src=x onerror=alert\(1\)&gt;\.jpg/);
+  assert.doesNotMatch(unsafeFilenameMarkup, /<p class="frame-photo-name"><img/);
 });

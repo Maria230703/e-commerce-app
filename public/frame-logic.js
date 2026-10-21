@@ -29,6 +29,22 @@ export const INITIAL_FRAME_SELECTION = {
   mat: 'bianco'
 };
 
+export const MAX_FRAME_PHOTO_BYTES = 10 * 1024 * 1024;
+
+const FRAME_PHOTO_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
+
+export function validateFramePhoto(file) {
+  if (!file || !FRAME_PHOTO_TYPES.has(file.type)) {
+    return 'Formato non supportato. Carica un\'immagine JPG, PNG o WebP.';
+  }
+
+  if (file.size > MAX_FRAME_PHOTO_BYTES) {
+    return 'La foto supera i 10 MB. Scegline una più leggera.';
+  }
+
+  return null;
+}
+
 function selectedOption(selection, group) {
   return FRAME_OPTIONS[group].find(({ value }) => value === selection[group]);
 }
