@@ -8,6 +8,8 @@ import {
 } from '/catalog-logic.js';
 import { renderProductDetailMarkup } from '/product-detail.js';
 import { renderLookScene } from '/look-scene.js';
+import { INITIAL_FRAME_SELECTION } from '/frame-logic.js';
+import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
 import {
   FAVORITES_STORAGE_KEY,
   readFavoriteIds,
@@ -22,14 +24,18 @@ const state = {
   category: 'all',
   sort: 'featured',
   selectedProductId: null,
+  frameSelection: { ...INITIAL_FRAME_SELECTION },
   favoriteIds: readFavoriteIds(window.localStorage, PRODUCTS),
   cart: []
 };
 
 const isFavoritesPage = window.location.pathname === '/preferiti';
+const isFrameConfiguratorPage = window.location.pathname === '/configuratore-cornice';
 const pageTitle = document.querySelector('#page-title');
+const layout = document.querySelector('.layout');
 const lookSceneContainer = document.querySelector('#look-scene-container');
 const productList = document.querySelector('#product-list');
+const cartPanel = document.querySelector('.cart-panel');
 const categoryFilters = document.querySelector('#category-filters');
 const toolbar = document.querySelector('.toolbar');
 const searchInput = document.querySelector('#search-input');
@@ -69,7 +75,7 @@ function toggleFavorite(productId) {
 }
 
 function renderCategoryFilters() {
-  categoryFilters.innerHTML = CATEGORIES.map(
+  categoryFilters.innerHTML = `${CATEGORIES.map(
     (category) => `
       <button
         type="button"
@@ -79,7 +85,9 @@ function renderCategoryFilters() {
         ${category.label}
       </button>
     `
-  ).join('');
+  ).join('')}
+    <a class="frame-configurator-link" href="/configuratore-cornice">Crea la tua cornice</a>
+  `;
 
   categoryFilters.querySelectorAll('.filter-chip').forEach((button) => {
     button.addEventListener('click', () => {
@@ -90,9 +98,33 @@ function renderCategoryFilters() {
   });
 }
 
+function renderFrameConfiguratorPage() {
+  pageTitle.textContent = 'Crea la tua cornice';
+  lookSceneContainer.hidden = true;
+  toolbar.hidden = true;
+  categoryFilters.hidden = true;
+  cartPanel.hidden = true;
+  layout.classList.add('frame-configurator-layout');
+  productList.classList.add('frame-configurator-container');
+  productList.innerHTML = renderFrameConfiguratorMarkup(state.frameSelection);
+
+  productList.querySelectorAll('.frame-option').forEach((button) => {
+    button.addEventListener('click', () => {
+      const group = button.dataset.frameOption;
+      state.frameSelection[group] = button.dataset.frameValue;
+      renderFrameConfiguratorPage();
+    });
+  });
+}
+
 function renderProducts() {
   if (isFavoritesPage) {
     renderFavoritesPage();
+    return;
+  }
+
+  if (isFrameConfiguratorPage) {
+    renderFrameConfiguratorPage();
     return;
   }
 
@@ -112,6 +144,9 @@ function renderProducts() {
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
   categoryFilters.hidden = false;
+  cartPanel.hidden = false;
+  layout.classList.remove('frame-configurator-layout');
+  productList.classList.remove('frame-configurator-container');
 
   const filteredProducts = filterProducts(state.products, {
     search: state.search,
