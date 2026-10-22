@@ -132,6 +132,8 @@ test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
   assert.match(markup, /Vaso Duna × 1/);
   assert.match(markup, /Spedizione<\/span>\s*<strong>4,90\s€</);
   assert.match(markup, /Totale<\/span>\s*<strong>38,90\s€</);
+  assert.ok(markup.indexOf('Torna al carrello') < markup.indexOf('Torna a Scopri'));
+  assert.ok(markup.indexOf('Torna a Scopri') < markup.indexOf('<h2 id="payment-page-title">'));
   assert.match(markup, /<label for="shipping-name">Nome<\/label>/);
   assert.match(markup, /<label for="shipping-surname">Cognome<\/label>/);
   assert.match(markup, /<label for="shipping-phone">Numero di telefono<\/label>/);

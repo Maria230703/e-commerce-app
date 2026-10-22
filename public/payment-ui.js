@@ -88,6 +88,7 @@ export function renderPaymentPageMarkup({
     return `
       <section class="payment-page" aria-labelledby="payment-page-title">
         <a class="back-button" href="/carrello">Torna al carrello</a>
+        <a class="back-button" href="/scopri">Torna a Scopri</a>
         <h2 id="payment-page-title">Pagamento</h2>
         <p class="empty-cart">Il carrello è vuoto.</p>
       </section>
@@ -97,6 +98,7 @@ export function renderPaymentPageMarkup({
   return `
     <section class="payment-page" aria-labelledby="payment-page-title">
       <a class="back-button" href="/carrello">Torna al carrello</a>
+      <a class="back-button" href="/scopri">Torna a Scopri</a>
       <h2 id="payment-page-title">Pagamento</h2>
       ${stage === 'confirmation' ? '' : renderOrderSummary(items, couponCode)}
       ${stage === 'form' ? `
