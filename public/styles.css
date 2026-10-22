@@ -109,6 +109,51 @@ h1 {
   text-decoration: none;
 }
 
+.coupon-container {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+
+.header-actions .coupon-toggle,
+.header-actions .coupon-apply {
+  width: auto;
+  margin-top: 0;
+  font: inherit;
+}
+
+.coupon-form {
+  display: grid;
+  justify-items: stretch;
+  gap: 8px;
+  width: min(260px, calc(100vw - 32px));
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.coupon-feedback {
+  margin: 0;
+  color: #b42318;
+}
+
+.coupon-applied {
+  margin: 0;
+  color: var(--success);
+  font-size: 0.85rem;
+}
+
+.coupon-remove {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .layout {
   max-width: 1280px;
   margin: 0 auto;

@@ -19,6 +19,12 @@ import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
 import { validateCardPayment, validateShippingAddress } from '/payment-logic.js';
 import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js';
 import {
+  calculateDiscountedCartTotals,
+  COUPON_CODE,
+  COUPON_MINIMUM_SUBTOTAL_CENTS,
+  validateCouponCode
+} from '/coupon-logic.js';
+import {
   createFrameCartItem,
   getFrameCartId,
   isItemInCart,
@@ -48,7 +54,9 @@ const state = {
   shippingAddress: {},
   paymentErrors: {},
   paymentStage: 'form',
-  orderSubmitting: false
+  orderSubmitting: false,
+  couponCode: window.localStorage.getItem('e-commerce-coupon') ?? '',
+  couponEntryOpen: false
 };
 
 const isFavoritesPage = window.location.pathname === '/preferiti';
@@ -72,6 +80,13 @@ const cartCountEl = document.querySelector('#cart-count');
 const itemsCountEl = document.querySelector('#items-count');
 const favoritesCountEl = document.querySelector('#favorites-count');
 const checkoutButton = document.querySelector('#cart-checkout-button');
+const couponContainer = document.querySelector('#coupon-container');
+const couponToggle = document.querySelector('#coupon-toggle');
+const couponForm = document.querySelector('#coupon-form');
+const couponInput = document.querySelector('#coupon-input');
+const couponFeedback = document.querySelector('#coupon-feedback');
+const couponApplied = document.querySelector('#coupon-applied');
+const couponRemove = document.querySelector('#coupon-remove');
 
 function persistCart() {
   saveCart(window.localStorage, state.cart);
@@ -245,7 +260,7 @@ function renderCartPage() {
   cartPanel.hidden = true;
   layout.classList.add('payment-layout');
   productList.classList.add('payment-page-container');
-  productList.innerHTML = renderCartPageMarkup(state.cart);
+  productList.innerHTML = renderCartPageMarkup(state.cart, state.couponCode);
 
   productList.querySelectorAll('[data-cart-action]').forEach((button) => {
     button.addEventListener('click', () => {
@@ -260,6 +275,21 @@ function renderCartPage() {
       }
     });
   });
+}
+
+function renderCouponAvailability(subtotalCents) {
+  const hasEligibleSubtotal = subtotalCents > COUPON_MINIMUM_SUBTOTAL_CENTS;
+  if (state.couponCode && (!hasEligibleSubtotal || validateCouponCode(state.couponCode, subtotalCents))) {
+    state.couponCode = '';
+    window.localStorage.removeItem('e-commerce-coupon');
+  }
+  if (!hasEligibleSubtotal) {
+    state.couponEntryOpen = false;
+    state.couponMessage = '';
+  }
+
+  const isLandingPage = window.location.pathname === '/' || window.location.pathname === '/scopri';
+  couponContainer.hidden = !isLandingPage || state.selectedProductId !== null || !hasEligibleSubtotal;
 }
 
 function showOrderConfirmation(order) {
@@ -303,7 +333,8 @@ async function createOrder(paymentMethod) {
           frameSelection
         })),
         address: state.shippingAddress,
-        paymentMethod
+        paymentMethod,
+        couponCode: state.couponCode
       })
     });
     const result = await response.json();
@@ -338,7 +369,8 @@ function renderPaymentPage() {
     selectedMethod: state.selectedPaymentMethod,
     errors: state.paymentErrors,
     stage: state.paymentStage,
-    address: state.shippingAddress
+    address: state.shippingAddress,
+    couponCode: state.couponCode
   });
 
   if (state.paymentStage === 'confirmation' || !state.cart.length) {
@@ -425,6 +457,7 @@ function renderPaymentPage() {
 }
 
 function renderProducts() {
+  renderCouponAvailability(calculateCartTotalCents(state.cart).subtotalCents);
   if (isFavoritesPage) {
     renderFavoritesPage();
     return;
@@ -596,8 +629,12 @@ lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
 });
 
 function renderCart() {
-  const { subtotalCents, shippingCents, totalCents } = calculateCartTotalCents(state.cart);
+  const { subtotalCents, shippingCents, discountCents, totalCents } = calculateDiscountedCartTotals(
+    state.cart,
+    state.couponCode
+  );
   const itemCount = state.cart.reduce((count, item) => count + item.quantity, 0);
+  renderCouponAvailability(subtotalCents);
 
   if (!state.cart.length) {
     cartItems.innerHTML = '<div class="empty-cart">Il carrello è vuoto.</div>';
@@ -621,10 +658,31 @@ function renderCart() {
 
   subtotalEl.textContent = formatCurrencyCents(subtotalCents);
   shippingEl.textContent = formatCurrencyCents(shippingCents);
+  let discountRow = document.querySelector('#cart-discount');
+  if (discountCents > 0) {
+    if (!discountRow) {
+      discountRow = document.createElement('div');
+      discountRow.id = 'cart-discount';
+      discountRow.className = 'row';
+      discountRow.innerHTML = '<span>Sconto coupon</span><strong></strong>';
+      totalEl.closest('.totals').insertBefore(discountRow, totalEl.closest('.total-row'));
+    }
+    discountRow.querySelector('strong').textContent = `−${formatCurrencyCents(discountCents)}`;
+  } else {
+    discountRow?.remove();
+  }
   totalEl.textContent = formatCurrencyCents(totalCents);
   cartCountEl.textContent = String(itemCount);
   itemsCountEl.textContent = `${itemCount} articoli`;
   checkoutButton.hidden = state.cart.length === 0;
+  couponToggle.setAttribute('aria-expanded', String(state.couponEntryOpen));
+  couponForm.hidden = !state.couponEntryOpen;
+  couponInput.value = state.couponCode || state.couponInput || '';
+  couponFeedback.textContent = state.couponMessage ?? '';
+  couponFeedback.hidden = !state.couponMessage;
+  couponApplied.hidden = !state.couponCode;
+  couponApplied.textContent = state.couponCode ? `Coupon ${state.couponCode} applicato` : '';
+  couponRemove.hidden = !state.couponCode;
 
   cartItems.querySelectorAll('[data-cart-action]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -654,3 +712,46 @@ renderCategoryFilters();
 renderFavoriteCount();
 renderProducts();
 renderCart();
+
+couponInput.addEventListener('input', () => {
+  state.couponInput = couponInput.value;
+});
+
+couponToggle.addEventListener('click', () => {
+  state.couponEntryOpen = !state.couponEntryOpen;
+  state.couponMessage = '';
+  if (state.couponEntryOpen) {
+    couponInput.value = state.couponCode || state.couponInput || '';
+  }
+  renderCart();
+  if (state.couponEntryOpen) {
+    couponInput.focus();
+  }
+});
+
+couponForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const subtotalCents = calculateCartTotalCents(state.cart).subtotalCents;
+  const error = validateCouponCode(couponInput.value, subtotalCents);
+  if (error) {
+    state.couponMessage = error;
+    couponFeedback.textContent = error;
+    couponFeedback.hidden = false;
+    return;
+  }
+
+  state.couponCode = COUPON_CODE;
+  state.couponInput = COUPON_CODE;
+  state.couponMessage = '';
+  state.couponEntryOpen = false;
+  window.localStorage.setItem('e-commerce-coupon', COUPON_CODE);
+  renderCart();
+});
+
+couponRemove.addEventListener('click', () => {
+  state.couponCode = '';
+  state.couponInput = '';
+  state.couponMessage = '';
+  window.localStorage.removeItem('e-commerce-coupon');
+  renderCart();
+});

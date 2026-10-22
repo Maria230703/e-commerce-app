@@ -1,4 +1,5 @@
-import { calculateCartTotalCents, formatCurrencyCents } from '../catalog-logic.js';
+import { formatCurrencyCents } from '../catalog-logic.js';
+import { calculateDiscountedCartTotals } from './coupon-logic.js';
 import { EUROPEAN_PHONE_PREFIXES, PAYMENT_METHODS } from './payment-logic.js';
 
 function escapeHtml(value) {
@@ -11,8 +12,8 @@ function escapeHtml(value) {
   })[character]);
 }
 
-function renderOrderSummary(items) {
-  const totals = calculateCartTotalCents(items);
+function renderOrderSummary(items, couponCode) {
+  const totals = calculateDiscountedCartTotals(items, couponCode);
   const rows = items.map((item) => `
     <div class="payment-summary-row">
       <span>${escapeHtml(item.name)}${item.frameDescription ? ` — ${escapeHtml(item.frameDescription)}` : ''} × ${item.quantity}</span>
@@ -26,6 +27,7 @@ function renderOrderSummary(items) {
       ${rows}
       <div class="payment-summary-row"><span>Subtotale</span><strong>${formatCurrencyCents(totals.subtotalCents)}</strong></div>
       <div class="payment-summary-row"><span>Spedizione</span><strong>${formatCurrencyCents(totals.shippingCents)}</strong></div>
+      ${totals.discountCents > 0 ? `<div class="payment-summary-row"><span>Sconto coupon</span><strong>−${formatCurrencyCents(totals.discountCents)}</strong></div>` : ''}
       <div class="payment-summary-row total-row"><span>Totale</span><strong>${formatCurrencyCents(totals.totalCents)}</strong></div>
     </section>
   `;
@@ -77,7 +79,8 @@ export function renderPaymentPageMarkup({
   selectedMethod = '',
   errors = {},
   stage = 'form',
-  address = {}
+  address = {},
+  couponCode = ''
 }) {
   if (!items.length && stage !== 'confirmation') {
     return `
@@ -93,7 +96,7 @@ export function renderPaymentPageMarkup({
     <section class="payment-page" aria-labelledby="payment-page-title">
       <a class="back-button" href="/carrello">Torna al carrello</a>
       <h2 id="payment-page-title">Pagamento</h2>
-      ${stage === 'confirmation' ? '' : renderOrderSummary(items)}
+      ${stage === 'confirmation' ? '' : renderOrderSummary(items, couponCode)}
       ${stage === 'form' ? `
         <form id="payment-form" novalidate>
           <section class="payment-section" aria-labelledby="shipping-title">
@@ -153,7 +156,7 @@ export function renderPaymentPageMarkup({
   `;
 }
 
-export function renderCartPageMarkup(items) {
+export function renderCartPageMarkup(items, couponCode = '') {
   if (!items.length) {
     return `
       <section class="cart-page">
@@ -164,7 +167,7 @@ export function renderCartPageMarkup(items) {
     `;
   }
 
-  const totals = calculateCartTotalCents(items);
+  const totals = calculateDiscountedCartTotals(items, couponCode);
   return `
     <section class="cart-page">
       <h2>Il tuo carrello</h2>
@@ -188,6 +191,7 @@ export function renderCartPageMarkup(items) {
       <div class="totals">
         <div class="row"><span>Subtotale</span><strong>${formatCurrencyCents(totals.subtotalCents)}</strong></div>
         <div class="row"><span>Spedizione</span><strong>${formatCurrencyCents(totals.shippingCents)}</strong></div>
+        ${totals.discountCents > 0 ? `<div class="row"><span>Sconto coupon</span><strong>−${formatCurrencyCents(totals.discountCents)}</strong></div>` : ''}
         <div class="row total-row"><span>Totale</span><strong>${formatCurrencyCents(totals.totalCents)}</strong></div>
       </div>
       <a class="checkout-button cart-checkout-link" href="/pagamento">Vai al pagamento</a>

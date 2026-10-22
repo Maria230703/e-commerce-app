@@ -13,6 +13,11 @@ import {
   validateShippingAddress
 } from '../public/payment-logic.js';
 import {
+  calculateDiscountedCartTotals,
+  COUPON_CODE,
+  validateCouponCode
+} from '../public/coupon-logic.js';
+import {
   renderCartPageMarkup,
   renderPaymentPageMarkup
 } from '../public/payment-ui.js';
@@ -103,6 +108,24 @@ test('il totale del carrello usa centesimi e calcola la spedizione al limite cor
   });
 });
 
+test('il coupon ESEMPIO10 sconta del 10% solo sui carrelli oltre 50 euro', () => {
+  const lampada = [{ ...PRODUCTS.find(({ name }) => name === 'Lampada Lume'), quantity: 1 }];
+  const portavaso = [{ ...PRODUCTS.find(({ name }) => name === 'Portavaso Trama'), quantity: 1 }];
+  const importoEsattoSoglia = [{ price: 50, quantity: 1 }];
+
+  assert.equal(validateCouponCode(COUPON_CODE, 5001), null);
+  assert.equal(validateCouponCode(COUPON_CODE, 5000), 'Il coupon è disponibile per acquisti superiori a 50,00 €');
+  assert.equal(validateCouponCode('NONVALIDO', 8900), 'Codice coupon non valido');
+  assert.deepEqual(calculateDiscountedCartTotals(lampada, COUPON_CODE), {
+    subtotalCents: 8900,
+    shippingCents: 0,
+    discountCents: 890,
+    totalCents: 8010
+  });
+  assert.equal(calculateDiscountedCartTotals(portavaso, COUPON_CODE).totalCents, 4990);
+  assert.equal(calculateDiscountedCartTotals(importoEsattoSoglia, COUPON_CODE).discountCents, 0);
+});
+
 test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
   const markup = renderPaymentPageMarkup({ items: vasoCart });
 
@@ -130,6 +153,18 @@ test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
 test('il carrello offre il pagamento solo se contiene articoli', () => {
   assert.doesNotMatch(renderCartPageMarkup([]), /Vai al pagamento/);
   assert.match(renderCartPageMarkup(vasoCart), /href="\/pagamento">Vai al pagamento<\/a>/);
+});
+
+test('il riepilogo del carrello e del pagamento mostra il coupon applicato', () => {
+  const lampada = [{ ...PRODUCTS.find(({ name }) => name === 'Lampada Lume'), quantity: 1 }];
+  const cartMarkup = renderCartPageMarkup(lampada, COUPON_CODE);
+  const paymentMarkup = renderPaymentPageMarkup({ items: lampada, couponCode: COUPON_CODE });
+
+  assert.match(cartMarkup, /Sconto coupon<\/span><strong>−8,90\s€<\/strong>/);
+  assert.match(cartMarkup, /Totale<\/span><strong>80,10\s€<\/strong>/);
+  assert.match(paymentMarkup, /Sconto coupon<\/span><strong>−8,90\s€<\/strong>/);
+  assert.match(paymentMarkup, /Totale<\/span><strong>80,10\s€<\/strong>/);
+  assert.doesNotMatch(renderCartPageMarkup(vasoCart, COUPON_CODE), /Sconto coupon/);
 });
 
 test('la conferma per bonifico indica lo stato e i dati fittizi per il pagamento', () => {
@@ -184,6 +219,46 @@ test('gli ordini salvati non includono dati di carta e il bonifico resta in atte
     assert.deepEqual(order.address, validAddress);
     assert.deepEqual(storedOrders, [order]);
     assert.doesNotMatch(storedText, /cardNumber|expiry|code|4242/);
+  } finally {
+    await fs.rm(temporaryDirectory, { recursive: true, force: true });
+  }
+});
+
+test('gli ordini applicano il coupon valido e rifiutano quello non applicabile', async () => {
+  const temporaryDirectory = await fs.mkdtemp(path.join(os.tmpdir(), 'ecommerce-coupon-order-'));
+  const ordersFile = path.join(temporaryDirectory, 'orders.json');
+  const lampada = PRODUCTS.find(({ name }) => name === 'Lampada Lume');
+
+  try {
+    const order = await createOrder({
+      items: [{ id: lampada.id, quantity: 1 }],
+      address: validAddress,
+      paymentMethod: 'card',
+      couponCode: COUPON_CODE
+    }, ordersFile);
+
+    assert.equal(order.subtotalCents, 8900);
+    assert.equal(order.discountCents, 890);
+    assert.equal(order.totalCents, 8010);
+    assert.equal(order.couponCode, COUPON_CODE);
+    await assert.rejects(
+      createOrder({
+        items: [{ id: 3, quantity: 1 }],
+        address: validAddress,
+        paymentMethod: 'card',
+        couponCode: COUPON_CODE
+      }, path.join(temporaryDirectory, 'ineligible-orders.json')),
+      /Il coupon è disponibile per acquisti superiori a 50,00 €/
+    );
+    await assert.rejects(
+      createOrder({
+        items: [{ id: lampada.id, quantity: 1 }],
+        address: validAddress,
+        paymentMethod: 'card',
+        couponCode: 'NONVALIDO'
+      }, path.join(temporaryDirectory, 'invalid-coupon-orders.json')),
+      /Codice coupon non valido/
+    );
   } finally {
     await fs.rm(temporaryDirectory, { recursive: true, force: true });
   }

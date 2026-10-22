@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { calculateCartTotalCents, PRODUCTS } from './catalog-logic.js';
 import { getFrameSelectionPriceCents, describeFrameSelection } from './public/frame-logic.js';
 import { PAYMENT_METHODS, validateShippingAddress } from './public/payment-logic.js';
+import { calculateDiscountedCartTotals, validateCouponCode } from './public/coupon-logic.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const ORDERS_FILE = path.join(__dirname, 'orders.json');
@@ -81,11 +82,18 @@ async function createOrderAndSave(input, filePath) {
   }
 
   const items = parseItems(input.items);
-  const totals = calculateCartTotalCents(items);
+  const cartTotals = calculateCartTotalCents(items);
+  const couponCode = typeof input.couponCode === 'string' ? input.couponCode.trim() : '';
+  const couponError = couponCode ? validateCouponCode(couponCode, cartTotals.subtotalCents) : null;
+  if (couponError || (input.couponCode != null && typeof input.couponCode !== 'string')) {
+    throw new OrderInputError(couponError ?? 'Codice coupon non valido');
+  }
+  const totals = calculateDiscountedCartTotals(items, couponCode);
   const order = {
     number: `ORD-${new Date().toISOString().slice(0, 10).replaceAll('-', '')}-${randomUUID().slice(0, 8).toUpperCase()}`,
     status: input.paymentMethod === 'bank-transfer' ? 'In attesa di pagamento' : 'Confermato',
     paymentMethod: input.paymentMethod,
+    ...(couponCode ? { couponCode, discountCents: totals.discountCents } : {}),
     items,
     address: {
       name: input.address.name.trim(),
