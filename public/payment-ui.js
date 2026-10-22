@@ -80,7 +80,9 @@ export function renderPaymentPageMarkup({
   errors = {},
   stage = 'form',
   address = {},
-  couponCode = ''
+  couponCode = '',
+  couponInput = '',
+  couponError = ''
 }) {
   if (!items.length && stage !== 'confirmation') {
     return `
@@ -98,6 +100,21 @@ export function renderPaymentPageMarkup({
       <h2 id="payment-page-title">Pagamento</h2>
       ${stage === 'confirmation' ? '' : renderOrderSummary(items, couponCode)}
       ${stage === 'form' ? `
+        <section class="payment-section payment-coupon" aria-labelledby="coupon-title">
+          <h2 id="coupon-title">Codice sconto</h2>
+          <form id="payment-coupon-form" novalidate>
+            <label for="payment-coupon-input">Inserisci qui il tuo codice sconto</label>
+            <div class="coupon-entry">
+              <input id="payment-coupon-input" name="couponCode" type="text" placeholder="Inserisci qui il tuo codice sconto" autocomplete="off" value="${escapeHtml(couponInput)}" aria-describedby="payment-coupon-error">
+              <button class="checkout-button coupon-apply" type="submit">${couponCode ? 'Aggiorna coupon' : 'Applica coupon'}</button>
+            </div>
+            <p id="payment-coupon-error" class="payment-field-error" role="alert"${couponError ? '' : ' hidden'}>${escapeHtml(couponError)}</p>
+            ${couponCode ? `
+              <p class="coupon-applied" role="status">Coupon ${escapeHtml(couponCode)} applicato</p>
+              <button id="coupon-remove" class="coupon-remove" type="button">Rimuovi coupon</button>
+            ` : ''}
+          </form>
+        </section>
         <form id="payment-form" novalidate>
           <section class="payment-section" aria-labelledby="shipping-title">
             <h2 id="shipping-title">Dati di spedizione</h2>

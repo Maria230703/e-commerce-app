@@ -24,15 +24,8 @@
           Preferiti <strong id="favorites-count">0</strong>
         </a>
         <div id="coupon-container" class="coupon-container" hidden>
-          <button id="coupon-toggle" class="checkout-button coupon-toggle" type="button" aria-expanded="false" aria-controls="coupon-form">Inserisci il coupon</button>
-          <form id="coupon-form" class="coupon-form" hidden>
-            <label for="coupon-input">Codice coupon</label>
-            <input id="coupon-input" name="couponCode" type="text" autocomplete="off" aria-describedby="coupon-feedback">
-            <button class="checkout-button coupon-apply" type="submit">Applica coupon</button>
-            <p id="coupon-feedback" class="coupon-feedback" role="alert" hidden></p>
-          </form>
-          <p id="coupon-applied" class="coupon-applied" role="status" hidden></p>
-          <button id="coupon-remove" class="coupon-remove" type="button" hidden>Rimuovi coupon</button>
+          <button id="coupon-copy" class="checkout-button coupon-toggle" type="button">Coupon per te disponibile</button>
+          <p id="coupon-copy-feedback" class="coupon-applied" role="status" aria-live="polite" hidden></p>
         </div>
       </div>
     </header>

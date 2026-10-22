@@ -116,27 +116,16 @@ h1 {
 }
 
 .header-actions .coupon-toggle,
-.header-actions .coupon-apply {
+.coupon-apply {
   width: auto;
   margin-top: 0;
   font: inherit;
 }
 
-.coupon-form {
+.coupon-entry {
   display: grid;
-  justify-items: stretch;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 8px;
-  width: min(260px, calc(100vw - 32px));
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--panel);
-  box-shadow: var(--shadow);
-}
-
-.coupon-feedback {
-  margin: 0;
-  color: #b42318;
 }
 
 .coupon-applied {

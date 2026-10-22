@@ -56,7 +56,8 @@ const state = {
   paymentStage: 'form',
   orderSubmitting: false,
   couponCode: window.localStorage.getItem('e-commerce-coupon') ?? '',
-  couponEntryOpen: false
+  couponInput: '',
+  couponMessage: ''
 };
 
 const isFavoritesPage = window.location.pathname === '/preferiti';
@@ -81,12 +82,8 @@ const itemsCountEl = document.querySelector('#items-count');
 const favoritesCountEl = document.querySelector('#favorites-count');
 const checkoutButton = document.querySelector('#cart-checkout-button');
 const couponContainer = document.querySelector('#coupon-container');
-const couponToggle = document.querySelector('#coupon-toggle');
-const couponForm = document.querySelector('#coupon-form');
-const couponInput = document.querySelector('#coupon-input');
-const couponFeedback = document.querySelector('#coupon-feedback');
-const couponApplied = document.querySelector('#coupon-applied');
-const couponRemove = document.querySelector('#coupon-remove');
+const couponCopy = document.querySelector('#coupon-copy');
+const couponCopyFeedback = document.querySelector('#coupon-copy-feedback');
 
 function persistCart() {
   saveCart(window.localStorage, state.cart);
@@ -370,7 +367,9 @@ function renderPaymentPage() {
     errors: state.paymentErrors,
     stage: state.paymentStage,
     address: state.shippingAddress,
-    couponCode: state.couponCode
+    couponCode: state.couponCode,
+    couponInput: state.couponInput,
+    couponError: state.couponMessage
   });
 
   if (state.paymentStage === 'confirmation' || !state.cart.length) {
@@ -379,6 +378,37 @@ function renderPaymentPage() {
 
   const form = productList.querySelector('#payment-form');
   if (form) {
+    const couponForm = productList.querySelector('#payment-coupon-form');
+    const couponInput = couponForm.querySelector('[name="couponCode"]');
+    couponForm.addEventListener('input', () => {
+      state.couponInput = couponInput.value;
+      state.couponMessage = '';
+    });
+    couponForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      state.couponInput = couponInput.value;
+      const subtotalCents = calculateCartTotalCents(state.cart).subtotalCents;
+      const error = validateCouponCode(state.couponInput, subtotalCents);
+      if (error) {
+        state.couponMessage = error;
+        renderPaymentPage();
+        return;
+      }
+
+      state.couponCode = COUPON_CODE;
+      state.couponInput = COUPON_CODE;
+      state.couponMessage = '';
+      window.localStorage.setItem('e-commerce-coupon', COUPON_CODE);
+      renderPaymentPage();
+    });
+    productList.querySelector('#coupon-remove')?.addEventListener('click', () => {
+      state.couponCode = '';
+      state.couponInput = '';
+      state.couponMessage = '';
+      window.localStorage.removeItem('e-commerce-coupon');
+      renderPaymentPage();
+    });
+
     form.querySelectorAll('#shipping-name, #shipping-surname, #shipping-address, #shipping-city, #shipping-postalCode, #shipping-phonePrefix, #shipping-phone, #shipping-email').forEach((input) => {
       const updateShippingAddress = () => {
         state.shippingAddress[input.name] = input.value;
@@ -629,12 +659,13 @@ lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
 });
 
 function renderCart() {
-  const { subtotalCents, shippingCents, discountCents, totalCents } = calculateDiscountedCartTotals(
+  const itemCount = state.cart.reduce((count, item) => count + item.quantity, 0);
+  const { subtotalCents } = calculateCartTotalCents(state.cart);
+  renderCouponAvailability(subtotalCents);
+  const { shippingCents, discountCents, totalCents } = calculateDiscountedCartTotals(
     state.cart,
     state.couponCode
   );
-  const itemCount = state.cart.reduce((count, item) => count + item.quantity, 0);
-  renderCouponAvailability(subtotalCents);
 
   if (!state.cart.length) {
     cartItems.innerHTML = '<div class="empty-cart">Il carrello è vuoto.</div>';
@@ -675,14 +706,6 @@ function renderCart() {
   cartCountEl.textContent = String(itemCount);
   itemsCountEl.textContent = `${itemCount} articoli`;
   checkoutButton.hidden = state.cart.length === 0;
-  couponToggle.setAttribute('aria-expanded', String(state.couponEntryOpen));
-  couponForm.hidden = !state.couponEntryOpen;
-  couponInput.value = state.couponCode || state.couponInput || '';
-  couponFeedback.textContent = state.couponMessage ?? '';
-  couponFeedback.hidden = !state.couponMessage;
-  couponApplied.hidden = !state.couponCode;
-  couponApplied.textContent = state.couponCode ? `Coupon ${state.couponCode} applicato` : '';
-  couponRemove.hidden = !state.couponCode;
 
   cartItems.querySelectorAll('[data-cart-action]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -713,45 +736,13 @@ renderFavoriteCount();
 renderProducts();
 renderCart();
 
-couponInput.addEventListener('input', () => {
-  state.couponInput = couponInput.value;
-});
-
-couponToggle.addEventListener('click', () => {
-  state.couponEntryOpen = !state.couponEntryOpen;
-  state.couponMessage = '';
-  if (state.couponEntryOpen) {
-    couponInput.value = state.couponCode || state.couponInput || '';
+couponCopy.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(COUPON_CODE);
+    couponCopyFeedback.textContent = 'Codice ESEMPIO10 copiato. Incollalo nella pagina di pagamento.';
+    couponCopyFeedback.hidden = false;
+  } catch {
+    couponCopyFeedback.textContent = 'Non è stato possibile copiare il codice. Inserisci ESEMPIO10 nella pagina di pagamento.';
+    couponCopyFeedback.hidden = false;
   }
-  renderCart();
-  if (state.couponEntryOpen) {
-    couponInput.focus();
-  }
-});
-
-couponForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const subtotalCents = calculateCartTotalCents(state.cart).subtotalCents;
-  const error = validateCouponCode(couponInput.value, subtotalCents);
-  if (error) {
-    state.couponMessage = error;
-    couponFeedback.textContent = error;
-    couponFeedback.hidden = false;
-    return;
-  }
-
-  state.couponCode = COUPON_CODE;
-  state.couponInput = COUPON_CODE;
-  state.couponMessage = '';
-  state.couponEntryOpen = false;
-  window.localStorage.setItem('e-commerce-coupon', COUPON_CODE);
-  renderCart();
-});
-
-couponRemove.addEventListener('click', () => {
-  state.couponCode = '';
-  state.couponInput = '';
-  state.couponMessage = '';
-  window.localStorage.removeItem('e-commerce-coupon');
-  renderCart();
 });

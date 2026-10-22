@@ -167,6 +167,14 @@ test('il riepilogo del carrello e del pagamento mostra il coupon applicato', () 
   assert.doesNotMatch(renderCartPageMarkup(vasoCart, COUPON_CODE), /Sconto coupon/);
 });
 
+test('il campo coupon è tra il riepilogo dell’ordine e i dati di spedizione', () => {
+  const markup = renderPaymentPageMarkup({ items: vasoCart });
+
+  assert.match(markup, /placeholder="Inserisci qui il tuo codice sconto"/);
+  assert.ok(markup.indexOf('payment-summary-title') < markup.indexOf('payment-coupon-form'));
+  assert.ok(markup.indexOf('payment-coupon-form') < markup.indexOf('shipping-title'));
+});
+
 test('la conferma per bonifico indica lo stato e i dati fittizi per il pagamento', () => {
   const markup = renderPaymentPageMarkup({
     items: [],
