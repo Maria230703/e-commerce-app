@@ -782,6 +782,12 @@ input[type="radio"] {
   gap: 6px;
 }
 
+.phone-fields {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 2fr;
+  gap: 8px;
+}
+
 .payment-field-error,
 .payment-request-error {
   margin: 0;
@@ -802,6 +808,10 @@ input[type="radio"] {
 .payment-card-fields legend {
   padding: 0 4px;
   font-weight: 600;
+}
+
+.payment-methods legend {
+  font-size: 1.5em;
 }
 
 .payment-method {

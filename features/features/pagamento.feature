@@ -33,12 +33,20 @@ Funzionalità: Pagamento
     E l'ordine non viene confermato
 
     Esempi:
-      | campo      | messaggio                 |
-      | Nome       | Inserisci il nome         |
-      | Indirizzo  | Inserisci l'indirizzo     |
-      | CAP        | Inserisci il CAP          |
-      | Città      | Inserisci la città        |
-      | Email      | Inserisci l'email         |
+      | campo              | messaggio                        |
+      | Nome               | Inserisci il nome                |
+      | Cognome            | Inserisci il cognome             |
+      | Indirizzo          | Inserisci l'indirizzo            |
+      | Città              | Inserisci la città               |
+      | CAP                | Inserisci il CAP                 |
+      | Numero di telefono | Inserisci il numero di telefono |
+      | Email              | Inserisci l'email                |
+
+  Scenario: Inserire un numero di telefono con prefisso europeo
+    Dato che sono sulla pagina del pagamento
+    Quando inserisco il numero di telefono "3331234567"
+    E seleziono il prefisso "+33"
+    Allora il prefisso "+33" è selezionato per il numero di telefono
 
   Scenario: CAP non valido
     Dato che sono sulla pagina del pagamento

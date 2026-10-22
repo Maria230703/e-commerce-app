@@ -1,0 +1,26 @@
+[
+  {
+    "number": "ORD-20261022-592DC639",
+    "status": "Confermato",
+    "paymentMethod": "paypal",
+    "items": [
+      {
+        "id": 2,
+        "name": "Specchio Orbita",
+        "price": 119,
+        "quantity": 1
+      }
+    ],
+    "address": {
+      "name": "Maria Carmen Morgese",
+      "address": "Via Toscana 22",
+      "postalCode": "70029",
+      "city": "Santeramo in Colle",
+      "email": "maria.morgese.03@gmail.com"
+    },
+    "subtotalCents": 11900,
+    "shippingCents": 0,
+    "totalCents": 11900,
+    "createdAt": "2026-10-22T15:27:40.124Z"
+  }
+]

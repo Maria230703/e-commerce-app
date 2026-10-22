@@ -272,9 +272,12 @@ function showOrderConfirmation(order) {
     orderStatus: order.status,
     totalCents: order.totalCents,
     customerName: order.address.name,
+    customerSurname: order.address.surname,
     customerAddress: order.address.address,
     customerPostalCode: order.address.postalCode,
     customerCity: order.address.city,
+    customerPhonePrefix: order.address.phonePrefix,
+    customerPhone: order.address.phone,
     customerEmail: order.address.email,
     bankTransfer: order.paymentMethod === 'bank-transfer'
   };
@@ -344,16 +347,21 @@ function renderPaymentPage() {
 
   const form = productList.querySelector('#payment-form');
   if (form) {
-    form.querySelectorAll('#shipping-name, #shipping-address, #shipping-postalCode, #shipping-city, #shipping-email').forEach((input) => {
-      input.addEventListener('input', () => {
+    form.querySelectorAll('#shipping-name, #shipping-surname, #shipping-address, #shipping-city, #shipping-postalCode, #shipping-phonePrefix, #shipping-phone, #shipping-email').forEach((input) => {
+      const updateShippingAddress = () => {
         state.shippingAddress[input.name] = input.value;
         const fieldErrors = validateShippingAddress(state.shippingAddress);
-        const error = form.querySelector(`#${input.id} + [role="alert"]`);
+        const error = input.id === 'shipping-phonePrefix'
+          ? form.querySelector('#shipping-phone-prefix-error')
+          : form.querySelector(`#${input.id === 'shipping-phone' ? 'shipping-phone-error' : input.id} + [role="alert"]`);
         if (error) {
-          error.textContent = fieldErrors[input.name] ?? '';
-          error.hidden = !fieldErrors[input.name];
+          const errorMessage = input.name === 'phonePrefix' ? fieldErrors.phonePrefix : fieldErrors[input.name];
+          error.textContent = errorMessage ?? '';
+          error.hidden = !errorMessage;
         }
-      });
+      };
+      input.addEventListener('input', updateShippingAddress);
+      input.addEventListener('change', updateShippingAddress);
     });
 
     form.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
@@ -369,9 +377,12 @@ function renderPaymentPage() {
       const formData = new FormData(form);
       state.shippingAddress = {
         name: formData.get('name')?.toString() ?? '',
+        surname: formData.get('surname')?.toString() ?? '',
         address: formData.get('address')?.toString() ?? '',
-        postalCode: formData.get('postalCode')?.toString() ?? '',
         city: formData.get('city')?.toString() ?? '',
+        postalCode: formData.get('postalCode')?.toString() ?? '',
+        phonePrefix: formData.get('phonePrefix')?.toString() ?? '',
+        phone: formData.get('phone')?.toString() ?? '',
         email: formData.get('email')?.toString() ?? ''
       };
       state.selectedPaymentMethod = formData.get('paymentMethod')?.toString() ?? '';

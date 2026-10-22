@@ -1,5 +1,5 @@
 import { calculateCartTotalCents, formatCurrencyCents } from '../catalog-logic.js';
-import { PAYMENT_METHODS } from './payment-logic.js';
+import { EUROPEAN_PHONE_PREFIXES, PAYMENT_METHODS } from './payment-logic.js';
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -38,6 +38,24 @@ function renderShippingField(name, label, type, error, autocomplete, value = '')
       <label for="${id}">${label}</label>
       <input id="${id}" name="${name}" type="${type}" autocomplete="${autocomplete}" value="${escapeHtml(value)}" ${name === 'postalCode' ? 'inputmode="numeric" maxlength="5"' : ''}${name === 'cardNumber' ? ' inputmode="numeric" maxlength="19"' : ''}${name === 'cardExpiry' ? ' inputmode="numeric" maxlength="5"' : ''}${name === 'cardCode' ? ' inputmode="numeric" maxlength="4"' : ''}>
       <span class="payment-field-error" role="alert"${error ? '' : ' hidden'}>${escapeHtml(error ?? '')}</span>
+    </div>
+  `;
+}
+
+function renderPhoneField(errors, address) {
+  return `
+    <div class="payment-field">
+      <label for="shipping-phone">Numero di telefono</label>
+      <div class="phone-fields">
+        <select id="shipping-phonePrefix" name="phonePrefix" autocomplete="tel-country-code" aria-label="Prefisso internazionale">
+          ${EUROPEAN_PHONE_PREFIXES.map(({ country, value }) => `
+            <option value="${value}"${(address.phonePrefix ?? '+39') === value ? ' selected' : ''}>${country} (${value})</option>
+          `).join('')}
+        </select>
+        <input id="shipping-phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" value="${escapeHtml(address.phone ?? '')}" aria-describedby="shipping-phone-error">
+      </div>
+      <span id="shipping-phone-error" class="payment-field-error" role="alert"${errors.phone ? '' : ' hidden'}>${escapeHtml(errors.phone ?? '')}</span>
+      <span id="shipping-phone-prefix-error" class="payment-field-error" role="alert"${errors.phonePrefix ? '' : ' hidden'}>${escapeHtml(errors.phonePrefix ?? '')}</span>
     </div>
   `;
 }
@@ -81,9 +99,11 @@ export function renderPaymentPageMarkup({
           <section class="payment-section" aria-labelledby="shipping-title">
             <h2 id="shipping-title">Dati di spedizione</h2>
             ${renderShippingField('name', 'Nome', 'text', errors.name, 'name', address.name)}
+            ${renderShippingField('surname', 'Cognome', 'text', errors.surname, 'family-name', address.surname)}
             ${renderShippingField('address', 'Indirizzo', 'text', errors.address, 'street-address', address.address)}
-            ${renderShippingField('postalCode', 'CAP', 'text', errors.postalCode, 'postal-code', address.postalCode)}
             ${renderShippingField('city', 'Città', 'text', errors.city, 'address-level2', address.city)}
+            ${renderShippingField('postalCode', 'CAP', 'text', errors.postalCode, 'postal-code', address.postalCode)}
+            ${renderPhoneField(errors, address)}
             ${renderShippingField('email', 'Email', 'email', errors.email, 'email', address.email)}
           </section>
           <fieldset class="payment-section payment-methods">
@@ -118,8 +138,9 @@ export function renderPaymentPageMarkup({
           <p>Stato: <strong>${escapeHtml(errors.orderStatus)}</strong></p>
           <p>${errors.bankTransfer ? 'Totale da pagare' : 'Totale pagato'}: <strong>${formatCurrencyCents(errors.totalCents)}</strong></p>
           <h3>Dati di spedizione</h3>
-          <p>${escapeHtml(errors.customerName)}</p>
+          <p>${escapeHtml(errors.customerName)} ${escapeHtml(errors.customerSurname)}</p>
           <p>${escapeHtml(errors.customerAddress)}, ${escapeHtml(errors.customerPostalCode)} ${escapeHtml(errors.customerCity)}</p>
+          <p>${escapeHtml(errors.customerPhonePrefix)} ${escapeHtml(errors.customerPhone)}</p>
           <p>${escapeHtml(errors.customerEmail)}</p>
           ${errors.bankTransfer ? `
             <p>IBAN di prova (fittizio): <strong>IT00 X000 0000 0000 0000 0000 000</strong></p>

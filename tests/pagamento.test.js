@@ -21,10 +21,13 @@ import { INITIAL_FRAME_SELECTION } from '../public/frame-logic.js';
 import { createFrameCartItem } from '../public/cart-logic.js';
 
 const validAddress = {
-  name: 'Maria Rossi',
+  name: 'Maria',
+  surname: 'Rossi',
   address: 'Via Roma 1',
   postalCode: '20100',
   city: 'Milano',
+  phonePrefix: '+39',
+  phone: '3331234567',
   email: 'maria@example.it'
 };
 
@@ -33,9 +36,12 @@ const vasoCart = [{ ...PRODUCTS.find(({ name }) => name === 'Vaso Duna'), quanti
 test('valida i campi obbligatori e i formati di CAP ed email', () => {
   assert.deepEqual(validateShippingAddress({}), {
     name: 'Inserisci il nome',
+    surname: 'Inserisci il cognome',
     address: "Inserisci l'indirizzo",
     postalCode: 'Inserisci il CAP',
     city: 'Inserisci la città',
+    phonePrefix: 'Seleziona un prefisso internazionale valido',
+    phone: 'Inserisci il numero di telefono',
     email: "Inserisci l'email"
   });
   assert.deepEqual(validateShippingAddress({
@@ -47,6 +53,14 @@ test('valida i campi obbligatori e i formati di CAP ed email', () => {
     email: "Inserisci un'email valida"
   });
   assert.deepEqual(validateShippingAddress(validAddress), {});
+  assert.deepEqual(validateShippingAddress({
+    ...validAddress,
+    phone: '333 123 4567'
+  }), {});
+  assert.equal(validateShippingAddress({
+    ...validAddress,
+    phone: '333-ABC'
+  }).phone, 'Inserisci un numero di telefono valido');
 });
 
 test('la carta simulata accetta la carta di prova, rifiuta la carta di test e controlla la scadenza', () => {
@@ -96,6 +110,16 @@ test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
   assert.match(markup, /Spedizione<\/span>\s*<strong>4,90\s€</);
   assert.match(markup, /Totale<\/span>\s*<strong>38,90\s€</);
   assert.match(markup, /<label for="shipping-name">Nome<\/label>/);
+  assert.match(markup, /<label for="shipping-surname">Cognome<\/label>/);
+  assert.match(markup, /<label for="shipping-phone">Numero di telefono<\/label>/);
+  assert.match(markup, /<option value="\+39" selected>Italia \(\+39\)<\/option>/);
+  assert.match(markup, /<option value="\+33">Francia \(\+33\)<\/option>/);
+  assert.ok(markup.indexOf('shipping-name') < markup.indexOf('shipping-surname'));
+  assert.ok(markup.indexOf('shipping-surname') < markup.indexOf('shipping-address'));
+  assert.ok(markup.indexOf('shipping-address') < markup.indexOf('shipping-city'));
+  assert.ok(markup.indexOf('shipping-city') < markup.indexOf('shipping-postalCode'));
+  assert.ok(markup.indexOf('shipping-postalCode') < markup.indexOf('shipping-phone'));
+  assert.ok(markup.indexOf('shipping-phone') < markup.indexOf('shipping-email'));
   assert.equal((markup.match(/type="radio"/g) ?? []).length, 3);
   assert.doesNotMatch(markup, /checked/);
   assert.match(markup, /Carta di credito/);
@@ -116,10 +140,13 @@ test('la conferma per bonifico indica lo stato e i dati fittizi per il pagamento
       orderNumber: 'ORD-20261021-ABCDEF12',
       orderStatus: 'In attesa di pagamento',
       totalCents: 3890,
-      customerName: 'Maria Rossi',
+      customerName: 'Maria',
+      customerSurname: 'Rossi',
       customerAddress: 'Via Roma 1',
       customerPostalCode: '20100',
       customerCity: 'Milano',
+      customerPhonePrefix: '+39',
+      customerPhone: '3331234567',
       customerEmail: 'maria@example.it',
       bankTransfer: true
     }
@@ -131,6 +158,8 @@ test('la conferma per bonifico indica lo stato e i dati fittizi per il pagamento
   assert.match(markup, /IBAN di prova \(fittizio\)/);
   assert.match(markup, /Causale:/);
   assert.match(markup, /ORD-20261021-ABCDEF12/);
+  assert.match(markup, /Maria Rossi/);
+  assert.match(markup, /\+39 3331234567/);
 });
 
 test('gli ordini salvati non includono dati di carta e il bonifico resta in attesa', async () => {
@@ -152,6 +181,7 @@ test('gli ordini salvati non includono dati di carta e il bonifico resta in atte
     assert.match(order.number, /^ORD-\d{8}-[A-F0-9]{8}$/);
     assert.equal(order.status, 'In attesa di pagamento');
     assert.equal(order.totalCents, 3890);
+    assert.deepEqual(order.address, validAddress);
     assert.deepEqual(storedOrders, [order]);
     assert.doesNotMatch(storedText, /cardNumber|expiry|code|4242/);
   } finally {
@@ -186,6 +216,14 @@ test('rifiuta gli ordini senza indirizzo valido o senza articoli', async () => {
   );
   await assert.rejects(
     createOrder({ items: [{ id: 4, quantity: 1 }], address: {}, paymentMethod: 'card' }, path.join(os.tmpdir(), 'no-orders.json')),
+    /Dati di spedizione non validi/
+  );
+  await assert.rejects(
+    createOrder({
+      items: [{ id: 4, quantity: 1 }],
+      address: { ...validAddress, phone: 'no' },
+      paymentMethod: 'card'
+    }, path.join(os.tmpdir(), 'invalid-phone-orders.json')),
     /Dati di spedizione non validi/
   );
 });

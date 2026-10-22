@@ -89,9 +89,12 @@ async function createOrderAndSave(input, filePath) {
     items,
     address: {
       name: input.address.name.trim(),
+      surname: input.address.surname.trim(),
       address: input.address.address.trim(),
       postalCode: input.address.postalCode.trim(),
       city: input.address.city.trim(),
+      phonePrefix: input.address.phonePrefix,
+      phone: input.address.phone.trim(),
       email: input.address.email.trim()
     },
     subtotalCents: totals.subtotalCents,
