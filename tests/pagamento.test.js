@@ -37,6 +37,8 @@ const validAddress = {
 };
 
 const vasoCart = [{ ...PRODUCTS.find(({ name }) => name === 'Vaso Duna'), quantity: 1 }];
+const specchioCart = [{ ...PRODUCTS.find(({ name }) => name === 'Specchio Orbita'), quantity: 1 }];
+const candelaCart = [{ ...PRODUCTS.find(({ name }) => name === 'Candela Vaniglia'), quantity: 1 }];
 
 test('valida i campi obbligatori e i formati di CAP ed email', () => {
   assert.deepEqual(validateShippingAddress({}), {
@@ -106,6 +108,38 @@ test('il totale del carrello usa centesimi e calcola la spedizione al limite cor
     shippingCents: 0,
     totalCents: 7900
   });
+});
+
+test('il riepilogo del pagamento applica la spedizione gratuita da 79,00 euro', () => {
+  const specchioTotals = calculateCartTotalCents(specchioCart);
+  assert.deepEqual(specchioTotals, {
+    subtotalCents: 11900,
+    shippingCents: 0,
+    totalCents: 11900
+  });
+
+  const specchioMarkup = renderPaymentPageMarkup({ items: specchioCart });
+  assert.match(specchioMarkup, /Specchio Orbita × 1<\/span>\s*<strong>119,00\s€<\/strong>/);
+  assert.match(specchioMarkup, /Spedizione<\/span><strong>0,00\s€<\/strong>/);
+  assert.match(specchioMarkup, /Totale<\/span><strong>119,00\s€<\/strong>/);
+
+  const multipleItemsCart = [...specchioCart, ...candelaCart];
+  assert.equal(calculateCartTotalCents(multipleItemsCart).shippingCents, 0);
+  assert.match(
+    renderPaymentPageMarkup({ items: multipleItemsCart }),
+    /Spedizione<\/span><strong>0,00\s€<\/strong>/
+  );
+
+  const candelaTotals = calculateCartTotalCents(candelaCart);
+  assert.deepEqual(candelaTotals, {
+    subtotalCents: 2200,
+    shippingCents: 490,
+    totalCents: 2690
+  });
+  const candelaMarkup = renderPaymentPageMarkup({ items: candelaCart });
+  assert.match(candelaMarkup, /Candela Vaniglia × 1<\/span>\s*<strong>22,00\s€<\/strong>/);
+  assert.match(candelaMarkup, /Spedizione<\/span><strong>4,90\s€<\/strong>/);
+  assert.match(candelaMarkup, /Totale<\/span><strong>26,90\s€<\/strong>/);
 });
 
 test('il coupon ESEMPIO10 sconta del 10% solo sui carrelli oltre 50 euro', () => {
