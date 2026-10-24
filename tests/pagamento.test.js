@@ -86,6 +86,11 @@ test('la carta simulata accetta la carta di prova, rifiuta la carta di test e co
     expiry: '01/20',
     code: '123'
   }), 'La carta è scaduta');
+  assert.equal(validateCardPayment({
+    number: '4242 4242 4242 4242',
+    expiry: '12/30',
+    code: '12'
+  }), 'Inserisci un CVV valido');
 });
 
 test('il totale del carrello usa centesimi e calcola la spedizione al limite corretto', () => {
@@ -162,6 +167,7 @@ test('il coupon ESEMPIO10 sconta del 10% solo sui carrelli oltre 50 euro', () =>
 
 test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
   const markup = renderPaymentPageMarkup({ items: vasoCart });
+  const cardMarkup = renderPaymentPageMarkup({ items: vasoCart, selectedMethod: 'card' });
 
   assert.match(markup, /Vaso Duna × 1/);
   assert.match(markup, /Spedizione<\/span>\s*<strong>4,90\s€</);
@@ -184,6 +190,7 @@ test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
   assert.match(markup, /Carta di credito/);
   assert.match(markup, /PayPal/);
   assert.match(markup, /Bonifico bancario/);
+  assert.match(cardMarkup, /<label for="shipping-cardCode">Codice CVV<\/label>/);
 });
 
 test('il carrello offre il pagamento solo se contiene articoli', () => {

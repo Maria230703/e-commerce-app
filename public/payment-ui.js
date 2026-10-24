@@ -68,7 +68,7 @@ function renderCardFields(errors) {
       <legend>Dati della carta (simulazione)</legend>
       ${renderShippingField('cardNumber', 'Numero carta', 'text', errors.cardNumber, 'off')}
       ${renderShippingField('cardExpiry', 'Scadenza (MM/AA)', 'text', errors.cardExpiry, 'off')}
-      ${renderShippingField('cardCode', 'Codice', 'password', errors.cardCode, 'off')}
+      ${renderShippingField('cardCode', 'Codice CVV', 'password', errors.cardCode, 'off')}
       <p class="payment-field-error payment-card-general-error" role="alert"${errors.card ? '' : ' hidden'}>${escapeHtml(errors.card ?? '')}</p>
     </fieldset>
   `;

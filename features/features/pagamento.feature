@@ -71,7 +71,7 @@ Funzionalità: Pagamento
   Scenario: Pagamento con carta riuscito
     Dato che ho compilato correttamente i dati di spedizione
     E ho scelto "Carta di credito"
-    Quando inserisco il numero di prova "4242 4242 4242 4242", scadenza "12/30" e codice "123"
+    Quando inserisco il numero di prova "4242 4242 4242 4242", scadenza "12/30" e codice CVV "123"
     E tocco "Conferma ordine"
     Allora vedo "Ordine confermato" con un numero d'ordine
     E il totale pagato è 38,90 euro
@@ -80,7 +80,7 @@ Funzionalità: Pagamento
   Scenario: Carta rifiutata
     Dato che ho compilato correttamente i dati di spedizione
     E ho scelto "Carta di credito"
-    Quando inserisco il numero di prova "4000 0000 0000 0002", scadenza "12/30" e codice "123"
+    Quando inserisco il numero di prova "4000 0000 0000 0002", scadenza "12/30" e codice CVV "123"
     E tocco "Conferma ordine"
     Allora vedo il messaggio "Pagamento rifiutato. Prova con un'altra carta."
     E l'ordine non viene confermato
@@ -89,7 +89,7 @@ Funzionalità: Pagamento
   Scenario: Carta scaduta
     Dato che ho compilato correttamente i dati di spedizione
     E ho scelto "Carta di credito"
-    Quando inserisco il numero di prova "4242 4242 4242 4242", scadenza "01/20" e codice "123"
+    Quando inserisco il numero di prova "4242 4242 4242 4242", scadenza "01/20" e codice CVV "123"
     E tocco "Conferma ordine"
     Allora vedo il messaggio "La carta è scaduta"
     E l'ordine non viene confermato

@@ -129,7 +129,7 @@ export function validateCardPayment(card, now = new Date()) {
   }
 
   if (!/^\d{3,4}$/.test(card.code)) {
-    return 'Inserisci un codice valido';
+    return 'Inserisci un CVV valido';
   }
 
   if (number === '4000000000000002') {
