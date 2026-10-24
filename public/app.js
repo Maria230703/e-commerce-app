@@ -7,7 +7,7 @@ import {
   calculateCartTotalCents,
   transitionCatalogView
 } from '/catalog-logic.js';
-import { renderProductDetailMarkup } from '/product-detail.js';
+import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup } from '/product-detail.js';
 import { renderAddToCartButton } from '/cart-ui.js';
 import { renderLookScene } from '/look-scene.js';
 import {
@@ -45,6 +45,7 @@ const state = {
   category: 'all',
   sort: 'featured',
   selectedProductId: null,
+  selectedProductImageIndex: 0,
   frameSelection: { ...INITIAL_FRAME_SELECTION },
   framePhoto: null,
   framePhotoError: '',
@@ -521,6 +522,7 @@ function renderProducts() {
   }
 
   pageTitle.textContent = 'Scopri';
+  productList.classList.remove('product-detail-list');
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
   categoryFilters.hidden = false;
@@ -578,6 +580,7 @@ function renderProducts() {
           productId: Number(button.dataset.productId)
         })
       );
+      state.selectedProductImageIndex = 0;
       renderProducts();
     });
   });
@@ -611,19 +614,53 @@ function openProduct(productId) {
       productId
     })
   );
+  state.selectedProductImageIndex = 0;
   renderProducts();
 }
 
 function renderProductDetail(product) {
   pageTitle.textContent = product.name;
+  productList.classList.add('product-detail-list');
   toolbar.hidden = true;
   categoryFilters.hidden = true;
 
   productList.innerHTML = renderProductDetailMarkup(
     product,
     state.favoriteIds.includes(product.id),
-    isItemInCart(state.cart, product.id)
+    isItemInCart(state.cart, product.id),
+    state.selectedProductImageIndex
   );
+
+  const galleryImages = PRODUCT_GALLERY_IMAGES[product.id] ?? [];
+  const selectGalleryImage = (index) => {
+    if (!galleryImages.length) {
+      return;
+    }
+
+    state.selectedProductImageIndex = (index + galleryImages.length) % galleryImages.length;
+    const mainImage = productList.querySelector('[data-gallery-main-image]');
+    mainImage.src = galleryImages[state.selectedProductImageIndex];
+    mainImage.alt = `${product.name}, foto ${state.selectedProductImageIndex + 1} di ${galleryImages.length}`;
+
+    productList.querySelectorAll('[data-gallery-index]').forEach((thumbnail) => {
+      const selected = Number(thumbnail.dataset.galleryIndex) === state.selectedProductImageIndex;
+      thumbnail.classList.toggle('is-selected', selected);
+      thumbnail.setAttribute('aria-pressed', String(selected));
+    });
+  };
+
+  productList.querySelectorAll('[data-gallery-action]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const direction = button.dataset.galleryAction === 'next' ? 1 : -1;
+      selectGalleryImage(state.selectedProductImageIndex + direction);
+    });
+  });
+
+  productList.querySelectorAll('[data-gallery-index]').forEach((button) => {
+    button.addEventListener('click', () => {
+      selectGalleryImage(Number(button.dataset.galleryIndex));
+    });
+  });
 
   productList.querySelector('.back-button').addEventListener('click', () => {
     Object.assign(state, transitionCatalogView(state, { type: 'back-to-catalog' }));

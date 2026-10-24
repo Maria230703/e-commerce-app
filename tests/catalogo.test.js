@@ -9,7 +9,7 @@ import {
   calculateCartTotal,
   transitionCatalogView
 } from '../catalog-logic.js';
-import { renderProductDetailMarkup } from '../public/product-detail.js';
+import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup } from '../public/product-detail.js';
 import { renderAddToCartButton } from '../public/cart-ui.js';
 import {
   CART_STORAGE_KEY,
@@ -220,6 +220,21 @@ test('la scheda di Lampada Lume mostra nome, prezzo di 89 euro e descrizione', (
   assert.match(markup, /<h2 id="product-detail-title">Lampada Lume<\/h2>/);
   assert.ok(markup.includes(`<p class="price">${formatCurrency(89)}</p>`));
   assert.match(markup, /<p class="product-detail-description">Paralume in lino e base in metallo\. Luce calda e diffusa\.<\/p>/);
+});
+
+test('la galleria di Lampada Lume mostra quattro foto con frecce e miniature selezionabili', () => {
+  const product = PRODUCTS.find(({ name }) => name === 'Lampada Lume');
+  const firstPhotoMarkup = renderProductDetailMarkup(product);
+  const thirdPhotoMarkup = renderProductDetailMarkup(product, false, false, 2);
+
+  assert.equal(PRODUCT_GALLERY_IMAGES[product.id].length, 4);
+  assert.match(firstPhotoMarkup, /aria-label="Foto precedente"/);
+  assert.match(firstPhotoMarkup, /aria-label="Foto successiva"/);
+  assert.match(firstPhotoMarkup, /src="\/product-images\/lampada-lume-1\.svg"[\s\S]*alt="Lampada Lume, foto 1 di 4"/);
+  assert.equal((firstPhotoMarkup.match(/data-gallery-index="/g) ?? []).length, 4);
+  assert.match(firstPhotoMarkup, /data-gallery-index="0"[\s\S]*aria-pressed="true"/);
+  assert.match(thirdPhotoMarkup, /src="\/product-images\/lampada-lume-3\.svg"[\s\S]*alt="Lampada Lume, foto 3 di 4"/);
+  assert.match(thirdPhotoMarkup, /class="product-gallery-thumbnail is-selected"[\s\S]*data-gallery-index="2"[\s\S]*aria-pressed="true"/);
 });
 
 test('il catalogo usa le descrizioni aggiornate per tutti gli articoli', () => {
