@@ -1,3 +1,4 @@
+Aggiunge la galleria immagini degli articoli
 # language: it
 
 Funzionalità: Galleria di immagini della scheda prodotto

@@ -548,7 +548,7 @@ function renderProducts() {
     return `
       <article class="product-card">
         <button class="product-detail-button" type="button" data-product-id="${product.id}">
-          <div class="product-image">
+          <div class="product-image" data-product-id="${product.id}">
             ${mainImage ? `<img src="${encodeURI(mainImage)}" alt="">` : ''}
           </div>
           <div class="product-body">
