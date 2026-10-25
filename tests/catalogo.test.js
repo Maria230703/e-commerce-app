@@ -122,7 +122,9 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   assert.match(markup, /<button class="back-button" type="button">Indietro<\/button>/);
   assert.match(markup, /<h2 id="product-detail-title">Vaso Duna<\/h2>/);
   assert.ok(markup.includes(`<p class="price">${formatCurrency(product.price)}</p>`));
-  assert.match(markup, /<p class="product-detail-description">Ceramica smaltata a mano con finitura opaca\.<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Descrizione:<\/strong> Ceramica smaltata a mano con finitura opaca\.<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Materiali:<\/strong> ceramica smaltata<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row">Made in Italy<\/p>/);
 });
 
 test('le schede hanno Acquista con etichetta accessibile e riflettono lo stato aggiunto', () => {
@@ -219,7 +221,9 @@ test('la scheda di Lampada Lume mostra nome, prezzo di 89 euro e descrizione', (
 
   assert.match(markup, /<h2 id="product-detail-title">Lampada Lume<\/h2>/);
   assert.ok(markup.includes(`<p class="price">${formatCurrency(89)}</p>`));
-  assert.match(markup, /<p class="product-detail-description">Paralume in lino e base in metallo\. Luce calda e diffusa\.<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Descrizione:<\/strong> Paralume in lino e base in metallo\. Luce calda e diffusa\.<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Materiali:<\/strong> lino, metallo, porta lampadina in acciaio inox<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row">Made in Italy<\/p>/);
 });
 
 test('la galleria di Lampada Lume mostra quattro foto con frecce e miniature selezionabili', () => {

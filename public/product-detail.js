@@ -15,6 +15,15 @@ export const PRODUCT_GALLERY_IMAGES = {
   6: ['/images/immagine cornice 1.jpg', '/images/immagine cornice 2.jpg']
 };
 
+const PRODUCT_MATERIALS = {
+  1: 'lino, metallo, porta lampadina in acciaio inox',
+  2: 'metallo, vetro, retro in truciolato',
+  3: 'rattan naturale, fondo impermeabile',
+  4: 'ceramica smaltata',
+  5: 'cera vegetale, vasetto in vetro',
+  6: 'plastica, vetro antiriflesso, retro in sughero, ganci in acciaio'
+};
+
 function renderProductGallery(product, activeImageIndex) {
   const images = PRODUCT_GALLERY_IMAGES[product.id];
   if (!images) {
@@ -62,7 +71,11 @@ export function renderProductDetailMarkup(product, isFavorite = false, isAddedTo
         <p class="price">${formatCurrency(product.price)}</p>
         ${renderFavoriteButtonMarkup(product, isFavorite)}
       </div>
-      <p class="product-detail-description">${product.description}</p>
+      <div class="product-detail-information" aria-label="Informazioni prodotto">
+        <p class="product-detail-information-row"><strong>Descrizione:</strong> ${product.description}</p>
+        <p class="product-detail-information-row"><strong>Materiali:</strong> ${PRODUCT_MATERIALS[product.id]}</p>
+        <p class="product-detail-information-row">Made in Italy</p>
+      </div>
       <button
         class="add-button product-detail-add-button${isAddedToCart ? ' is-added' : ''}"
         type="button"
