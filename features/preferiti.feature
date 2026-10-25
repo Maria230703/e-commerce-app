@@ -8,11 +8,13 @@ Funzionalità: Preferiti
     Dato che sono sulla pagina Scopri e non ho preferiti
     Quando tocco il cuore di "Vaso Duna"
     Allora il cuore di "Vaso Duna" risulta attivo
+    E il cuore è nero pece senza spunta
 
   Scenario: Aggiungere un articolo ai preferiti dalla scheda
     Dato che sto guardando la scheda di "Lampada Lume"
     Quando tocco il cuore
     Allora il cuore risulta attivo
+    E il cuore è nero pece senza spunta
     E "Lampada Lume" compare nella pagina Preferiti
 
   Scenario: Togliere un articolo dai preferiti

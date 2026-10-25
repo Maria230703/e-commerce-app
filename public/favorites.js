@@ -39,8 +39,16 @@ export function renderFavoriteButtonMarkup(product, isFavorite) {
       aria-label="${action} ${product.name} ${status} preferiti"
       aria-pressed="${isFavorite}"
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path>
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+        ${isFavorite ? 'style="fill: #000000 !important; stroke: #000000 !important;"' : ''}
+      >
+        <path
+          d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"
+          ${isFavorite ? 'style="fill: #000000 !important; stroke: #000000 !important;"' : ''}
+        ></path>
       </svg>
     </button>
   `;

@@ -1,5 +1,5 @@
 import { formatCurrency } from '../catalog-logic.js';
-import { renderFavoriteButtonMarkup } from './favorites.js';
+import { renderFavoriteButtonMarkup } from './favorites.js?v=20261025-favorites-black-2';
 
 export const PRODUCT_GALLERY_IMAGES = {
   1: [

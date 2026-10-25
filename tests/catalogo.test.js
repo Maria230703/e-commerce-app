@@ -177,6 +177,7 @@ test('il cuore della scheda ha stato e nome accessibile e resta accanto al prezz
   const activeMarkup = renderProductDetailMarkup(product, true);
 
   assert.match(inactiveMarkup, /class="favorite-button "/);
+  assert.match(activeMarkup, /<path[\s\S]*?style="fill: #000000 !important; stroke: #000000 !important;"/);
   assert.match(inactiveMarkup, /aria-label="Aggiungi Lampada Lume ai preferiti"/);
   assert.match(inactiveMarkup, /aria-pressed="false"/);
   assert.match(activeMarkup, /aria-label="Rimuovi Lampada Lume dai preferiti"/);
@@ -194,6 +195,9 @@ test('il cuore del catalogo è un pulsante accessibile e gli articoli si aggiung
   assert.match(inactiveMarkup, /aria-label="Aggiungi Vaso Duna ai preferiti"/);
   assert.match(inactiveMarkup, /aria-pressed="false"/);
   assert.match(activeMarkup, /aria-label="Rimuovi Vaso Duna dai preferiti"/);
+  assert.match(activeMarkup, /<path[\s\S]*?style="fill: #000000 !important; stroke: #000000 !important;"/);
+  assert.match(activeMarkup, /style="fill: #000000 !important; stroke: #000000 !important;"/);
+  assert.doesNotMatch(activeMarkup, /favorite-check|✓/);
   assert.deepEqual(toggleFavoriteId([], product.id), [product.id]);
   assert.deepEqual(toggleFavoriteId([product.id], product.id), []);
 });

@@ -37,7 +37,7 @@ import {
   renderFavoriteButtonMarkup,
   renderFavoritesMarkup,
   toggleFavoriteId
-} from '/favorites.js';
+} from '/favorites.js?v=20261025-favorites-black-2';
 
 const state = {
   products: PRODUCTS,
