@@ -169,6 +169,10 @@ h1 {
   padding: 0 24px 32px;
 }
 
+.layout.cart-panel-hidden {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .catalog-panel,
 .cart-panel {
   background: var(--panel);

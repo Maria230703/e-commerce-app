@@ -526,7 +526,8 @@ function renderProducts() {
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
   categoryFilters.hidden = false;
-  cartPanel.hidden = false;
+  cartPanel.hidden = true;
+  layout.classList.add('cart-panel-hidden');
   layout.classList.remove('frame-configurator-layout');
   productList.classList.remove('frame-configurator-container');
 

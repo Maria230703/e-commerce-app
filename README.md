@@ -5,7 +5,7 @@ Web app e-commerce per piccoli complementi d'arredo, oggettistica e cornici, rea
 ## Funzionalità presenti
 
 - Catalogo con filtri per categoria.
-- Scheda prodotto con nome, prezzo e descrizione.
+- Scheda prodotto con nome, prezzo, descrizione e galleria di quattro immagini per ogni articolo.
 - Preferiti salvati nel browser, accessibili dal catalogo e dalla scheda prodotto.
 - Scena «Compra il look» con punti cliccabili per aprire le schede dei prodotti.
 - Configuratore di cornici con anteprima, riepilogo e prezzo aggiornati a ogni scelta.

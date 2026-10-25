@@ -12,6 +12,18 @@ Funzionalità: Carrello
     Allora vedo il messaggio "Il carrello è vuoto"
     E non vedo il pulsante "Vai al pagamento"
 
+  Scenario: Il riepilogo non appare nella pagina Scopri
+    Dato che sono sulla pagina Scopri
+    Quando non ho ancora toccato il pulsante Carrello
+    Allora non vedo il riepilogo del carrello
+    E il pulsante Carrello resta visibile nell'intestazione
+
+  Scenario: Aprire il carrello dal pulsante
+    Dato che sono sulla pagina Scopri
+    Quando tocco il pulsante Carrello
+    Allora si apre la pagina del carrello
+    E posso vedere il riepilogo e il totale
+
   Scenario: Aggiungere un articolo dalla scheda
     Dato che il carrello è vuoto
     E sto guardando la scheda di "Vaso Duna"
