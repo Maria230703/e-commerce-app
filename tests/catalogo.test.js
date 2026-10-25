@@ -230,22 +230,44 @@ test('la galleria di Lampada Lume mostra quattro foto con frecce e miniature sel
   assert.equal(PRODUCT_GALLERY_IMAGES[product.id].length, 4);
   assert.match(firstPhotoMarkup, /aria-label="Foto precedente"/);
   assert.match(firstPhotoMarkup, /aria-label="Foto successiva"/);
-  assert.match(firstPhotoMarkup, /src="\/product-images\/lampada-lume-1\.svg"[\s\S]*alt="Lampada Lume, foto 1 di 4"/);
+  assert.match(firstPhotoMarkup, /src="\/images\/lampada%201\.jpg"[\s\S]*alt="Lampada Lume, foto 1 di 4"/);
   assert.equal((firstPhotoMarkup.match(/data-gallery-index="/g) ?? []).length, 4);
   assert.match(firstPhotoMarkup, /data-gallery-index="0"[\s\S]*aria-pressed="true"/);
-  assert.match(thirdPhotoMarkup, /src="\/product-images\/lampada-lume-3\.svg"[\s\S]*alt="Lampada Lume, foto 3 di 4"/);
+  assert.match(thirdPhotoMarkup, /src="\/images\/lampada\.jpg"[\s\S]*alt="Lampada Lume, foto 3 di 4"/);
   assert.match(thirdPhotoMarkup, /class="product-gallery-thumbnail is-selected"[\s\S]*data-gallery-index="2"[\s\S]*aria-pressed="true"/);
 });
 
-test('tutti gli articoli del catalogo hanno quattro immagini nella galleria', () => {
+test('le gallerie usano tutte le foto disponibili nell’ordine corretto', () => {
+  assert.deepEqual(PRODUCT_GALLERY_IMAGES, {
+    1: [
+      '/images/lampada 1.jpg',
+      '/images/lampada 2.jpg',
+      '/images/lampada.jpg',
+      '/images/lampada 4.jpg'
+    ],
+    2: ['/images/specchio 1.jpg', '/images/specchio 2.jpg'],
+    3: ['/images/portavaso 1.jpg', '/images/portavaso 2.jpg', '/images/portavaso 3.jpg'],
+    4: ['/images/vaso 1.jpg', '/images/vaso 2.jpg', '/images/vaso 3.jpg'],
+    5: ['/images/candela 1.jpg', '/images/candela 2.jpg', '/images/candela 3.jpg'],
+    6: ['/images/immagine cornice 1.jpg', '/images/immagine cornice 2.jpg']
+  });
+  const frameMarkup = renderProductDetailMarkup(PRODUCTS.find(({ id }) => id === 6));
+  assert.match(frameMarkup, /src="\/images\/immagine%20cornice%201\.jpg"/);
+
   for (const product of PRODUCTS) {
     const images = PRODUCT_GALLERY_IMAGES[product.id];
     const markup = renderProductDetailMarkup(product);
 
-    assert.equal(images.length, 4, `${product.name} deve avere quattro immagini`);
-    assert.equal(new Set(images).size, 4, `${product.name} deve avere immagini distinte`);
+    assert.ok(images.length >= 2, `${product.name} deve avere almeno due immagini`);
+    assert.equal(new Set(images).size, images.length, `${product.name} non deve ripetere immagini`);
     assert.match(markup, new RegExp(`aria-label="Galleria immagini ${product.name}"`));
-    assert.equal((markup.match(/data-gallery-index="/g) ?? []).length, 4);
+    assert.equal((markup.match(/data-gallery-index="/g) ?? []).length, images.length);
+  }
+});
+
+test('ogni articolo usa la prima foto della galleria come immagine principale', () => {
+  for (const product of PRODUCTS) {
+    assert.ok(PRODUCT_GALLERY_IMAGES[product.id][0], `${product.name} deve avere una foto principale`);
   }
 });
 

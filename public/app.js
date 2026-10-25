@@ -543,16 +543,14 @@ function renderProducts() {
   }
 
   productList.innerHTML = filteredProducts.map((product) => {
-    const emojiMap = {
-      arredo: '💡',
-      oggettistica: '🏺',
-      cornici: '🖼️'
-    };
+    const mainImage = PRODUCT_GALLERY_IMAGES[product.id]?.[0];
 
     return `
       <article class="product-card">
         <button class="product-detail-button" type="button" data-product-id="${product.id}">
-          <div class="product-image" aria-hidden="true">${emojiMap[product.category]}</div>
+          <div class="product-image">
+            ${mainImage ? `<img src="${encodeURI(mainImage)}" alt="">` : ''}
+          </div>
           <div class="product-body">
             <div class="product-top">
               <span class="badge">${product.badge}</span>
@@ -640,7 +638,7 @@ function renderProductDetail(product) {
 
     state.selectedProductImageIndex = (index + galleryImages.length) % galleryImages.length;
     const mainImage = productList.querySelector('[data-gallery-main-image]');
-    mainImage.src = galleryImages[state.selectedProductImageIndex];
+    mainImage.src = encodeURI(galleryImages[state.selectedProductImageIndex]);
     mainImage.alt = `${product.name}, foto ${state.selectedProductImageIndex + 1} di ${galleryImages.length}`;
 
     productList.querySelectorAll('[data-gallery-index]').forEach((thumbnail) => {

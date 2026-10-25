@@ -14,7 +14,8 @@ const MIME_TYPES = {
   '.css': 'text/css; charset=utf-8',
   '.js': 'application/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
-  '.svg': 'image/svg+xml'
+  '.svg': 'image/svg+xml',
+  '.jpg': 'image/jpeg'
 };
 
 function sendJson(res, statusCode, payload) {
@@ -90,10 +91,18 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  let relativePath = url.pathname;
-  const filePath = path.join(publicDir, relativePath);
+  let relativePath;
+  try {
+    relativePath = decodeURIComponent(url.pathname);
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Percorso non valido');
+    return;
+  }
 
-  if (!filePath.startsWith(publicDir)) {
+  const filePath = path.resolve(publicDir, `.${relativePath}`);
+
+  if (filePath !== publicDir && !filePath.startsWith(`${publicDir}${path.sep}`)) {
     res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Accesso negato');
     return;
