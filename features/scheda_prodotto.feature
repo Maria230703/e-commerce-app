@@ -50,7 +50,7 @@ Funzionalità: Scheda prodotto
       | Portavaso Trama  | Dimensioni  | diametro esterno 34 cm, diametro interno 27 cm, altezza 33 cm     |
       | Portavaso Trama  | Materiali   | rattan naturale, fondo impermeabile                               |
       | Portavaso Trama  | Provenienza | Made in Italy                                                     |
-      | Vaso Duna        | Dimensioni  | altezza 40 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm |
+      | Vaso Duna        | Dimensioni  | altezza 30 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm |
       | Vaso Duna        | Materiali   | ceramica smaltata                                                 |
       | Vaso Duna        | Colore      | bianco latte e arancione                                          |
       | Vaso Duna        | Provenienza | Made in Italy                                                     |

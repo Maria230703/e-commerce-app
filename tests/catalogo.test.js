@@ -55,7 +55,7 @@ test('la scena Compra il look compare prima del catalogo con quattro pulsanti ac
   assert.match(markup, /<h2 id="look-scene-title">Compra il look<\/h2>/);
   assert.match(markup, /<span>Angolo soggiorno<\/span>/);
   assert.match(markup, /Tocca i punti per scoprire gli oggetti della scena\./);
-  assert.match(markup, /<svg class="look-room-drawing"/);
+  assert.match(markup, /<img\s+class="look-room-image"\s+src="\/images\/Gemini_Generated_Image_agbiq5agbiq5agbi\.jpg"/);
   assert.equal((markup.match(/class="look-hotspot look-hotspot-/g) ?? []).length, 4);
   assert.ok(
     LOOK_SCENE_PRODUCTS.every(({ id, name }) =>
@@ -124,7 +124,12 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   assert.ok(markup.includes(`<p class="price">${formatCurrency(product.price)}</p>`));
   assert.match(markup, /<p class="product-detail-information-row"><strong>Descrizione:<\/strong> Ceramica smaltata a mano con finitura opaca\.<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row"><strong>Materiali:<\/strong> ceramica smaltata<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Dimensioni:<\/strong> altezza 30 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row">Made in Italy<\/p>/);
+  assert.ok(
+    markup.indexOf('<strong>Materiali:</strong>') < markup.indexOf('<strong>Dimensioni:</strong>')
+    && markup.indexOf('<strong>Dimensioni:</strong>') < markup.indexOf('Made in Italy')
+  );
 });
 
 test('le schede hanno Acquista con etichetta accessibile e riflettono lo stato aggiunto', () => {
@@ -223,6 +228,7 @@ test('la scheda di Lampada Lume mostra nome, prezzo di 89 euro e descrizione', (
   assert.ok(markup.includes(`<p class="price">${formatCurrency(89)}</p>`));
   assert.match(markup, /<p class="product-detail-information-row"><strong>Descrizione:<\/strong> Paralume in lino e base in metallo\. Luce calda e diffusa\.<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row"><strong>Materiali:<\/strong> lino, metallo, porta lampadina in acciaio inox<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Dimensioni:<\/strong> altezza 45 cm, diametro paralume 28 cm, diametro base 16 cm<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row">Made in Italy<\/p>/);
 });
 

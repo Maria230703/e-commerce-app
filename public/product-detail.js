@@ -24,6 +24,15 @@ const PRODUCT_MATERIALS = {
   6: 'plastica, vetro antiriflesso, retro in sughero, ganci in acciaio'
 };
 
+const PRODUCT_DIMENSIONS = {
+  1: 'altezza 45 cm, diametro paralume 28 cm, diametro base 16 cm',
+  2: 'diametro 100 cm',
+  3: 'diametro esterno 34 cm, diametro interno 27 cm, altezza 33 cm',
+  4: 'altezza 30 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm',
+  5: 'altezza 10 cm, diametro 8,5 cm, peso della cera 275 g',
+  6: '40 x 60 cm'
+};
+
 function renderProductGallery(product, activeImageIndex) {
   const images = PRODUCT_GALLERY_IMAGES[product.id];
   if (!images) {
@@ -74,6 +83,7 @@ export function renderProductDetailMarkup(product, isFavorite = false, isAddedTo
       <div class="product-detail-information" aria-label="Informazioni prodotto">
         <p class="product-detail-information-row"><strong>Descrizione:</strong> ${product.description}</p>
         <p class="product-detail-information-row"><strong>Materiali:</strong> ${PRODUCT_MATERIALS[product.id]}</p>
+        <p class="product-detail-information-row"><strong>Dimensioni:</strong> ${PRODUCT_DIMENSIONS[product.id]}</p>
         <p class="product-detail-information-row">Made in Italy</p>
       </div>
       <button
