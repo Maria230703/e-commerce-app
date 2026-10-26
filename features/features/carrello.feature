@@ -23,6 +23,7 @@ Funzionalità: Carrello
     Quando tocco il pulsante Carrello
     Allora si apre la pagina del carrello
     E posso vedere il riepilogo e il totale
+    E vedo il pulsante "Indietro"
 
   Scenario: Aggiungere un articolo dalla scheda
     Dato che il carrello è vuoto
@@ -48,25 +49,30 @@ Funzionalità: Carrello
     Allora "Vaso Duna" non è più nel carrello
     E vedo il messaggio "Il carrello è vuoto"
 
+  Scenario: I pulsanti quantità sono ordinati in verticale
+    Dato che nel carrello c'è 1 articolo "Vaso Duna"
+    Quando apro il carrello
+    Allora il pulsante "+" appare sopra il pulsante "-"
+
   Scenario: Aggiungere una cornice personalizzata
     Dato che il carrello è vuoto
-    E sto configurando una cornice 13x18 con finitura "Noce", profilo "Classico" e passe-partout "Bianco"
+    E sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
     Quando tocco "Aggiungi al carrello"
-    Allora il carrello contiene "Cornice su misura" a 38,90 euro
-    E la riga riporta "13x18 cm, Noce, Classico, passe-partout Bianco"
+    Allora il carrello contiene "Cornice su misura" a 30,90 euro
+    E la riga riporta "13x18 cm, Classico, passe-partout Bianco"
 
   Scenario: Cornice personalizzata con foto
-    Dato che sto configurando una cornice 13x18 con finitura "Noce", profilo "Classico" e passe-partout "Bianco"
+    Dato che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
     E ho caricato il file "mare.jpg"
     Quando tocco "Aggiungi al carrello"
     Allora la riga della cornice riporta "Stampa foto su carta fotografica: omaggio"
-    E il prezzo della riga è 38,90 euro
+    E il prezzo della riga è 30,90 euro
 
   Scenario: Cornici con scelte diverse sono righe separate
-    Dato che nel carrello c'è una cornice 13x18 "Noce", "Classico", passe-partout "Bianco"
-    Quando aggiungo una cornice 13x18 "Oro spazzolato", "Classico", passe-partout "Bianco"
+    Dato che nel carrello c'è una cornice 13x18 "Classico", passe-partout "Bianco"
+    Quando aggiungo una cornice 13x18 "Contemporaneo", passe-partout "Bianco"
     Allora il carrello ha due righe di cornice
-    E il subtotale è 81,80 euro
+    E il subtotale è 63,80 euro
 
   Schema dello scenario: Costo della spedizione
     Dato che il subtotale del carrello è <subtotale> euro

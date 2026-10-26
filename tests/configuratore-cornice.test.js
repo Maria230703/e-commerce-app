@@ -12,7 +12,12 @@ import {
   getFrameSelectionPriceCents
 } from '../public/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '../public/frame-configurator.js';
-import { createFrameCartItem, isItemInCart } from '../public/cart-logic.js';
+import {
+  CART_STORAGE_KEY,
+  createFrameCartItem,
+  isItemInCart,
+  restoreCart
+} from '../public/cart-logic.js';
 
 function selectionWith(overrides = {}) {
   return { ...INITIAL_FRAME_SELECTION, ...overrides };
@@ -30,14 +35,15 @@ function assertOptionPressed(markup, value, pressed) {
 test('il configuratore apre con le scelte iniziali e il prezzo corretto', () => {
   const markup = renderFrameConfiguratorMarkup(INITIAL_FRAME_SELECTION);
 
-  assert.equal(calculateFramePriceCents(INITIAL_FRAME_SELECTION), 3890);
+  assert.equal(calculateFramePriceCents(INITIAL_FRAME_SELECTION), 3090);
   assert.match(markup, /Misura \(cm\)/);
   assertOptionPressed(markup, '13x18', 'true');
-  assertOptionPressed(markup, 'noce', 'true');
   assertOptionPressed(markup, 'classico', 'true');
   assertOptionPressed(markup, 'bianco', 'true');
   assertOptionPressed(markup, '10x15', 'false');
-  assert.match(markup, /38,90 €/);
+  assert.doesNotMatch(markup, /Finitura|data-frame-option="finish"/);
+  assert.match(markup, /<a class="back-button frame-back-link" href="\/scopri">Indietro<\/a>/);
+  assert.match(markup, /30,90 €/);
 });
 
 test('il prezzo in centesimi segue tutte le misure con le scelte iniziali', () => {
@@ -47,22 +53,15 @@ test('il prezzo in centesimi segue tutte le misure con le scelte iniziali', () =
   ]);
 
   assert.deepEqual(prices, [
-    ['10x15', 3490],
-    ['13x18', 3890],
-    ['15x20', 4390],
-    ['30x30', 5890],
-    ['50x70', 9890]
+    ['10x15', 2690],
+    ['13x18', 3090],
+    ['15x20', 3590],
+    ['30x30', 5090],
+    ['50x70', 9090]
   ]);
 });
 
-test('le finiture, i profili e i passe-partout espongono opzioni e supplementi corretti', () => {
-  assert.deepEqual(
-    FRAME_OPTIONS.finish.map(({ label, color, priceCents }) => ({ label, color, priceCents })),
-    [
-      { label: 'Noce', color: '#6B4A32', priceCents: 800 },
-      { label: 'Oro spazzolato', color: '#B89A55', priceCents: 1200 }
-    ]
-  );
+test('i profili e i passe-partout espongono opzioni e supplementi corretti', () => {
   assert.deepEqual(
     FRAME_OPTIONS.profile.map(({ label, borderWidth, priceCents }) => ({ label, borderWidth, priceCents })),
     [
@@ -81,14 +80,12 @@ test('le finiture, i profili e i passe-partout espongono opzioni e supplementi c
   );
 });
 
-test('finitura e profilo aggiornano supplemento e dettagli dell’anteprima', () => {
-  const goldMarkup = renderFrameConfiguratorMarkup(selectionWith({ finish: 'oro-spazzolato' }));
+test('il profilo aggiorna supplemento e dettagli dell’anteprima', () => {
   const classicMarkup = renderFrameConfiguratorMarkup(INITIAL_FRAME_SELECTION);
   const modernMarkup = renderFrameConfiguratorMarkup(selectionWith({ profile: 'contemporaneo' }));
 
-  assert.equal(calculateFramePriceCents(selectionWith({ finish: 'oro-spazzolato' })), 4290);
-  assert.match(goldMarkup, /--frame-color: #B89A55/);
-  assert.equal(calculateFramePriceCents(selectionWith({ profile: 'contemporaneo' })), 4090);
+  assert.equal(calculateFramePriceCents(selectionWith({ profile: 'contemporaneo' })), 3290);
+  assert.match(classicMarkup, /--frame-color: #6B4A32/);
   assert.match(classicMarkup, /--frame-border-width: 12px/);
   assert.match(modernMarkup, /--frame-border-width: 6px/);
 });
@@ -99,10 +96,10 @@ test('il passe-partout aggiorna prezzo e anteprima; Nessuno lo rimuove', () => {
   const greenMarkup = renderFrameConfiguratorMarkup(selectionWith({ mat: 'verde-smeraldo' }));
   const redMarkup = renderFrameConfiguratorMarkup(selectionWith({ mat: 'rosso-carminio' }));
 
-  assert.equal(calculateFramePriceCents(noMatSelection), 3300);
+  assert.equal(calculateFramePriceCents(noMatSelection), 2500);
   assert.match(noMatMarkup, /senza passe-partout/);
   assert.doesNotMatch(noMatMarkup, /class="frame-mat"/);
-  assert.equal(calculateFramePriceCents(selectionWith({ mat: 'verde-smeraldo' })), 3890);
+  assert.equal(calculateFramePriceCents(selectionWith({ mat: 'verde-smeraldo' })), 3090);
   assert.match(greenMarkup, /--mat-color: #50C878/);
   assert.match(redMarkup, /--mat-color: #960018/);
   assert.match(renderFrameConfiguratorMarkup(INITIAL_FRAME_SELECTION), /--mat-color: #FBFAF7/);
@@ -111,7 +108,6 @@ test('il passe-partout aggiorna prezzo e anteprima; Nessuno lo rimuove', () => {
 test('la combinazione richiesta aggiorna riepilogo e prezzo e rispetta la proporzione', () => {
   const selection = {
     measure: '50x70',
-    finish: 'oro-spazzolato',
     profile: 'contemporaneo',
     mat: 'rosso-carminio'
   };
@@ -119,11 +115,11 @@ test('la combinazione richiesta aggiorna riepilogo e prezzo e rispetta la propor
 
   assert.equal(
     describeFrameSelection(selection),
-    '50x70 cm, Oro spazzolato, Contemporaneo, passe-partout Rosso carminio'
+    '50x70 cm, Contemporaneo, passe-partout Rosso carminio'
   );
-  assert.equal(calculateFramePriceCents(selection), 10490);
-  assert.equal(formatFramePrice(calculateFramePriceCents(selection)), '104,90 €');
-  assert.match(markup, /50x70 cm, Oro spazzolato, Contemporaneo, passe-partout Rosso carminio/);
+  assert.equal(calculateFramePriceCents(selection), 9290);
+  assert.equal(formatFramePrice(calculateFramePriceCents(selection)), '92,90 €');
+  assert.match(markup, /50x70 cm, Contemporaneo, passe-partout Rosso carminio/);
   assert.match(markup, /--frame-ratio: 50 \/ 70/);
   assert.match(markup, /aria-pressed="false"/);
   assert.match(markup, /<button/);
@@ -136,10 +132,39 @@ test('aggiunge una cornice configurata al carrello e mantiene lo stato Aggiunto'
   const cart = [frame];
 
   assert.equal(frame.name, 'Cornice su misura');
-  assert.equal(frame.price, 38.9);
-  assert.equal(frame.frameDescription, '13x18 cm, Noce, Classico, passe-partout Bianco');
+  assert.equal(frame.price, 30.9);
+  assert.equal(frame.frameDescription, '13x18 cm, Classico, passe-partout Bianco');
   assert.equal(isItemInCart(cart, frame.id), true);
-  assert.equal(getFrameSelectionPriceCents(frame.frameSelection), 3890);
+  assert.equal(getFrameSelectionPriceCents(frame.frameSelection), 3090);
+});
+
+test('ripristina i carrelli salvati con la vecchia scelta di finitura', () => {
+  const storage = {
+    getItem(key) {
+      return key === CART_STORAGE_KEY
+        ? JSON.stringify([{
+            id: 'frame:13x18|noce|classico|bianco',
+            quantity: 1,
+            frameSelection: {
+              measure: '13x18',
+              finish: 'noce',
+              profile: 'classico',
+              mat: 'bianco'
+            }
+          }])
+        : null;
+    }
+  };
+
+  const [frame] = restoreCart(storage);
+
+  assert.equal(frame.id, 'frame:13x18|classico|bianco');
+  assert.equal(frame.price, 30.9);
+  assert.deepEqual(frame.frameSelection, {
+    measure: '13x18',
+    profile: 'classico',
+    mat: 'bianco'
+  });
 });
 
 test('la validazione accetta JPG, PNG e WebP fino a 10 MiB', () => {

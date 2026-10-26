@@ -8,7 +8,7 @@ Funzionalità: Stampa della propria foto
   # La stampa è un servizio in omaggio: non modifica il prezzo
 
   Contesto:
-    Dato che sto configurando una cornice 13x18 con finitura "Noce", profilo "Classico" e passe-partout "Bianco"
+    Dato che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
 
   Scenario: Anteprima prima del caricamento
     Allora l'anteprima mostra il segnaposto "La tua foto"
@@ -40,7 +40,7 @@ Funzionalità: Stampa della propria foto
   Scenario: La stampa è un omaggio e non cambia il prezzo
     Quando carico il file "mare.jpg"
     Allora il riepilogo mostra "Stampa foto su carta fotografica: omaggio"
-    E il prezzo è 38,90 euro
+    E il prezzo è 30,90 euro
 
   Scenario: La carta fotografica è l'unico tipo di stampa
     Dato che ho caricato il file "mare.jpg"
@@ -54,7 +54,7 @@ Funzionalità: Stampa della propria foto
     Dato che ho caricato il file "mare.jpg"
     Quando scelgo il profilo "Contemporaneo" e il passe-partout "Rosso carminio"
     Allora l'anteprima mostra ancora la mia foto, con il nuovo profilo e il nuovo passe-partout
-    E il prezzo è 40,90 euro
+    E il prezzo è 32,90 euro
 
   Scenario: Sostituire la foto
     Dato che ho caricato il file "mare.jpg"

@@ -6,10 +6,6 @@ export const FRAME_OPTIONS = {
     { value: '30x30', label: '30x30', width: 30, height: 30, priceCents: 3900 },
     { value: '50x70', label: '50x70', width: 50, height: 70, priceCents: 7900 }
   ],
-  finish: [
-    { value: 'noce', label: 'Noce', color: '#6B4A32', priceCents: 800 },
-    { value: 'oro-spazzolato', label: 'Oro spazzolato', color: '#B89A55', priceCents: 1200 }
-  ],
   profile: [
     { value: 'classico', label: 'Classico', borderWidth: 12, priceCents: 600 },
     { value: 'contemporaneo', label: 'Contemporaneo', borderWidth: 6, priceCents: 800 }
@@ -24,7 +20,6 @@ export const FRAME_OPTIONS = {
 
 export const INITIAL_FRAME_SELECTION = {
   measure: '13x18',
-  finish: 'noce',
   profile: 'classico',
   mat: 'bianco'
 };
@@ -64,14 +59,13 @@ export function formatFramePrice(priceCents) {
 
 export function describeFrameSelection(selection) {
   const measure = selectedOption(selection, 'measure');
-  const finish = selectedOption(selection, 'finish');
   const profile = selectedOption(selection, 'profile');
   const mat = selectedOption(selection, 'mat');
   const matDescription = mat.value === 'nessuno'
     ? 'senza passe-partout'
     : `passe-partout ${mat.label}`;
 
-  return `${measure.label} cm, ${finish.label}, ${profile.label}, ${matDescription}`;
+  return `${measure.label} cm, ${profile.label}, ${matDescription}`;
 }
 
 export function getFrameSelectionPriceCents(selection) {

@@ -17,7 +17,7 @@ import {
 } from '/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
 import { validateCardPayment, validateShippingAddress } from '/payment-logic.js';
-import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js';
+import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js?v=20261026-cart-quantity-order-1';
 import {
   calculateDiscountedCartTotals,
   COUPON_CODE,
@@ -74,6 +74,7 @@ const lookSceneContainer = document.querySelector('#look-scene-container');
 const productList = document.querySelector('#product-list');
 const cartPanel = document.querySelector('.cart-panel');
 const categoryFilters = document.querySelector('#category-filters');
+const frameConfiguratorLink = document.querySelector('#frame-configurator-link');
 const toolbar = document.querySelector('.toolbar');
 const searchInput = document.querySelector('#search-input');
 const sortSelect = document.querySelector('#sort-select');
@@ -128,6 +129,7 @@ function renderFavoriteCount() {
 
 function renderFavoritesPage() {
   pageTitle.textContent = 'Preferiti';
+  frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
   categoryFilters.hidden = true;
@@ -174,7 +176,6 @@ function renderCategoryFilters() {
       </button>
     `
   ).join('')}
-    <a class="frame-configurator-link" href="/configuratore-cornice">Crea la tua cornice</a>
   `;
 
   categoryFilters.querySelectorAll('.filter-chip').forEach((button) => {
@@ -188,6 +189,7 @@ function renderCategoryFilters() {
 
 function renderFrameConfiguratorPage() {
   pageTitle.textContent = 'Crea la tua cornice';
+  frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
   categoryFilters.hidden = true;
@@ -275,6 +277,7 @@ function renderFrameConfiguratorPage() {
 
 function renderCartPage() {
   pageTitle.textContent = 'Il tuo carrello';
+  frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
   categoryFilters.hidden = true;
@@ -378,6 +381,7 @@ async function createOrder(paymentMethod) {
 
 function renderPaymentPage() {
   pageTitle.textContent = 'Pagamento';
+  frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
   categoryFilters.hidden = true;
@@ -519,6 +523,7 @@ function renderProducts() {
     const product = state.products.find((item) => item.id === state.selectedProductId);
     if (product) {
       lookSceneContainer.hidden = true;
+      frameConfiguratorLink.hidden = true;
       renderProductDetail(product);
       return;
     }
@@ -550,6 +555,7 @@ function renderProducts() {
 
     if (product) {
       lookSceneContainer.hidden = true;
+      frameConfiguratorLink.hidden = true;
       renderProductDetail(product);
       return;
     }
@@ -558,6 +564,7 @@ function renderProducts() {
   }
 
   pageTitle.textContent = 'Scopri';
+  frameConfiguratorLink.hidden = false;
   productList.classList.remove('product-detail-list');
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
@@ -760,8 +767,8 @@ function renderCart() {
         </div>
         <div class="cart-item-price">
           <strong>${formatCurrencyCents(Math.round(item.price * 100) * item.quantity)}</strong>
-          <button class="cart-quantity-button" type="button" data-cart-action="decrease" data-product-id="${item.id}" aria-label="Diminuisci ${item.name}">−</button>
           <button class="cart-quantity-button" type="button" data-cart-action="increase" data-product-id="${item.id}" aria-label="Aumenta ${item.name}">+</button>
+          <button class="cart-quantity-button" type="button" data-cart-action="decrease" data-product-id="${item.id}" aria-label="Diminuisci ${item.name}">−</button>
           <button class="cart-remove-button" type="button" data-cart-action="remove" data-product-id="${item.id}">Rimuovi</button>
         </div>
       </div>
@@ -820,10 +827,10 @@ renderCart();
 couponCopy.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(COUPON_CODE);
-    couponCopyFeedback.textContent = 'Codice ESEMPIO10 copiato. Incollalo nella pagina di pagamento.';
+    couponCopyFeedback.textContent = `Codice ${COUPON_CODE} copiato. Incollalo nella pagina di pagamento.`;
     couponCopyFeedback.hidden = false;
   } catch {
-    couponCopyFeedback.textContent = 'Non è stato possibile copiare il codice. Inserisci ESEMPIO10 nella pagina di pagamento.';
+    couponCopyFeedback.textContent = `Non è stato possibile copiare il codice. Inserisci ${COUPON_CODE} nella pagina di pagamento.`;
     couponCopyFeedback.hidden = false;
   }
 });

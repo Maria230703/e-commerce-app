@@ -147,7 +147,7 @@ test('il riepilogo del pagamento applica la spedizione gratuita da 79,00 euro', 
   assert.match(candelaMarkup, /Totale<\/span><strong>26,90\s€<\/strong>/);
 });
 
-test('il coupon ESEMPIO10 sconta del 10% solo sui carrelli oltre 50 euro', () => {
+test('il coupon FirstPurchase sconta del 10% solo sui carrelli oltre 50 euro', () => {
   const lampada = [{ ...PRODUCTS.find(({ name }) => name === 'Lampada Lume'), quantity: 1 }];
   const portavaso = [{ ...PRODUCTS.find(({ name }) => name === 'Portavaso Trama'), quantity: 1 }];
   const importoEsattoSoglia = [{ price: 50, quantity: 1 }];
@@ -194,8 +194,19 @@ test('la pagina riepiloga il totale e non preseleziona un metodo', () => {
 });
 
 test('il carrello offre il pagamento solo se contiene articoli', () => {
-  assert.doesNotMatch(renderCartPageMarkup([]), /Vai al pagamento/);
-  assert.match(renderCartPageMarkup(vasoCart), /href="\/pagamento">Vai al pagamento<\/a>/);
+  const emptyCartMarkup = renderCartPageMarkup([]);
+  const cartMarkup = renderCartPageMarkup(vasoCart);
+
+  assert.doesNotMatch(emptyCartMarkup, /Vai al pagamento/);
+  assert.doesNotMatch(emptyCartMarkup, /Il tuo carrello/);
+  assert.match(emptyCartMarkup, /<a class="back-button" href="\/scopri">Indietro<\/a>/);
+  assert.match(cartMarkup, /href="\/pagamento">Vai al pagamento<\/a>/);
+  assert.match(cartMarkup, /<a class="back-button" href="\/scopri">Indietro<\/a>/);
+  assert.ok(
+    cartMarkup.indexOf('data-cart-action="increase"')
+      < cartMarkup.indexOf('data-cart-action="decrease"')
+  );
+  assert.doesNotMatch(cartMarkup, /Il tuo carrello/);
 });
 
 test('il riepilogo del carrello e del pagamento mostra il coupon applicato', () => {
@@ -328,8 +339,8 @@ test('il carrello e il pagamento accettano una cornice configurata', async () =>
     }, ordersFile);
 
     assert.equal(order.items[0].name, 'Cornice su misura');
-    assert.equal(order.items[0].frameDescription, '13x18 cm, Noce, Classico, passe-partout Bianco');
-    assert.equal(order.totalCents, 4380);
+    assert.equal(order.items[0].frameDescription, '13x18 cm, Classico, passe-partout Bianco');
+    assert.equal(order.totalCents, 3580);
   } finally {
     await fs.rm(temporaryDirectory, { recursive: true, force: true });
   }

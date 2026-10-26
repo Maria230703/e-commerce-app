@@ -36,7 +36,6 @@ function escapeHtml(value) {
 
 export function renderFrameConfiguratorMarkup(selection, photo = null, photoError = '') {
   const measure = FRAME_OPTIONS.measure.find(({ value }) => value === selection.measure);
-  const finish = FRAME_OPTIONS.finish.find(({ value }) => value === selection.finish);
   const profile = FRAME_OPTIONS.profile.find(({ value }) => value === selection.profile);
   const mat = FRAME_OPTIONS.mat.find(({ value }) => value === selection.mat);
   const previewContent = photo
@@ -51,15 +50,15 @@ export function renderFrameConfiguratorMarkup(selection, photo = null, photoErro
 
   return `
     <section class="frame-configurator" aria-labelledby="frame-configurator-title">
-      <a class="back-button frame-back-link" href="/scopri">Torna a Scopri</a>
+      <a class="back-button frame-back-link" href="/scopri">Indietro</a>
       <h2 id="frame-configurator-title">Crea la tua cornice</h2>
       <div class="frame-configurator-content">
         <div class="frame-preview-column">
           <div
             class="frame-preview"
             role="img"
-            aria-label="Anteprima cornice ${finish.label}, profilo ${profile.label}, misura ${measure.label} cm${mat.color ? `, passe-partout ${mat.label}` : ', senza passe-partout'}"
-            style="--frame-color: ${finish.color}; --frame-border-width: ${profile.borderWidth}px; --frame-ratio: ${measure.width} / ${measure.height}"
+            aria-label="Anteprima cornice, profilo ${profile.label}, misura ${measure.label} cm${mat.color ? `, passe-partout ${mat.label}` : ', senza passe-partout'}"
+            style="--frame-color: #6B4A32; --frame-border-width: ${profile.borderWidth}px; --frame-ratio: ${measure.width} / ${measure.height}"
           >${preview}</div>
           <p class="frame-summary" aria-live="polite">${summary}</p>
           ${photo ? `
@@ -77,7 +76,6 @@ export function renderFrameConfiguratorMarkup(selection, photo = null, photoErro
         </div>
         <div class="frame-options">
           ${renderOptionGroup('measure', 'Misura (cm)', selection)}
-          ${renderOptionGroup('finish', 'Finitura', selection)}
           ${renderOptionGroup('profile', 'Profilo', selection)}
           ${renderOptionGroup('mat', 'Passe-partout', selection)}
           <p class="frame-price" aria-live="polite">

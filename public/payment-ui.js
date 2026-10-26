@@ -179,9 +179,8 @@ export function renderCartPageMarkup(items, couponCode = '') {
   if (!items.length) {
     return `
       <section class="cart-page">
-        <h2>Il tuo carrello</h2>
         <p class="empty-cart">Il carrello è vuoto.</p>
-        <a class="back-button" href="/scopri">Torna a Scopri</a>
+        <a class="back-button" href="/scopri">Indietro</a>
       </section>
     `;
   }
@@ -189,7 +188,7 @@ export function renderCartPageMarkup(items, couponCode = '') {
   const totals = calculateDiscountedCartTotals(items, couponCode);
   return `
     <section class="cart-page">
-      <h2>Il tuo carrello</h2>
+      <a class="back-button" href="/scopri">Indietro</a>
       <div class="cart-items">
         ${items.map((item) => `
           <div class="cart-item">
@@ -200,8 +199,8 @@ export function renderCartPageMarkup(items, couponCode = '') {
             </div>
             <div class="cart-item-price">
               <strong>${formatCurrencyCents(Math.round(item.price * 100) * item.quantity)}</strong>
-              <button class="cart-quantity-button" type="button" data-cart-action="decrease" data-product-id="${item.id}" aria-label="Diminuisci ${escapeHtml(item.name)}">−</button>
               <button class="cart-quantity-button" type="button" data-cart-action="increase" data-product-id="${item.id}" aria-label="Aumenta ${escapeHtml(item.name)}">+</button>
+              <button class="cart-quantity-button" type="button" data-cart-action="decrease" data-product-id="${item.id}" aria-label="Diminuisci ${escapeHtml(item.name)}">−</button>
               <button class="cart-remove-button" type="button" data-cart-action="remove" data-product-id="${item.id}">Rimuovi</button>
             </div>
           </div>

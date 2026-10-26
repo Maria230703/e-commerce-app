@@ -52,7 +52,7 @@ export function persistCart(storage, cart) {
 }
 
 export function getFrameCartId(selection) {
-  return `frame:${[selection.measure, selection.finish, selection.profile, selection.mat].join('|')}`;
+  return `frame:${[selection.measure, selection.profile, selection.mat].join('|')}`;
 }
 
 export function createFrameCartItem(selection) {
@@ -61,7 +61,11 @@ export function createFrameCartItem(selection) {
     name: 'Cornice su misura',
     price: calculateFramePriceCents(selection) / 100,
     quantity: 1,
-    frameSelection: { ...selection },
+    frameSelection: {
+      measure: selection.measure,
+      profile: selection.profile,
+      mat: selection.mat
+    },
     frameDescription: describeFrameSelection(selection)
   };
 }

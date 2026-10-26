@@ -1,6 +1,6 @@
 import { calculateCartTotalCents } from '../catalog-logic.js';
 
-export const COUPON_CODE = 'ESEMPIO10';
+export const COUPON_CODE = 'FirstPurchase';
 export const COUPON_DISCOUNT_PERCENT = 10;
 export const COUPON_MINIMUM_SUBTOTAL_CENTS = 5000;
 
@@ -9,7 +9,7 @@ export function validateCouponCode(code, subtotalCents) {
     return 'Inserisci un coupon';
   }
 
-  if (code.trim().toUpperCase() !== COUPON_CODE) {
+  if (code.trim().toUpperCase() !== COUPON_CODE.toUpperCase()) {
     return 'Codice coupon non valido';
   }
 

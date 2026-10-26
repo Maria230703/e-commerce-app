@@ -5,12 +5,12 @@ Funzionalità: Coupon di sconto
 # Il coupon è simulato: nessuno sconto reale applicato su nessuna spesa reale effettuata
 # Metodo di applicazione: su una spesa minima di 50,00 € , applicato coupon del valore di 10% 
 # Il pulsante "Coupon per te disponibile" compare nella pagina iniziale sotto "Carrello" e "Preferiti" solo con un subtotale superiore a 50,00 €.
-# Al clic il coupon "ESEMPIO10" viene copiato negli appunti e può essere incollato al pagamento.
+# Al clic il coupon "FirstPurchase" viene copiato negli appunti e può essere incollato al pagamento.
 
 Contesto:
 Dato che nel carrello c'è un articolo 'Specchio Orbita' del valore superiore a 50,00 €
 
-Scenario: Coupon 'ESEMPIO10' applicabile al totale della spesa nel carrello
+Scenario: Coupon 'FirstPurchase' applicabile al totale della spesa nel carrello
 Dato che 'Portavaso Trama' costa meno di 50,00 € 
 Quando  'Portavaso Trama' è nel carrello
 Allora il coupon non può essere applicato
@@ -30,12 +30,12 @@ Allora non vedo "Coupon per te disponibile"
 Scenario: Copiare il coupon dalla pagina iniziale
 Dato che il subtotale del carrello è superiore a 50,00 €
 Quando tocco "Coupon per te disponibile"
-Allora il codice "ESEMPIO10" viene copiato negli appunti
+Allora il codice "FirstPurchase" viene copiato negli appunti
 
 Scenario: Applicare il coupon al pagamento
 Dato che sono sulla pagina del Pagamento
 E nel carrello c'è "Lampada Lume"
-Quando inserisco "ESEMPIO10" in "Inserisci qui il tuo codice sconto"
+Quando inserisco "FirstPurchase" in "Inserisci qui il tuo codice sconto"
 E applico il coupon
 Allora vedo uno sconto pari al 10% del subtotale
 E il nuovo totale viene mostrato nel riepilogo dell'ordine
@@ -43,7 +43,7 @@ E il nuovo totale viene mostrato nel riepilogo dell'ordine
 Schema dello scenario: Il coupon è disponibile solo per acquisti superiori a 50,00 euro
 Dato che nel carrello c'è "<articolo>"
 Quando apro la pagina di pagamento
-Allora il coupon "ESEMPIO10" <disponibilità> essere applicato
+Allora il coupon "FirstPurchase" <disponibilità> essere applicato
 
 Esempi:
 | articolo         | disponibilità |
@@ -58,5 +58,5 @@ Scenario: Acquisto di articoli superiore a 1
 Dato che nel carrello ci sono più articoli
 E il valore totale della spesa è superiore a 50,00 € 
 Quando tocco 'Vai al pagamento' 
-Allora posso inserire il coupon 'ESEMPIO10' del valore del 10%
+Allora posso inserire il coupon 'FirstPurchase' del valore del 10%
 E il valore totale della spesa si abbassa
