@@ -111,6 +111,11 @@ h1 {
   gap: 12px;
 }
 
+body.landing-page #coupon-container[hidden] {
+  display: grid !important;
+  visibility: hidden;
+}
+
 .favorites-link {
   display: flex;
   align-items: center;
@@ -187,7 +192,11 @@ h1 {
 }
 
 .look-scene {
-  margin-bottom: 28px;
+  margin-bottom: 18px;
+}
+
+.catalog-title {
+  margin: 0 0 18px;
 }
 
 .look-scene-header {
@@ -522,7 +531,9 @@ input[type="radio"] {
 }
 
 .add-button {
-  width: auto;
+  width: 112px;
+  min-width: 112px;
+  flex: 0 0 112px;
   min-height: 44px;
   padding: 8px 10px;
   background: var(--panel-alt);
@@ -531,11 +542,16 @@ input[type="radio"] {
   white-space: nowrap;
 }
 
-.add-button.is-added {
-  background: var(--primary);
-  color: white;
-  font-family: Cambria, Caladea, Georgia, serif;
-  font-weight: 700;
+.add-button-check {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .add-button:hover,
@@ -543,6 +559,20 @@ input[type="radio"] {
 .back-button:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
+}
+
+.add-button:hover {
+  transform: none;
+}
+
+.add-button.is-added {
+  background: #5D7A45;
+  color: white;
+  font-weight: 700;
+}
+
+.add-button.is-added:hover {
+  background: var(--primary-dark);
 }
 
 .product-detail {

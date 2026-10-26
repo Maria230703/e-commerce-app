@@ -65,6 +65,8 @@ const isFavoritesPage = window.location.pathname === '/preferiti';
 const isFrameConfiguratorPage = window.location.pathname === '/configuratore-cornice';
 const isCartPage = window.location.pathname === '/carrello';
 const isPaymentPage = window.location.pathname === '/pagamento';
+const isLandingPage = window.location.pathname === '/' || window.location.pathname === '/scopri';
+document.body.classList.toggle('landing-page', isLandingPage);
 const pageTitle = document.querySelector('#page-title');
 const layout = document.querySelector('.layout');
 const lookSceneContainer = document.querySelector('#look-scene-container');
@@ -234,13 +236,19 @@ function renderFrameConfiguratorPage() {
   const frameInCart = isItemInCart(state.cart, frameId);
   const addFrameButton = productList.querySelector('.frame-add-button');
   addFrameButton.classList.toggle('is-added', frameInCart);
-  addFrameButton.textContent = frameInCart ? '✓ Aggiunto' : 'Acquista';
+  addFrameButton.innerHTML = frameInCart
+    ? '<svg class="add-button-check" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="m3 8 3.2 3.2L13 4.5"/></svg><span>Aggiunto</span>'
+    : 'Aggiungi';
+  addFrameButton.setAttribute('aria-label', frameInCart
+    ? 'Rimuovi cornice su misura dal carrello'
+    : 'Aggiungi cornice su misura al carrello');
+  addFrameButton.setAttribute('aria-pressed', String(frameInCart));
   addFrameButton.addEventListener('click', () => {
     const selection = { ...state.frameSelection };
     const id = getFrameCartId(selection);
     const existingItem = state.cart.find((item) => item.id === id);
     if (existingItem) {
-      existingItem.quantity += 1;
+      state.cart = state.cart.filter((item) => item.id !== id);
     } else {
       state.cart.push(createFrameCartItem(selection));
     }
@@ -286,7 +294,6 @@ function renderCouponAvailability(subtotalCents) {
     state.couponMessage = '';
   }
 
-  const isLandingPage = window.location.pathname === '/' || window.location.pathname === '/scopri';
   couponContainer.hidden = !isLandingPage || state.selectedProductId !== null || !hasEligibleSubtotal;
 }
 
@@ -593,7 +600,7 @@ function renderProducts() {
         return;
       }
 
-      addProductToCart(product);
+      toggleProductInCart(product);
       renderProducts();
     });
   });
@@ -671,15 +678,15 @@ function renderProductDetail(product) {
   });
 
   productList.querySelector('.product-detail-add-button').addEventListener('click', () => {
-    addProductToCart(product);
+    toggleProductInCart(product);
     renderProductDetail(product);
   });
 }
 
-function addProductToCart(product) {
+function toggleProductInCart(product) {
   const existingItem = state.cart.find((item) => item.id === product.id);
   if (existingItem) {
-    existingItem.quantity += 1;
+    state.cart = state.cart.filter((item) => item.id !== product.id);
   } else {
     state.cart.push({ ...product, quantity: 1 });
   }

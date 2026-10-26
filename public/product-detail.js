@@ -90,8 +90,11 @@ export function renderProductDetailMarkup(product, isFavorite = false, isAddedTo
         class="add-button product-detail-add-button${isAddedToCart ? ' is-added' : ''}"
         type="button"
         data-product-id="${product.id}"
-        aria-label="Aggiungi ${product.name} al carrello"
-      >${isAddedToCart ? '✓ Aggiunto' : 'Acquista'}</button>
+        aria-label="${isAddedToCart ? `Rimuovi ${product.name} dal carrello` : `Aggiungi ${product.name} al carrello`}"
+        aria-pressed="${isAddedToCart}"
+      >${isAddedToCart
+        ? '<svg class="add-button-check" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="m3 8 3.2 3.2L13 4.5"/></svg><span>Aggiunto</span>'
+        : 'Aggiungi'}</button>
     </section>
   `;
 }

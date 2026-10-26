@@ -132,24 +132,27 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   );
 });
 
-test('le schede hanno Acquista con etichetta accessibile e riflettono lo stato aggiunto', () => {
+test('i pulsanti del carrello hanno etichette accessibili e riflettono lo stato aggiunto', () => {
   const product = PRODUCTS.find(({ id }) => id === 1);
   const inactiveMarkup = renderProductDetailMarkup(product);
   const addedMarkup = renderProductDetailMarkup(product, false, true);
   const cardButton = renderAddToCartButton(product, false);
   const addedCardButton = renderAddToCartButton(product, true);
 
-  assert.match(inactiveMarkup, />Acquista<\/button>/);
+  assert.match(inactiveMarkup, />Aggiungi<\/button>/);
   assert.match(inactiveMarkup, /aria-label="Aggiungi Lampada Lume al carrello"/);
+  assert.match(inactiveMarkup, /aria-pressed="false"/);
   assert.match(addedMarkup, /class="add-button product-detail-add-button is-added"/);
-  assert.match(addedMarkup, />✓ Aggiunto<\/button>/);
+  assert.match(addedMarkup, /<svg class="add-button-check"[\s\S]*?><\/svg><span>Aggiunto<\/span>/);
+  assert.match(addedMarkup, /aria-label="Rimuovi Lampada Lume dal carrello"/);
+  assert.match(addedMarkup, /aria-pressed="true"/);
   assert.match(cardButton, /aria-label="Aggiungi Lampada Lume al carrello"/);
-  assert.match(cardButton, />Acquista<\/button>/);
+  assert.match(cardButton, />Aggiungi<\/button>/);
   assert.match(addedCardButton, /class="add-button is-added"/);
-  assert.match(addedCardButton, />✓ Aggiunto<\/button>/);
+  assert.match(addedCardButton, /<svg class="add-button-check"[\s\S]*?><\/svg><span>Aggiunto<\/span>/);
 });
 
-test('lo stato Aggiunto resta sincronizzato col carrello persistente e torna Acquista a quantità zero', () => {
+test('lo stato Aggiunto resta sincronizzato col carrello persistente e torna Aggiungi a quantità zero', () => {
   const product = PRODUCTS.find(({ id }) => id === 2);
   const storage = {
     value: JSON.stringify([{ id: product.id, quantity: 1 }]),
@@ -163,12 +166,12 @@ test('lo stato Aggiunto resta sincronizzato col carrello persistente e torna Acq
   const restoredCart = restoreCart(storage);
 
   assert.equal(isItemInCart(restoredCart, product.id), true);
-  assert.match(renderAddToCartButton(product, isItemInCart(restoredCart, product.id)), /✓ Aggiunto/);
+  assert.match(renderAddToCartButton(product, isItemInCart(restoredCart, product.id)), /<span>Aggiunto<\/span>/);
 
   persistCart(storage, []);
   const emptyCart = restoreCart(storage);
   assert.equal(isItemInCart(emptyCart, product.id), false);
-  assert.match(renderAddToCartButton(product, isItemInCart(emptyCart, product.id)), />Acquista<\/button>/);
+  assert.match(renderAddToCartButton(product, isItemInCart(emptyCart, product.id)), />Aggiungi<\/button>/);
 });
 
 test('il cuore della scheda ha stato e nome accessibile e resta accanto al prezzo', () => {

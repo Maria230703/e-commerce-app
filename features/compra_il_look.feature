@@ -9,6 +9,11 @@ Funzionalità: Compra il look
     Allora vedo la scena "Angolo soggiorno" con 4 punti cliccabili
     E la scena compare sopra l'elenco degli articoli
 
+  Scenario: Vedere il titolo sopra la ricerca
+    Quando apro la pagina Scopri
+    Allora vedo "Scopri" sotto la scena "Compra il look"
+    E vedo "Scopri" prima del campo di ricerca
+
   Schema dello scenario: Aprire un articolo dalla scena
     Dato che sono sulla pagina Scopri
     Quando tocco il punto di "<articolo>" sulla scena

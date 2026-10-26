@@ -128,7 +128,7 @@ test('la combinazione richiesta aggiorna riepilogo e prezzo e rispetta la propor
   assert.match(markup, /aria-pressed="false"/);
   assert.match(markup, /<button/);
   assert.match(markup, /class="add-button frame-add-button"/);
-  assert.match(markup, />\s*Acquista\s*<\/button>/);
+  assert.match(markup, />\s*Aggiungi\s*<\/button>/);
 });
 
 test('aggiunge una cornice configurata al carrello e mantiene lo stato Aggiunto', () => {
