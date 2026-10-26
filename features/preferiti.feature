@@ -28,6 +28,14 @@ Funzionalità: Preferiti
     Quando apro la pagina Preferiti
     Allora vedo 2 articoli
     E vedo "Vaso Duna" a 34 euro e "Cornice Atelier" a 29 euro
+    E ogni articolo mostra la propria immagine accanto al nome
+
+  Scenario: Aprire un articolo dai preferiti
+    Dato che "Vaso Duna" è tra i preferiti
+    Quando tocco l'articolo "Vaso Duna" nella pagina Preferiti
+    Allora vedo la scheda di "Vaso Duna"
+    Quando torno indietro
+    Allora torno alla pagina Preferiti
 
   Scenario: Nessun preferito
     Dato che non ho preferiti

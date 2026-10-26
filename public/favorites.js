@@ -54,15 +54,25 @@ export function renderFavoriteButtonMarkup(product, isFavorite) {
   `;
 }
 
-export function renderFavoritesMarkup(products) {
+export function renderFavoritesMarkup(products, productImages = {}) {
   if (!products.length) {
     return `<p class="empty-favorites">${EMPTY_FAVORITES_MESSAGE}</p>`;
   }
 
   return products.map((product) => `
-    <article class="favorite-item">
-      <h2>${product.name}</h2>
-      <p class="price">${formatCurrency(product.price)}</p>
-    </article>
+    <button
+      class="favorite-item"
+      type="button"
+      data-product-id="${product.id}"
+      aria-label="Apri la scheda di ${product.name}"
+    >
+      ${productImages[product.id]?.[0]
+        ? `<img class="favorite-item-image" src="${encodeURI(productImages[product.id][0])}" alt="">`
+        : ''}
+      <span class="favorite-item-details">
+        <span class="favorite-item-name">${product.name}</span>
+        <span class="price">${formatCurrency(product.price)}</span>
+      </span>
+    </button>
   `).join('');
 }

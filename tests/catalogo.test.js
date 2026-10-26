@@ -218,10 +218,15 @@ test('i preferiti vengono mantenuti in localStorage e i prodotti rimossi dal cat
 });
 
 test('la pagina Preferiti mostra nome e prezzo oppure il messaggio vuoto richiesto', () => {
-  const markup = renderFavoritesMarkup(PRODUCTS.filter(({ id }) => [4, 6].includes(id)));
+  const markup = renderFavoritesMarkup(
+    PRODUCTS.filter(({ id }) => [4, 6].includes(id)),
+    PRODUCT_GALLERY_IMAGES
+  );
 
   assert.match(markup, /Vaso Duna/);
   assert.ok(markup.includes(formatCurrency(34)));
+  assert.match(markup, /favorite-item-image" src="\/images\/vaso%201\.jpg"/);
+  assert.match(markup, /aria-label="Apri la scheda di Vaso Duna"/);
   assert.match(markup, /Cornice Atelier/);
   assert.ok(markup.includes(formatCurrency(29)));
   assert.equal(renderFavoritesMarkup([]), `<p class="empty-favorites">${EMPTY_FAVORITES_MESSAGE}</p>`);

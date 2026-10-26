@@ -37,7 +37,7 @@ import {
   renderFavoriteButtonMarkup,
   renderFavoritesMarkup,
   toggleFavoriteId
-} from '/favorites.js?v=20261025-favorites-black-2';
+} from '/favorites.js?v=20261026-favorites-list-images-1';
 
 const state = {
   products: PRODUCTS,
@@ -45,6 +45,7 @@ const state = {
   category: 'all',
   sort: 'featured',
   selectedProductId: null,
+  selectedProductSource: 'catalog',
   selectedProductImageIndex: 0,
   frameSelection: { ...INITIAL_FRAME_SELECTION },
   framePhoto: null,
@@ -130,14 +131,27 @@ function renderFavoritesPage() {
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
   categoryFilters.hidden = true;
+  cartPanel.hidden = true;
+  layout.classList.add('cart-panel-hidden');
+  productList.classList.remove('product-detail-list');
   productList.innerHTML = `
     <div class="favorites-page">
       ${renderFavoritesMarkup(
-        state.products.filter((product) => state.favoriteIds.includes(product.id))
+        state.products.filter((product) => state.favoriteIds.includes(product.id)),
+        PRODUCT_GALLERY_IMAGES
       )}
       <a class="back-button favorites-back-link" href="/scopri">Torna a Scopri</a>
     </div>
   `;
+
+  productList.querySelectorAll('.favorite-item').forEach((button) => {
+    button.addEventListener('click', () => {
+      state.selectedProductId = Number(button.dataset.productId);
+      state.selectedProductSource = 'favorites';
+      state.selectedProductImageIndex = 0;
+      renderProducts();
+    });
+  });
 }
 
 function toggleFavorite(productId) {
@@ -154,8 +168,9 @@ function renderCategoryFilters() {
         type="button"
         class="filter-chip ${state.category === category.value ? 'active' : ''}"
         data-category="${category.value}"
+        aria-pressed="${state.category === category.value}"
       >
-        ${category.label}
+        <span>${category.label}</span>
       </button>
     `
   ).join('')}
@@ -496,6 +511,20 @@ function renderPaymentPage() {
 
 function renderProducts() {
   renderCouponAvailability(calculateCartTotalCents(state.cart).subtotalCents);
+
+  if (
+    isFavoritesPage &&
+    state.selectedProductId !== null
+  ) {
+    const product = state.products.find((item) => item.id === state.selectedProductId);
+    if (product) {
+      lookSceneContainer.hidden = true;
+      renderProductDetail(product);
+      return;
+    }
+    state.selectedProductId = null;
+  }
+
   if (isFavoritesPage) {
     renderFavoritesPage();
     return;
@@ -586,6 +615,7 @@ function renderProducts() {
           productId: Number(button.dataset.productId)
         })
       );
+      state.selectedProductSource = 'catalog';
       state.selectedProductImageIndex = 0;
       renderProducts();
     });
@@ -620,6 +650,7 @@ function openProduct(productId) {
       productId
     })
   );
+  state.selectedProductSource = 'catalog';
   state.selectedProductImageIndex = 0;
   renderProducts();
 }
@@ -669,6 +700,13 @@ function renderProductDetail(product) {
   });
 
   productList.querySelector('.back-button').addEventListener('click', () => {
+    if (state.selectedProductSource === 'favorites') {
+      state.selectedProductId = null;
+      state.selectedProductSource = 'catalog';
+      renderProducts();
+      return;
+    }
+
     Object.assign(state, transitionCatalogView(state, { type: 'back-to-catalog' }));
     renderProducts();
   });
