@@ -74,6 +74,7 @@ const lookSceneContainer = document.querySelector('#look-scene-container');
 const productList = document.querySelector('#product-list');
 const cartPanel = document.querySelector('.cart-panel');
 const categoryFilters = document.querySelector('#category-filters');
+const categoryControls = document.querySelector('#category-controls');
 const frameConfiguratorLink = document.querySelector('#frame-configurator-link');
 const toolbar = document.querySelector('.toolbar');
 const searchInput = document.querySelector('#search-input');
@@ -132,7 +133,7 @@ function renderFavoritesPage() {
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
-  categoryFilters.hidden = true;
+  categoryControls.hidden = true;
   cartPanel.hidden = true;
   layout.classList.add('cart-panel-hidden');
   productList.classList.remove('product-detail-list');
@@ -192,7 +193,7 @@ function renderFrameConfiguratorPage() {
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
-  categoryFilters.hidden = true;
+  categoryControls.hidden = true;
   cartPanel.hidden = true;
   layout.classList.add('frame-configurator-layout');
   productList.classList.add('frame-configurator-container');
@@ -280,7 +281,7 @@ function renderCartPage() {
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
-  categoryFilters.hidden = true;
+  categoryControls.hidden = true;
   cartPanel.hidden = true;
   layout.classList.add('payment-layout');
   productList.classList.add('payment-page-container');
@@ -384,7 +385,7 @@ function renderPaymentPage() {
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
-  categoryFilters.hidden = true;
+  categoryControls.hidden = true;
   cartPanel.hidden = true;
   layout.classList.add('payment-layout');
   productList.classList.add('payment-page-container');
@@ -568,7 +569,7 @@ function renderProducts() {
   productList.classList.remove('product-detail-list');
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
-  categoryFilters.hidden = false;
+  categoryControls.hidden = false;
   cartPanel.hidden = true;
   layout.classList.add('cart-panel-hidden');
   layout.classList.remove('frame-configurator-layout');
@@ -666,7 +667,7 @@ function renderProductDetail(product) {
   pageTitle.textContent = product.name;
   productList.classList.add('product-detail-list');
   toolbar.hidden = true;
-  categoryFilters.hidden = true;
+  categoryControls.hidden = true;
 
   productList.innerHTML = renderProductDetailMarkup(
     product,
