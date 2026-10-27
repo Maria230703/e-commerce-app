@@ -586,11 +586,27 @@ button.add-button.is-added:hover {
 }
 
 .product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  grid-template-areas:
+    "back back"
+    "gallery title"
+    "gallery price"
+    "gallery information"
+    "gallery add";
+  align-items: start;
+  column-gap: 28px;
   max-width: 820px;
   padding: 8px 4px;
 }
 
+.product-detail > .back-button {
+  grid-area: back;
+  justify-self: start;
+}
+
 .product-gallery {
+  grid-area: gallery;
   margin-top: 24px;
 }
 
@@ -677,6 +693,7 @@ button.add-button.is-added:hover {
 }
 
 .product-detail h2 {
+  grid-area: title;
   margin: 28px 0 12px;
   font-size: 1.7rem;
 }
@@ -686,6 +703,7 @@ button.add-button.is-added:hover {
 }
 
 .product-detail-price-row {
+  grid-area: price;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -696,12 +714,17 @@ button.add-button.is-added:hover {
 }
 
 .product-detail-information {
+  grid-area: information;
   display: grid;
   gap: 8px;
   margin: 16px 0;
   color: var(--muted);
   line-height: 1.6;
   font-size: 1.05rem;
+}
+
+.product-detail-add-button {
+  grid-area: add;
 }
 
 .product-detail-information-row {
@@ -1228,6 +1251,26 @@ select:focus-visible {
 }
 
 @media (max-width: 640px) {
+  .product-detail {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "back"
+      "gallery"
+      "title"
+      "price"
+      "information"
+      "add";
+    row-gap: 0;
+  }
+
+  .product-detail h2 {
+    margin-top: 28px;
+  }
+
+  .product-gallery {
+    margin-top: 24px;
+  }
+
   .product-gallery-arrow {
     width: 36px;
     height: 36px;
