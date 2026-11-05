@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { statSync } from 'node:fs';
 
 import {
   CATEGORIES,
@@ -9,7 +10,11 @@ import {
   calculateCartTotal,
   transitionCatalogView
 } from '../catalog-logic.js';
-import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup } from '../public/product-detail.js';
+import {
+  PRODUCT_GALLERY_IMAGES,
+  PRODUCT_GALLERY_IMAGE_DIMENSIONS,
+  renderProductDetailMarkup
+} from '../public/product-detail.js';
 import { renderAddToCartButton } from '../public/cart-ui.js';
 import {
   CART_STORAGE_KEY,
@@ -55,7 +60,7 @@ test('la scena Compra il look compare prima del catalogo con quattro pulsanti ac
   assert.match(markup, /<h2 id="look-scene-title">Compra il look<\/h2>/);
   assert.match(markup, /<span>Angolo soggiorno<\/span>/);
   assert.match(markup, /Tocca i punti per scoprire gli oggetti della scena\./);
-  assert.match(markup, /<img\s+class="look-room-image"\s+src="\/images\/Gemini_Generated_Image_agbiq5agbiq5agbi\.jpg"/);
+  assert.match(markup, /<img\s+class="look-room-image"\s+src="\/images\/scena-soggiorno\.jpg"/);
   assert.equal((markup.match(/class="look-hotspot look-hotspot-/g) ?? []).length, 4);
   assert.ok(
     LOOK_SCENE_PRODUCTS.every(({ id, name }) =>
@@ -174,6 +179,16 @@ test('lo stato Aggiunto resta sincronizzato col carrello persistente e torna Agg
   assert.match(renderAddToCartButton(product, isItemInCart(emptyCart, product.id)), />Aggiungi<\/button>/);
 });
 
+test('il carrello vuoto viene ripristinato se il JSON salvato è corrotto o non è un elenco', () => {
+  for (const value of ['{', JSON.stringify({ id: 1, quantity: 1 })]) {
+    const storage = {
+      getItem: (key) => key === CART_STORAGE_KEY ? value : null
+    };
+
+    assert.deepEqual(restoreCart(storage), []);
+  }
+});
+
 test('il cuore della scheda ha stato e nome accessibile e resta accanto al prezzo', () => {
   const product = PRODUCTS.find(({ id }) => id === 1);
   const inactiveMarkup = renderProductDetailMarkup(product);
@@ -217,15 +232,27 @@ test('i preferiti vengono mantenuti in localStorage e i prodotti rimossi dal cat
   assert.deepEqual(readFavoriteIds({ getItem: () => null }, PRODUCTS), []);
 });
 
+test('i preferiti vuoti vengono ripristinati se il JSON salvato è corrotto o non è un elenco', () => {
+  for (const value of ['{', JSON.stringify({ ids: [4] })]) {
+    const storage = {
+      getItem: (key) => key === FAVORITES_STORAGE_KEY ? value : null
+    };
+
+    assert.deepEqual(readFavoriteIds(storage, PRODUCTS), []);
+  }
+});
+
 test('la pagina Preferiti mostra nome e prezzo oppure il messaggio vuoto richiesto', () => {
   const markup = renderFavoritesMarkup(
     PRODUCTS.filter(({ id }) => [4, 6].includes(id)),
-    PRODUCT_GALLERY_IMAGES
+    PRODUCT_GALLERY_IMAGES,
+    PRODUCT_GALLERY_IMAGE_DIMENSIONS
   );
 
   assert.match(markup, /Vaso Duna/);
   assert.ok(markup.includes(formatCurrency(34)));
-  assert.match(markup, /favorite-item-image" src="\/images\/vaso%201\.jpg"/);
+  assert.match(markup, /favorite-item-image" src="\/images\/vaso-1\.jpg"/);
+  assert.match(markup, /loading="lazy" width="896" height="1200"/);
   assert.match(markup, /aria-label="Apri la scheda di Vaso Duna"/);
   assert.match(markup, /Cornice Atelier/);
   assert.ok(markup.includes(formatCurrency(29)));
@@ -252,29 +279,30 @@ test('la galleria di Lampada Lume mostra quattro foto con frecce e miniature sel
   assert.equal(PRODUCT_GALLERY_IMAGES[product.id].length, 4);
   assert.match(firstPhotoMarkup, /aria-label="Foto precedente"/);
   assert.match(firstPhotoMarkup, /aria-label="Foto successiva"/);
-  assert.match(firstPhotoMarkup, /src="\/images\/lampada%201\.jpg"[\s\S]*alt="Lampada Lume, foto 1 di 4"/);
+  assert.match(firstPhotoMarkup, /src="\/images\/lampada-1\.jpg"[\s\S]*alt="Lampada Lume, foto 1 di 4"/);
+  assert.match(firstPhotoMarkup, /loading="lazy"[\s\S]*width="896"[\s\S]*height="1200"/);
   assert.equal((firstPhotoMarkup.match(/data-gallery-index="/g) ?? []).length, 4);
   assert.match(firstPhotoMarkup, /data-gallery-index="0"[\s\S]*aria-pressed="true"/);
-  assert.match(thirdPhotoMarkup, /src="\/images\/lampada\.jpg"[\s\S]*alt="Lampada Lume, foto 3 di 4"/);
+  assert.match(thirdPhotoMarkup, /src="\/images\/lampada-3\.jpg"[\s\S]*alt="Lampada Lume, foto 3 di 4"/);
   assert.match(thirdPhotoMarkup, /class="product-gallery-thumbnail is-selected"[\s\S]*data-gallery-index="2"[\s\S]*aria-pressed="true"/);
 });
 
 test('le gallerie usano tutte le foto disponibili nell’ordine corretto', () => {
   assert.deepEqual(PRODUCT_GALLERY_IMAGES, {
     1: [
-      '/images/lampada 1.jpg',
-      '/images/lampada 2.jpg',
-      '/images/lampada.jpg',
-      '/images/lampada 4.jpg'
+      '/images/lampada-1.jpg',
+      '/images/lampada-2.jpg',
+      '/images/lampada-3.jpg',
+      '/images/lampada-4.jpg'
     ],
-    2: ['/images/specchio 1.jpg', '/images/specchio 2.jpg'],
-    3: ['/images/portavaso 1.jpg', '/images/portavaso 2.jpg', '/images/portavaso 3.jpg'],
-    4: ['/images/vaso 1.jpg', '/images/vaso 2.jpg', '/images/vaso 3.jpg'],
-    5: ['/images/candela 1.jpg', '/images/candela 2.jpg', '/images/candela 3.jpg'],
-    6: ['/images/immagine cornice 1.jpg', '/images/immagine cornice 2.jpg']
+    2: ['/images/specchio-1.jpg', '/images/specchio-2.jpg'],
+    3: ['/images/portavaso-1.jpg', '/images/portavaso-2.jpg', '/images/portavaso-3.jpg'],
+    4: ['/images/vaso-1.jpg', '/images/vaso-2.jpg', '/images/vaso-3.jpg'],
+    5: ['/images/candela-1.jpg', '/images/candela-2.jpg', '/images/candela-3.jpg'],
+    6: ['/images/cornice-1.jpg', '/images/cornice-2.jpg']
   });
   const frameMarkup = renderProductDetailMarkup(PRODUCTS.find(({ id }) => id === 6));
-  assert.match(frameMarkup, /src="\/images\/immagine%20cornice%201\.jpg"/);
+  assert.match(frameMarkup, /src="\/images\/cornice-1\.jpg"/);
 
   for (const product of PRODUCTS) {
     const images = PRODUCT_GALLERY_IMAGES[product.id];
@@ -285,6 +313,21 @@ test('le gallerie usano tutte le foto disponibili nell’ordine corretto', () =>
     assert.match(markup, new RegExp(`aria-label="Galleria immagini ${product.name}"`));
     assert.equal((markup.match(/data-gallery-index="/g) ?? []).length, images.length);
   }
+});
+
+test('tutte le immagini pubbliche usate restano entro 200 KB e hanno dimensioni esplicite', () => {
+  const imagePaths = [
+    ...Object.values(PRODUCT_GALLERY_IMAGES).flat(),
+    '/images/scena-soggiorno.jpg'
+  ];
+
+  for (const imagePath of imagePaths) {
+    const imageUrl = new URL(`../public${imagePath}`, import.meta.url);
+    assert.ok(statSync(imageUrl).size <= 200_000, `${imagePath} deve pesare al massimo 200 KB`);
+  }
+
+  const lookSceneMarkup = renderLookScene();
+  assert.match(lookSceneMarkup, /loading="lazy"[\s\S]*width="1200"[\s\S]*height="801"/);
 });
 
 test('ogni articolo usa la prima foto della galleria come immagine principale', () => {

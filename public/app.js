@@ -7,7 +7,11 @@ import {
   calculateCartTotalCents,
   transitionCatalogView
 } from '/catalog-logic.js';
-import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup } from '/product-detail.js';
+import {
+  PRODUCT_GALLERY_IMAGES,
+  PRODUCT_GALLERY_IMAGE_DIMENSIONS,
+  renderProductDetailMarkup
+} from '/product-detail.js';
 import { renderAddToCartButton } from '/cart-ui.js';
 import { renderLookScene } from '/look-scene.js';
 import {
@@ -37,15 +41,22 @@ import {
   renderFavoriteButtonMarkup,
   renderFavoritesMarkup,
   toggleFavoriteId
-} from '/favorites.js?v=20261026-favorites-list-images-1';
+} from '/favorites.js?v=20261105-favorites-image-optimization-1';
+
+const requestedProductId = Number(new URLSearchParams(window.location.search).get('prodotto'));
+const initialProductId = PRODUCTS.some(({ id }) => id === requestedProductId)
+  ? requestedProductId
+  : null;
 
 const state = {
   products: PRODUCTS,
   search: '',
   category: 'all',
   sort: 'featured',
-  selectedProductId: null,
-  selectedProductSource: 'catalog',
+  selectedProductId: initialProductId,
+  selectedProductSource: window.location.pathname === '/preferiti' && initialProductId !== null
+    ? 'favorites'
+    : 'catalog',
   selectedProductImageIndex: 0,
   frameSelection: { ...INITIAL_FRAME_SELECTION },
   framePhoto: null,
@@ -90,6 +101,77 @@ const checkoutButton = document.querySelector('#cart-checkout-button');
 const couponContainer = document.querySelector('#coupon-container');
 const couponCopy = document.querySelector('#coupon-copy');
 const couponCopyFeedback = document.querySelector('#coupon-copy-feedback');
+let currentViewKey = null;
+
+function setPageView(title, viewKey) {
+  const viewChanged = currentViewKey !== viewKey;
+  currentViewKey = viewKey;
+  pageTitle.textContent = title;
+  document.title = `${title} | E-commerce`;
+
+  if (viewChanged) {
+    pageTitle.focus({ preventScroll: true });
+  }
+}
+
+function replaceMarkupPreservingFocus(container, markup) {
+  const activeElement = document.activeElement;
+  const activeIsContainer = activeElement === container;
+  const shouldRestoreFocus = activeElement instanceof HTMLElement && container.contains(activeElement);
+  const focusAttributes = shouldRestoreFocus
+    ? [...activeElement.attributes].filter(({ name }) => (
+      name === 'id' ||
+      name === 'name' ||
+      name === 'type' ||
+      name === 'value' ||
+      name.startsWith('data-')
+    ))
+    : [];
+  const focusIdentity = shouldRestoreFocus
+    ? {
+      tagName: activeElement.tagName,
+      classNames: [...activeElement.classList].filter((className) => (
+        !['active', 'is-added', 'is-favorite', 'is-selected'].includes(className)
+      )),
+      attributes: focusAttributes.map(({ name, value }) => [name, value])
+    }
+    : null;
+
+  container.innerHTML = markup;
+
+  if (activeIsContainer) {
+    container.focus();
+    return;
+  }
+
+  if (!focusIdentity) {
+    return;
+  }
+
+  const candidates = [...container.querySelectorAll(focusIdentity.tagName.toLowerCase())];
+  const replacement = candidates.find((candidate) => {
+    if (focusIdentity.attributes.length) {
+      return focusIdentity.attributes.every(([name, value]) => candidate.getAttribute(name) === value) &&
+        focusIdentity.classNames.every((className) => candidate.classList.contains(className));
+    }
+    return focusIdentity.classNames.length
+      ? focusIdentity.classNames.every((className) => candidate.classList.contains(className))
+      : candidate.className === '';
+  });
+  const fallback = container.querySelector('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled])');
+  (replacement ?? fallback ?? pageTitle).focus();
+}
+
+function productIdFromUrl() {
+  const productId = Number(new URLSearchParams(window.location.search).get('prodotto'));
+  return PRODUCTS.some(({ id }) => id === productId) ? productId : null;
+}
+
+function updateProductUrl(productId, method = 'pushState') {
+  const url = new URL(window.location.href);
+  url.searchParams.set('prodotto', String(productId));
+  window.history[method]({ productId }, '', `${url.pathname}${url.search}${url.hash}`);
+}
 
 function persistCart() {
   saveCart(window.localStorage, state.cart);
@@ -129,7 +211,7 @@ function renderFavoriteCount() {
 }
 
 function renderFavoritesPage() {
-  pageTitle.textContent = 'Preferiti';
+  setPageView('Preferiti', 'favorites');
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
@@ -137,22 +219,20 @@ function renderFavoritesPage() {
   cartPanel.hidden = true;
   layout.classList.add('cart-panel-hidden');
   productList.classList.remove('product-detail-list');
-  productList.innerHTML = `
+  replaceMarkupPreservingFocus(productList, `
     <div class="favorites-page">
       ${renderFavoritesMarkup(
         state.products.filter((product) => state.favoriteIds.includes(product.id)),
-        PRODUCT_GALLERY_IMAGES
+        PRODUCT_GALLERY_IMAGES,
+        PRODUCT_GALLERY_IMAGE_DIMENSIONS
       )}
       <a class="back-button favorites-back-link" href="/scopri">Torna a Scopri</a>
     </div>
-  `;
+  `);
 
   productList.querySelectorAll('.favorite-item').forEach((button) => {
     button.addEventListener('click', () => {
-      state.selectedProductId = Number(button.dataset.productId);
-      state.selectedProductSource = 'favorites';
-      state.selectedProductImageIndex = 0;
-      renderProducts();
+      openProduct(Number(button.dataset.productId), 'favorites');
     });
   });
 }
@@ -165,7 +245,7 @@ function toggleFavorite(productId) {
 }
 
 function renderCategoryFilters() {
-  categoryFilters.innerHTML = `${CATEGORIES.map(
+  replaceMarkupPreservingFocus(categoryFilters, `${CATEGORIES.map(
     (category) => `
       <button
         type="button"
@@ -177,7 +257,7 @@ function renderCategoryFilters() {
       </button>
     `
   ).join('')}
-  `;
+  `);
 
   categoryFilters.querySelectorAll('.filter-chip').forEach((button) => {
     button.addEventListener('click', () => {
@@ -189,7 +269,7 @@ function renderCategoryFilters() {
 }
 
 function renderFrameConfiguratorPage() {
-  pageTitle.textContent = 'Crea la tua cornice';
+  setPageView('Crea la tua cornice', 'frame-configurator');
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
@@ -197,11 +277,11 @@ function renderFrameConfiguratorPage() {
   cartPanel.hidden = true;
   layout.classList.add('frame-configurator-layout');
   productList.classList.add('frame-configurator-container');
-  productList.innerHTML = renderFrameConfiguratorMarkup(
+  replaceMarkupPreservingFocus(productList, renderFrameConfiguratorMarkup(
     state.frameSelection,
     state.framePhoto,
     state.framePhotoError
-  );
+  ));
 
   productList.querySelectorAll('.frame-option').forEach((button) => {
     button.addEventListener('click', () => {
@@ -254,9 +334,9 @@ function renderFrameConfiguratorPage() {
   const frameInCart = isItemInCart(state.cart, frameId);
   const addFrameButton = productList.querySelector('.frame-add-button');
   addFrameButton.classList.toggle('is-added', frameInCart);
-  addFrameButton.innerHTML = frameInCart
+  replaceMarkupPreservingFocus(addFrameButton, frameInCart
     ? '<svg class="add-button-check" aria-hidden="true" viewBox="0 0 16 16" focusable="false"><path d="m3 8 3.2 3.2L13 4.5"/></svg><span>Aggiunto</span>'
-    : 'Aggiungi';
+    : 'Aggiungi');
   addFrameButton.setAttribute('aria-label', frameInCart
     ? 'Rimuovi cornice su misura dal carrello'
     : 'Aggiungi cornice su misura al carrello');
@@ -277,7 +357,7 @@ function renderFrameConfiguratorPage() {
 }
 
 function renderCartPage() {
-  pageTitle.textContent = 'Il tuo carrello';
+  setPageView('Il tuo carrello', 'cart');
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
@@ -285,7 +365,7 @@ function renderCartPage() {
   cartPanel.hidden = true;
   layout.classList.add('payment-layout');
   productList.classList.add('payment-page-container');
-  productList.innerHTML = renderCartPageMarkup(state.cart, state.couponCode);
+  replaceMarkupPreservingFocus(productList, renderCartPageMarkup(state.cart, state.couponCode));
 
   productList.querySelectorAll('[data-cart-action]').forEach((button) => {
     button.addEventListener('click', () => {
@@ -381,7 +461,7 @@ async function createOrder(paymentMethod) {
 }
 
 function renderPaymentPage() {
-  pageTitle.textContent = 'Pagamento';
+  setPageView('Pagamento', `payment-${state.paymentStage}`);
   frameConfiguratorLink.hidden = true;
   lookSceneContainer.hidden = true;
   toolbar.hidden = true;
@@ -389,7 +469,7 @@ function renderPaymentPage() {
   cartPanel.hidden = true;
   layout.classList.add('payment-layout');
   productList.classList.add('payment-page-container');
-  productList.innerHTML = renderPaymentPageMarkup({
+  replaceMarkupPreservingFocus(productList, renderPaymentPageMarkup({
     items: state.cart,
     selectedMethod: state.selectedPaymentMethod,
     errors: state.paymentErrors,
@@ -398,7 +478,7 @@ function renderPaymentPage() {
     couponCode: state.couponCode,
     couponInput: state.couponInput,
     couponError: state.couponMessage
-  });
+  }));
 
   if (state.paymentStage === 'confirmation' || !state.cart.length) {
     return;
@@ -564,7 +644,7 @@ function renderProducts() {
     state.selectedProductId = null;
   }
 
-  pageTitle.textContent = 'Scopri';
+  setPageView('Scopri', 'catalog');
   frameConfiguratorLink.hidden = false;
   productList.classList.remove('product-detail-list');
   lookSceneContainer.hidden = false;
@@ -582,18 +662,19 @@ function renderProducts() {
   });
 
   if (!filteredProducts.length) {
-    productList.innerHTML = '<div class="empty-cart">Nessun prodotto trovato con i filtri correnti.</div>';
+    replaceMarkupPreservingFocus(productList, '<div class="empty-cart">Nessun prodotto trovato con i filtri correnti.</div>');
     return;
   }
 
-  productList.innerHTML = filteredProducts.map((product) => {
+  replaceMarkupPreservingFocus(productList, filteredProducts.map((product) => {
     const mainImage = PRODUCT_GALLERY_IMAGES[product.id]?.[0];
+    const mainImageDimensions = PRODUCT_GALLERY_IMAGE_DIMENSIONS[product.id]?.[0];
 
     return `
       <article class="product-card">
         <button class="product-detail-button" type="button" data-product-id="${product.id}">
           <div class="product-image" data-product-id="${product.id}">
-            ${mainImage ? `<img src="${encodeURI(mainImage)}" alt="">` : ''}
+            ${mainImage ? `<img src="${encodeURI(mainImage)}" alt="" loading="lazy" width="${mainImageDimensions.width}" height="${mainImageDimensions.height}">` : ''}
           </div>
           <div class="product-body">
             <div class="product-top">
@@ -612,20 +693,11 @@ function renderProducts() {
         </div>
       </article>
     `;
-  }).join('');
+  }).join(''));
 
   productList.querySelectorAll('.product-detail-button').forEach((button) => {
     button.addEventListener('click', () => {
-      Object.assign(
-        state,
-        transitionCatalogView(state, {
-          type: 'open-product',
-          productId: Number(button.dataset.productId)
-        })
-      );
-      state.selectedProductSource = 'catalog';
-      state.selectedProductImageIndex = 0;
-      renderProducts();
+      openProduct(Number(button.dataset.productId));
     });
   });
 
@@ -650,7 +722,7 @@ function renderProducts() {
   });
 }
 
-function openProduct(productId) {
+function openProduct(productId, source = 'catalog') {
   Object.assign(
     state,
     transitionCatalogView(state, {
@@ -658,23 +730,43 @@ function openProduct(productId) {
       productId
     })
   );
-  state.selectedProductSource = 'catalog';
+  state.selectedProductSource = source;
   state.selectedProductImageIndex = 0;
+  updateProductUrl(productId);
+  renderProducts();
+}
+
+function closeProduct() {
+  if (window.history.state?.productId === state.selectedProductId) {
+    window.history.back();
+    return;
+  }
+
+  const url = new URL(window.location.href);
+  url.searchParams.delete('prodotto');
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+
+  if (state.selectedProductSource === 'favorites') {
+    state.selectedProductId = null;
+    state.selectedProductSource = 'catalog';
+  } else {
+    Object.assign(state, transitionCatalogView(state, { type: 'back-to-catalog' }));
+  }
   renderProducts();
 }
 
 function renderProductDetail(product) {
-  pageTitle.textContent = product.name;
+  setPageView(product.name, `product-${product.id}`);
   productList.classList.add('product-detail-list');
   toolbar.hidden = true;
   categoryControls.hidden = true;
 
-  productList.innerHTML = renderProductDetailMarkup(
+  replaceMarkupPreservingFocus(productList, renderProductDetailMarkup(
     product,
     state.favoriteIds.includes(product.id),
     isItemInCart(state.cart, product.id),
     state.selectedProductImageIndex
-  );
+  ));
 
   const galleryImages = PRODUCT_GALLERY_IMAGES[product.id] ?? [];
   const selectGalleryImage = (index) => {
@@ -708,15 +800,7 @@ function renderProductDetail(product) {
   });
 
   productList.querySelector('.back-button').addEventListener('click', () => {
-    if (state.selectedProductSource === 'favorites') {
-      state.selectedProductId = null;
-      state.selectedProductSource = 'catalog';
-      renderProducts();
-      return;
-    }
-
-    Object.assign(state, transitionCatalogView(state, { type: 'back-to-catalog' }));
-    renderProducts();
+    closeProduct();
   });
 
   productList.querySelector('.favorite-button').addEventListener('click', () => {
@@ -740,7 +824,7 @@ function toggleProductInCart(product) {
   renderCart();
 }
 
-lookSceneContainer.innerHTML = renderLookScene();
+replaceMarkupPreservingFocus(lookSceneContainer, renderLookScene());
 lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
   button.addEventListener('click', () => {
     openProduct(Number(button.dataset.productId));
@@ -757,9 +841,9 @@ function renderCart() {
   );
 
   if (!state.cart.length) {
-    cartItems.innerHTML = '<div class="empty-cart">Il carrello è vuoto.</div>';
+    replaceMarkupPreservingFocus(cartItems, '<div class="empty-cart">Il carrello è vuoto.</div>');
   } else {
-    cartItems.innerHTML = state.cart.map((item) => `
+    replaceMarkupPreservingFocus(cartItems, state.cart.map((item) => `
       <div class="cart-item">
         <div class="cart-item-name">
           <strong>${item.name}</strong>
@@ -773,7 +857,7 @@ function renderCart() {
           <button class="cart-remove-button" type="button" data-cart-action="remove" data-product-id="${item.id}">Rimuovi</button>
         </div>
       </div>
-      `).join('');
+      `).join(''));
   }
 
   subtotalEl.textContent = formatCurrencyCents(subtotalCents);
@@ -784,7 +868,7 @@ function renderCart() {
       discountRow = document.createElement('div');
       discountRow.id = 'cart-discount';
       discountRow.className = 'row';
-      discountRow.innerHTML = '<span>Sconto coupon</span><strong></strong>';
+      replaceMarkupPreservingFocus(discountRow, '<span>Sconto coupon</span><strong></strong>');
       totalEl.closest('.totals').insertBefore(discountRow, totalEl.closest('.total-row'));
     }
     discountRow.querySelector('strong').textContent = `−${formatCurrencyCents(discountCents)}`;
@@ -812,6 +896,15 @@ function renderCart() {
 
 searchInput.addEventListener('input', (event) => {
   state.search = event.target.value;
+  renderProducts();
+});
+
+window.addEventListener('popstate', () => {
+  state.selectedProductId = productIdFromUrl();
+  state.selectedProductSource = state.selectedProductId !== null && isFavoritesPage
+    ? 'favorites'
+    : 'catalog';
+  state.selectedProductImageIndex = 0;
   renderProducts();
 });
 

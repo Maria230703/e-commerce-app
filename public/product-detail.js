@@ -1,18 +1,32 @@
 import { formatCurrency } from '../catalog-logic.js';
-import { renderFavoriteButtonMarkup } from './favorites.js?v=20261026-favorites-list-images-1';
+import { renderFavoriteButtonMarkup } from './favorites.js?v=20261105-favorites-image-optimization-1';
 
 export const PRODUCT_GALLERY_IMAGES = {
   1: [
-    '/images/lampada 1.jpg',
-    '/images/lampada 2.jpg',
-    '/images/lampada.jpg',
-    '/images/lampada 4.jpg'
+    '/images/lampada-1.jpg',
+    '/images/lampada-2.jpg',
+    '/images/lampada-3.jpg',
+    '/images/lampada-4.jpg'
   ],
-  2: ['/images/specchio 1.jpg', '/images/specchio 2.jpg'],
-  3: ['/images/portavaso 1.jpg', '/images/portavaso 2.jpg', '/images/portavaso 3.jpg'],
-  4: ['/images/vaso 1.jpg', '/images/vaso 2.jpg', '/images/vaso 3.jpg'],
-  5: ['/images/candela 1.jpg', '/images/candela 2.jpg', '/images/candela 3.jpg'],
-  6: ['/images/immagine cornice 1.jpg', '/images/immagine cornice 2.jpg']
+  2: ['/images/specchio-1.jpg', '/images/specchio-2.jpg'],
+  3: ['/images/portavaso-1.jpg', '/images/portavaso-2.jpg', '/images/portavaso-3.jpg'],
+  4: ['/images/vaso-1.jpg', '/images/vaso-2.jpg', '/images/vaso-3.jpg'],
+  5: ['/images/candela-1.jpg', '/images/candela-2.jpg', '/images/candela-3.jpg'],
+  6: ['/images/cornice-1.jpg', '/images/cornice-2.jpg']
+};
+
+export const PRODUCT_GALLERY_IMAGE_DIMENSIONS = {
+  1: [
+    { width: 896, height: 1200 },
+    { width: 896, height: 1200 },
+    { width: 1200, height: 896 },
+    { width: 896, height: 1200 }
+  ],
+  2: [{ width: 896, height: 1200 }, { width: 896, height: 1200 }],
+  3: [{ width: 896, height: 1200 }, { width: 896, height: 1200 }, { width: 896, height: 1200 }],
+  4: [{ width: 896, height: 1200 }, { width: 896, height: 1200 }, { width: 896, height: 1200 }],
+  5: [{ width: 896, height: 1200 }, { width: 896, height: 1200 }, { width: 896, height: 1200 }],
+  6: [{ width: 1200, height: 654 }, { width: 1200, height: 654 }]
 };
 
 const PRODUCT_MATERIALS = {
@@ -40,6 +54,7 @@ function renderProductGallery(product, activeImageIndex) {
   }
 
   const selectedIndex = ((activeImageIndex % images.length) + images.length) % images.length;
+  const imageDimensions = PRODUCT_GALLERY_IMAGE_DIMENSIONS[product.id];
 
   return `
     <section class="product-gallery" aria-label="Galleria immagini ${product.name}">
@@ -49,6 +64,9 @@ function renderProductGallery(product, activeImageIndex) {
           class="product-gallery-image"
           src="${encodeURI(images[selectedIndex])}"
           alt="${product.name}, foto ${selectedIndex + 1} di ${images.length}"
+          loading="lazy"
+          width="${imageDimensions[selectedIndex].width}"
+          height="${imageDimensions[selectedIndex].height}"
           data-gallery-main-image
         >
         <button class="product-gallery-arrow" type="button" data-gallery-action="next" aria-label="Foto successiva">›</button>
@@ -62,7 +80,7 @@ function renderProductGallery(product, activeImageIndex) {
             aria-label="Mostra foto ${index + 1}"
             aria-pressed="${index === selectedIndex}"
           >
-            <img src="${encodeURI(image)}" alt="">
+            <img src="${encodeURI(image)}" alt="" loading="lazy" width="${imageDimensions[index].width}" height="${imageDimensions[index].height}">
           </button>
         `).join('')}
       </div>
