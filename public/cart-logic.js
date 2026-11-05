@@ -13,15 +13,9 @@ export function restoreCart(storage, products = PRODUCTS) {
     return [];
   }
 
-  let storedItems;
-  try {
-    storedItems = JSON.parse(storedValue);
-  } catch {
-    return [];
-  }
-
+  const storedItems = JSON.parse(storedValue);
   if (!Array.isArray(storedItems)) {
-    return [];
+    throw new TypeError('Il carrello salvato deve essere un elenco di articoli.');
   }
 
   return storedItems.flatMap((storedItem) => {

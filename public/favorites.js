@@ -11,15 +11,10 @@ export function readFavoriteIds(storage, products) {
     return [];
   }
 
-  let favoriteIds;
-  try {
-    favoriteIds = JSON.parse(storedValue);
-  } catch {
-    return [];
-  }
+  const favoriteIds = JSON.parse(storedValue);
 
   if (!Array.isArray(favoriteIds)) {
-    return [];
+    throw new TypeError('I preferiti salvati devono essere un elenco di ID.');
   }
 
   const productIds = new Set(products.map(({ id }) => id));
@@ -59,7 +54,7 @@ export function renderFavoriteButtonMarkup(product, isFavorite) {
   `;
 }
 
-export function renderFavoritesMarkup(products, productImages = {}, imageDimensions = {}) {
+export function renderFavoritesMarkup(products, productImages = {}) {
   if (!products.length) {
     return `<p class="empty-favorites">${EMPTY_FAVORITES_MESSAGE}</p>`;
   }
@@ -72,7 +67,7 @@ export function renderFavoritesMarkup(products, productImages = {}, imageDimensi
       aria-label="Apri la scheda di ${product.name}"
     >
       ${productImages[product.id]?.[0]
-        ? `<img class="favorite-item-image" src="${encodeURI(productImages[product.id][0])}" alt="" loading="lazy" width="${imageDimensions[product.id]?.[0]?.width ?? 896}" height="${imageDimensions[product.id]?.[0]?.height ?? 1200}">`
+        ? `<img class="favorite-item-image" src="${encodeURI(productImages[product.id][0])}" alt="">`
         : ''}
       <span class="favorite-item-details">
         <span class="favorite-item-name">${product.name}</span>

@@ -26,11 +26,8 @@ export function renderLookScene() {
       <div class="look-room">
         <img
           class="look-room-image"
-          src="/images/scena-soggiorno.jpg"
+          src="/images/Gemini_Generated_Image_agbiq5agbiq5agbi.jpg"
           alt="Soggiorno con cornice, vaso e lampada sopra un tavolo e portavaso in rattan"
-          loading="lazy"
-          width="1200"
-          height="801"
         >
         ${hotspots}
       </div>
