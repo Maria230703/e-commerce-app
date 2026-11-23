@@ -117,12 +117,34 @@ export function calculateCartTotal(items = []) {
   };
 }
 
+export const FREE_SHIPPING_THRESHOLD_CENTS = 7900;
+export const SHIPPING_COST_CENTS = 490;
+
+// §REQ:SPDZ-STP-020, §REQ:SPDZ-STP-030
+export function getFreeShippingProgress(subtotalCents) {
+  if (!(subtotalCents > 0)) {
+    return { visible: false, unlocked: false, remainingCents: 0, message: '' };
+  }
+  if (subtotalCents >= FREE_SHIPPING_THRESHOLD_CENTS) {
+    return { visible: true, unlocked: true, remainingCents: 0, message: 'Spedizione gratuita sbloccata' };
+  }
+  const remainingCents = FREE_SHIPPING_THRESHOLD_CENTS - subtotalCents;
+  const amount = (remainingCents / 100).toFixed(2).replace('.', ',');
+  return {
+    visible: true,
+    unlocked: false,
+    remainingCents,
+    message: `Ti mancano ${amount} euro per la spedizione gratuita`
+  };
+}
+
+// §REQ:SPDZ-STP-010, §REQ:SPDZ-STP-040, §REQ:SPDZ-STP-050
 export function calculateCartTotalCents(items = []) {
   const subtotalCents = items.reduce(
     (sum, item) => sum + Math.round(item.price * 100) * item.quantity,
     0
   );
-  const shippingCents = subtotalCents > 0 && subtotalCents < 7900 ? 490 : 0;
+  const shippingCents = subtotalCents > 0 && subtotalCents < FREE_SHIPPING_THRESHOLD_CENTS ? SHIPPING_COST_CENTS : 0;
 
   return {
     subtotalCents,

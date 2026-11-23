@@ -1,4 +1,4 @@
-import { formatCurrencyCents } from '../catalog-logic.js';
+import { formatCurrencyCents, getFreeShippingProgress } from '../catalog-logic.js';
 import { calculateDiscountedCartTotals } from './coupon-logic.js';
 import { EUROPEAN_PHONE_PREFIXES, PAYMENT_METHODS } from './payment-logic.js';
 
@@ -31,6 +31,14 @@ function renderOrderSummary(items, couponCode) {
       <div class="payment-summary-row total-row"><span>Totale</span><strong>${formatCurrencyCents(totals.totalCents)}</strong></div>
     </section>
   `;
+}
+
+// §REQ:SPDZ-STP-020, §REQ:SPDZ-STP-030
+export function renderFreeShippingBar(subtotalCents) {
+  const progress = getFreeShippingProgress(subtotalCents);
+  return progress.visible
+    ? `<p class="free-shipping-bar${progress.unlocked ? ' is-unlocked' : ''}" role="status">${progress.message}</p>`
+    : '';
 }
 
 function renderShippingField(name, label, type, error, autocomplete, value = '') {
@@ -209,6 +217,7 @@ export function renderCartPageMarkup(items, couponCode = '') {
         `).join('')}
       </div>
       <div class="totals">
+        ${renderFreeShippingBar(totals.subtotalCents)}
         <div class="row"><span>Subtotale</span><strong>${formatCurrencyCents(totals.subtotalCents)}</strong></div>
         <div class="row"><span>Spedizione</span><strong>${formatCurrencyCents(totals.shippingCents)}</strong></div>
         ${totals.discountCents > 0 ? `<div class="row"><span>Sconto coupon</span><strong>−${formatCurrencyCents(totals.discountCents)}</strong></div>` : ''}

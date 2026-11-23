@@ -1310,3 +1310,14 @@ select:focus-visible {
     padding: 8px 10px;
   }
 }
+
+.free-shipping-bar {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #6b5b4b;
+}
+
+.free-shipping-bar.is-unlocked {
+  color: #2f6b3f;
+  font-weight: 600;
+}

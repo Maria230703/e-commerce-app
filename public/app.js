@@ -5,7 +5,8 @@ import {
   formatCurrency,
   formatCurrencyCents,
   calculateCartTotalCents,
-  transitionCatalogView
+  transitionCatalogView,
+  getFreeShippingProgress
 } from '/catalog-logic.js';
 import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup, stepGalleryIndex } from '/product-detail.js';
 import { renderAddToCartButton } from '/cart-ui.js';
@@ -86,6 +87,7 @@ const sortSelect = document.querySelector('#sort-select');
 const cartItems = document.querySelector('#cart-items');
 const subtotalEl = document.querySelector('#subtotal');
 const shippingEl = document.querySelector('#shipping');
+const freeShippingEl = document.querySelector('#free-shipping');
 const totalEl = document.querySelector('#total');
 const cartCountEl = document.querySelector('#cart-count');
 const itemsCountEl = document.querySelector('#items-count');
@@ -776,6 +778,11 @@ function renderCart() {
 
   subtotalEl.textContent = formatCurrencyCents(subtotalCents);
   shippingEl.textContent = formatCurrencyCents(shippingCents);
+  // §REQ:SPDZ-STP-020, §REQ:SPDZ-STP-030
+  const freeShipping = getFreeShippingProgress(subtotalCents);
+  freeShippingEl.hidden = !freeShipping.visible;
+  freeShippingEl.textContent = freeShipping.message;
+  freeShippingEl.classList.toggle('is-unlocked', freeShipping.unlocked);
   let discountRow = document.querySelector('#cart-discount');
   if (discountCents > 0) {
     if (!discountRow) {
