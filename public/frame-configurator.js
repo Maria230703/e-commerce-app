@@ -34,6 +34,8 @@ function escapeHtml(value) {
   })[character]);
 }
 
+// §REQ:PRSN-CRNC-TMM-010 — pagina "Crea la tua cornice" con anteprima e "Indietro"
+// §REQ:PRSN-CRNC-TMM-050, §REQ:PRSN-CRNC-TMM-060 — l'anteprima segue profilo e passe-partout
 export function renderFrameConfiguratorMarkup(selection, photo = null, photoError = '') {
   const measure = FRAME_OPTIONS.measure.find(({ value }) => value === selection.measure);
   const profile = FRAME_OPTIONS.profile.find(({ value }) => value === selection.profile);

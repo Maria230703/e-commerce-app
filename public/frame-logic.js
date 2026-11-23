@@ -1,3 +1,5 @@
+// §REQ:PRSN-CRNC-TMM-040 — misure e prezzi · §REQ:PRSN-CRNC-TMM-050 — profili ·
+// §REQ:PRSN-CRNC-TMM-060 — passe-partout (Nessuno senza supplemento)
 export const FRAME_OPTIONS = {
   measure: [
     { value: '10x15', label: '10x15', width: 10, height: 15, priceCents: 1500 },
@@ -18,6 +20,7 @@ export const FRAME_OPTIONS = {
   ]
 };
 
+// §REQ:PRSN-CRNC-TMM-030 — selezione iniziale 13x18, Classico, Bianco (30,90 €), senza finitura
 export const INITIAL_FRAME_SELECTION = {
   measure: '13x18',
   profile: 'classico',
@@ -57,6 +60,7 @@ export function formatFramePrice(priceCents) {
   return `${euros},${cents} €`;
 }
 
+// §REQ:PRSN-CRNC-TMM-070 — riepilogo della combinazione scelta
 export function describeFrameSelection(selection) {
   const measure = selectedOption(selection, 'measure');
   const profile = selectedOption(selection, 'profile');
