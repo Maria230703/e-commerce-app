@@ -566,6 +566,7 @@ function renderProducts() {
   pageTitle.textContent = 'Scopri';
   frameConfiguratorLink.hidden = false;
   productList.classList.remove('product-detail-list');
+  // §REQ:CMPR-IL-LOOK-JMT-040 — tornando dalla scheda la scena è di nuovo visibile su Scopri
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
   categoryControls.hidden = false;
@@ -735,6 +736,7 @@ function toggleProductInCart(product) {
   renderCart();
 }
 
+// §REQ:CMPR-IL-LOOK-JMT-010, §REQ:CMPR-IL-LOOK-JMT-030 — i punti della scena aprono la scheda dell'articolo
 lookSceneContainer.innerHTML = renderLookScene();
 lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
   button.addEventListener('click', () => {

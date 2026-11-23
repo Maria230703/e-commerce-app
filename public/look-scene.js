@@ -1,3 +1,4 @@
+// §REQ:CMPR-IL-LOOK-JMT-010, §REQ:CMPR-IL-LOOK-JMT-030, §REQ:CMPR-IL-LOOK-JMT-050 — scena "Angolo soggiorno": 4 punti che aprono la scheda, senza toccare il catalogo
 export const LOOK_SCENE_PRODUCTS = [
   { id: 6, name: 'Cornice Atelier', position: 'frame' },
   { id: 4, name: 'Vaso Duna', position: 'vase' },
