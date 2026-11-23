@@ -35,7 +35,7 @@ export function restoreCart(storage, products = PRODUCTS) {
         return [];
       }
       return [{
-        ...createFrameCartItem(selection),
+        ...createFrameCartItem(selection, storedItem.framePhotoIncluded ? { name: '' } : null),
         quantity
       }];
     }
@@ -47,7 +47,9 @@ export function restoreCart(storage, products = PRODUCTS) {
 
 export function persistCart(storage, cart) {
   storage.setItem(CART_STORAGE_KEY, JSON.stringify(
-    cart.map(({ id, quantity, frameSelection }) => ({ id, quantity, frameSelection }))
+    cart.map(({ id, quantity, frameSelection, framePhotoIncluded }) => ({
+      id, quantity, frameSelection, framePhotoIncluded
+    }))
   ));
 }
 
@@ -55,7 +57,12 @@ export function getFrameCartId(selection) {
   return `frame:${[selection.measure, selection.profile, selection.mat].join('|')}`;
 }
 
-export function createFrameCartItem(selection) {
+export const FRAME_PHOTO_PRINT_NOTE = 'Stampa foto su carta fotografica: omaggio';
+
+// §REQ:CRRL-CRNC-PRSN-BCS-010, §REQ:CRRL-CRNC-PRSN-BCS-020, §REQ:CRRL-CRNC-PRSN-BCS-030
+export function createFrameCartItem(selection, photo = null) {
+  const hasPhoto = Boolean(photo);
+  const description = describeFrameSelection(selection);
   return {
     id: getFrameCartId(selection),
     name: 'Cornice su misura',
@@ -66,7 +73,8 @@ export function createFrameCartItem(selection) {
       profile: selection.profile,
       mat: selection.mat
     },
-    frameDescription: describeFrameSelection(selection)
+    frameDescription: hasPhoto ? `${description}, ${FRAME_PHOTO_PRINT_NOTE}` : description,
+    framePhotoIncluded: hasPhoto
   };
 }
 

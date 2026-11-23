@@ -1,0 +1,5 @@
+{
+  "targets": [
+    { "name": "web-client", "build": "node --check server.js && node --check orders.js && node --check catalog-logic.js && for f in public/*.js; do node --check \"$f\" || exit 1; done", "test": "node --test tests/", "run": "node server.js" }
+  ]
+}

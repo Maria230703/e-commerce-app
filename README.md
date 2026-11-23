@@ -116,3 +116,7 @@ This allows you to apply code changes to a running application without restartin
 ## License
 
 See LICENSE file for details.
+
+## What's new
+
+See the [CHANGELOG](CHANGELOG.md).

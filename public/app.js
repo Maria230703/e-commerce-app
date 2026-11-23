@@ -268,7 +268,7 @@ function renderFrameConfiguratorPage() {
     if (existingItem) {
       state.cart = state.cart.filter((item) => item.id !== id);
     } else {
-      state.cart.push(createFrameCartItem(selection));
+      state.cart.push(createFrameCartItem(selection, state.framePhoto));
     }
     persistCart();
     renderCart();
