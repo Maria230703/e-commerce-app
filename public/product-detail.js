@@ -15,6 +15,11 @@ export const PRODUCT_GALLERY_IMAGES = {
   6: ['/images/immagine cornice 1.jpg', '/images/immagine cornice 2.jpg']
 };
 
+/** §REQ:GLLR-IMMG-NNT-020, §REQ:GLLR-IMMG-NNT-030, §REQ:GLLR-IMMG-NNT-040, §REQ:GLLR-IMMG-NNT-050 */
+export function stepGalleryIndex(index, delta, length) {
+  return (((index + delta) % length) + length) % length;
+}
+
 const PRODUCT_MATERIALS = {
   1: 'lino, metallo, porta lampadina in acciaio inox',
   2: 'metallo, vetro, retro in truciolato',

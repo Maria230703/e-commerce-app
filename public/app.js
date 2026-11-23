@@ -7,7 +7,7 @@ import {
   calculateCartTotalCents,
   transitionCatalogView
 } from '/catalog-logic.js';
-import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup } from '/product-detail.js';
+import { PRODUCT_GALLERY_IMAGES, renderProductDetailMarkup, stepGalleryIndex } from '/product-detail.js';
 import { renderAddToCartButton } from '/cart-ui.js';
 import { renderLookScene } from '/look-scene.js';
 import {
@@ -685,7 +685,7 @@ function renderProductDetail(product) {
       return;
     }
 
-    state.selectedProductImageIndex = (index + galleryImages.length) % galleryImages.length;
+    state.selectedProductImageIndex = stepGalleryIndex(index, 0, galleryImages.length); // §REQ:GLLR-IMMG-NNT-040
     const mainImage = productList.querySelector('[data-gallery-main-image]');
     mainImage.src = encodeURI(galleryImages[state.selectedProductImageIndex]);
     mainImage.alt = `${product.name}, foto ${state.selectedProductImageIndex + 1} di ${galleryImages.length}`;
