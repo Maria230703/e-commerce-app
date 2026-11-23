@@ -29,6 +29,11 @@ const PRODUCT_MATERIALS = {
   6: 'plastica, vetro antiriflesso, retro in sughero, ganci in acciaio'
 };
 
+// §REQ:SCHD-PRDT-MQI-040 — il colore è una voce della scheda solo per gli articoli che lo dichiarano
+const PRODUCT_COLORS = {
+  4: 'bianco latte e arancione'
+};
+
 const PRODUCT_DIMENSIONS = {
   1: 'altezza 45 cm, diametro paralume 28 cm, diametro base 16 cm',
   2: 'diametro 100 cm',
@@ -75,6 +80,7 @@ function renderProductGallery(product, activeImageIndex) {
   `;
 }
 
+/** §REQ:SCHD-PRDT-MQI-010, §REQ:SCHD-PRDT-MQI-040 */
 export function renderProductDetailMarkup(product, isFavorite = false, isAddedToCart = false, activeImageIndex = 0) {
   return `
     <section class="product-detail" aria-labelledby="product-detail-title">
@@ -89,7 +95,8 @@ export function renderProductDetailMarkup(product, isFavorite = false, isAddedTo
         <p class="product-detail-information-row"><strong>Descrizione:</strong> ${product.description}</p>
         <p class="product-detail-information-row"><strong>Materiali:</strong> ${PRODUCT_MATERIALS[product.id]}</p>
         <p class="product-detail-information-row"><strong>Dimensioni:</strong> ${PRODUCT_DIMENSIONS[product.id]}</p>
-        <p class="product-detail-information-row">Made in Italy</p>
+        ${PRODUCT_COLORS[product.id] ? `<p class="product-detail-information-row"><strong>Colore:</strong> ${PRODUCT_COLORS[product.id]}</p>` : ''}
+        <p class="product-detail-information-row"><strong>Provenienza:</strong> Made in Italy</p>
       </div>
       <button
         class="add-button product-detail-add-button${isAddedToCart ? ' is-added' : ''}"

@@ -51,7 +51,7 @@ export const PRODUCTS = [
     name: 'Cornice Atelier',
     category: 'cornici',
     price: 29,
-    description: 'Profilo in legno con vetro antiriflesso.',
+    description: 'Profilo in plastica con vetro antiriflesso.', // §REQ:SCHD-PRDT-MQI-010
     badge: 'Elegante'
   }
 ];
@@ -93,6 +93,7 @@ export function filterProducts(items = PRODUCTS, options = {}) {
   return filtered;
 }
 
+// §REQ:SCHD-PRDT-MQI-010, §REQ:SCHD-PRDT-MQI-020, §REQ:SCHD-PRDT-MQI-030 — aprire la scheda e tornare a Scopri mantenendo la categoria
 export function transitionCatalogView(state, action) {
   switch (action.type) {
     case 'open-product':

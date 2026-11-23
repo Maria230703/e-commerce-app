@@ -125,7 +125,7 @@ test('la scheda contiene nome, prezzo e descrizione del prodotto', () => {
   assert.match(markup, /<p class="product-detail-information-row"><strong>Descrizione:<\/strong> Ceramica smaltata a mano con finitura opaca\.<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row"><strong>Materiali:<\/strong> ceramica smaltata<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row"><strong>Dimensioni:<\/strong> altezza 30 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm<\/p>/);
-  assert.match(markup, /<p class="product-detail-information-row">Made in Italy<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Provenienza:<\/strong> Made in Italy<\/p>/);
   assert.ok(
     markup.indexOf('<strong>Materiali:</strong>') < markup.indexOf('<strong>Dimensioni:</strong>')
     && markup.indexOf('<strong>Dimensioni:</strong>') < markup.indexOf('Made in Italy')
@@ -241,7 +241,7 @@ test('la scheda di Lampada Lume mostra nome, prezzo di 89 euro e descrizione', (
   assert.match(markup, /<p class="product-detail-information-row"><strong>Descrizione:<\/strong> Paralume in lino e base in metallo\. Luce calda e diffusa\.<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row"><strong>Materiali:<\/strong> lino, metallo, porta lampadina in acciaio inox<\/p>/);
   assert.match(markup, /<p class="product-detail-information-row"><strong>Dimensioni:<\/strong> altezza 45 cm, diametro paralume 28 cm, diametro base 16 cm<\/p>/);
-  assert.match(markup, /<p class="product-detail-information-row">Made in Italy<\/p>/);
+  assert.match(markup, /<p class="product-detail-information-row"><strong>Provenienza:<\/strong> Made in Italy<\/p>/);
 });
 
 test('la galleria di Lampada Lume mostra quattro foto con frecce e miniature selezionabili', () => {
@@ -302,7 +302,7 @@ test('il catalogo usa le descrizioni aggiornate per tutti gli articoli', () => {
       { name: 'Portavaso Trama', description: 'Intreccio in rattan naturale con fondo impermeabile.' },
       { name: 'Vaso Duna', description: 'Ceramica smaltata a mano con finitura opaca.' },
       { name: 'Candela Vaniglia', description: 'Cera vegetale in vasetto di vetro riutilizzabile.' },
-      { name: 'Cornice Atelier', description: 'Profilo in legno con vetro antiriflesso.' }
+      { name: 'Cornice Atelier', description: 'Profilo in plastica con vetro antiriflesso.' }
     ]
   );
 });
