@@ -7,6 +7,7 @@ import {
 
 export const CART_STORAGE_KEY = 'e-commerce-cart';
 
+// §REQ:CRRL-RGH-E-QNTT-KWT-090
 export function restoreCart(storage, products = PRODUCTS) {
   const storedValue = storage.getItem(CART_STORAGE_KEY);
   if (storedValue === null) {
@@ -45,6 +46,7 @@ export function restoreCart(storage, products = PRODUCTS) {
   });
 }
 
+// §REQ:CRRL-RGH-E-QNTT-KWT-090
 export function persistCart(storage, cart) {
   storage.setItem(CART_STORAGE_KEY, JSON.stringify(
     cart.map(({ id, quantity, frameSelection, framePhotoIncluded }) => ({
@@ -80,4 +82,33 @@ export function createFrameCartItem(selection, photo = null) {
 
 export function isItemInCart(cart, id) {
   return cart.some((item) => item.id === id);
+}
+
+// §REQ:CRRL-RGH-E-QNTT-KWT-040
+export function addProductToCart(cart, product) {
+  return [...cart, { ...product, quantity: 1 }];
+}
+
+// §REQ:CRRL-RGH-E-QNTT-KWT-120
+export function removeFromCart(cart, id) {
+  return cart.filter((item) => item.id !== id);
+}
+
+// §REQ:CRRL-RGH-E-QNTT-KWT-100, §REQ:CRRL-RGH-E-QNTT-KWT-110
+export function toggleProductInCart(cart, product) {
+  return isItemInCart(cart, product.id)
+    ? removeFromCart(cart, product.id)
+    : addProductToCart(cart, product);
+}
+
+// §REQ:CRRL-RGH-E-QNTT-KWT-060, §REQ:CRRL-RGH-E-QNTT-KWT-070
+export function changeCartQuantity(cart, id, change) {
+  return cart
+    .map((item) => (item.id === id ? { ...item, quantity: item.quantity + change } : item))
+    .filter((item) => item.quantity > 0);
+}
+
+// §REQ:CRRL-RGH-E-QNTT-KWT-040
+export function getCartItemCount(cart) {
+  return cart.reduce((count, item) => count + item.quantity, 0);
 }

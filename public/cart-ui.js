@@ -1,3 +1,4 @@
+// §REQ:CRRL-RGH-E-QNTT-KWT-100, §REQ:CRRL-RGH-E-QNTT-KWT-110, §REQ:CRRL-RGH-E-QNTT-KWT-120
 export function renderAddToCartButton(product, isAdded, options = {}) {
   const className = options.className ? ` ${options.className}` : '';
   const ariaLabel = options.ariaLabel ?? (

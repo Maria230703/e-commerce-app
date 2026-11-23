@@ -25,11 +25,14 @@ import {
   validateCouponCode
 } from '/coupon-logic.js';
 import {
+  changeCartQuantity,
   createFrameCartItem,
+  getCartItemCount,
   getFrameCartId,
   isItemInCart,
   persistCart as saveCart,
-  restoreCart
+  restoreCart,
+  toggleProductInCart as toggleCartProduct
 } from '/cart-logic.js';
 import {
   FAVORITES_STORAGE_KEY,
@@ -111,15 +114,11 @@ function refreshCurrentCartView() {
 }
 
 function setCartQuantity(productId, change) {
-  const item = state.cart.find(({ id }) => id === productId);
-  if (!item) {
+  if (!isItemInCart(state.cart, productId)) {
     return;
   }
 
-  item.quantity += change;
-  if (item.quantity <= 0) {
-    state.cart = state.cart.filter(({ id }) => id !== productId);
-  }
+  state.cart = changeCartQuantity(state.cart, productId, change);
   persistCart();
   refreshCurrentCartView();
 }
@@ -570,6 +569,7 @@ function renderProducts() {
   lookSceneContainer.hidden = false;
   toolbar.hidden = false;
   categoryControls.hidden = false;
+  // §REQ:CRRL-RGH-E-QNTT-KWT-020 — il riepilogo non compare in Scopri
   cartPanel.hidden = true;
   layout.classList.add('cart-panel-hidden');
   layout.classList.remove('frame-configurator-layout');
@@ -730,12 +730,7 @@ function renderProductDetail(product) {
 }
 
 function toggleProductInCart(product) {
-  const existingItem = state.cart.find((item) => item.id === product.id);
-  if (existingItem) {
-    state.cart = state.cart.filter((item) => item.id !== product.id);
-  } else {
-    state.cart.push({ ...product, quantity: 1 });
-  }
+  state.cart = toggleCartProduct(state.cart, product);
   persistCart();
   renderCart();
 }
@@ -748,7 +743,7 @@ lookSceneContainer.querySelectorAll('.look-hotspot').forEach((button) => {
 });
 
 function renderCart() {
-  const itemCount = state.cart.reduce((count, item) => count + item.quantity, 0);
+  const itemCount = getCartItemCount(state.cart);
   const { subtotalCents } = calculateCartTotalCents(state.cart);
   renderCouponAvailability(subtotalCents);
   const { shippingCents, discountCents, totalCents } = calculateDiscountedCartTotals(

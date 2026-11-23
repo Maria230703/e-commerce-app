@@ -175,6 +175,7 @@ export function renderPaymentPageMarkup({
   `;
 }
 
+// §REQ:CRRL-RGH-E-QNTT-KWT-010, §REQ:CRRL-RGH-E-QNTT-KWT-030, §REQ:CRRL-RGH-E-QNTT-KWT-060, §REQ:CRRL-RGH-E-QNTT-KWT-070, §REQ:CRRL-RGH-E-QNTT-KWT-080
 export function renderCartPageMarkup(items, couponCode = '') {
   if (!items.length) {
     return `
