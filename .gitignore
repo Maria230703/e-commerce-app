@@ -1,3 +1,108 @@
+# See https://git-scm.com/docs/gitignore for more about ignoring files.
+
+# OS files
 .DS_Store
-Icon? 
-orders.json
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+/.idea
+.vs/
+*.suo
+*.user
+*.swp
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Dependencies
+**/node_modules
+**/.venv
+**/venv
+**/__pycache__
+*.py[cod]
+**/.gradle
+
+# Build output
+**/dist
+**/build
+**/out
+**/out-tsc
+**/bin
+**/obj
+**/target
+**/tmp
+
+# Logs
+*.log
+npm-debug.*
+yarn-error.log
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Test coverage and caches
+coverage/
+.coverage
+.pytest_cache/
+.nyc_output/
+
+# C4 model index cache
+/codegen/model/c4modeler-index-*.index.json
+
+# Claude Local overrides
+CLAUDE.local.md
+.claude/settings.local.json
+
+# DevTeam agent-team runtime state: scheduler lock, run log, jobs/messages/events
+.caep/agent-team/lock.json
+.caep/agent-team/runs.json
+.caep/agent-team/state.json
+
+# CAIP node AI session logs
+*.caip-context.log.md
+
+# CAIP AI run history
+.caep/pipeline/
+*.ai.trace.jsonl
+
+# CAIP AI Assistant
+.caep/assistant/exports/
+.caep/assistant/archives/
+.caep/assistant/auto-approvals.json
+.caep/reports/
+.caep/session-trace/
+
+# CAIP req-loop runtime
+.caep/req-loop/
+.caep/req-loop-beta/
+.caep/req-loop-driver.mcp.json
+
+# CAIP analysis notebook
+analysis-notes/.jobs.json
+analysis-notes/.inbox-feed.json
+analysis-notes/inbox/.taking/
+analysis-notes/inbox/.feeding-*
+
+# CAIP per-machine settings and caches
+.caep/local.json
+.caep/metadata-cache.json
+.vscode/streampulse-metadata.yaml
+.vscode/.caep-signal-*
+
+# Local or regenerated files (added by CAIP)
+graft/.cache/
+graft/.graph/
+hub.log
+TestResults/
+coverage*/
+test-output*/
+*.trx
+.caep/driver-transcripts/
+.claude/worktrees/

@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "caip-c4modeler": {
+      "type": "http",
+      "url": "http://127.0.0.1:51521/mcp"
+    },
+    "caip-eventstorm": {
+      "type": "http",
+      "url": "http://127.0.0.1:51523/mcp"
+    },
+    "caip-gherkin": {
+      "type": "http",
+      "url": "http://127.0.0.1:51524/mcp"
+    },
+    "caip-graph": {
+      "type": "http",
+      "url": "http://127.0.0.1:51528/mcp"
+    },
+    "caip-sequence": {
+      "type": "http",
+      "url": "http://127.0.0.1:51529/mcp"
+    },
+    "caip-streampulse": {
+      "type": "http",
+      "url": "http://127.0.0.1:51526/mcp"
+    },
+    "caip-tools": {
+      "type": "http",
+      "url": "http://127.0.0.1:51525/mcp"
+    },
+    "caip-vscode": {
+      "type": "http",
+      "url": "http://127.0.0.1:51527/mcp"
+    }
+  }
+}

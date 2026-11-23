@@ -1,0 +1,11 @@
+{
+  "people": [
+    {
+      "name": "Maria",
+      "roles": [
+        "team-lead",
+        "analyst"
+      ]
+    }
+  ]
+}

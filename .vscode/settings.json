@@ -1,0 +1,57 @@
+{
+  // --inject:ca-scarface
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "yaml.format.enable": true,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "search.exclude": {
+    "**/dist": true
+  },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "[yaml]": {
+    "editor.detectIndentation": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.fontWeight": "bold",
+    "editor.minimap.enabled": true
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#1f6fd0",
+    "activityBar.background": "#1f6fd0",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ee90bb",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#1f6fd0",
+    "statusBar.background": "#1857a4",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#1f6fd0",
+    "statusBarItem.remoteBackground": "#1857a4",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#1857a4",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#1857a499",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#1857a4",
+  "chat.useClaudeMdFile": false,
+  "chat.instructionsFilesLocations": {
+    ".claude/rules": false
+  },
+  "chat.agentSkillsLocations": {
+    ".claude/skills": false
+  },
+  "chat.agentFilesLocations": {
+    ".claude/agents": false
+  },
+  "chat.hookFilesLocations": {
+    ".claude/settings.local.json": false,
+    ".claude/settings.json": false
+  },
+  "aspire.enableAspireDashboardAutoLaunch": "launch",
+  "aspire.dashboardBrowser": "integratedBrowser",
+  "chat.subagents.allowInvocationsFromSubagents": true
+  // --endinject:ca-scarface
+}
