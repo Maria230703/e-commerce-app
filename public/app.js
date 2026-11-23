@@ -128,6 +128,7 @@ function renderFavoriteCount() {
   favoritesCountEl.textContent = String(state.favoriteIds.length);
 }
 
+// §REQ:PRFR-BSO-040, §REQ:PRFR-BSO-050, §REQ:PRFR-BSO-070
 function renderFavoritesPage() {
   pageTitle.textContent = 'Preferiti';
   frameConfiguratorLink.hidden = true;
@@ -157,6 +158,7 @@ function renderFavoritesPage() {
   });
 }
 
+// §REQ:PRFR-BSO-010, §REQ:PRFR-BSO-020, §REQ:PRFR-BSO-030, §REQ:PRFR-BSO-080
 function toggleFavorite(productId) {
   state.favoriteIds = toggleFavoriteId(state.favoriteIds, productId);
   window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favoriteIds));
@@ -708,7 +710,7 @@ function renderProductDetail(product) {
   });
 
   productList.querySelector('.back-button').addEventListener('click', () => {
-    if (state.selectedProductSource === 'favorites') {
+    if (state.selectedProductSource === 'favorites') { // §REQ:PRFR-BSO-060
       state.selectedProductId = null;
       state.selectedProductSource = 'catalog';
       renderProducts();

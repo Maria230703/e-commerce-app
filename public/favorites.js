@@ -4,6 +4,7 @@ export const FAVORITES_STORAGE_KEY = 'e-commerce-favorites';
 export const EMPTY_FAVORITES_MESSAGE =
   'Tocca il cuore sugli oggetti che ti piacciono: li ritrovi tutti qui.';
 
+/** Rilegge i preferiti salvati dopo un ricaricamento. §REQ:PRFR-BSO-080 */
 export function readFavoriteIds(storage, products) {
   const storedValue = storage.getItem(FAVORITES_STORAGE_KEY);
 
@@ -21,12 +22,14 @@ export function readFavoriteIds(storage, products) {
   return [...new Set(favoriteIds.filter((id) => productIds.has(id)))];
 }
 
+/** Aggiunge o toglie un articolo dai preferiti. §REQ:PRFR-BSO-010, §REQ:PRFR-BSO-020, §REQ:PRFR-BSO-030 */
 export function toggleFavoriteId(favoriteIds, productId) {
   return favoriteIds.includes(productId)
     ? favoriteIds.filter((id) => id !== productId)
     : [...favoriteIds, productId];
 }
 
+/** Cuore attivo nero pece senza spunta. §REQ:PRFR-BSO-010, §REQ:PRFR-BSO-020, §REQ:PRFR-BSO-030 */
 export function renderFavoriteButtonMarkup(product, isFavorite) {
   const action = isFavorite ? 'Rimuovi' : 'Aggiungi';
   const status = isFavorite ? 'dai' : 'ai';
@@ -54,6 +57,7 @@ export function renderFavoriteButtonMarkup(product, isFavorite) {
   `;
 }
 
+/** Elenco dei preferiti con immagine, nome e prezzo; messaggio se vuoto. §REQ:PRFR-BSO-040, §REQ:PRFR-BSO-050, §REQ:PRFR-BSO-070 */
 export function renderFavoritesMarkup(products, productImages = {}) {
   if (!products.length) {
     return `<p class="empty-favorites">${EMPTY_FAVORITES_MESSAGE}</p>`;
