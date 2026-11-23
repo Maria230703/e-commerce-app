@@ -337,3 +337,24 @@ test('calcola subtotale, spedizione e totale', () => {
   assert.equal(totals.total, 118);
   assert.equal(totals.itemCount, 2);
 });
+
+/** §REQ:CTLG-PRDT-GSE-010 — Scopri mostra tutti i 6 articoli quando nessun filtro è attivo. */
+test('Scopri senza filtri mostra tutti i 6 articoli del negozio', () => {
+  const visible = filterProducts(PRODUCTS, { category: 'all' });
+
+  assert.equal(PRODUCTS.length, 6);
+  assert.equal(visible.length, 6);
+  assert.deepEqual(visible.map(({ id }) => id), [1, 2, 3, 4, 5, 6]);
+});
+
+/** §REQ:CTLG-PRDT-GSE-020 — scegliendo la categoria "Cornici" si vede 1 solo articolo su 6. */
+test('la categoria Cornici mostra 1 articolo su 6', () => {
+  assert.equal(PRODUCTS.filter(({ category }) => category === 'cornici').length, 1);
+  assert.ok(CATEGORIES.some(({ label, value }) => label === 'Cornici' && value === 'cornici'));
+
+  const visible = filterProducts(PRODUCTS, { category: 'cornici' });
+
+  assert.equal(PRODUCTS.length, 6);
+  assert.equal(visible.length, 1);
+  assert.equal(visible[0].name, 'Cornice Atelier');
+});

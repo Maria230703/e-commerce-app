@@ -56,6 +56,7 @@ export const PRODUCTS = [
   }
 ];
 
+// §REQ:CTLG-PRDT-GSE-010, §REQ:CTLG-PRDT-GSE-020 — Scopri mostra tutti gli articoli; la categoria li filtra
 export function filterProducts(items = PRODUCTS, options = {}) {
   const { search = '', category = 'all', sort = 'featured' } = options;
   const query = search.trim().toLowerCase();
