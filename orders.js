@@ -36,8 +36,10 @@ function parseItems(items) {
         throw new OrderInputError('Articolo non valido');
       }
 
+      // §REQ:PGMN-EST-ORDN-PEC-070
+      const photoName = typeof item.framePhotoName === 'string' ? item.framePhotoName.trim().slice(0, 255) : '';
       return {
-        ...createFrameCartItem(item.frameSelection),
+        ...createFrameCartItem(item.frameSelection, photoName ? { name: photoName } : null),
         quantity,
       };
     }
@@ -116,6 +118,7 @@ async function createOrderAndSave(input, filePath) {
   return order;
 }
 
+// §REQ:PGMN-EST-ORDN-PEC-010, §REQ:PGMN-EST-ORDN-PEC-040, §REQ:PGMN-EST-ORDN-PEC-050, §REQ:PGMN-EST-ORDN-PEC-060
 export function createOrder(input, filePath = ORDERS_FILE) {
   const task = orderQueue.then(() => createOrderAndSave(input, filePath));
   orderQueue = task.catch(() => {});

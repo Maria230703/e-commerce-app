@@ -120,6 +120,7 @@ export function validatePaymentSubmission(address, paymentMethod) {
   return errors;
 }
 
+// §REQ:PGMN-EST-ORDN-PEC-010, §REQ:PGMN-EST-ORDN-PEC-020, §REQ:PGMN-EST-ORDN-PEC-030
 export function validateCardPayment(card, now = new Date()) {
   const number = card.number.replace(/\s/g, '');
   if (!number) {

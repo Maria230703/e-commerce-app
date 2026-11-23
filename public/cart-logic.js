@@ -36,7 +36,7 @@ export function restoreCart(storage, products = PRODUCTS) {
         return [];
       }
       return [{
-        ...createFrameCartItem(selection, storedItem.framePhotoIncluded ? { name: '' } : null),
+        ...createFrameCartItem(selection, storedItem.framePhotoIncluded ? { name: typeof storedItem.framePhotoName === 'string' ? storedItem.framePhotoName : '' } : null),
         quantity
       }];
     }
@@ -49,8 +49,8 @@ export function restoreCart(storage, products = PRODUCTS) {
 // §REQ:CRRL-RGH-E-QNTT-KWT-090
 export function persistCart(storage, cart) {
   storage.setItem(CART_STORAGE_KEY, JSON.stringify(
-    cart.map(({ id, quantity, frameSelection, framePhotoIncluded }) => ({
-      id, quantity, frameSelection, framePhotoIncluded
+    cart.map(({ id, quantity, frameSelection, framePhotoIncluded, framePhotoName }) => ({
+      id, quantity, frameSelection, framePhotoIncluded, framePhotoName
     }))
   ));
 }
@@ -61,7 +61,7 @@ export function getFrameCartId(selection) {
 
 export const FRAME_PHOTO_PRINT_NOTE = 'Stampa foto su carta fotografica: omaggio';
 
-// §REQ:CRRL-CRNC-PRSN-BCS-010, §REQ:CRRL-CRNC-PRSN-BCS-020, §REQ:CRRL-CRNC-PRSN-BCS-030
+// §REQ:CRRL-CRNC-PRSN-BCS-010, §REQ:CRRL-CRNC-PRSN-BCS-020, §REQ:CRRL-CRNC-PRSN-BCS-030, §REQ:PGMN-EST-ORDN-PEC-070
 export function createFrameCartItem(selection, photo = null) {
   const hasPhoto = Boolean(photo);
   const description = describeFrameSelection(selection);
@@ -76,7 +76,8 @@ export function createFrameCartItem(selection, photo = null) {
       mat: selection.mat
     },
     frameDescription: hasPhoto ? `${description}, ${FRAME_PHOTO_PRINT_NOTE}` : description,
-    framePhotoIncluded: hasPhoto
+    framePhotoIncluded: hasPhoto,
+    ...(hasPhoto && photo.name ? { framePhotoName: photo.name } : {})
   };
 }
 

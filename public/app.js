@@ -352,10 +352,11 @@ async function createOrder(paymentMethod) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        items: state.cart.map(({ id, quantity, frameSelection }) => ({
+        items: state.cart.map(({ id, quantity, frameSelection, framePhotoName }) => ({
           id,
           quantity,
-          frameSelection
+          frameSelection,
+          framePhotoName
         })),
         address: state.shippingAddress,
         paymentMethod,
