@@ -1,9 +1,11 @@
+// §REQ:PGMN-DATI-DI-SPDZ-ICN-030
 export const PAYMENT_METHODS = [
   { value: 'card', label: 'Carta di credito' },
   { value: 'paypal', label: 'PayPal' },
   { value: 'bank-transfer', label: 'Bonifico bancario' }
 ];
 
+// §REQ:PGMN-DATI-DI-SPDZ-ICN-050
 export const EUROPEAN_PHONE_PREFIXES = [
   { country: 'Albania', value: '+355' },
   { country: 'Andorra', value: '+376' },
@@ -56,6 +58,7 @@ export const EUROPEAN_PHONE_PREFIXES = [
   { country: 'Ungheria', value: '+36' }
 ];
 
+// §REQ:PGMN-DATI-DI-SPDZ-ICN-040, §REQ:PGMN-DATI-DI-SPDZ-ICN-060, §REQ:PGMN-DATI-DI-SPDZ-ICN-070
 export function validateShippingAddress(address) {
   const errors = {};
   const name = typeof address.name === 'string' ? address.name.trim() : '';
@@ -105,6 +108,15 @@ export function validateShippingAddress(address) {
     errors.email = "Inserisci un'email valida";
   }
 
+  return errors;
+}
+
+// §REQ:PGMN-DATI-DI-SPDZ-ICN-080
+export function validatePaymentSubmission(address, paymentMethod) {
+  const errors = validateShippingAddress(address);
+  if (!paymentMethod) {
+    errors.paymentMethod = 'Scegli un metodo di pagamento';
+  }
   return errors;
 }
 

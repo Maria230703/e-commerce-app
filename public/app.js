@@ -16,7 +16,7 @@ import {
   validateFramePhoto
 } from '/frame-logic.js';
 import { renderFrameConfiguratorMarkup } from '/frame-configurator.js';
-import { validateCardPayment, validateShippingAddress } from '/payment-logic.js';
+import { validateCardPayment, validatePaymentSubmission } from '/payment-logic.js';
 import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js?v=20261026-cart-quantity-order-1';
 import {
   calculateDiscountedCartTotals,
@@ -477,11 +477,7 @@ function renderPaymentPage() {
         email: formData.get('email')?.toString() ?? ''
       };
       state.selectedPaymentMethod = formData.get('paymentMethod')?.toString() ?? '';
-      state.paymentErrors = validateShippingAddress(state.shippingAddress);
-
-      if (!state.selectedPaymentMethod) {
-        state.paymentErrors.paymentMethod = 'Scegli un metodo di pagamento';
-      }
+      state.paymentErrors = validatePaymentSubmission(state.shippingAddress, state.selectedPaymentMethod);
 
       if (Object.keys(state.paymentErrors).length > 0) {
         renderPaymentPage();

@@ -74,6 +74,7 @@ function renderCardFields(errors) {
   `;
 }
 
+// §REQ:PGMN-DATI-DI-SPDZ-ICN-010, §REQ:PGMN-DATI-DI-SPDZ-ICN-030, §REQ:PGMN-DATI-DI-SPDZ-ICN-050, §REQ:PGMN-DATI-DI-SPDZ-ICN-090
 export function renderPaymentPageMarkup({
   items,
   selectedMethod = '',
@@ -175,7 +176,7 @@ export function renderPaymentPageMarkup({
   `;
 }
 
-// §REQ:CRRL-RGH-E-QNTT-KWT-010, §REQ:CRRL-RGH-E-QNTT-KWT-030, §REQ:CRRL-RGH-E-QNTT-KWT-060, §REQ:CRRL-RGH-E-QNTT-KWT-070, §REQ:CRRL-RGH-E-QNTT-KWT-080
+// §REQ:CRRL-RGH-E-QNTT-KWT-010, §REQ:CRRL-RGH-E-QNTT-KWT-030, §REQ:CRRL-RGH-E-QNTT-KWT-060, §REQ:CRRL-RGH-E-QNTT-KWT-070, §REQ:CRRL-RGH-E-QNTT-KWT-080, §REQ:PGMN-DATI-DI-SPDZ-ICN-010, §REQ:PGMN-DATI-DI-SPDZ-ICN-020
 export function renderCartPageMarkup(items, couponCode = '') {
   if (!items.length) {
     return `
