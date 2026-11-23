@@ -21,7 +21,8 @@ import { renderCartPageMarkup, renderPaymentPageMarkup } from '/payment-ui.js?v=
 import {
   calculateDiscountedCartTotals,
   COUPON_CODE,
-  COUPON_MINIMUM_SUBTOTAL_CENTS,
+  copyCouponCode,
+  isCouponButtonVisible,
   validateCouponCode
 } from '/coupon-logic.js';
 import {
@@ -301,8 +302,9 @@ function renderCartPage() {
   });
 }
 
+/** §REQ:CPN-DI-SCNT-QAD-020, §REQ:CPN-DI-SCNT-QAD-030 */
 function renderCouponAvailability(subtotalCents) {
-  const hasEligibleSubtotal = subtotalCents > COUPON_MINIMUM_SUBTOTAL_CENTS;
+  const hasEligibleSubtotal = isCouponButtonVisible(subtotalCents);
   if (state.couponCode && (!hasEligibleSubtotal || validateCouponCode(state.couponCode, subtotalCents))) {
     state.couponCode = '';
     window.localStorage.removeItem('e-commerce-coupon');
@@ -823,12 +825,7 @@ renderProducts();
 renderCart();
 
 couponCopy.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(COUPON_CODE);
-    couponCopyFeedback.textContent = `Codice ${COUPON_CODE} copiato. Incollalo nella pagina di pagamento.`;
-    couponCopyFeedback.hidden = false;
-  } catch {
-    couponCopyFeedback.textContent = `Non è stato possibile copiare il codice. Inserisci ${COUPON_CODE} nella pagina di pagamento.`;
-    couponCopyFeedback.hidden = false;
-  }
+  const { message } = await copyCouponCode(navigator.clipboard);
+  couponCopyFeedback.textContent = message;
+  couponCopyFeedback.hidden = false;
 });
