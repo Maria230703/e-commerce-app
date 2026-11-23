@@ -31,6 +31,7 @@ export const MAX_FRAME_PHOTO_BYTES = 10 * 1024 * 1024;
 
 const FRAME_PHOTO_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-030 — formato non accettato · §REQ:STMP-DLL-PRPR-FOTO-JUL-040 — oltre 10 MB
 export function validateFramePhoto(file) {
   if (!file || !FRAME_PHOTO_TYPES.has(file.type)) {
     return 'Formato non supportato. Carica un\'immagine JPG, PNG o WebP.';

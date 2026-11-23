@@ -192,6 +192,9 @@ function renderCategoryFilters() {
   });
 }
 
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-020, §REQ:STMP-DLL-PRPR-FOTO-JUL-030, §REQ:STMP-DLL-PRPR-FOTO-JUL-040 — caricamento e validazione
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-080 — la foto resta cambiando le scelte · §REQ:STMP-DLL-PRPR-FOTO-JUL-090 — sostituzione
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-100 — Rimuovi foto
 function renderFrameConfiguratorPage() {
   pageTitle.textContent = 'Crea la tua cornice';
   frameConfiguratorLink.hidden = true;

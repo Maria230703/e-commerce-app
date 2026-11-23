@@ -34,6 +34,10 @@ function escapeHtml(value) {
   })[character]);
 }
 
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-010, §REQ:STMP-DLL-PRPR-FOTO-JUL-020, §REQ:STMP-DLL-PRPR-FOTO-JUL-050, §REQ:STMP-DLL-PRPR-FOTO-JUL-060,
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-070, §REQ:STMP-DLL-PRPR-FOTO-JUL-080, §REQ:STMP-DLL-PRPR-FOTO-JUL-090, §REQ:STMP-DLL-PRPR-FOTO-JUL-100
+// — segnaposto o foto in anteprima, omaggio nel riepilogo, tipo di stampa, nome file, Rimuovi foto
+// §REQ:STMP-DLL-PRPR-FOTO-JUL-030, §REQ:STMP-DLL-PRPR-FOTO-JUL-040 — messaggio d'errore annunciato sotto l'anteprima
 // §REQ:PRSN-CRNC-TMM-010 — pagina "Crea la tua cornice" con anteprima e "Indietro"
 // §REQ:PRSN-CRNC-TMM-050, §REQ:PRSN-CRNC-TMM-060 — l'anteprima segue profilo e passe-partout
 export function renderFrameConfiguratorMarkup(selection, photo = null, photoError = '') {
