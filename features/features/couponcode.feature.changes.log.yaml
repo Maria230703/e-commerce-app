@@ -1,0 +1,82 @@
+version: 1
+document:
+  sourceFeature: couponcode.feature
+  updatedAt: '2026-11-24T18:43:19.468Z'
+changes:
+  - changedAt: '2026-11-24T18:43:19.462Z'
+    ref: feature:coupon-di-sconto
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: feature:coupon-di-sconto
+    constructType: Feature
+    offset: 11
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-010
+    constructType: Scenario
+    offset: 3
+    before: '    When  ''Portavaso Trama'' è nel carrello'
+    after: '    When ''Portavaso Trama'' è nel carrello'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 6
+    before: '      | articolo         | disponibilità |'
+    after: '    | articolo         | disponibilità |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 7
+    before: '      | Lampada Lume     | può           |'
+    after: '    | Lampada Lume     | può           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 8
+    before: '      | Specchio Orbita  | può           |'
+    after: '    | Specchio Orbita  | può           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 9
+    before: '      | Portavaso Trama  | non può       |'
+    after: '    | Portavaso Trama  | non può       |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 10
+    before: '      | Vaso Duna        | non può       |'
+    after: '    | Vaso Duna        | non può       |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 11
+    before: '      | Candela Vaniglia | non può       |'
+    after: '    | Candela Vaniglia | non può       |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:19.468Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 12
+    before: '      | Cornice Atelier  | non può       |'
+    after: '    | Cornice Atelier  | non può       |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

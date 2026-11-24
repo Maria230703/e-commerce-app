@@ -1,0 +1,390 @@
+version: 1
+document:
+  sourceFeature: galleria_immagini.feature
+  updatedAt: '2026-11-24T18:43:22.382Z'
+changes:
+  - changedAt: '2026-11-24T18:43:22.374Z'
+    ref: feature:galleria-di-immagini-della-scheda-prodotto
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:37f816a0-7bf6-7916-6560-d364f7a06cd1'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 7
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 8
+    before: '      | articolo         | numero_foto |'
+    after: '    | articolo         | numero_foto |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 9
+    before: '      | Lampada Lume     | 4           |'
+    after: '    | Lampada Lume     | 4           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 10
+    before: '      | Specchio Orbita  | 2           |'
+    after: '    | Specchio Orbita  | 2           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 11
+    before: '      | Portavaso Trama  | 3           |'
+    after: '    | Portavaso Trama  | 3           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 12
+    before: '      | Vaso Duna        | 3           |'
+    after: '    | Vaso Duna        | 3           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 13
+    before: '      | Candela Vaniglia | 3           |'
+    after: '    | Candela Vaniglia | 3           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 14
+    before: '      | Cornice Atelier  | 2           |'
+    after: '    | Cornice Atelier  | 2           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 7
+    before: '      | articolo         |'
+    after: '    | articolo         |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume     |'
+    after: '    | Lampada Lume     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 9
+    before: '      | Specchio Orbita  |'
+    after: '    | Specchio Orbita  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 10
+    before: '      | Portavaso Trama  |'
+    after: '    | Portavaso Trama  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 11
+    before: '      | Vaso Duna        |'
+    after: '    | Vaso Duna        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 12
+    before: '      | Candela Vaniglia |'
+    after: '    | Candela Vaniglia |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 13
+    before: '      | Cornice Atelier  |'
+    after: '    | Cornice Atelier  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 7
+    before: '      | articolo         |'
+    after: '    | articolo         |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume     |'
+    after: '    | Lampada Lume     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 9
+    before: '      | Portavaso Trama  |'
+    after: '    | Portavaso Trama  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 10
+    before: '      | Vaso Duna        |'
+    after: '    | Vaso Duna        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 11
+    before: '      | Candela Vaniglia |'
+    after: '    | Candela Vaniglia |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 7
+    before: '      | articolo         | ultima_foto | numero_foto |'
+    after: '    | articolo         | ultima_foto | numero_foto |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume     | 4           | 4           |'
+    after: '    | Lampada Lume     | 4           | 4           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 9
+    before: '      | Specchio Orbita  | 2           | 2           |'
+    after: '    | Specchio Orbita  | 2           | 2           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 10
+    before: '      | Portavaso Trama  | 3           | 3           |'
+    after: '    | Portavaso Trama  | 3           | 3           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 11
+    before: '      | Vaso Duna        | 3           | 3           |'
+    after: '    | Vaso Duna        | 3           | 3           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 12
+    before: '      | Candela Vaniglia | 3           | 3           |'
+    after: '    | Candela Vaniglia | 3           | 3           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 13
+    before: '      | Cornice Atelier  | 2           | 2           |'
+    after: '    | Cornice Atelier  | 2           | 2           |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 7
+    before: '      | articolo         |'
+    after: '    | articolo         |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume     |'
+    after: '    | Lampada Lume     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 9
+    before: '      | Specchio Orbita  |'
+    after: '    | Specchio Orbita  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 10
+    before: '      | Portavaso Trama  |'
+    after: '    | Portavaso Trama  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 11
+    before: '      | Vaso Duna        |'
+    after: '    | Vaso Duna        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 12
+    before: '      | Candela Vaniglia |'
+    after: '    | Candela Vaniglia |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 13
+    before: '      | Cornice Atelier  |'
+    after: '    | Cornice Atelier  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 7
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 8
+    before: '      | articolo         |'
+    after: '    | articolo         |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 9
+    before: '      | Lampada Lume     |'
+    after: '    | Lampada Lume     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 10
+    before: '      | Specchio Orbita  |'
+    after: '    | Specchio Orbita  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 11
+    before: '      | Portavaso Trama  |'
+    after: '    | Portavaso Trama  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 12
+    before: '      | Vaso Duna        |'
+    after: '    | Vaso Duna        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 13
+    before: '      | Candela Vaniglia |'
+    after: '    | Candela Vaniglia |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 14
+    before: '      | Cornice Atelier  |'
+    after: '    | Cornice Atelier  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 7
+    before: '      | articolo         |'
+    after: '    | articolo         |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume     |'
+    after: '    | Lampada Lume     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 9
+    before: '      | Specchio Orbita  |'
+    after: '    | Specchio Orbita  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 10
+    before: '      | Portavaso Trama  |'
+    after: '    | Portavaso Trama  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 11
+    before: '      | Vaso Duna        |'
+    after: '    | Vaso Duna        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 12
+    before: '      | Candela Vaniglia |'
+    after: '    | Candela Vaniglia |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.382Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 13
+    before: '      | Cornice Atelier  |'
+    after: '    | Cornice Atelier  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

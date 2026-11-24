@@ -1,0 +1,54 @@
+version: 1
+document:
+  sourceFeature: compra_il_look.feature
+  updatedAt: '2026-11-24T18:43:22.800Z'
+changes:
+  - changedAt: '2026-11-24T18:43:22.794Z'
+    ref: feature:compra-il-look
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:98f295c7-ba88-5b12-290b-815a8c0ac139'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.800Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.800Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 6
+    before: '      | articolo        | prezzo |'
+    after: '    | articolo        | prezzo |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.800Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 7
+    before: '      | Cornice Atelier | 29     |'
+    after: '    | Cornice Atelier | 29     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.800Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume    | 89     |'
+    after: '    | Lampada Lume    | 89     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.800Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 9
+    before: '      | Vaso Duna       | 34     |'
+    after: '    | Vaso Duna       | 34     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:22.800Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 10
+    before: '      | Portavaso Trama | 45     |'
+    after: '    | Portavaso Trama | 45     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

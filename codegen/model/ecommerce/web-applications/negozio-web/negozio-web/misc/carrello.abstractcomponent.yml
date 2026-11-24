@@ -1,0 +1,29 @@
+type: abstract-component
+name: Carrello
+title: Carrello
+description: >-
+  Righe, quantita, totali e persistenza del carrello. Moduli: cart-logic.js,
+  cart-ui.js, renderCartPageMarkup in payment-ui.js, calculateCartTotalCents in
+  catalog-logic.js.
+id: 32be3296-6b21-5964-8815-ef0bf817c0ab
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 321.16666666666663
+        'y': 1116.5
+children:
+  - id: 6bdc6d04-e975-b0c2-3cc9-27289100d07f
+    type: abstract-component
+  - id: 1fb8ff4a-4d4d-4571-4edc-89b6c95cb115
+    type: abstract-component
+  - id: e9b021aa-1516-4456-0533-ed742ce16ac1
+    type: abstract-component
+interactions:
+  - targetId: f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47
+    type: abstract-component
+    level: component
+  - targetId: 94d6dcb5-3ead-b352-1700-b2185272c021
+    type: abstract-component
+    level: component

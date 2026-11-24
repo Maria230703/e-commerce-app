@@ -1,0 +1,12 @@
+type: abstract-component
+name: GalleryModule
+title: product-detail.js (galleria)
+description: PRODUCT_GALLERY_IMAGES, stepGalleryIndex; selezione miniature in app.js.
+id: 219c469d-1860-4fb6-83f0-cd990b3276f8
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      37f816a0-7bf6-7916-6560-d364f7a06cd1:
+        x: 0
+        'y': 0

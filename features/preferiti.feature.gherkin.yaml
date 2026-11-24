@@ -1,0 +1,221 @@
+version: 1
+document:
+  sourceFeature: preferiti.feature
+  generatedAt: '2026-11-24T18:43:17.665Z'
+  copilotSessionId: d1d566528ae66ea6e58e849662b7193b
+feature:
+  id: 0d2c3d1e-32e0-4d61-bf25-d32b3d856267
+  createdAt: '2026-11-24T18:39:57.147Z'
+  updatedAt: '2026-11-24T18:43:17.665Z'
+  title: Preferiti
+  description:
+    - As a cliente del negozio
+    - I want salvare gli articoli che mi piacciono
+    - So that ritrovarli facilmente più tardi
+  tags:
+    - c4-id:7d40d91f-0bed-f5f3-4479-83b4d838c2ee
+  scenarios:
+    - id: PRFR-BSO-010
+      title: Aggiungere un articolo ai preferiti dal catalogo
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sono sulla pagina Scopri e non ho preferiti
+        - keyword: When
+          text: tocco il cuore di "Vaso Duna"
+        - keyword: Then
+          text: il cuore di "Vaso Duna" risulta attivo
+        - keyword: And
+          text: il cuore è nero pece senza spunta
+    - id: PRFR-BSO-020
+      title: Aggiungere un articolo ai preferiti dalla scheda
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando la scheda di "Lampada Lume"
+        - keyword: When
+          text: tocco il cuore
+        - keyword: Then
+          text: il cuore risulta attivo
+        - keyword: And
+          text: il cuore è nero pece senza spunta
+        - keyword: And
+          text: '"Lampada Lume" compare nella pagina Preferiti'
+    - id: PRFR-BSO-030
+      title: Togliere un articolo dai preferiti
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: '"Vaso Duna" è tra i preferiti'
+        - keyword: When
+          text: tocco di nuovo il cuore di "Vaso Duna"
+        - keyword: Then
+          text: il cuore di "Vaso Duna" non è più attivo
+        - keyword: And
+          text: '"Vaso Duna" non compare nella pagina Preferiti'
+    - id: PRFR-BSO-040
+      title: Vedere l'elenco dei preferiti
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho tra i preferiti "Vaso Duna" e "Cornice Atelier"
+        - keyword: When
+          text: apro la pagina Preferiti
+        - keyword: Then
+          text: vedo 2 articoli
+        - keyword: And
+          text: vedo "Vaso Duna" a 34 euro e "Cornice Atelier" a 29 euro
+        - keyword: And
+          text: ogni articolo mostra la propria immagine accanto al nome
+    - id: PRFR-BSO-050
+      title: Aprire un articolo dai preferiti
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: '"Vaso Duna" è tra i preferiti'
+        - keyword: When
+          text: tocco l'articolo "Vaso Duna" nella pagina Preferiti
+        - keyword: Then
+          text: vedo la scheda di "Vaso Duna"
+    - id: PRFR-BSO-060
+      title: Tornare ai preferiti dalla scheda di un articolo
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho aperto la scheda di "Vaso Duna" dalla pagina Preferiti
+        - keyword: When
+          text: torno indietro
+        - keyword: Then
+          text: torno alla pagina Preferiti
+    - id: PRFR-BSO-070
+      title: Nessun preferito
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: non ho preferiti
+        - keyword: When
+          text: apro la pagina Preferiti
+        - keyword: Then
+          text: 'vedo il messaggio "Tocca il cuore sugli oggetti che ti piacciono: li ritrovi tutti qui."'
+    - id: PRFR-BSO-080
+      title: I preferiti restano dopo aver ricaricato la pagina
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:39:57.147Z'
+        updatedAt: '2026-11-24T18:39:57.147Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho tra i preferiti "Vaso Duna"
+        - keyword: When
+          text: ricarico la pagina
+        - keyword: Then
+          text: il cuore di "Vaso Duna" è ancora attivo

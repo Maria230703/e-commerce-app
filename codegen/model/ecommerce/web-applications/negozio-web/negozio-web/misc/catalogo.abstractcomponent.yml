@@ -1,0 +1,24 @@
+type: abstract-component
+name: Catalogo
+title: Catalogo
+description: >-
+  Elenco prodotti, categorie, filtri e transizioni di vista. Moduli:
+  catalog-logic.js (PRODUCTS, CATEGORIES, filterProducts,
+  transitionCatalogView), rendering in app.js.
+id: 6a3feb6a-aab2-b194-12ce-55e1586f95be
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 120.5
+        'y': 88.5
+children:
+  - id: c0070321-c8e5-20f0-8bdb-35a56ba6ff8a
+    type: abstract-component
+  - id: 76d31dd2-3138-055b-0259-9560a63e183f
+    type: abstract-component
+interactions:
+  - targetId: dd29197b-b9a5-8ffc-6e16-66ad6720d572
+    type: abstract-component
+    level: component

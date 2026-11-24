@@ -1,0 +1,14 @@
+type: abstract-component
+name: FramePhotoSection
+title: frame-configurator.js (foto)
+description: >-
+  Anteprima e caricamento della foto; FRAME_PHOTO_PRINT_NOTE e
+  createFrameCartItem in cart-logic.js.
+id: 85516501-df5c-5883-8367-d1610a0abd93
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      dc487e23-0a3f-05ad-a17e-92db88a7daab:
+        x: -170.5
+        'y': 0

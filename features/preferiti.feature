@@ -1,49 +1,60 @@
-# language: it
-Funzionalità: Preferiti
-  Come cliente del negozio
-  voglio salvare gli articoli che mi piacciono
-  per ritrovarli facilmente più tardi
+@c4-id:7d40d91f-0bed-f5f3-4479-83b4d838c2ee
+Feature: Preferiti
 
+  As a cliente del negozio
+  I want salvare gli articoli che mi piacciono
+  So that ritrovarli facilmente più tardi
+
+  @id(PRFR-BSO-010) @functional @c4-container
   Scenario: Aggiungere un articolo ai preferiti dal catalogo
-    Dato che sono sulla pagina Scopri e non ho preferiti
-    Quando tocco il cuore di "Vaso Duna"
-    Allora il cuore di "Vaso Duna" risulta attivo
-    E il cuore è nero pece senza spunta
+    Given sono sulla pagina Scopri e non ho preferiti
+    When tocco il cuore di "Vaso Duna"
+    Then il cuore di "Vaso Duna" risulta attivo
+    And il cuore è nero pece senza spunta
 
+  @id(PRFR-BSO-020) @functional @c4-container
   Scenario: Aggiungere un articolo ai preferiti dalla scheda
-    Dato che sto guardando la scheda di "Lampada Lume"
-    Quando tocco il cuore
-    Allora il cuore risulta attivo
-    E il cuore è nero pece senza spunta
-    E "Lampada Lume" compare nella pagina Preferiti
+    Given sto guardando la scheda di "Lampada Lume"
+    When tocco il cuore
+    Then il cuore risulta attivo
+    And il cuore è nero pece senza spunta
+    And "Lampada Lume" compare nella pagina Preferiti
 
+  @id(PRFR-BSO-030) @functional @c4-container
   Scenario: Togliere un articolo dai preferiti
-    Dato che "Vaso Duna" è tra i preferiti
-    Quando tocco di nuovo il cuore di "Vaso Duna"
-    Allora il cuore di "Vaso Duna" non è più attivo
-    E "Vaso Duna" non compare nella pagina Preferiti
+    Given "Vaso Duna" è tra i preferiti
+    When tocco di nuovo il cuore di "Vaso Duna"
+    Then il cuore di "Vaso Duna" non è più attivo
+    And "Vaso Duna" non compare nella pagina Preferiti
 
+  @id(PRFR-BSO-040) @functional @c4-container
   Scenario: Vedere l'elenco dei preferiti
-    Dato che ho tra i preferiti "Vaso Duna" e "Cornice Atelier"
-    Quando apro la pagina Preferiti
-    Allora vedo 2 articoli
-    E vedo "Vaso Duna" a 34 euro e "Cornice Atelier" a 29 euro
-    E ogni articolo mostra la propria immagine accanto al nome
+    Given ho tra i preferiti "Vaso Duna" e "Cornice Atelier"
+    When apro la pagina Preferiti
+    Then vedo 2 articoli
+    And vedo "Vaso Duna" a 34 euro e "Cornice Atelier" a 29 euro
+    And ogni articolo mostra la propria immagine accanto al nome
 
+  @id(PRFR-BSO-050) @functional @c4-container
   Scenario: Aprire un articolo dai preferiti
-    Dato che "Vaso Duna" è tra i preferiti
-    Quando tocco l'articolo "Vaso Duna" nella pagina Preferiti
-    Allora vedo la scheda di "Vaso Duna"
-    Quando torno indietro
-    Allora torno alla pagina Preferiti
+    Given "Vaso Duna" è tra i preferiti
+    When tocco l'articolo "Vaso Duna" nella pagina Preferiti
+    Then vedo la scheda di "Vaso Duna"
 
+  @id(PRFR-BSO-060) @functional @c4-container
+  Scenario: Tornare ai preferiti dalla scheda di un articolo
+    Given ho aperto la scheda di "Vaso Duna" dalla pagina Preferiti
+    When torno indietro
+    Then torno alla pagina Preferiti
+
+  @id(PRFR-BSO-070) @functional @c4-container
   Scenario: Nessun preferito
-    Dato che non ho preferiti
-    Quando apro la pagina Preferiti
-    Allora vedo il messaggio "Tocca il cuore sugli oggetti che ti piacciono: li ritrovi tutti qui."
+    Given non ho preferiti
+    When apro la pagina Preferiti
+    Then vedo il messaggio "Tocca il cuore sugli oggetti che ti piacciono: li ritrovi tutti qui."
 
+  @id(PRFR-BSO-080) @functional @c4-container
   Scenario: I preferiti restano dopo aver ricaricato la pagina
-    Dato che ho tra i preferiti "Vaso Duna"
-    Quando ricarico la pagina
-    Allora il cuore di "Vaso Duna" è ancora attivo
-    
+    Given ho tra i preferiti "Vaso Duna"
+    When ricarico la pagina
+    Then il cuore di "Vaso Duna" è ancora attivo

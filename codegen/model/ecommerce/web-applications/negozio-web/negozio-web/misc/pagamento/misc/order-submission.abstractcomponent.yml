@@ -1,0 +1,12 @@
+type: abstract-component
+name: OrderSubmission
+title: app.js (invio ordine)
+description: fetch POST /api/orders dalla shell app.js.
+id: 711deac7-8dff-ef20-3a46-a99ff93534f9
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      bd43ab9c-56da-6742-9ed3-b1f2db1b2019:
+        x: -170.5
+        'y': -140

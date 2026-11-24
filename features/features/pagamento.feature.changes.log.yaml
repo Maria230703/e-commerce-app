@@ -1,0 +1,82 @@
+version: 1
+document:
+  sourceFeature: pagamento.feature
+  updatedAt: '2026-11-24T18:43:20.573Z'
+changes:
+  - changedAt: '2026-11-24T18:43:20.566Z'
+    ref: feature:pagamento
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:bd43ab9c-56da-6742-9ed3-b1f2db1b2019'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: feature:pagamento
+    constructType: Feature
+    offset: 9
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 7
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 8
+    before: '      | campo              | messaggio                        |'
+    after: '    | campo              | messaggio                        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 9
+    before: '      | Nome               | Inserisci il nome                |'
+    after: '    | Nome               | Inserisci il nome                |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 10
+    before: '      | Cognome            | Inserisci il cognome             |'
+    after: '    | Cognome            | Inserisci il cognome             |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 11
+    before: '      | Indirizzo          | Inserisci l''indirizzo            |'
+    after: '    | Indirizzo          | Inserisci l''indirizzo            |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 12
+    before: '      | Città              | Inserisci la città               |'
+    after: '    | Città              | Inserisci la città               |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 13
+    before: '      | CAP                | Inserisci il CAP                 |'
+    after: '    | CAP                | Inserisci il CAP                 |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 14
+    before: '      | Numero di telefono | Inserisci il numero di telefono |'
+    after: '    | Numero di telefono | Inserisci il numero di telefono |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.573Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 15
+    before: '      | Email              | Inserisci l''email                |'
+    after: '    | Email              | Inserisci l''email                |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

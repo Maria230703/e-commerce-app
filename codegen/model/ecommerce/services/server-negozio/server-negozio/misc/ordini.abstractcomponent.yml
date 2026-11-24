@@ -1,0 +1,17 @@
+type: abstract-component
+name: Ordini
+title: Ordini
+description: >-
+  Validazione e persistenza degli ordini in orders.json (orders.js: createOrder,
+  OrderInputError).
+id: 50faddec-e1ab-6f69-4ca9-df027e199ed9
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      cf35d60e-6f44-ff74-a26e-9731ec9f59e0:
+        x: 200
+        'y': 345.5
+children:
+  - id: e78e691b-e717-30e7-23a1-7f8ea98491e7
+    type: abstract-component

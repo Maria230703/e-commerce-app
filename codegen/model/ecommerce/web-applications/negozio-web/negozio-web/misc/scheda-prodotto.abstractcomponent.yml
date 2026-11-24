@@ -1,0 +1,21 @@
+type: abstract-component
+name: SchedaProdotto
+title: Scheda prodotto
+description: >-
+  Dettaglio prodotto con colore e provenienza etichettati. Modulo:
+  product-detail.js (renderProductDetailMarkup).
+id: dd29197b-b9a5-8ffc-6e16-66ad6720d572
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 120.5
+        'y': 345.5
+children:
+  - id: 98142ae1-74c2-a8b7-b013-96057f3f9c83
+    type: abstract-component
+interactions:
+  - targetId: 37f816a0-7bf6-7916-6560-d364f7a06cd1
+    type: abstract-component
+    level: component

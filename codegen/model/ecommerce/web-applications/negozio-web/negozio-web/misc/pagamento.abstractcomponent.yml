@@ -1,0 +1,26 @@
+type: abstract-component
+name: Pagamento
+title: Pagamento
+description: >-
+  Indirizzo, validazione, metodi di pagamento simulati (carta, PayPal, bonifico)
+  e invio ordine a /api/orders. Moduli: payment-logic.js, payment-ui.js, invio
+  in app.js.
+id: bd43ab9c-56da-6742-9ed3-b1f2db1b2019
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 321.16666666666663
+        'y': 859.5
+children:
+  - id: 210e02bc-9981-5adf-b262-1000092e964e
+    type: abstract-component
+  - id: 7c1056e4-3cf2-735f-0a05-c988c6e23bf7
+    type: abstract-component
+  - id: 711deac7-8dff-ef20-3a46-a99ff93534f9
+    type: abstract-component
+interactions:
+  - targetId: 32be3296-6b21-5964-8815-ef0bf817c0ab
+    type: abstract-component
+    level: component

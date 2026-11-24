@@ -1,0 +1,215 @@
+version: 1
+document:
+  sourceFeature: scheda_prodotto.feature
+  updatedAt: '2026-11-24T18:43:17.129Z'
+changes:
+  - changedAt: '2026-11-24T18:43:17.123Z'
+    ref: feature:scheda-prodotto
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:dd29197b-b9a5-8ffc-6e16-66ad6720d572'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 6
+    before: '      | articolo        | prezzo | descrizione                                                     |'
+    after: '    | articolo        | prezzo | descrizione                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 7
+    before: '      | Lampada Lume    | 89     | Paralume in lino e base in metallo. Luce calda e diffusa.       |'
+    after: '    | Lampada Lume    | 89     | Paralume in lino e base in metallo. Luce calda e diffusa.       |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 8
+    before: '      | Specchio Orbita | 119    | Specchio tondo con bordo sottile in metallo.                    |'
+    after: '    | Specchio Orbita | 119    | Specchio tondo con bordo sottile in metallo.                    |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 9
+    before: '      | Portavaso Trama | 45     | Intreccio in rattan naturale con fondo impermeabile.            |'
+    after: '    | Portavaso Trama | 45     | Intreccio in rattan naturale con fondo impermeabile.            |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 10
+    before: '      | Vaso Duna       | 34     | Ceramica smaltata a mano con finitura opaca.                    |'
+    after: '    | Vaso Duna       | 34     | Ceramica smaltata a mano con finitura opaca.                    |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 11
+    before: '      | Candela Vaniglia| 22     | Cera vegetale in vasetto di vetro riutilizzabile.               |'
+    after: '    | Candela Vaniglia| 22     | Cera vegetale in vasetto di vetro riutilizzabile.               |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 12
+    before: '      | Cornice Atelier | 29     | Profilo in plastica con vetro antiriflesso.                        |'
+    after: '    | Cornice Atelier | 29     | Profilo in plastica con vetro antiriflesso.                        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 6
+    before: '      | articolo         | voce        | valore                                                            |'
+    after: '    | articolo         | voce        | valore                                                            |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 7
+    before: '      | Lampada Lume     | Dimensioni  | altezza 45 cm, diametro paralume 28 cm, diametro base 16 cm       |'
+    after: '    | Lampada Lume     | Dimensioni  | altezza 45 cm, diametro paralume 28 cm, diametro base 16 cm       |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 8
+    before: '      | Lampada Lume     | Materiali   | lino, metallo, porta lampadina in acciaio inox                    |'
+    after: '    | Lampada Lume     | Materiali   | lino, metallo, porta lampadina in acciaio inox                    |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 9
+    before: '      | Lampada Lume     | Provenienza | Made in Italy                                                     |'
+    after: '    | Lampada Lume     | Provenienza | Made in Italy                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 10
+    before: '      | Specchio Orbita  | Dimensioni  | diametro 100 cm                                                   |'
+    after: '    | Specchio Orbita  | Dimensioni  | diametro 100 cm                                                   |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 11
+    before: '      | Specchio Orbita  | Materiali   | metallo, vetro, retro in truciolato                               |'
+    after: '    | Specchio Orbita  | Materiali   | metallo, vetro, retro in truciolato                               |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 12
+    before: '      | Specchio Orbita  | Provenienza | Made in Italy                                                     |'
+    after: '    | Specchio Orbita  | Provenienza | Made in Italy                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 13
+    before: '      | Cornice Atelier  | Dimensioni  | 40 x 60 cm                                                        |'
+    after: '    | Cornice Atelier  | Dimensioni  | 40 x 60 cm                                                        |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 14
+    before: '      | Cornice Atelier  | Materiali   | plastica, vetro antiriflesso, retro in sughero, ganci in acciaio  |'
+    after: '    | Cornice Atelier  | Materiali   | plastica, vetro antiriflesso, retro in sughero, ganci in acciaio  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 15
+    before: '      | Cornice Atelier  | Provenienza | Made in Italy                                                     |'
+    after: '    | Cornice Atelier  | Provenienza | Made in Italy                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 16
+    before: '      | Candela Vaniglia | Dimensioni  | altezza 10 cm, diametro 8,5 cm, peso della cera 275 g             |'
+    after: '    | Candela Vaniglia | Dimensioni  | altezza 10 cm, diametro 8,5 cm, peso della cera 275 g             |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 17
+    before: '      | Candela Vaniglia | Materiali   | cera vegetale, vasetto in vetro                                   |'
+    after: '    | Candela Vaniglia | Materiali   | cera vegetale, vasetto in vetro                                   |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 18
+    before: '      | Candela Vaniglia | Provenienza | Made in Italy                                                     |'
+    after: '    | Candela Vaniglia | Provenienza | Made in Italy                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 19
+    before: '      | Portavaso Trama  | Dimensioni  | diametro esterno 34 cm, diametro interno 27 cm, altezza 33 cm     |'
+    after: '    | Portavaso Trama  | Dimensioni  | diametro esterno 34 cm, diametro interno 27 cm, altezza 33 cm     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 20
+    before: '      | Portavaso Trama  | Materiali   | rattan naturale, fondo impermeabile                               |'
+    after: '    | Portavaso Trama  | Materiali   | rattan naturale, fondo impermeabile                               |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 21
+    before: '      | Portavaso Trama  | Provenienza | Made in Italy                                                     |'
+    after: '    | Portavaso Trama  | Provenienza | Made in Italy                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 22
+    before: '      | Vaso Duna        | Dimensioni  | altezza 30 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm |'
+    after: '    | Vaso Duna        | Dimensioni  | altezza 30 cm, diametro pancia 22 cm, imboccatura 13 cm, base 11 cm |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 23
+    before: '      | Vaso Duna        | Materiali   | ceramica smaltata                                                 |'
+    after: '    | Vaso Duna        | Materiali   | ceramica smaltata                                                 |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 24
+    before: '      | Vaso Duna        | Colore      | bianco latte e arancione                                          |'
+    after: '    | Vaso Duna        | Colore      | bianco latte e arancione                                          |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:17.129Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 25
+    before: '      | Vaso Duna        | Provenienza | Made in Italy                                                     |'
+    after: '    | Vaso Duna        | Provenienza | Made in Italy                                                     |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

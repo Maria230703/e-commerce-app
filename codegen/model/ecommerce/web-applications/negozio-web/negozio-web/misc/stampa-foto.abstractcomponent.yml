@@ -1,0 +1,20 @@
+type: abstract-component
+name: StampaFoto
+title: Stampa foto
+description: >-
+  Caricamento, anteprima e validazione della foto propria da stampare nella
+  cornice, con omaggio. Moduli: validateFramePhoto in frame-logic.js, sezione
+  foto in frame-configurator.js, FRAME_PHOTO_PRINT_NOTE in cart-logic.js.
+id: dc487e23-0a3f-05ad-a17e-92db88a7daab
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 973
+        'y': 345.5
+children:
+  - id: f6228983-46b6-8b8d-3dfb-8052a97489b1
+    type: abstract-component
+  - id: 85516501-df5c-5883-8367-d1610a0abd93
+    type: abstract-component

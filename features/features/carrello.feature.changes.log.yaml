@@ -1,0 +1,82 @@
+version: 1
+document:
+  sourceFeature: carrello.feature
+  updatedAt: '2026-11-24T18:43:18.902Z'
+changes:
+  - changedAt: '2026-11-24T18:43:18.894Z'
+    ref: feature:carrello
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:32be3296-6b21-5964-8815-ef0bf817c0ab'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.894Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-010) @functional @c4-container'
+    after: '  @id(SPDZ-STP-010) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.894Z'
+    ref: SPDZ-STP-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-020) @functional @c4-container'
+    after: '  @id(SPDZ-STP-020) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.894Z'
+    ref: SPDZ-STP-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-030) @functional @c4-container'
+    after: '  @id(SPDZ-STP-030) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: feature:carrello
+    constructType: Feature
+    offset: 8
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 7
+    before: '      | subtotale | spedizione | totale |'
+    after: '    | subtotale | spedizione | totale |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 8
+    before: '      | 34,00     | 4,90       | 38,90  |'
+    after: '    | 34,00     | 4,90       | 38,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 9
+    before: '      | 78,90     | 4,90       | 83,80  |'
+    after: '    | 78,90     | 4,90       | 83,80  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 10
+    before: '      | 79,00     | 0,00       | 79,00  |'
+    after: '    | 79,00     | 0,00       | 79,00  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:18.902Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 11
+    before: '      | 123,00    | 0,00       | 123,00 |'
+    after: '    | 123,00    | 0,00       | 123,00 |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

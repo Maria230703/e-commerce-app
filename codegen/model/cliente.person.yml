@@ -1,0 +1,20 @@
+type: person
+name: Cliente
+description: >-
+  Il cliente che sfoglia il catalogo, configura cornici, compila il carrello e
+  paga.
+id: 616cbb32-1802-2037-d050-57f21d4e2a89
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      e-commerce:
+        x: 90.5
+        'y': 190.5
+      501f7912-cc6e-4573-f253-3d49e1c61fbb:
+        x: 190.5
+        'y': -227
+interactions:
+  - targetId: 501f7912-cc6e-4573-f253-3d49e1c61fbb
+    type: software-system
+    level: context

@@ -1,0 +1,465 @@
+version: 1
+document:
+  sourceFeature: pagamento.feature
+  generatedAt: '2026-11-24T18:43:20.544Z'
+  copilotSessionId: de58da2b5fd7c769e9498b6f4f76b0a2
+feature:
+  id: 5875f14a-49d1-45eb-af78-7029b56525ba
+  createdAt: '2026-11-24T18:43:20.544Z'
+  updatedAt: '2026-11-24T18:43:20.544Z'
+  title: Pagamento
+  description:
+    - As a cliente del negozio
+    - I want inserire i dati di spedizione e scegliere come pagare
+    - So that completare il mio acquisto
+  tags:
+    - c4-id:bd43ab9c-56da-6742-9ed3-b1f2db1b2019
+  background:
+    comments:
+      - 'Il pagamento è simulato: nessun addebito reale e nessun dato di carta salvato'
+      - 'Metodi disponibili: carta di credito, PayPal, bonifico bancario'
+    steps:
+      - keyword: Given
+        text: nel carrello c'è 1 articolo "Vaso Duna"
+      - keyword: And
+        text: il totale è 38,90 euro
+  scenarios:
+    - id: PGMN-DATI-DI-SPDZ-ICN-010
+      title: Andare al pagamento dal carrello
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: When
+          text: tocco "Vai al pagamento"
+        - keyword: Then
+          text: vedo la pagina con i dati di spedizione e la scelta del metodo di pagamento
+    - id: PGMN-DATI-DI-SPDZ-ICN-020
+      title: Pagamento non disponibile con il carrello vuoto
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: svuoto il carrello
+        - keyword: When
+          text: apro il carrello
+        - keyword: Then
+          text: non vedo il pulsante "Vai al pagamento"
+    - id: PGMN-DATI-DI-SPDZ-ICN-030
+      title: Metodi di pagamento disponibili
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: When
+          text: sono sulla pagina del pagamento
+        - keyword: Then
+          text: vedo i metodi "Carta di credito", "PayPal" e "Bonifico bancario"
+        - keyword: And
+          text: nessun metodo è già selezionato
+    - id: PGMN-DATI-DI-SPDZ-ICN-040
+      title: Dati di spedizione obbligatori
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sono sulla pagina del pagamento
+        - keyword: And
+          text: compilo tutti i dati di spedizione tranne "<campo>"
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo il messaggio "<messaggio>"
+        - keyword: And
+          text: l'ordine non viene confermato
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| campo              | messaggio                        |'
+        - keyword: __raw__
+          text: '| Nome               | Inserisci il nome                |'
+        - keyword: __raw__
+          text: '| Cognome            | Inserisci il cognome             |'
+        - keyword: __raw__
+          text: '| Indirizzo          | Inserisci l''indirizzo            |'
+        - keyword: __raw__
+          text: '| Città              | Inserisci la città               |'
+        - keyword: __raw__
+          text: '| CAP                | Inserisci il CAP                 |'
+        - keyword: __raw__
+          text: '| Numero di telefono | Inserisci il numero di telefono |'
+        - keyword: __raw__
+          text: '| Email              | Inserisci l''email                |'
+    - id: PGMN-DATI-DI-SPDZ-ICN-050
+      title: Inserire un numero di telefono con prefisso europeo
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sono sulla pagina del pagamento
+        - keyword: When
+          text: inserisco il numero di telefono "3331234567"
+        - keyword: And
+          text: seleziono il prefisso "+33"
+        - keyword: Then
+          text: il prefisso "+33" è selezionato per il numero di telefono
+    - id: PGMN-DATI-DI-SPDZ-ICN-060
+      title: CAP non valido
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sono sulla pagina del pagamento
+        - keyword: When
+          text: inserisco il CAP "123"
+        - keyword: Then
+          text: vedo il messaggio "Il CAP deve avere 5 cifre"
+    - id: PGMN-DATI-DI-SPDZ-ICN-070
+      title: Email non valida
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sono sulla pagina del pagamento
+        - keyword: When
+          text: inserisco l'email "maria.esempio.it"
+        - keyword: Then
+          text: vedo il messaggio "Inserisci un'email valida"
+    - id: PGMN-DATI-DI-SPDZ-ICN-080
+      title: Nessun metodo di pagamento scelto
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo il messaggio "Scegli un metodo di pagamento"
+        - keyword: And
+          text: l'ordine non viene confermato
+    - id: PGMN-DATI-DI-SPDZ-ICN-090
+      title: Riepilogo dell'ordine
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: When
+          text: sono sulla pagina del pagamento
+        - keyword: Then
+          text: vedo il riepilogo con "Vaso Duna" a 34,00 euro, spedizione 4,90 euro e totale 38,90 euro
+    - id: PGMN-EST-ORDN-PEC-010
+      title: Pagamento con carta riuscito
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Carta di credito"
+        - keyword: When
+          text: inserisco il numero di prova "4242 4242 4242 4242", scadenza "12/30" e codice CVV "123"
+        - keyword: And
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo "Ordine confermato" con un numero d'ordine
+        - keyword: And
+          text: il totale pagato è 38,90 euro
+        - keyword: And
+          text: il carrello è vuoto
+    - id: PGMN-EST-ORDN-PEC-020
+      title: Carta rifiutata
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Carta di credito"
+        - keyword: When
+          text: inserisco il numero di prova "4000 0000 0000 0002", scadenza "12/30" e codice CVV "123"
+        - keyword: And
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo il messaggio "Pagamento rifiutato. Prova con un'altra carta."
+        - keyword: And
+          text: l'ordine non viene confermato
+        - keyword: And
+          text: il carrello contiene ancora 1 articolo "Vaso Duna"
+    - id: PGMN-EST-ORDN-PEC-030
+      title: Carta scaduta
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Carta di credito"
+        - keyword: When
+          text: inserisco il numero di prova "4242 4242 4242 4242", scadenza "01/20" e codice CVV "123"
+        - keyword: And
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo il messaggio "La carta è scaduta"
+        - keyword: And
+          text: l'ordine non viene confermato
+    - id: PGMN-EST-ORDN-PEC-040
+      title: Pagamento con PayPal
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "PayPal"
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo la schermata simulata di PayPal
+        - keyword: And
+          text: dopo l'approvazione vedo "Ordine confermato" con un numero d'ordine
+    - id: PGMN-EST-ORDN-PEC-050
+      title: Pagamento con bonifico
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Bonifico bancario"
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo l'IBAN di prova e la causale con il numero d'ordine
+        - keyword: And
+          text: lo stato dell'ordine è "In attesa di pagamento"
+    - id: PGMN-EST-ORDN-PEC-060
+      title: I dati della carta non vengono salvati
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: ho pagato con carta
+        - keyword: When
+          text: riapro la pagina del pagamento
+        - keyword: Then
+          text: i campi della carta sono vuoti
+    - id: PGMN-EST-ORDN-PEC-070
+      title: La foto da stampare arriva al negozio
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+        - foto
+      metadata:
+        createdAt: '2026-11-24T18:43:20.544Z'
+        updatedAt: '2026-11-24T18:43:20.544Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: nel carrello c'è una cornice con la foto "mare.jpg"
+        - keyword: And
+          text: ho pagato con successo
+        - keyword: When
+          text: guardo l'ordine
+        - keyword: Then
+          text: l'ordine riporta la foto "mare.jpg" da stampare su carta fotografica

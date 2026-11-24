@@ -1,0 +1,17 @@
+type: abstract-component
+name: Preferiti
+title: Preferiti
+description: >-
+  Aggiunta/rimozione dei preferiti, elenco, stato vuoto e persistenza in
+  localStorage. Modulo: favorites.js.
+id: 7d40d91f-0bed-f5f3-4479-83b4d838c2ee
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 832.6666666666666
+        'y': 859.5
+children:
+  - id: a0f701c8-2b58-b3af-5d69-e1a0c7b2fae7
+    type: abstract-component

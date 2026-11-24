@@ -1,0 +1,43 @@
+type: software-system
+name: Ecommerce
+description: Negozio online di cornici e articoli per la casa (sistema interno).
+id: 501f7912-cc6e-4573-f253-3d49e1c61fbb
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      e-commerce:
+        x: 90.5
+        'y': 459.5
+  - namespace: c4modeler
+    name: boundary
+    value:
+      x: 190.5
+      'y': 200.5
+      width: 400
+      height: 434
+configuration:
+  ports:
+    sqlServer: 5433
+    postgres: 5432
+    oracle:
+      listener: 1521
+      emExpress: 5500
+    rabbit: 5672
+    redis: 5379
+    jaeger:
+      agentCompactUdp: 5775
+      agentConfigHttp: 5778
+      agentThriftCompactUdp: 6831
+      agentThriftBinaryUdp: 6832
+      zipkinHttp: 9411
+      collectorHttp: 14268
+      uiHttp: 16686
+  orchestrator:
+    provider: docker
+title: E-commerce
+children:
+  - id: c01292a7-a13a-2c8a-5335-9de968150c57
+    type: web-application
+  - id: cf35d60e-6f44-ff74-a26e-9731ec9f59e0
+    type: service

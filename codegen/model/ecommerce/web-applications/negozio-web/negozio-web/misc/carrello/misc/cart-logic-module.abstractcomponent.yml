@@ -1,0 +1,14 @@
+type: abstract-component
+name: CartLogicModule
+title: cart-logic.js
+description: >-
+  restoreCart, persistCart, addProductToCart, removeFromCart,
+  changeCartQuantity, getCartItemCount.
+id: 6bdc6d04-e975-b0c2-3cc9-27289100d07f
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      32be3296-6b21-5964-8815-ef0bf817c0ab:
+        x: -170.5
+        'y': -140

@@ -1,0 +1,319 @@
+version: 1
+document:
+  sourceFeature: galleria_immagini.feature
+  generatedAt: '2026-11-24T18:43:22.351Z'
+  copilotSessionId: f85bb62a4ac7938fe64662ca3d178314
+feature:
+  id: ce0c905a-9634-4cf1-9894-eea04607c2e1
+  createdAt: '2026-11-24T18:43:22.351Z'
+  updatedAt: '2026-11-24T18:43:22.351Z'
+  title: Galleria di immagini della scheda prodotto
+  description:
+    - As a cliente
+    - I want vedere meglio l'articolo attraverso le sue foto
+    - So that valutarlo prima di decidere se comprarlo
+  tags:
+    - c4-id:37f816a0-7bf6-7916-6560-d364f7a06cd1
+  background:
+    steps:
+      - keyword: Given
+        text: voglio vedere la galleria di un articolo del catalogo
+      - keyword: And
+        text: sono disponibili tutte le foto fornite per quell'articolo
+      - keyword: And
+        text: posso navigare sia con le frecce sia con le miniature
+  scenarios:
+    - id: GLLR-IMMG-NNT-010
+      title: Aprire la scheda prodotto e vedere la prima foto
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sono sulla scheda prodotto "<articolo>"
+        - keyword: When
+          text: guardo la scheda
+        - keyword: Then
+          text: vedo la foto 1 del carosello
+        - keyword: And
+          text: vedo le frecce di navigazione e le miniature delle <numero_foto> foto disponibili
+        - keyword: And
+          text: posso leggere la descrizione del prodotto
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         | numero_foto |'
+        - keyword: __raw__
+          text: '| Lampada Lume     | 4           |'
+        - keyword: __raw__
+          text: '| Specchio Orbita  | 2           |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  | 3           |'
+        - keyword: __raw__
+          text: '| Vaso Duna        | 3           |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia | 3           |'
+        - keyword: __raw__
+          text: '| Cornice Atelier  | 2           |'
+    - id: GLLR-IMMG-NNT-020
+      title: Avanzare alla foto successiva
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando la foto 1 dell'articolo "<articolo>"
+        - keyword: When
+          text: tocco la freccia a destra
+        - keyword: Then
+          text: il carosello scorre in avanti
+        - keyword: And
+          text: viene mostrata la foto 2 dell'articolo "<articolo>"
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         |'
+        - keyword: __raw__
+          text: '| Lampada Lume     |'
+        - keyword: __raw__
+          text: '| Specchio Orbita  |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  |'
+        - keyword: __raw__
+          text: '| Vaso Duna        |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia |'
+        - keyword: __raw__
+          text: '| Cornice Atelier  |'
+    - id: GLLR-IMMG-NNT-030
+      title: Scorrere le foto in successione
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando la foto 2 dell'articolo "<articolo>"
+        - keyword: When
+          text: tocco la freccia a destra
+        - keyword: Then
+          text: il carosello scorre in avanti
+        - keyword: And
+          text: viene mostrata la foto 3 dell'articolo "<articolo>"
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         |'
+        - keyword: __raw__
+          text: '| Lampada Lume     |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  |'
+        - keyword: __raw__
+          text: '| Vaso Duna        |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia |'
+    - id: GLLR-IMMG-NNT-040
+      title: Ricominciare dalla prima foto dopo l'ultima
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando la foto <ultima_foto> di <numero_foto> nella scheda di "<articolo>"
+        - keyword: When
+          text: tocco la freccia a destra
+        - keyword: Then
+          text: vedo la foto 1 di <numero_foto>
+        - keyword: And
+          text: lo scorrimento continua nell'ordine stabilito
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         | ultima_foto | numero_foto |'
+        - keyword: __raw__
+          text: '| Lampada Lume     | 4           | 4           |'
+        - keyword: __raw__
+          text: '| Specchio Orbita  | 2           | 2           |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  | 3           | 3           |'
+        - keyword: __raw__
+          text: '| Vaso Duna        | 3           | 3           |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia | 3           | 3           |'
+        - keyword: __raw__
+          text: '| Cornice Atelier  | 2           | 2           |'
+    - id: GLLR-IMMG-NNT-050
+      title: Tornare alla foto precedente
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando la foto 2 dell'articolo "<articolo>"
+        - keyword: When
+          text: tocco la freccia a sinistra
+        - keyword: Then
+          text: il carosello scorre all'indietro
+        - keyword: And
+          text: viene mostrata la foto 1 dell'articolo "<articolo>"
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         |'
+        - keyword: __raw__
+          text: '| Lampada Lume     |'
+        - keyword: __raw__
+          text: '| Specchio Orbita  |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  |'
+        - keyword: __raw__
+          text: '| Vaso Duna        |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia |'
+        - keyword: __raw__
+          text: '| Cornice Atelier  |'
+    - id: GLLR-IMMG-NNT-060
+      title: Selezionare una foto con le miniature
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando la foto 2 dell'articolo "<articolo>"
+        - keyword: When
+          text: tocco la miniatura della foto 1
+        - keyword: Then
+          text: la foto 1 dell'articolo "<articolo>" appare nel riquadro principale
+        - keyword: And
+          text: sostituisce la foto 2 dell'articolo "<articolo>"
+        - keyword: And
+          text: la miniatura della foto 1 è selezionata e ha una trasparenza del 50%
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         |'
+        - keyword: __raw__
+          text: '| Lampada Lume     |'
+        - keyword: __raw__
+          text: '| Specchio Orbita  |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  |'
+        - keyword: __raw__
+          text: '| Vaso Duna        |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia |'
+        - keyword: __raw__
+          text: '| Cornice Atelier  |'
+    - id: GLLR-IMMG-NNT-070
+      title: Vedere frecce nere in cerchi color panna
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:22.351Z'
+        updatedAt: '2026-11-24T18:43:22.351Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: sto guardando una foto dell'articolo "<articolo>"
+        - keyword: When
+          text: guardo le frecce di navigazione
+        - keyword: Then
+          text: le frecce sono nere
+        - keyword: And
+          text: ogni freccia è racchiusa in un cerchio color panna con trasparenza del 50%
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo         |'
+        - keyword: __raw__
+          text: '| Lampada Lume     |'
+        - keyword: __raw__
+          text: '| Specchio Orbita  |'
+        - keyword: __raw__
+          text: '| Portavaso Trama  |'
+        - keyword: __raw__
+          text: '| Vaso Duna        |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia |'
+        - keyword: __raw__
+          text: '| Cornice Atelier  |'

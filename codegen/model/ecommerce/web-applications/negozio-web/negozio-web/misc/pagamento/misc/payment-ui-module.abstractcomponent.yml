@@ -1,0 +1,12 @@
+type: abstract-component
+name: PaymentUiModule
+title: payment-ui.js
+description: renderPaymentPageMarkup, schermata PayPal simulata.
+id: 7c1056e4-3cf2-735f-0a05-c988c6e23bf7
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      bd43ab9c-56da-6742-9ed3-b1f2db1b2019:
+        x: 0
+        'y': 140

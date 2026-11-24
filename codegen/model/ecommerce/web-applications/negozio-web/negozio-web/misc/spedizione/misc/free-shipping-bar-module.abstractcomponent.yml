@@ -1,0 +1,12 @@
+type: abstract-component
+name: FreeShippingBarModule
+title: payment-ui.js (renderFreeShippingBar)
+description: Barra della spedizione gratuita.
+id: 438f00d2-86a0-3c19-c29e-eb74bb6076c2
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      94d6dcb5-3ead-b352-1700-b2185272c021:
+        x: 170.5
+        'y': 0

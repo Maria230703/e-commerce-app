@@ -1,0 +1,12 @@
+type: abstract-component
+name: ShippingRulesModule
+title: catalog-logic.js (spedizione)
+description: FREE_SHIPPING_THRESHOLD_CENTS, SHIPPING_COST_CENTS, getFreeShippingProgress.
+id: d47f13bd-f109-d77c-2fc9-0cc182bf36f5
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      94d6dcb5-3ead-b352-1700-b2185272c021:
+        x: -170.5
+        'y': 0

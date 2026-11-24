@@ -1,0 +1,19 @@
+version: 1
+document:
+  sourceFeature: spedizionegratuita.feature
+  updatedAt: '2026-11-24T18:43:20.037Z'
+changes:
+  - changedAt: '2026-11-24T18:43:20.002Z'
+    ref: feature:spedizione-gratuita
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:94d6dcb5-3ead-b352-1700-b2185272c021'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:20.037Z'
+    ref: feature:spedizione-gratuita
+    constructType: Feature
+    offset: 8
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

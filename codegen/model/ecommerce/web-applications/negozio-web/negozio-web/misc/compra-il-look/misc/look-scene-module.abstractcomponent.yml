@@ -1,0 +1,12 @@
+type: abstract-component
+name: LookSceneModule
+title: look-scene.js
+description: LOOK_SCENE_PRODUCTS, renderLookScene.
+id: 2c32e260-aad4-321c-b2ce-203ef9385061
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      98f295c7-ba88-5b12-290b-815a8c0ac139:
+        x: 0
+        'y': 0

@@ -1,0 +1,12 @@
+type: abstract-component
+name: OrdersJs
+title: orders.js
+description: createOrder, OrderInputError, ORDERS_FILE (orders.json).
+id: e78e691b-e717-30e7-23a1-7f8ea98491e7
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      50faddec-e1ab-6f69-4ca9-df027e199ed9:
+        x: 0
+        'y': 0

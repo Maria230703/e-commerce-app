@@ -1,117 +1,138 @@
-# language: it
-Funzionalità: Carrello
-  Come cliente del negozio
-  voglio raccogliere gli articoli che voglio comprare e vedere il totale
-  per decidere cosa acquistare
+@c4-id:32be3296-6b21-5964-8815-ef0bf817c0ab
+Feature: Carrello
+
+  As a cliente del negozio
+  I want raccogliere gli articoli che voglio comprare e vedere il totale
+  So that decidere cosa acquistare
 
   # Spedizione 4,90 euro, gratuita da 79,00 euro di subtotale
-
+  @id(CRRL-RGH-E-QNTT-KWT-010) @functional @c4-container
   Scenario: Carrello vuoto
-    Dato che non ho aggiunto nulla
-    Quando apro il carrello
-    Allora vedo il messaggio "Il carrello è vuoto"
-    E non vedo il pulsante "Vai al pagamento"
+    Given non ho aggiunto nulla
+    When apro il carrello
+    Then vedo il messaggio "Il carrello è vuoto"
+    And non vedo il pulsante "Vai al pagamento"
 
+  @id(CRRL-RGH-E-QNTT-KWT-020) @functional @c4-container
   Scenario: Il riepilogo non appare nella pagina Scopri
-    Dato che sono sulla pagina Scopri
-    Quando non ho ancora toccato il pulsante Carrello
-    Allora non vedo il riepilogo del carrello
-    E il pulsante Carrello resta visibile nell'intestazione
+    Given sono sulla pagina Scopri
+    When non ho ancora toccato il pulsante Carrello
+    Then non vedo il riepilogo del carrello
+    And il pulsante Carrello resta visibile nell'intestazione
 
+  @id(CRRL-RGH-E-QNTT-KWT-030) @functional @c4-container
   Scenario: Aprire il carrello dal pulsante
-    Dato che sono sulla pagina Scopri
-    Quando tocco il pulsante Carrello
-    Allora si apre la pagina del carrello
-    E posso vedere il riepilogo e il totale
-    E vedo il pulsante "Indietro"
+    Given sono sulla pagina Scopri
+    When tocco il pulsante Carrello
+    Then si apre la pagina del carrello
+    And posso vedere il riepilogo e il totale
+    And vedo il pulsante "Indietro"
 
+  @id(CRRL-RGH-E-QNTT-KWT-040) @functional @c4-container
   Scenario: Aggiungere un articolo dalla scheda
-    Dato che il carrello è vuoto
-    E sto guardando la scheda di "Vaso Duna"
-    Quando tocco "Aggiungi"
-    Allora il carrello contiene 1 articolo "Vaso Duna" a 34,00 euro
-    E l'icona del carrello mostra 1
+    Given il carrello è vuoto
+    And sto guardando la scheda di "Vaso Duna"
+    When tocco "Aggiungi"
+    Then il carrello contiene 1 articolo "Vaso Duna" a 34,00 euro
+    And l'icona del carrello mostra 1
 
+  @id(CRRL-RGH-E-QNTT-KWT-050) @functional @c4-container
   Scenario: Aggiungere due volte lo stesso articolo
-    Dato che nel carrello c'è 1 articolo "Vaso Duna"
-    Quando aggiungo di nuovo "Vaso Duna" dalla sua scheda
-    Allora il carrello ha una sola riga "Vaso Duna" con quantità 2
-    E l'icona del carrello mostra 2
+    Given nel carrello c'è 1 articolo "Vaso Duna"
+    When aggiungo di nuovo "Vaso Duna" dalla sua scheda
+    Then il carrello ha una sola riga "Vaso Duna" con quantità 2
+    And l'icona del carrello mostra 2
 
+  @id(CRRL-RGH-E-QNTT-KWT-060) @functional @c4-container
   Scenario: Aumentare la quantità
-    Dato che nel carrello c'è 1 articolo "Vaso Duna"
-    Quando aumento la quantità di "Vaso Duna" a 3
-    Allora la riga "Vaso Duna" mostra 102,00 euro
+    Given nel carrello c'è 1 articolo "Vaso Duna"
+    When aumento la quantità di "Vaso Duna" a 3
+    Then la riga "Vaso Duna" mostra 102,00 euro
 
+  @id(CRRL-RGH-E-QNTT-KWT-070) @functional @c4-container
   Scenario: Togliere un articolo diminuendo la quantità
-    Dato che nel carrello c'è 1 articolo "Vaso Duna"
-    Quando diminuisco la quantità di "Vaso Duna"
-    Allora "Vaso Duna" non è più nel carrello
-    E vedo il messaggio "Il carrello è vuoto"
+    Given nel carrello c'è 1 articolo "Vaso Duna"
+    When diminuisco la quantità di "Vaso Duna"
+    Then "Vaso Duna" non è più nel carrello
+    And vedo il messaggio "Il carrello è vuoto"
 
+  @id(CRRL-RGH-E-QNTT-KWT-080) @functional @c4-container
   Scenario: I pulsanti quantità sono ordinati in verticale
-    Dato che nel carrello c'è 1 articolo "Vaso Duna"
-    Quando apro il carrello
-    Allora il pulsante "+" appare sopra il pulsante "-"
+    Given nel carrello c'è 1 articolo "Vaso Duna"
+    When apro il carrello
+    Then il pulsante "+" appare sopra il pulsante "-"
 
+  @id(CRRL-CRNC-PRSN-BCS-010) @functional @c4-container
   Scenario: Aggiungere una cornice personalizzata
-    Dato che il carrello è vuoto
-    E sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
-    Quando tocco "Aggiungi al carrello"
-    Allora il carrello contiene "Cornice su misura" a 30,90 euro
-    E la riga riporta "13x18 cm, Classico, passe-partout Bianco"
+    Given il carrello è vuoto
+    And sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+    When tocco "Aggiungi al carrello"
+    Then il carrello contiene "Cornice su misura" a 30,90 euro
+    And la riga riporta "13x18 cm, Classico, passe-partout Bianco"
 
+  @id(CRRL-CRNC-PRSN-BCS-020) @functional @c4-container
   Scenario: Cornice personalizzata con foto
-    Dato che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
-    E ho caricato il file "mare.jpg"
-    Quando tocco "Aggiungi al carrello"
-    Allora la riga della cornice riporta "Stampa foto su carta fotografica: omaggio"
-    E il prezzo della riga è 30,90 euro
+    Given sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+    And ho caricato il file "mare.jpg"
+    When tocco "Aggiungi al carrello"
+    Then la riga della cornice riporta "Stampa foto su carta fotografica: omaggio"
+    And il prezzo della riga è 30,90 euro
 
+  @id(CRRL-CRNC-PRSN-BCS-030) @functional @c4-container
   Scenario: Cornici con scelte diverse sono righe separate
-    Dato che nel carrello c'è una cornice 13x18 "Classico", passe-partout "Bianco"
-    Quando aggiungo una cornice 13x18 "Contemporaneo", passe-partout "Bianco"
-    Allora il carrello ha due righe di cornice
-    E il subtotale è 63,80 euro
+    Given nel carrello c'è una cornice 13x18 "Classico", passe-partout "Bianco"
+    When aggiungo una cornice 13x18 "Contemporaneo", passe-partout "Bianco"
+    Then il carrello ha due righe di cornice
+    And il subtotale è 63,80 euro
 
-  Schema dello scenario: Costo della spedizione
-    Dato che il subtotale del carrello è <subtotale> euro
-    Quando guardo il riepilogo del carrello
-    Allora la spedizione costa <spedizione> euro
-    E il totale è <totale> euro
+  @id(SPDZ-STP-010) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)
+  Scenario Outline: Costo della spedizione
+    Given il subtotale del carrello è <subtotale> euro
+    When guardo il riepilogo del carrello
+    Then la spedizione costa <spedizione> euro
+    And il totale è <totale> euro
+    Examples:
+    | subtotale | spedizione | totale |
+    | 34,00     | 4,90       | 38,90  |
+    | 78,90     | 4,90       | 83,80  |
+    | 79,00     | 0,00       | 79,00  |
+    | 123,00    | 0,00       | 123,00 |
 
-    Esempi:
-      | subtotale | spedizione | totale |
-      | 34,00     | 4,90       | 38,90  |
-      | 78,90     | 4,90       | 83,80  |
-      | 79,00     | 0,00       | 79,00  |
-      | 123,00    | 0,00       | 123,00 |
-
+  @id(SPDZ-STP-020) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)
   Scenario: Barra della spedizione gratuita
-    Dato che nel carrello c'è 1 articolo "Vaso Duna"
-    Quando guardo il riepilogo del carrello
-    Allora vedo "Ti mancano 45,00 euro per la spedizione gratuita"
+    Given nel carrello c'è 1 articolo "Vaso Duna"
+    When guardo il riepilogo del carrello
+    Then vedo "Ti mancano 45,00 euro per la spedizione gratuita"
 
+  @id(SPDZ-STP-030) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)
   Scenario: Spedizione gratuita raggiunta
-    Dato che nel carrello c'è 1 articolo "Lampada Lume"
-    Quando guardo il riepilogo del carrello
-    Allora vedo "Spedizione gratuita sbloccata"
+    Given nel carrello c'è 1 articolo "Lampada Lume"
+    When guardo il riepilogo del carrello
+    Then vedo "Spedizione gratuita sbloccata"
 
+  @id(CRRL-RGH-E-QNTT-KWT-090) @functional @c4-container
   Scenario: Il carrello resta dopo la ricarica
-    Dato che nel carrello c'è 1 articolo "Vaso Duna"
-    Quando ricarico la pagina
-    Allora il carrello contiene ancora 1 articolo "Vaso Duna"
-  Scenario: Il pulsante mantiene la posizione e rimuove l'articolo al secondo tocco
-    Dato che sono sulla pagina Scopri e il carrello è vuoto
-    Quando tocco "Aggiungi" su "Lampada Lume"
-    Allora il pulsante di "Lampada Lume" diventa verde e mostra "Aggiunto"
-    E il pulsante resta nella stessa posizione
-    E gli altri articoli mantengono il pulsante "Aggiungi"
-    E tocco di nuovo il pulsante di "Lampada Lume"
-    Allora "Lampada Lume" non è più nel carrello
-    E il pulsante di "Lampada Lume" torna "Aggiungi"
+    Given nel carrello c'è 1 articolo "Vaso Duna"
+    When ricarico la pagina
+    Then il carrello contiene ancora 1 articolo "Vaso Duna"
 
+  @id(CRRL-RGH-E-QNTT-KWT-100) @functional @c4-container
+  Scenario: Il pulsante diventa Aggiunto e mantiene la posizione
+    Given sono sulla pagina Scopri e il carrello è vuoto
+    When tocco "Aggiungi" su "Lampada Lume"
+    Then il pulsante di "Lampada Lume" diventa verde e mostra "Aggiunto"
+    And il pulsante resta nella stessa posizione
+    And gli altri articoli mantengono il pulsante "Aggiungi"
+
+  @id(CRRL-RGH-E-QNTT-KWT-110) @functional @c4-container
+  Scenario: Il secondo tocco rimuove l'articolo
+    Given "Lampada Lume" è nel carrello
+    When tocco di nuovo il pulsante di "Lampada Lume"
+    Then "Lampada Lume" non è più nel carrello
+    And il pulsante di "Lampada Lume" torna "Aggiungi"
+
+  @id(CRRL-RGH-E-QNTT-KWT-120) @functional @c4-container
   Scenario: Il pulsante torna normale se l'articolo esce dal carrello
-    Dato che "Lampada Lume" è nel carrello
-    Quando tolgo "Lampada Lume" dal carrello
-    Allora il pulsante di "Lampada Lume" torna "Aggiungi"
+    Given "Lampada Lume" è nel carrello
+    When tolgo "Lampada Lume" dal carrello
+    Then il pulsante di "Lampada Lume" torna "Aggiungi"

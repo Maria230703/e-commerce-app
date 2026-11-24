@@ -1,0 +1,14 @@
+type: abstract-component
+name: ServerJs
+title: server.js
+description: >-
+  http.createServer, serveFile, readJsonBody, sendJson, route /api/orders e
+  /api/products.
+id: a3062246-772f-d6b6-2186-ee4ce4b834a6
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      470b505d-e72a-5b64-3653-cb650af96d41:
+        x: 0
+        'y': 0

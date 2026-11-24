@@ -1,0 +1,24 @@
+type: abstract-component
+name: ConfiguratoreCornice
+title: Configuratore cornice
+description: >-
+  Scelta delle opzioni cornice e prezzo. Moduli: frame-configurator.js,
+  frame-logic.js (FRAME_OPTIONS, calculateFramePriceCents,
+  describeFrameSelection).
+id: d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 973
+        'y': 88.5
+children:
+  - id: 260c2155-3920-ea91-ccbd-607dd9f557bd
+    type: abstract-component
+  - id: 378820da-3fb9-d435-aa09-2f4652fe292e
+    type: abstract-component
+interactions:
+  - targetId: dc487e23-0a3f-05ad-a17e-92db88a7daab
+    type: abstract-component
+    level: component

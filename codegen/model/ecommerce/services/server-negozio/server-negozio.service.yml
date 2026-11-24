@@ -1,0 +1,46 @@
+type: service
+name: ServerNegozio
+title: Server negozio
+description: >-
+  Processo Node (server.js, node:http) distinto dal browser: serve i file
+  statici di public/, espone POST /api/orders e GET /api/products e persiste gli
+  ordini in orders.json.
+namespace: Ecommerce.Server
+targetProfile:
+  platform: headless
+  language: javascript
+  framework: node-http
+  run: node server.js
+  cwd: .
+id: cf35d60e-6f44-ff74-a26e-9731ec9f59e0
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      501f7912-cc6e-4573-f253-3d49e1c61fbb:
+        x: 200
+        'y': 345.5
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 0
+        'y': 954.5
+  - namespace: c4modeler
+    name: boundary
+    value:
+      x: 190.5
+      'y': 297
+      width: 400
+      height: 434
+target:
+  framework: net
+  version: 10
+version: 1
+generationMode: default
+data:
+  orm: EntityFrameworkCore
+sidecar: true
+mapperProvider: mapster
+children:
+  - id: 470b505d-e72a-5b64-3653-cb650af96d41
+    type: abstract-component
+  - id: 50faddec-e1ab-6f69-4ca9-df027e199ed9
+    type: abstract-component

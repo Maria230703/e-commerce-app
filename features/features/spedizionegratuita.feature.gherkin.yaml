@@ -1,0 +1,77 @@
+version: 1
+document:
+  sourceFeature: spedizionegratuita.feature
+  generatedAt: '2026-11-24T18:43:19.983Z'
+  copilotSessionId: 7519f2ab0e7acd2b1e6abcc910b5fb0d
+feature:
+  id: cdd4cb3a-526f-48e8-b747-0ad15e395fbb
+  createdAt: '2026-11-24T18:43:19.983Z'
+  updatedAt: '2026-11-24T18:43:19.983Z'
+  title: Spedizione gratuita
+  description:
+    - As a cliente del negozio
+    - I want usufruire della spedizione gratuita prevista per ordini a partire da 79 euro
+    - So that risparmiare sull'ordine totale
+  tags:
+    - c4-id:94d6dcb5-3ead-b352-1700-b2185272c021
+  background:
+    comments:
+      - Spedizione 4,90 euro, gratuita da 79,00 euro di subtotale
+    steps:
+      - keyword: Given
+        text: tocco 'Vai al pagamento' e voglio acquistare dal negozio
+      - keyword: And
+        text: il carrello è vuoto
+  scenarios:
+    - id: SPDZ-STP-040
+      title: Spedizione gratuita da 79,00 euro
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:19.983Z'
+        updatedAt: '2026-11-24T18:43:19.983Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: nel carrello c'è 'Specchio Orbita' a 119,00 euro
+        - keyword: When
+          text: tocco 'Vai al pagamento'
+        - keyword: Then
+          text: la spedizione costa 0,00 euro
+        - keyword: And
+          text: il totale è di 119,00
+    - id: SPDZ-STP-050
+      title: Spedizione a pagamento a 4,90 euro
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-24T18:43:19.983Z'
+        updatedAt: '2026-11-24T18:43:19.983Z'
+        aiGeneratedAt: null
+        aiStartedAt: null
+        aiEndedAt: null
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 0
+      steps:
+        - keyword: Given
+          text: nel carrello c'è 'Vaso Duna' a 34,00 euro
+        - keyword: When
+          text: tocco 'Vai al pagamento'
+        - keyword: Then
+          text: la spedizione costa 4,90 euro
+        - keyword: And
+          text: il totale è di 38,90 euro

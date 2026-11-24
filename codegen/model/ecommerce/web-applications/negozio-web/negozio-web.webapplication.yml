@@ -1,0 +1,68 @@
+type: web-application
+name: NegozioWeb
+title: Negozio web
+description: >-
+  Single-page application servita da public/ (vanilla JS ES modules,
+  localStorage per carrello e preferiti). Include catalog-logic.js, servito dal
+  server al browser. Pagamenti simulati lato UI.
+target: vanilla-js
+architecture: single-page-application
+targetProfile:
+  platform: web
+  language: javascript
+  cwd: .
+id: c01292a7-a13a-2c8a-5335-9de968150c57
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      501f7912-cc6e-4573-f253-3d49e1c61fbb:
+        x: 200
+        'y': 88.5
+      cf35d60e-6f44-ff74-a26e-9731ec9f59e0:
+        x: 190.5
+        'y': 737.5
+  - namespace: c4modeler
+    name: boundary
+    value:
+      x: 0
+      'y': 0
+      width: 1093.5
+      height: 1462
+prefix: app
+author: CodeArchitects
+strict: false
+port: 4200
+mode: standalone
+designSystem:
+  kit: caep
+  theme:
+    - cupertino
+  icons: fontAwesomeV5Free
+interactions:
+  - targetId: cf35d60e-6f44-ff74-a26e-9731ec9f59e0
+    type: service
+    level: container
+children:
+  - id: 6a3feb6a-aab2-b194-12ce-55e1586f95be
+    type: abstract-component
+  - id: dd29197b-b9a5-8ffc-6e16-66ad6720d572
+    type: abstract-component
+  - id: 7d40d91f-0bed-f5f3-4479-83b4d838c2ee
+    type: abstract-component
+  - id: 32be3296-6b21-5964-8815-ef0bf817c0ab
+    type: abstract-component
+  - id: f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47
+    type: abstract-component
+  - id: 94d6dcb5-3ead-b352-1700-b2185272c021
+    type: abstract-component
+  - id: bd43ab9c-56da-6742-9ed3-b1f2db1b2019
+    type: abstract-component
+  - id: d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b
+    type: abstract-component
+  - id: dc487e23-0a3f-05ad-a17e-92db88a7daab
+    type: abstract-component
+  - id: 37f816a0-7bf6-7916-6560-d364f7a06cd1
+    type: abstract-component
+  - id: 98f295c7-ba88-5b12-290b-815a8c0ac139
+    type: abstract-component

@@ -1,0 +1,14 @@
+type: abstract-component
+name: FrameLogicModule
+title: frame-logic.js
+description: >-
+  FRAME_OPTIONS, INITIAL_FRAME_SELECTION, calculateFramePriceCents,
+  describeFrameSelection, getFrameSelectionPriceCents.
+id: 378820da-3fb9-d435-aa09-2f4652fe292e
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b:
+        x: 170.5
+        'y': 0

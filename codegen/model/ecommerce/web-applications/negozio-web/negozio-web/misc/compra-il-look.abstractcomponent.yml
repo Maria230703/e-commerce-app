@@ -1,0 +1,15 @@
+type: abstract-component
+name: CompraIlLook
+title: Compra il look
+description: 'Scena d''ambiente con prodotti acquistabili insieme. Modulo: look-scene.js.'
+id: 98f295c7-ba88-5b12-290b-815a8c0ac139
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 632
+        'y': 88.5
+children:
+  - id: 2c32e260-aad4-321c-b2ce-203ef9385061
+    type: abstract-component

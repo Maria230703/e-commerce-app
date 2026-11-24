@@ -1,0 +1,14 @@
+type: abstract-component
+name: FavoritesModule
+title: favorites.js
+description: >-
+  readFavoriteIds, toggleFavoriteId, renderFavoriteButtonMarkup,
+  renderFavoritesMarkup, persistenza localStorage.
+id: a0f701c8-2b58-b3af-5d69-e1a0c7b2fae7
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      7d40d91f-0bed-f5f3-4479-83b4d838c2ee:
+        x: 0
+        'y': 0

@@ -5,3 +5,8 @@ type: c4-project
 caepVersion: 6
 mode: universal
 description: e-commerce project
+children:
+  - id: 501f7912-cc6e-4573-f253-3d49e1c61fbb
+    type: software-system
+  - id: 616cbb32-1802-2037-d050-57f21d4e2a89
+    type: person

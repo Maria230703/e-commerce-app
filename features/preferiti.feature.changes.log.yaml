@@ -1,0 +1,12 @@
+version: 1
+document:
+  sourceFeature: preferiti.feature
+  updatedAt: '2026-11-24T18:43:17.675Z'
+changes:
+  - changedAt: '2026-11-24T18:43:17.675Z'
+    ref: feature:preferiti
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:7d40d91f-0bed-f5f3-4479-83b4d838c2ee'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>

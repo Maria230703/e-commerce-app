@@ -1,0 +1,12 @@
+type: abstract-component
+name: CatalogViewRendering
+title: app.js (vista catalogo)
+description: Rendering dell'elenco e dei filtri del catalogo nella shell app.js.
+id: 76d31dd2-3138-055b-0259-9560a63e183f
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      6a3feb6a-aab2-b194-12ce-55e1586f95be:
+        x: -170.5
+        'y': 0

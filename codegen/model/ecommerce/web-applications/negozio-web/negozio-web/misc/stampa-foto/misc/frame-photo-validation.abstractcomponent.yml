@@ -1,0 +1,12 @@
+type: abstract-component
+name: FramePhotoValidation
+title: frame-logic.js (foto)
+description: validateFramePhoto, MAX_FRAME_PHOTO_BYTES.
+id: f6228983-46b6-8b8d-3dfb-8052a97489b1
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      dc487e23-0a3f-05ad-a17e-92db88a7daab:
+        x: 170.5
+        'y': 0

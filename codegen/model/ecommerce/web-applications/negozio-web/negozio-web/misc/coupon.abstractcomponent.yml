@@ -1,0 +1,17 @@
+type: abstract-component
+name: Coupon
+title: Coupon
+description: >-
+  Codice FirstPurchase: visibilita, copia, validazione e sconto. Modulo:
+  coupon-logic.js.
+id: f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 150.66666666666663
+        'y': 1373.5
+children:
+  - id: 3a9cd6e1-71da-33e0-bd3b-a8004d6eb1dc
+    type: abstract-component

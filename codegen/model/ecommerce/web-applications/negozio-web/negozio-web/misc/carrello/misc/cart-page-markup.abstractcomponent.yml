@@ -1,0 +1,12 @@
+type: abstract-component
+name: CartPageMarkup
+title: payment-ui.js (renderCartPageMarkup)
+description: Markup della pagina carrello.
+id: e9b021aa-1516-4456-0533-ed742ce16ac1
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      32be3296-6b21-5964-8815-ef0bf817c0ab:
+        x: 0
+        'y': 140

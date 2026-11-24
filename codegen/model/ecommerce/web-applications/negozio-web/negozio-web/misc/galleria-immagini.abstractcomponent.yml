@@ -1,0 +1,18 @@
+type: abstract-component
+name: GalleriaImmagini
+title: Galleria immagini
+description: >-
+  Galleria delle foto del prodotto con miniature e navigazione. Modulo:
+  product-detail.js (PRODUCT_GALLERY_IMAGES, stepGalleryIndex), selezione in
+  app.js.
+id: 37f816a0-7bf6-7916-6560-d364f7a06cd1
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 120.5
+        'y': 602.5
+children:
+  - id: 219c469d-1860-4fb6-83f0-cd990b3276f8
+    type: abstract-component

@@ -1,0 +1,12 @@
+type: abstract-component
+name: FrameConfiguratorModule
+title: frame-configurator.js
+description: renderFrameConfiguratorMarkup.
+id: 260c2155-3920-ea91-ccbd-607dd9f557bd
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b:
+        x: -170.5
+        'y': 0

@@ -1,0 +1,14 @@
+type: abstract-component
+name: CouponLogicModule
+title: coupon-logic.js
+description: >-
+  validateCouponCode, calculateCouponDiscountCents,
+  calculateDiscountedCartTotals, copyCouponCode, isCouponButtonVisible.
+id: 3a9cd6e1-71da-33e0-bd3b-a8004d6eb1dc
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47:
+        x: 0
+        'y': 0

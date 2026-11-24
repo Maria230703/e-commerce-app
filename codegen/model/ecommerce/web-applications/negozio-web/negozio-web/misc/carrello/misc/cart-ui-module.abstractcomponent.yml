@@ -1,0 +1,12 @@
+type: abstract-component
+name: CartUiModule
+title: cart-ui.js
+description: renderAddToCartButton.
+id: 1fb8ff4a-4d4d-4571-4edc-89b6c95cb115
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      32be3296-6b21-5964-8815-ef0bf817c0ab:
+        x: 170.5
+        'y': -140

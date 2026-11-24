@@ -1,0 +1,14 @@
+type: abstract-component
+name: PaymentLogicModule
+title: payment-logic.js
+description: >-
+  PAYMENT_METHODS, validateShippingAddress, validatePaymentSubmission,
+  validateCardPayment.
+id: 210e02bc-9981-5adf-b262-1000092e964e
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      bd43ab9c-56da-6742-9ed3-b1f2db1b2019:
+        x: 170.5
+        'y': -140

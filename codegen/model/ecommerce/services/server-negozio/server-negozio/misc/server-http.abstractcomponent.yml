@@ -1,0 +1,21 @@
+type: abstract-component
+name: ServerHttp
+title: Server HTTP
+description: >-
+  Routing HTTP (server.js): file statici, GET /api/products, POST /api/orders,
+  lettura del body JSON.
+id: 470b505d-e72a-5b64-3653-cb650af96d41
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      cf35d60e-6f44-ff74-a26e-9731ec9f59e0:
+        x: 200
+        'y': 88.5
+interactions:
+  - targetId: 50faddec-e1ab-6f69-4ca9-df027e199ed9
+    type: abstract-component
+    level: component
+children:
+  - id: a3062246-772f-d6b6-2186-ee4ce4b834a6
+    type: abstract-component

@@ -1,0 +1,131 @@
+version: 1
+document:
+  sourceFeature: configuratore_cornice.feature
+  updatedAt: '2026-11-24T18:43:21.179Z'
+changes:
+  - changedAt: '2026-11-24T18:43:21.166Z'
+    ref: feature:personalizzazione-della-cornice
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '@c4-id:d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 6
+    before: '      | misura | prezzo |'
+    after: '    | misura | prezzo |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 7
+    before: '      | 10x15  | 26,90  |'
+    after: '    | 10x15  | 26,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 8
+    before: '      | 13x18  | 30,90  |'
+    after: '    | 13x18  | 30,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 9
+    before: '      | 15x20  | 35,90  |'
+    after: '    | 15x20  | 35,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 10
+    before: '      | 30x30  | 50,90  |'
+    after: '    | 30x30  | 50,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 11
+    before: '      | 50x70  | 90,90  |'
+    after: '    | 50x70  | 90,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 7
+    before: '      | profilo       | prezzo |'
+    after: '    | profilo       | prezzo |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 8
+    before: '      | Classico      | 30,90  |'
+    after: '    | Classico      | 30,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 9
+    before: '      | Contemporaneo | 32,90  |'
+    after: '    | Contemporaneo | 32,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 7
+    before: '      | passepartout   | prezzo |'
+    after: '    | passepartout   | prezzo |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 8
+    before: '      | Nessuno        | 25,00  |'
+    after: '    | Nessuno        | 25,00  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 9
+    before: '      | Bianco         | 30,90  |'
+    after: '    | Bianco         | 30,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 10
+    before: '      | Verde smeraldo | 30,90  |'
+    after: '    | Verde smeraldo | 30,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-24T18:43:21.179Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 11
+    before: '      | Rosso carminio | 30,90  |'
+    after: '    | Rosso carminio | 30,90  |'
+    author: Gianluca Maggio <gmaggio@codearchitects.com>
