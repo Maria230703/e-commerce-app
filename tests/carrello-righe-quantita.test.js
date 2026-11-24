@@ -56,6 +56,17 @@ test('CRRL-RGH-E-QNTT-KWT-040: aggiungere Vaso Duna a un carrello vuoto crea 1 r
   assert.equal(cartLogic.getCartItemCount(cart), 1);
 });
 
+/** §REQ:CRRL-RGH-E-QNTT-KWT-050 — "+" sulla riga porta Vaso Duna a quantità 2, una sola riga, l'icona mostra 2. */
+test('CRRL-RGH-E-QNTT-KWT-050: il pulsante + su Vaso Duna porta la riga a quantità 2 e l’icona mostra 2', () => {
+  const cart = cartLogic.changeCartQuantity(cartLogic.addProductToCart([], VASO), VASO.id, 1);
+  assert.equal(cart.length, 1);
+  assert.equal(cart[0].name, 'Vaso Duna');
+  assert.equal(cart[0].quantity, 2);
+  assert.equal(cartLogic.getCartItemCount(cart), 2);
+  assert.match(renderCartPageMarkup(cart), new RegExp(`data-cart-action="increase" data-product-id="${VASO.id}"`));
+  assert.match(appJs, /cartCountEl\.textContent = String\(itemCount\);/);
+});
+
 /** §REQ:CRRL-RGH-E-QNTT-KWT-060 — aumentare la quantità a 3 porta la riga a 102,00 euro. */
 test('CRRL-RGH-E-QNTT-KWT-060: portando Vaso Duna a quantità 3 la riga vale 102,00 euro', () => {
   let cart = cartLogic.addProductToCart([], VASO);

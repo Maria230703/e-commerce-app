@@ -102,14 +102,14 @@ export function toggleProductInCart(cart, product) {
     : addProductToCart(cart, product);
 }
 
-// §REQ:CRRL-RGH-E-QNTT-KWT-060, §REQ:CRRL-RGH-E-QNTT-KWT-070
+// §REQ:CRRL-RGH-E-QNTT-KWT-050, §REQ:CRRL-RGH-E-QNTT-KWT-060, §REQ:CRRL-RGH-E-QNTT-KWT-070
 export function changeCartQuantity(cart, id, change) {
   return cart
     .map((item) => (item.id === id ? { ...item, quantity: item.quantity + change } : item))
     .filter((item) => item.quantity > 0);
 }
 
-// §REQ:CRRL-RGH-E-QNTT-KWT-040
+// §REQ:CRRL-RGH-E-QNTT-KWT-040, §REQ:CRRL-RGH-E-QNTT-KWT-050
 export function getCartItemCount(cart) {
   return cart.reduce((count, item) => count + item.quantity, 0);
 }
