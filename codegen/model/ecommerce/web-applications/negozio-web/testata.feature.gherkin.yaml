@@ -1,19 +1,20 @@
 version: 1
 document:
   sourceFeature: testata.feature
-  generatedAt: '2026-11-25T20:55:45.375Z'
+  generatedAt: '2026-11-25T21:35:50.226Z'
   copilotSessionId: ac5cf7b707f45e5fa76524ead403647d
 feature:
   id: 5752be1f-757d-4059-82f8-92c5761ca2ab
   createdAt: '2026-11-25T20:55:45.356Z'
-  updatedAt: '2026-11-25T20:55:45.358Z'
+  updatedAt: '2026-11-25T21:35:50.226Z'
   title: Testata della pagina iniziale
   description:
     - As a cliente del negozio
     - I want trovare subito logo, ricerca, preferiti e carrello in una testata ordinata che resta in alto
     - So that cercare e raggiungere gli articoli senza perdere i comandi principali mentre scorro
   tags:
-    - c4-id:c01292a7-a13a-2c8a-5335-9de968150c57
+    - c4-id:b73eb991-9966-db35-cc3d-4d91af013e6e
+    - c4-related(c01292a7-a13a-2c8a-5335-9de968150c57)
   scenarios:
     - id: TSTT-2RHMB5
       title: La barra superiore ha il messaggio al centro e lingua e tema a destra
@@ -21,6 +22,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -32,9 +34,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono sulla pagina iniziale
@@ -50,6 +52,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -61,9 +64,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono sulla pagina iniziale
@@ -79,6 +82,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -90,9 +94,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono su una pagina del sito
@@ -108,6 +112,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -119,9 +124,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono sulla pagina iniziale
@@ -137,6 +142,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -148,9 +154,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono sulla pagina iniziale
@@ -166,6 +172,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -177,9 +184,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono sulla pagina iniziale
@@ -193,6 +200,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -204,9 +212,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono sulla pagina iniziale e vedo la scena "Compra il look"
@@ -220,6 +228,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -231,9 +240,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: sono su una pagina del sito
@@ -249,6 +258,7 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
       metadata:
         createdAt: '2026-11-25T20:55:45.356Z'
         updatedAt: '2026-11-25T20:55:45.356Z'
@@ -260,9 +270,9 @@ feature:
         aiErrorCount: 0
         aiErrorTotal: 0
         aiRevisionCount: 1
-        author: Maria <mcmorgese@codearchitects.com>
         aiProvider: anthropic
         aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
       steps:
         - keyword: Given
           text: ho scelto Inglese o Spagnolo

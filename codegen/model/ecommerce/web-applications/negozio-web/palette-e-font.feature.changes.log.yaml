@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: palette-e-font.feature
-  updatedAt: '2026-11-25T21:29:46.925Z'
+  updatedAt: '2026-11-25T21:35:47.410Z'
 changes:
   - changedAt: '2026-11-25T21:29:46.925Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -66,3 +66,66 @@ changes:
     offset: 0
     before: null
     after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:35:47.242Z'
+    ref: PLTT-E-FONT-3AQKRP
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-3AQKRP) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-3AQKRP) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.263Z'
+    ref: PLTT-E-FONT-92CH3F
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-92CH3F) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-92CH3F) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.282Z'
+    ref: PLTT-E-FONT-73QEB8
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-73QEB8) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-73QEB8) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.300Z'
+    ref: PLTT-E-FONT-2JDECG
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-2JDECG) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-2JDECG) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.337Z'
+    ref: PLTT-E-FONT-8N7D2D
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-8N7D2D) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-8N7D2D) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.353Z'
+    ref: PLTT-E-FONT-3VRGUJ
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-3VRGUJ) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-3VRGUJ) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.369Z'
+    ref: PLTT-E-FONT-5C5H2A
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-5C5H2A) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-5C5H2A) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.390Z'
+    ref: PLTT-E-FONT-7XFJRW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-7XFJRW) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-7XFJRW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.410Z'
+    ref: PLTT-E-FONT-6RQYMU
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PLTT-E-FONT-6RQYMU) @functional @c4-container'
+    after: '  @id(PLTT-E-FONT-6RQYMU) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>

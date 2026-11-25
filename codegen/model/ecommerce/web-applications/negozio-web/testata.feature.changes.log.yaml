@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: testata.feature
-  updatedAt: '2026-11-25T21:29:45.936Z'
+  updatedAt: '2026-11-25T21:35:50.234Z'
 changes:
   - changedAt: '2026-11-25T21:29:45.936Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -66,3 +66,73 @@ changes:
     offset: 0
     before: null
     after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:35:47.066Z'
+    ref: TSTT-2RHMB5
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-2RHMB5) @functional @c4-container'
+    after: '  @id(TSTT-2RHMB5) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.088Z'
+    ref: TSTT-5YBZQW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-5YBZQW) @functional @c4-container'
+    after: '  @id(TSTT-5YBZQW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.108Z'
+    ref: TSTT-4JJJG3
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-4JJJG3) @functional @c4-container'
+    after: '  @id(TSTT-4JJJG3) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.124Z'
+    ref: TSTT-5BGBBG
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-5BGBBG) @functional @c4-container'
+    after: '  @id(TSTT-5BGBBG) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.141Z'
+    ref: TSTT-25XBT9
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-25XBT9) @functional @c4-container'
+    after: '  @id(TSTT-25XBT9) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.164Z'
+    ref: TSTT-5PU7GW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-5PU7GW) @functional @c4-container'
+    after: '  @id(TSTT-5PU7GW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.180Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-9E8T7D) @functional @c4-container'
+    after: '  @id(TSTT-9E8T7D) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.200Z'
+    ref: TSTT-8VJC9V
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-8VJC9V) @functional @c4-container'
+    after: '  @id(TSTT-8VJC9V) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.222Z'
+    ref: TSTT-27HF7V
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-27HF7V) @functional @c4-container'
+    after: '  @id(TSTT-27HF7V) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:50.234Z'
+    ref: feature:testata-della-pagina-iniziale
+    constructType: Feature
+    offset: 0
+    before: '@c4-id:c01292a7-a13a-2c8a-5335-9de968150c57'
+    after: '@c4-id:b73eb991-9966-db35-cc3d-4d91af013e6e @c4-related(c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>

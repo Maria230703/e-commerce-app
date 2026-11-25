@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: lingua.feature
-  updatedAt: '2026-11-25T21:29:51.447Z'
+  updatedAt: '2026-11-25T21:35:48.084Z'
 changes:
   - changedAt: '2026-11-25T20:35:28.253Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -206,3 +206,80 @@ changes:
     offset: 0
     before: null
     after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:35:47.734Z'
+    ref: LNG-7ZCWHN
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-7ZCWHN) @functional @c4-component'
+    after: '  @id(LNG-7ZCWHN) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.760Z'
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-7T2YSF) @functional @c4-component'
+    after: '  @id(LNG-7T2YSF) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.787Z'
+    ref: LNG-9HRNHM
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-9HRNHM) @functional @c4-component'
+    after: '  @id(LNG-9HRNHM) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.828Z'
+    ref: LNG-674RJD
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-674RJD) @functional @c4-component'
+    after: '  @id(LNG-674RJD) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.855Z'
+    ref: LNG-9ERFZM
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-9ERFZM) @functional @c4-component'
+    after: '  @id(LNG-9ERFZM) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.949Z'
+    ref: LNG-7WEBWK
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-7WEBWK) @functional @c4-component'
+    after: '  @id(LNG-7WEBWK) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.984Z'
+    ref: LNG-3Q3RDZ
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-3Q3RDZ) @functional @c4-component'
+    after: '  @id(LNG-3Q3RDZ) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:48.013Z'
+    ref: LNG-6A3P6V
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-6A3P6V) @functional @c4-component'
+    after: '  @id(LNG-6A3P6V) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:48.033Z'
+    ref: LNG-5R75GQ
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-5R75GQ) @functional @c4-component'
+    after: '  @id(LNG-5R75GQ) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:48.070Z'
+    ref: LNG-9NBEVB
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-9NBEVB) @functional @c4-component'
+    after: '  @id(LNG-9NBEVB) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:48.084Z'
+    ref: LNG-6AEYMD
+    constructType: Scenario
+    offset: 0
+    before: '  @id(LNG-6AEYMD) @functional @c4-component'
+    after: '  @id(LNG-6AEYMD) @functional @c4-component @wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)'
+    author: Maria <mcmorgese@codearchitects.com>

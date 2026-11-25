@@ -1,0 +1,14 @@
+type: abstract-component
+name: CouponCopyModule
+title: coupon-logic.js (copia)
+description: >-
+  copyCouponCode con metodo alternativo, messaggi "Copiato" e "Copia non
+  riuscita", annuncio "Codice copiato"; finestra e annuncio gestiti in app.js.
+id: b4787449-3cf8-65aa-72fb-eb340131a3a8
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      b73eb991-9966-db35-cc3d-4d91af013e6e:
+        x: -170.5
+        'y': 0

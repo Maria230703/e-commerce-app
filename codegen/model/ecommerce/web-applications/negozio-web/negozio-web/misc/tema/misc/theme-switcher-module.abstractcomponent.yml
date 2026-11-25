@@ -1,0 +1,14 @@
+type: abstract-component
+name: ThemeSwitcherModule
+title: theme.js
+description: >-
+  Temi light/dark, tema successivo, lettura e salvataggio in localStorage, icone
+  sole e luna, nome del pulsante, applicazione di data-theme.
+id: 892f2d43-8347-ab60-b1a3-9cb6d5da301d
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb:
+        x: 0
+        'y': 0

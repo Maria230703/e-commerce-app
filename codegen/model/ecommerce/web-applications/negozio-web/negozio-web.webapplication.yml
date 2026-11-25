@@ -28,7 +28,7 @@ annotations:
       x: 0
       'y': 0
       width: 1464.6666666666667
-      height: 1462
+      height: 1719
 prefix: app
 author: CodeArchitects
 strict: false
@@ -67,4 +67,8 @@ children:
   - id: 98f295c7-ba88-5b12-290b-815a8c0ac139
     type: abstract-component
   - id: b48a0591-79d6-d2bc-e92e-bacbd2a1fb57
+    type: abstract-component
+  - id: 4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb
+    type: abstract-component
+  - id: b73eb991-9966-db35-cc3d-4d91af013e6e
     type: abstract-component

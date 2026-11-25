@@ -1,0 +1,18 @@
+type: abstract-component
+name: Tema
+title: Tema
+description: >-
+  Modalità giorno/notte del sito: pulsante nella barra superiore (sole o
+  spicchio di luna), colori scuri come variabili in styles.css, scelta ricordata
+  in localStorage e applicata prima del disegno della pagina. Modulo: theme.js.
+id: 4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 120.5
+        'y': 1630.5
+children:
+  - id: 892f2d43-8347-ab60-b1a3-9cb6d5da301d
+    type: abstract-component

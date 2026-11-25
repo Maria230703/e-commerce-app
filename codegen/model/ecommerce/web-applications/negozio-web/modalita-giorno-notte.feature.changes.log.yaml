@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: modalita-giorno-notte.feature
-  updatedAt: '2026-11-25T21:29:52.440Z'
+  updatedAt: '2026-11-25T21:35:49.478Z'
 changes:
   - changedAt: '2026-11-25T20:38:16.256Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -164,3 +164,52 @@ changes:
     offset: 0
     before: null
     after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:35:47.431Z'
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-8TY6QK) @functional @c4-container'
+    after: '  @id(MDLT-GRN-NTT-8TY6QK) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.475Z'
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-7QA35Y) @functional @c4-container'
+    after: '  @id(MDLT-GRN-NTT-7QA35Y) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.530Z'
+    ref: MDLT-GRN-NTT-72YRBW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-72YRBW) @functional @c4-container'
+    after: '  @id(MDLT-GRN-NTT-72YRBW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.554Z'
+    ref: MDLT-GRN-NTT-9ANCZM
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-9ANCZM) @functional @c4-container'
+    after: '  @id(MDLT-GRN-NTT-9ANCZM) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.573Z'
+    ref: MDLT-GRN-NTT-7J2URW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-7J2URW) @functional @c4-container'
+    after: '  @id(MDLT-GRN-NTT-7J2URW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.597Z'
+    ref: MDLT-GRN-NTT-29KNY6
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-29KNY6) @functional @c4-container'
+    after: '  @id(MDLT-GRN-NTT-29KNY6) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:49.478Z'
+    ref: feature:modalit-giorno-e-notte
+    constructType: Feature
+    offset: 0
+    before: '@c4-id:c01292a7-a13a-2c8a-5335-9de968150c57'
+    after: '@c4-id:4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb @c4-related(c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>

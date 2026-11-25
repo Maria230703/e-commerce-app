@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: lingua.feature
-  generatedAt: '2026-11-25T20:55:13.255Z'
+  generatedAt: '2026-11-25T21:35:48.080Z'
   copilotSessionId: 92953154547c7ec6fa5459213ecf8fdd
 feature:
   id: 982e05ee-3ead-4508-800b-54ec05e27779
@@ -21,6 +21,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -48,6 +49,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:55:12.058Z'
@@ -77,6 +79,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:55:13.274Z'
@@ -106,6 +109,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -135,6 +139,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -166,6 +171,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -197,6 +203,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -226,6 +233,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -255,6 +263,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -284,6 +293,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
@@ -311,6 +321,7 @@ feature:
       tags:
         - functional
         - c4-component
+        - wiki(entity-b48a0591-79d6-d2bc-e92e-bacbd2a1fb57)
       metadata:
         createdAt: '2026-11-25T20:29:33.427Z'
         updatedAt: '2026-11-25T20:29:33.427Z'
