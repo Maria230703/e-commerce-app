@@ -1,0 +1,12 @@
+type: abstract-component
+name: I18nDictionaries
+title: i18n-dictionaries.js
+description: Dizionari delle frasi e delle parole del sito in italiano, inglese e spagnolo.
+id: 846974a2-ab19-69c2-b0a1-027373c7cbbb
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      b48a0591-79d6-d2bc-e92e-bacbd2a1fb57:
+        x: -170.5
+        'y': 0

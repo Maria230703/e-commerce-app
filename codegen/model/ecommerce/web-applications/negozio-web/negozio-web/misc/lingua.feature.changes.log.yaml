@@ -1,0 +1,82 @@
+version: 1
+document:
+  sourceFeature: lingua.feature
+  updatedAt: '2026-11-25T20:35:28.253Z'
+changes:
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-7ZCWHN
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-9HRNHM
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-674RJD
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-9ERFZM
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-7WEBWK
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-3Q3RDZ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-6A3P6V
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-5R75GQ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-9NBEVB
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:35:28.253Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-6AEYMD
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1

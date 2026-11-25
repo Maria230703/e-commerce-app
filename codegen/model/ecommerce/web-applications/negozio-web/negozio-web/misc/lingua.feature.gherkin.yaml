@@ -1,0 +1,336 @@
+version: 1
+document:
+  sourceFeature: lingua.feature
+  generatedAt: '2026-11-25T20:29:33.460Z'
+  copilotSessionId: 92953154547c7ec6fa5459213ecf8fdd
+feature:
+  id: 982e05ee-3ead-4508-800b-54ec05e27779
+  createdAt: '2026-11-25T20:29:33.427Z'
+  updatedAt: '2026-11-25T20:29:33.431Z'
+  title: Lingua del sito
+  description:
+    - As a cliente del negozio
+    - I want scegliere la lingua del sito tra italiano, inglese e spagnolo
+    - So that leggere tutte le parole e le frasi del negozio nella lingua che capisco meglio
+  tags:
+    - c4-id:b48a0591-79d6-d2bc-e92e-bacbd2a1fb57
+  scenarios:
+    - id: LNG-7ZCWHN
+      title: Il pulsante mostra ITA quando il sito è in italiano
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina Scopri e il sito è in italiano
+        - keyword: When
+          text: guardo il pulsante della lingua
+        - keyword: Then
+          text: il pulsante mostra "ITA"
+    - id: LNG-7T2YSF
+      title: Il pulsante sta in alto a sinistra sopra il logo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina Scopri
+        - keyword: When
+          text: guardo l'intestazione
+        - keyword: Then
+          text: il pulsante della lingua è in alto a sinistra
+        - keyword: And
+          text: il pulsante della lingua sta sopra il logo "E"
+    - id: LNG-9HRNHM
+      title: Il pulsante è verde come i pulsanti della landing page
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina Scopri
+        - keyword: When
+          text: guardo il pulsante della lingua
+        - keyword: Then
+          text: il pulsante è verde
+        - keyword: And
+          text: ha lo stesso verde degli altri pulsanti della landing page
+    - id: LNG-674RJD
+      title: Aprire la barra delle lingue
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina Scopri e il sito è in italiano
+        - keyword: When
+          text: tocco il pulsante della lingua
+        - keyword: Then
+          text: si apre una barra come quella di "Ordina per"
+        - keyword: And
+          text: la barra offre "Inglese" e "Spagnolo"
+    - id: LNG-9ERFZM
+      title: Scegliere l'inglese
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho aperto la barra delle lingue
+        - keyword: When
+          text: scelgo "Inglese"
+        - keyword: Then
+          text: il pulsante mostra "ENG"
+        - keyword: And
+          text: la barra si chiude
+        - keyword: And
+          text: le parole e le frasi del sito sono in inglese
+    - id: LNG-7WEBWK
+      title: Scegliere lo spagnolo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho aperto la barra delle lingue
+        - keyword: When
+          text: scelgo "Spagnolo"
+        - keyword: Then
+          text: il pulsante mostra "ESP"
+        - keyword: And
+          text: la barra si chiude
+        - keyword: And
+          text: le parole e le frasi del sito sono in spagnolo
+    - id: LNG-3Q3RDZ
+      title: Tornare all'italiano o passare all'altra lingua
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: il sito è in inglese e il pulsante mostra "ENG"
+        - keyword: When
+          text: tocco il pulsante della lingua
+        - keyword: Then
+          text: la barra offre "Italiano" e "Spagnolo"
+        - keyword: And
+          text: scegliendo "Italiano" il pulsante mostra "ITA" e il sito torna in italiano
+    - id: LNG-6A3P6V
+      title: Tutti i testi del sito si traducono in automatico
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho scelto "Inglese" o "Spagnolo"
+        - keyword: When
+          text: >-
+            apro una pagina del sito tra catalogo, scheda prodotto, carrello, preferiti, pagamento e configuratore
+            cornice
+        - keyword: Then
+          text: nessuna parola o frase fissa della pagina resta in italiano
+    - id: LNG-5R75GQ
+      title: I nomi dei prodotti restano uguali e le descrizioni si traducono
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho scelto "Inglese" o "Spagnolo"
+        - keyword: When
+          text: vedo un articolo, per esempio "Vaso Duna"
+        - keyword: Then
+          text: il nome "Vaso Duna" resta invariato
+        - keyword: And
+          text: la descrizione dell'articolo è nella lingua scelta
+    - id: LNG-9NBEVB
+      title: Il pulsante della lingua compare solo nella landing page
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono su una pagina diversa da Scopri, per esempio Carrello
+        - keyword: When
+          text: guardo l'intestazione
+        - keyword: Then
+          text: non vedo il pulsante della lingua
+    - id: LNG-6AEYMD
+      title: La lingua scelta resta dopo aver ricaricato la pagina e cambiato pagina
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+      metadata:
+        createdAt: '2026-11-25T20:29:33.427Z'
+        updatedAt: '2026-11-25T20:29:33.427Z'
+        aiGeneratedAt: '2026-11-25T20:35:28.253Z'
+        aiStartedAt: '2026-11-25T20:35:21.951Z'
+        aiEndedAt: '2026-11-25T20:35:28.253Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho scelto "Spagnolo"
+        - keyword: When
+          text: ricarico la pagina oppure apro il Carrello
+        - keyword: Then
+          text: il sito resta in spagnolo
+        - keyword: And
+          text: tornando su Scopri il pulsante mostra "ESP"

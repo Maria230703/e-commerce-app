@@ -1,0 +1,21 @@
+type: abstract-component
+name: Lingua
+title: Lingua
+description: >-
+  Selettore della lingua del sito (ITA/ENG/ESP) in alto a sinistra sopra il
+  logo, solo sulla landing page; traduzione automatica di tutti i testi con
+  dizionari italiano, inglese e spagnolo, scelta ricordata in localStorage.
+  Moduli: language.js, i18n-dictionaries.js.
+id: b48a0591-79d6-d2bc-e92e-bacbd2a1fb57
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      c01292a7-a13a-2c8a-5335-9de968150c57:
+        x: 321.16666666666663
+        'y': 859.5
+children:
+  - id: 2636b6d8-bda4-c732-0059-b49c7d25244b
+    type: abstract-component
+  - id: 846974a2-ab19-69c2-b0a1-027373c7cbbb
+    type: abstract-component

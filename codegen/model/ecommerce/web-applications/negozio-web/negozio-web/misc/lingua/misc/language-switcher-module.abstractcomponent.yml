@@ -1,0 +1,14 @@
+type: abstract-component
+name: LanguageSwitcherModule
+title: language.js
+description: >-
+  Stato della lingua (ita/eng/esp), sigla del pulsante, markup del selettore,
+  traduzione del DOM e dei testi, persistenza in localStorage.
+id: 2636b6d8-bda4-c732-0059-b49c7d25244b
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      b48a0591-79d6-d2bc-e92e-bacbd2a1fb57:
+        x: 170.5
+        'y': 0
