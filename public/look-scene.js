@@ -6,6 +6,7 @@ export const LOOK_SCENE_PRODUCTS = [
   { id: 3, name: 'Portavaso Trama', position: 'plant' }
 ];
 
+// §REQ:TSTT-9E8T7D — sotto la scena, "Vedi tutti gli articoli" scorre fino all'elenco dei prodotti
 export function renderLookScene() {
   const hotspots = LOOK_SCENE_PRODUCTS.map(
     ({ id, name, position }) => `
@@ -34,5 +35,8 @@ export function renderLookScene() {
       </div>
       <p class="look-scene-hint">Tocca i punti per scoprire gli oggetti della scena.</p>
     </section>
+    <div class="look-scene-actions">
+      <button id="see-all-button" class="see-all-button" type="button" aria-label="Vedi tutti gli articoli">Vedi tutti gli articoli</button>
+    </div>
   `;
 }

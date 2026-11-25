@@ -7,40 +7,53 @@
     <script>try { if (localStorage.getItem('e-commerce-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (error) {}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=20261125-theme-1" />
+    <link href="https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=20261126-cream-1" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand-column">
-        <!-- §REQ:LNG-7T2YSF — il pulsante della lingua sta in alto a sinistra, sopra il logo "E" -->
-        <div id="language-switcher" class="language-switcher" hidden>
-          <button id="language-button" class="checkout-button language-button" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-menu">ITA</button>
-          <div id="language-menu" class="language-menu" role="listbox" aria-label="Scegli la lingua" hidden></div>
-        </div>
-        <div class="brand-wrap">
-          <div class="logo">E</div>
-          <div>
-            <p class="eyebrow">Shop</p>
+    <!-- §REQ:TSTT-2RHMB5 — barra superiore (prima riga): messaggio del coupon al centro, lingua e tema a destra; scorre via con la pagina -->
+    <div id="announcement-bar" class="announcement-bar">
+      <div class="announcement-bar-inner">
+        <span class="announcement-side" aria-hidden="true"></span>
+        <p class="announcement-message">
+          <span class="announcement-text">Primo acquisto: -10% con</span>
+          <span class="coupon-code-wrap">
+            <button id="coupon-code" class="coupon-code" type="button" aria-label="Copia codice sconto" aria-describedby="coupon-tooltip"></button>
+            <span id="coupon-tooltip" class="coupon-tooltip" role="tooltip"><svg id="coupon-tooltip-check" class="coupon-tooltip-check" viewBox="0 0 16 16" aria-hidden="true" focusable="false" hidden><path d="m3 8 3.2 3.2L13 4.5"/></svg><span id="coupon-tooltip-text">Copia codice</span></span>
+          </span>
+        </p>
+        <div class="announcement-actions">
+          <div id="language-switcher" class="language-switcher" hidden>
+            <button id="language-button" class="checkout-button language-button" type="button" aria-label="Lingua del sito" aria-haspopup="listbox" aria-expanded="false" aria-controls="language-menu">ITA</button>
+            <div id="language-menu" class="language-menu" role="listbox" aria-label="Scegli la lingua" hidden></div>
           </div>
+          <button id="theme-button" class="checkout-button theme-button" type="button" aria-label="Passa alla modalità notte">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="5" x2="12" y2="2.5"/><line x1="16.95" y1="7.05" x2="18.72" y2="5.28"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="16.95" y1="16.95" x2="18.72" y2="18.72"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="7.05" y1="16.95" x2="5.28" y2="18.72"/><line x1="5" y1="12" x2="2.5" y2="12"/><line x1="7.05" y1="7.05" x2="5.28" y2="5.28"/></svg>
+          </button>
         </div>
-        <!-- §REQ:MDLT-GRN-NTT-8TY6QK — il pulsante giorno/notte sta subito sotto il logo -->
-        <button id="theme-button" class="checkout-button theme-button" type="button" aria-label="Passa alla modalità notte">
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="5" x2="12" y2="2.5"/><line x1="16.95" y1="7.05" x2="18.72" y2="5.28"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="16.95" y1="16.95" x2="18.72" y2="18.72"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="7.05" y1="16.95" x2="5.28" y2="18.72"/><line x1="5" y1="12" x2="2.5" y2="12"/><line x1="7.05" y1="7.05" x2="5.28" y2="5.28"/></svg>
-        </button>
+      </div>
+      <p id="coupon-live" class="visually-hidden" role="status" aria-live="polite"></p>
+    </div>
+
+    <!-- §REQ:TSTT-5YBZQW — testata (seconda riga), fissa in alto -->
+    <header class="site-header" id="site-header">
+      <a class="brand-link" href="/" aria-label="E Shop, vai alla home">
+        <span class="logo">E</span>
+        <span class="eyebrow">Shop</span>
+      </a>
+      <div id="header-search" class="header-search">
+        <input id="search-input" type="search" placeholder="Es. lampada, vaso..." aria-label="Cerca prodotto" />
       </div>
       <div class="header-actions">
-        <a class="cart-pill cart-link" href="/carrello">
+        <a id="favorites-link" class="icon-button favorites-link" href="/preferiti" aria-label="Preferiti">
+          <svg class="header-icon header-icon-heart" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+          <span id="favorites-count" class="count-badge" hidden>0</span>
+        </a>
+        <a class="cart-pill cart-link" href="/carrello" aria-label="Carrello">
+          <svg class="header-icon header-icon-cart" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.1a2 2 0 0 0 2-1.5L21.5 8H6"/></svg>
           <span>Carrello</span>
-          <strong id="cart-count">0</strong>
+          <strong id="cart-count" class="count-badge">0</strong>
         </a>
-        <a id="favorites-link" class="favorites-link" href="/preferiti">
-          Preferiti <strong id="favorites-count">0</strong>
-        </a>
-        <div id="coupon-container" class="coupon-container" hidden>
-          <button id="coupon-copy" class="checkout-button coupon-toggle" type="button">Coupon per te disponibile</button>
-          <p id="coupon-copy-feedback" class="coupon-applied" role="status" aria-live="polite" hidden></p>
-        </div>
       </div>
     </header>
 
@@ -49,11 +62,6 @@
         <div id="look-scene-container"></div>
         <h1 id="page-title" class="catalog-title">Scopri</h1>
         <div class="toolbar">
-          <div class="search-box">
-            <label for="search-input">Cerca prodotto</label>
-            <input id="search-input" type="search" placeholder="Es. lampada, vaso..." />
-          </div>
-
           <div class="select-box">
             <label for="sort-select">Ordina per</label>
             <select id="sort-select">

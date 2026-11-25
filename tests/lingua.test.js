@@ -84,26 +84,26 @@ test('LNG-7ZCWHN: con il sito in italiano il pulsante mostra ITA e la lingua di 
 });
 
 /** §REQ:LNG-7T2YSF */
-test('LNG-7T2YSF: il pulsante della lingua sta in alto a sinistra, sopra il logo E', () => {
-  const header = indexHtml.slice(indexHtml.indexOf('<header class="topbar">'), indexHtml.indexOf('</header>'));
-  const column = header.indexOf('class="brand-column"');
-  const switcher = header.indexOf('id="language-button"');
-  const logo = header.indexOf('<div class="logo">E</div>');
-  assert.ok(column >= 0 && column < switcher && switcher < logo, 'colonna → pulsante → logo, in questo ordine');
-  assert.ok(column < header.indexOf('class="header-actions"'), 'la colonna del logo è la prima, a sinistra');
-  const columnRule = cssRule('.brand-column');
-  assert.match(columnRule, /flex-direction: column/);
-  assert.match(columnRule, /align-items: flex-start/);
-  assert.match(cssRule('.topbar'), /justify-content: space-between/);
+test('LNG-7T2YSF: il pulsante della lingua sta a destra nella barra superiore, accanto a giorno/notte, con area di almeno 44 pixel', () => {
+  const bar = indexHtml.slice(indexHtml.indexOf('<div id="announcement-bar"'), indexHtml.indexOf('<header class="site-header"'));
+  const actions = bar.slice(bar.indexOf('class="announcement-actions"'));
+  assert.ok(bar.indexOf('class="announcement-message"') < bar.indexOf('class="announcement-actions"'), 'messaggio, poi i pulsanti a destra');
+  assert.ok(actions.indexOf('id="language-button"') > 0 && actions.indexOf('id="language-button"') < actions.indexOf('id="theme-button"'));
+  assert.match(cssRule('.announcement-actions'), /justify-content: flex-end/);
+  const rule = cssRule('.checkout-button.language-button,\n.checkout-button.theme-button');
+  assert.match(rule, /min-height: 44px/);
+  assert.match(rule, /min-width: 44px/);
 });
 
 /** §REQ:LNG-9HRNHM */
-test('LNG-9HRNHM: il pulsante della lingua è verde, lo stesso verde dei pulsanti della landing page', () => {
+test('LNG-9HRNHM: il pulsante della lingua usa i colori panna: sfondo trasparente, bordo e testo della palette, nessun verde', () => {
   assert.match(indexHtml, /id="language-button" class="checkout-button language-button"/);
   const shared = css.slice(css.indexOf('.add-button,\n.checkout-button,\n.back-button {'));
-  assert.match(shared.slice(0, shared.indexOf('}')), /background: var\(--primary\)/);
-  assert.match(css, /--primary: #46553A/);
-  assert.doesNotMatch(cssRule('.checkout-button.language-button'), /background/, 'nessun colore proprio: eredita il verde');
+  const sharedRule = shared.slice(0, shared.indexOf('}'));
+  assert.match(sharedRule, /background: transparent/);
+  assert.match(sharedRule, /border: 1\.5px solid var\(--button-border\)/);
+  assert.match(cssRule('.checkout-button.language-button,\n.checkout-button.theme-button'), /color: var\(--ink\)/);
+  assert.doesNotMatch(css, /--primary/, 'nessun colore primario verde');
 });
 
 /** §REQ:LNG-674RJD */

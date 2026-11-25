@@ -1,0 +1,68 @@
+version: 1
+document:
+  sourceFeature: palette-e-font.feature
+  updatedAt: '2026-11-25T21:29:46.925Z'
+changes:
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-3AQKRP
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-92CH3F
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-73QEB8
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-2JDECG
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-8N7D2D
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-3VRGUJ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-5C5H2A
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-7XFJRW
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:46.925Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PLTT-E-FONT-6RQYMU
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1

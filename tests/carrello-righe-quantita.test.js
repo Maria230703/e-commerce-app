@@ -34,7 +34,7 @@ test('CRRL-RGH-E-QNTT-KWT-020: Scopri nasconde il riepilogo e l’intestazione c
   const scopriRender = appJs.slice(appJs.indexOf("pageTitle.textContent = 'Scopri';"));
   assert.match(scopriRender.slice(0, 600), /cartPanel\.hidden = true;/);
   const header = indexHtml.slice(indexHtml.indexOf('<header'), indexHtml.indexOf('</header>'));
-  assert.match(header, /<a class="cart-pill cart-link" href="\/carrello">\s*<span>Carrello<\/span>/);
+  assert.match(header, /<a class="cart-pill cart-link" href="\/carrello" aria-label="Carrello">\s*<svg[\s\S]*?<\/svg>\s*<span>Carrello<\/span>/);
 });
 
 /** §REQ:CRRL-RGH-E-QNTT-KWT-030 — il pulsante Carrello apre la pagina con riepilogo, totale e "Indietro". */
@@ -115,7 +115,7 @@ test('CRRL-RGH-E-QNTT-KWT-100: toccando Aggiungi su Lampada Lume solo il suo pul
   assert.match(lampada, new RegExp(`data-product-id="${LAMPADA.id}"`));
   assert.match(vaso, />Aggiungi<\/button>/);
   assert.match(fs.readFileSync(new URL('../public/styles.css', import.meta.url), 'utf8'),
-    /\.add-button\.is-added \{[^}]*background: #5D7A45;/);
+    /\.add-button\.is-added \{[^}]*background: var\(--cream\);/);
 });
 
 /** §REQ:CRRL-RGH-E-QNTT-KWT-110 — il secondo tocco rimuove l'articolo. */

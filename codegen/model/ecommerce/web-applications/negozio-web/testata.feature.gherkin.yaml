@@ -1,0 +1,272 @@
+version: 1
+document:
+  sourceFeature: testata.feature
+  generatedAt: '2026-11-25T20:55:45.375Z'
+  copilotSessionId: ac5cf7b707f45e5fa76524ead403647d
+feature:
+  id: 5752be1f-757d-4059-82f8-92c5761ca2ab
+  createdAt: '2026-11-25T20:55:45.356Z'
+  updatedAt: '2026-11-25T20:55:45.358Z'
+  title: Testata della pagina iniziale
+  description:
+    - As a cliente del negozio
+    - I want trovare subito logo, ricerca, preferiti e carrello in una testata ordinata che resta in alto
+    - So that cercare e raggiungere gli articoli senza perdere i comandi principali mentre scorro
+  tags:
+    - c4-id:c01292a7-a13a-2c8a-5335-9de968150c57
+  scenarios:
+    - id: TSTT-2RHMB5
+      title: La barra superiore ha il messaggio al centro e lingua e tema a destra
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo la prima riga
+        - keyword: Then
+          text: 'vedo la barra superiore con il messaggio "Primo acquisto: -10% con" e il codice centrati'
+        - keyword: And
+          text: a destra vedo il pulsante della lingua e quello giorno/notte
+    - id: TSTT-5YBZQW
+      title: La testata resta fissa in alto e la barra superiore scorre via
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: scorro la pagina verso il basso
+        - keyword: Then
+          text: la barra superiore scorre via
+        - keyword: And
+          text: la testata della seconda riga resta fissa in alto
+    - id: TSTT-4JJJG3
+      title: Il logo E Shop a sinistra porta alla home
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono su una pagina del sito
+        - keyword: When
+          text: guardo la testata
+        - keyword: Then
+          text: a sinistra vedo il logo "E" con la scritta "Shop"
+        - keyword: And
+          text: toccandolo vado alla home
+    - id: TSTT-5BGBBG
+      title: La ricerca sta al centro e occupa tutto lo spazio libero
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo la testata
+        - keyword: Then
+          text: la barra di ricerca sta al centro
+        - keyword: And
+          text: occupa tutto lo spazio libero tra il logo e i pulsanti a destra
+    - id: TSTT-25XBT9
+      title: Preferiti è un pulsante tondo con cuore e pallino del numero
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo la testata a destra
+        - keyword: Then
+          text: vedo "Preferiti" come pulsante tondo con l'icona di un cuore
+        - keyword: And
+          text: il pallino con il numero compare solo se i preferiti sono più di 0
+    - id: TSTT-5PU7GW
+      title: Carrello è un pulsante a pillola con icona, testo e pallino del numero
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo la testata a destra
+        - keyword: Then
+          text: vedo "Carrello" come pulsante a pillola con icona, testo e un pallino con il numero degli articoli
+    - id: TSTT-9E8T7D
+      title: Il pulsante Vedi tutti gli articoli porta all'elenco
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale e vedo la scena "Compra il look"
+        - keyword: When
+          text: tocco "Vedi tutti gli articoli" sotto la scena
+        - keyword: Then
+          text: la pagina scorre fino all'elenco dei prodotti
+    - id: TSTT-8VJC9V
+      title: Tutti i controlli della testata sono veri pulsanti o link con nome e area di 44 pixel
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono su una pagina del sito
+        - keyword: When
+          text: guardo i controlli della barra superiore e della testata
+        - keyword: Then
+          text: ognuno è un pulsante o un link con un nome per chi non vede
+        - keyword: And
+          text: l'area che si può toccare è alta e larga almeno 44 pixel, anche per lingua e tema
+    - id: TSTT-27HF7V
+      title: I nuovi testi sono tradotti in tutte le lingue del sito
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:55:45.356Z'
+        updatedAt: '2026-11-25T20:55:45.356Z'
+        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
+        aiStartedAt: '2026-11-25T20:56:02.462Z'
+        aiEndedAt: '2026-11-25T21:29:45.936Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho scelto Inglese o Spagnolo
+        - keyword: When
+          text: guardo la barra superiore, la testata e la scena
+        - keyword: Then
+          text: ogni nuovo testo è nella lingua scelta

@@ -12,18 +12,18 @@ Feature: Lingua del sito
     Then il pulsante mostra "ITA"
 
   @id(LNG-7T2YSF) @functional @c4-component
-  Scenario: Il pulsante sta in alto a sinistra sopra il logo
+  Scenario: Il pulsante sta a destra nella barra superiore
     Given sono sulla pagina Scopri
-    When guardo l'intestazione
-    Then il pulsante della lingua è in alto a sinistra
-    And il pulsante della lingua sta sopra il logo "E"
+    When guardo la barra superiore
+    Then il pulsante della lingua sta a destra nella barra superiore, accanto al pulsante giorno/notte
+    And l'area che si può toccare è alta e larga almeno 44 pixel
 
   @id(LNG-9HRNHM) @functional @c4-component
-  Scenario: Il pulsante è verde come i pulsanti della landing page
+  Scenario: Il pulsante usa i colori panna e nessun verde
     Given sono sulla pagina Scopri
     When guardo il pulsante della lingua
-    Then il pulsante è verde
-    And ha lo stesso verde degli altri pulsanti della landing page
+    Then il pulsante ha sfondo trasparente, bordo e testo nei colori della palette panna
+    And nel sito non c'è nessun verde
 
   @id(LNG-674RJD) @functional @c4-component
   Scenario: Aprire la barra delle lingue

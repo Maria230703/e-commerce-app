@@ -27,11 +27,12 @@ test('la scena Angolo soggiorno ha 4 punti cliccabili ed è sopra l\'elenco degl
 });
 
 /** §REQ:CMPR-IL-LOOK-JMT-020 — il titolo "Scopri" sta sotto la scena e prima della ricerca */
-test('il titolo Scopri sta sotto la scena Compra il look e prima del campo di ricerca', () => {
+test('il titolo Scopri sta sotto la scena Compra il look e prima di Ordina per', () => {
   assert.match(renderLookScene(), /<h2 id="look-scene-title">Compra il look<\/h2>/);
   assert.match(indexHtml, /<h1 id="page-title"[^>]*>Scopri<\/h1>/);
   assert.ok(at('id="look-scene-container"') < at('id="page-title"'));
-  assert.ok(at('id="page-title"') < at('id="search-input"'));
+  assert.ok(at('id="page-title"') < at('id="sort-select"'), 'il titolo sta prima di "Ordina per"');
+  assert.ok(at('id="search-input"') < at('id="look-scene-container"'), 'la ricerca sta nella testata, sopra la scena');
 });
 
 /** §REQ:CMPR-IL-LOOK-JMT-030 — ogni punto apre la scheda con nome e prezzo dell'articolo */

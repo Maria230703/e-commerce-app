@@ -83,7 +83,15 @@ const cartPanel = document.querySelector('.cart-panel');
 const categoryFilters = document.querySelector('#category-filters');
 const categoryControls = document.querySelector('#category-controls');
 const frameConfiguratorLink = document.querySelector('#frame-configurator-link');
-const toolbar = document.querySelector('.toolbar');
+const toolbarEl = document.querySelector('.toolbar');
+const headerSearch = document.querySelector('#header-search');
+// §REQ:TSTT-5BGBBG — la ricerca sta nella testata e si nasconde dove prima si nascondeva la barra degli strumenti
+const toolbar = {
+  set hidden(value) {
+    toolbarEl.hidden = value;
+    headerSearch.hidden = value;
+  }
+};
 const searchInput = document.querySelector('#search-input');
 const sortSelect = document.querySelector('#sort-select');
 const cartItems = document.querySelector('#cart-items');
@@ -95,9 +103,11 @@ const cartCountEl = document.querySelector('#cart-count');
 const itemsCountEl = document.querySelector('#items-count');
 const favoritesCountEl = document.querySelector('#favorites-count');
 const checkoutButton = document.querySelector('#cart-checkout-button');
-const couponContainer = document.querySelector('#coupon-container');
-const couponCopy = document.querySelector('#coupon-copy');
-const couponCopyFeedback = document.querySelector('#coupon-copy-feedback');
+const couponCodeEl = document.querySelector('#coupon-code');
+const couponTooltipEl = document.querySelector('#coupon-tooltip');
+const couponTooltipTextEl = document.querySelector('#coupon-tooltip-text');
+const couponCheckEl = document.querySelector('#coupon-tooltip-check');
+const couponLiveEl = document.querySelector('#coupon-live');
 
 function persistCart() {
   saveCart(window.localStorage, state.cart);
@@ -130,6 +140,7 @@ function setCartQuantity(productId, change) {
 
 function renderFavoriteCount() {
   favoritesCountEl.textContent = String(state.favoriteIds.length);
+  favoritesCountEl.hidden = state.favoriteIds.length === 0; // §REQ:TSTT-25XBT9
 }
 
 // §REQ:PRFR-BSO-040, §REQ:PRFR-BSO-050, §REQ:PRFR-BSO-070
@@ -323,7 +334,6 @@ function renderCouponAvailability(subtotalCents) {
     state.couponMessage = '';
   }
 
-  couponContainer.hidden = !isLandingPage || state.selectedProductId !== null || !hasEligibleSubtotal;
 }
 
 function showOrderConfirmation(order) {
@@ -835,10 +845,47 @@ renderFavoriteCount();
 renderProducts();
 renderCart();
 
-couponCopy.addEventListener('click', async () => {
-  const { message } = await copyCouponCode(navigator.clipboard);
-  couponCopyFeedback.textContent = message;
-  couponCopyFeedback.hidden = false;
+// §REQ:CPN-DI-SCNT-QAD-020, §REQ:CPN-DI-SCNT-QAD-030 — il codice nella barra viene dalla stessa fonte del campo coupon al pagamento
+couponCodeEl.textContent = COUPON_CODE;
+
+function copyWithFallback(text) {
+  const field = document.createElement('textarea');
+  field.value = text;
+  field.setAttribute('readonly', '');
+  field.style.position = 'fixed';
+  field.style.opacity = '0';
+  document.body.appendChild(field);
+  field.select();
+  try {
+    return document.execCommand('copy');
+  } finally {
+    field.remove();
+  }
+}
+
+let couponTooltipTimer;
+// §REQ:CPN-DI-SCNT-QAD-040, §REQ:CPNC-2PMRGV, §REQ:CPNC-4MYF8T — clic, tocco, Invio e Spazio (button nativo) copiano il codice
+couponCodeEl.addEventListener('click', async () => {
+  const result = await copyCouponCode(navigator.clipboard, copyWithFallback);
+  couponTooltipTextEl.textContent = result.message;
+  couponCheckEl.hidden = !result.copied; // spunta accanto a "Copiato"
+  couponTooltipEl.classList.toggle('is-copied', result.copied);
+  couponTooltipEl.classList.add('is-confirmation');
+  couponLiveEl.textContent = result.announcement;
+  clearTimeout(couponTooltipTimer);
+  couponTooltipTimer = setTimeout(() => {
+    couponTooltipTextEl.textContent = 'Copia codice';
+    couponCheckEl.hidden = true;
+    couponTooltipEl.classList.remove('is-copied', 'is-confirmation');
+    couponLiveEl.textContent = '';
+  }, 2500);
+});
+
+// §REQ:TSTT-9E8T7D — "Vedi tutti gli articoli" scorre fino all'elenco dei prodotti
+lookSceneContainer.addEventListener('click', (event) => {
+  if (event.target.closest('#see-all-button')) {
+    productList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 });
 
 // §REQ:MDLT-GRN-NTT-9ANCZM, §REQ:MDLT-GRN-NTT-29KNY6 — modalità giorno/notte, prima della traduzione così l'etichetta del pulsante viene tradotta

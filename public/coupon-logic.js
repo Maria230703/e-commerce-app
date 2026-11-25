@@ -9,14 +9,29 @@ export function isCouponButtonVisible(subtotalCents) {
   return subtotalCents > COUPON_MINIMUM_SUBTOTAL_CENTS;
 }
 
-/** §REQ:CPN-DI-SCNT-QAD-040 */
-export async function copyCouponCode(clipboard) {
-  try {
-    await clipboard.writeText(COUPON_CODE);
-    return { copied: true, message: `Codice ${COUPON_CODE} copiato. Incollalo nella pagina di pagamento.` };
-  } catch {
-    return { copied: false, message: `Non è stato possibile copiare il codice. Inserisci ${COUPON_CODE} nella pagina di pagamento.` };
+/**
+ * §REQ:CPN-DI-SCNT-QAD-040, §REQ:CPNC-2PMRGV, §REQ:CPNC-4MYF8T
+ * Copia il codice negli appunti; se non sono disponibili o rifiutano, prova il metodo alternativo.
+ */
+export async function copyCouponCode(clipboard, fallbackCopy) {
+  if (typeof clipboard?.writeText === 'function') {
+    try {
+      await clipboard.writeText(COUPON_CODE);
+      return { copied: true, message: 'Copiato', announcement: 'Codice copiato' };
+    } catch {
+      // si prova il metodo alternativo
+    }
   }
+
+  try {
+    if (typeof fallbackCopy === 'function' && fallbackCopy(COUPON_CODE)) {
+      return { copied: true, message: 'Copiato', announcement: 'Codice copiato' };
+    }
+  } catch {
+    // copia non riuscita
+  }
+
+  return { copied: false, message: 'Copia non riuscita', announcement: 'Copia non riuscita' };
 }
 
 /** §REQ:CPN-DI-SCNT-QAD-010, §REQ:CPN-DI-SCNT-QAD-060, §REQ:CPN-DI-SCNT-QAD-070 */

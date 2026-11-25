@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: modalita-giorno-notte.feature
-  updatedAt: '2026-11-25T20:38:16.256Z'
+  updatedAt: '2026-11-25T21:29:52.440Z'
 changes:
   - changedAt: '2026-11-25T20:38:16.256Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -45,3 +45,122 @@ changes:
     offset: 0
     before: null
     after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:55:14.584Z'
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Il pulsante giorno/notte sta sotto il logo'
+    after: '  Scenario: Il pulsante giorno/notte sta a destra nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:14.584Z'
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 3
+    before: '    When guardo l''intestazione'
+    after: '    When guardo la barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:14.584Z'
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 4
+    before: '    Then vedo il pulsante giorno/notte subito sotto il logo "E"'
+    after: '    Then vedo il pulsante giorno/notte a destra, dopo il pulsante della lingua'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:14.584Z'
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    And l''area che si può toccare è alta e larga almeno 44 pixel'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:15.791Z'
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Il pulsante giorno/notte è verde come gli altri pulsanti'
+    after: '  Scenario: Il pulsante giorno/notte usa i colori panna e nessun verde'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:15.791Z'
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 4
+    before: '    Then il pulsante è verde'
+    after: '    Then il pulsante ha sfondo trasparente, bordo e icona nei colori della palette panna'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:15.791Z'
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 5
+    before: '    And ha lo stesso verde degli altri pulsanti del sito'
+    after: '    And nel sito non c''è nessun verde'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:17.066Z'
+    ref: MDLT-GRN-NTT-72YRBW
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: In modalità giorno il pulsante mostra un sole bianco'
+    after: '  Scenario: In modalità giorno il pulsante mostra un sole'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:17.066Z'
+    ref: MDLT-GRN-NTT-72YRBW
+    constructType: Scenario
+    offset: 4
+    before: '    Then vedo un sole stilizzato bianco'
+    after: '    Then vedo un sole stilizzato nel colore del testo, ben visibile sulla barra panna'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:18.112Z'
+    ref: MDLT-GRN-NTT-9ANCZM
+    constructType: Scenario
+    offset: 5
+    before: '    And il pulsante mostra uno spicchio di luna bianco al posto del sole'
+    after: '    And il pulsante mostra uno spicchio di luna stilizzato al posto del sole'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:18.879Z'
+    ref: MDLT-GRN-NTT-7J2URW
+    constructType: Scenario
+    offset: 5
+    before: '    And il pulsante mostra di nuovo il sole bianco'
+    after: '    And il pulsante mostra di nuovo il sole'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:29:52.440Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:52.440Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:52.440Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-72YRBW
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:52.440Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-9ANCZM
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:52.440Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-7J2URW
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:52.440Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-29KNY6
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2

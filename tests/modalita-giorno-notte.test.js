@@ -48,31 +48,30 @@ const contrast = (a, b) => {
 };
 
 /** §REQ:MDLT-GRN-NTT-8TY6QK */
-test('MDLT-8TY6QK: il pulsante giorno/notte sta subito sotto il logo E, in ogni pagina', () => {
-  const header = indexHtml.slice(indexHtml.indexOf('<header class="topbar">'), indexHtml.indexOf('</header>'));
-  const column = header.indexOf('class="brand-column"');
-  const logo = header.indexOf('<div class="logo">E</div>');
-  const button = header.indexOf('id="theme-button"');
-  const actions = header.indexOf('class="header-actions"');
-  assert.ok(column >= 0 && column < logo && logo < button && button < actions, 'colonna → logo → pulsante giorno/notte');
-  assert.match(cssRule('.brand-column'), /flex-direction: column/);
+test('MDLT-8TY6QK: il pulsante giorno/notte sta a destra nella barra superiore, dopo la lingua, con area di almeno 44 pixel', () => {
+  const bar = indexHtml.slice(indexHtml.indexOf('<div id="announcement-bar"'), indexHtml.indexOf('<header class="site-header"'));
+  const actions = bar.slice(bar.indexOf('class="announcement-actions"'));
+  assert.ok(actions.indexOf('id="language-button"') < actions.indexOf('id="theme-button"'), 'lingua, poi giorno/notte');
   assert.doesNotMatch(indexHtml, /id="theme-button"[^>]*hidden/, 'non è nascosto: compare in ogni pagina');
   assert.doesNotMatch(themeJs, /isLandingPage/, 'nessun limite alla sola landing page');
+  const rule = cssRule('.checkout-button.language-button,\n.checkout-button.theme-button');
+  assert.match(rule, /min-height: 44px/);
+  assert.match(rule, /min-width: 44px/);
 });
 
 /** §REQ:MDLT-GRN-NTT-7QA35Y */
-test('MDLT-7QA35Y: il pulsante giorno/notte è verde come gli altri pulsanti e resta dello stesso verde in modalità notte', () => {
+test('MDLT-7QA35Y: il pulsante giorno/notte usa i colori panna, senza verde, anche in modalità notte', () => {
   assert.match(indexHtml, /id="theme-button" class="checkout-button theme-button"/);
   const shared = css.slice(css.indexOf('.add-button,\n.checkout-button,\n.back-button {'));
   const sharedRule = shared.slice(0, shared.indexOf('}'));
-  assert.match(sharedRule, /background: var\(--primary\)/);
-  assert.match(sharedRule, /color: white/, 'icona bianca');
-  assert.doesNotMatch(cssRule('.checkout-button.theme-button'), /background/, 'nessun colore proprio: eredita il verde');
-  assert.doesNotMatch(darkBlock(), /--primary/, 'in modalità notte il verde dei pulsanti non cambia');
+  assert.match(sharedRule, /background: transparent/);
+  assert.match(sharedRule, /border: 1\.5px solid var\(--button-border\)/);
+  assert.match(cssRule('.checkout-button.language-button,\n.checkout-button.theme-button'), /color: var\(--ink\)/, 'icona scura sulla barra panna');
+  assert.doesNotMatch(css, /--primary/, 'nessun colore primario verde');
 });
 
 /** §REQ:MDLT-GRN-NTT-72YRBW */
-test('MDLT-72YRBW: in modalità giorno il pulsante mostra un sole stilizzato bianco', () => {
+test('MDLT-72YRBW: in modalità giorno il pulsante mostra un sole stilizzato', () => {
   assert.equal(DEFAULT_THEME, 'light');
   const sun = renderThemeIconMarkup('light');
   assert.match(sun, /class="theme-icon theme-icon-sun"/);
@@ -85,7 +84,7 @@ test('MDLT-72YRBW: in modalità giorno il pulsante mostra un sole stilizzato bia
 });
 
 /** §REQ:MDLT-GRN-NTT-9ANCZM */
-test('MDLT-9ANCZM: toccando il pulsante il sito diventa scuro e leggibile, e il sole diventa uno spicchio di luna bianco', () => {
+test('MDLT-9ANCZM: toccando il pulsante il sito diventa scuro e leggibile, e il sole diventa uno spicchio di luna', () => {
   assert.equal(getNextTheme('light'), 'dark');
   const moon = renderThemeIconMarkup('dark');
   assert.match(moon, /class="theme-icon theme-icon-moon"/);
@@ -101,7 +100,7 @@ test('MDLT-9ANCZM: toccando il pulsante il sito diventa scuro e leggibile, e il 
   assert.ok(luminance(bg) < 0.05 && luminance(panel) < 0.08, 'sfondo e pannelli scuri');
   assert.ok(contrast(text, bg) >= 7 && contrast(text, panel) >= 7, 'testo chiaro ben leggibile');
   assert.ok(contrast(muted, bg) >= 4.5 && contrast(muted, panel) >= 4.5, 'testo secondario leggibile');
-  assert.ok(contrast('#FFFFFF', variable(css.slice(css.indexOf(':root {')), '--primary')) >= 4.5, 'testo bianco sul verde');
+  assert.ok(contrast('#2A2620', '#EFE6D2') >= 7, 'testo scuro sul panna della barra, anche in modalità notte');
   // gli elementi con colori propri restano visibili sullo sfondo scuro
   assert.match(css, /html\[data-theme="dark"\] \.favorite-button \{/);
   assert.match(css, /html\[data-theme="dark"\] \.free-shipping-bar \{/);

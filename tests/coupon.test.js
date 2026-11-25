@@ -25,47 +25,15 @@ test('CPN-010: Portavaso Trama (< 50 €) nel carrello: coupon non applicabile, 
   assert.equal(withCoupon.totalCents, calculateCartTotalCents(items).totalCents);
 });
 
-/** §REQ:CPN-DI-SCNT-QAD-020 */
-test('CPN-020: subtotale > 50 € sulla pagina iniziale: pulsante visibile sotto "Preferiti", stesso stile di "Vai al pagamento"', async () => {
-  assert.equal(typeof coupon.isCouponButtonVisible, 'function');
-  assert.equal(coupon.isCouponButtonVisible(5001), true);
-
-  const html = await fs.readFile(new URL('../public/index.html', import.meta.url), 'utf8');
-  const button = html.match(/<button id="coupon-copy" class="([^"]*)"[^>]*>([^<]*)<\/button>/);
-  assert.ok(button, 'pulsante coupon assente');
-  assert.equal(button[2], 'Coupon per te disponibile');
-  assert.ok(html.indexOf('id="favorites-link"') < html.indexOf('id="coupon-container"'));
-  assert.ok(html.indexOf('id="coupon-container"') < html.indexOf('</header>'));
-
-  const checkout = html.match(/<a id="cart-checkout-button" class="([^"]*)"/);
-  assert.ok(checkout);
-  assert.ok(button[1].split(' ').includes('checkout-button'));
-  assert.ok(checkout[1].split(' ').includes('checkout-button'));
-
-  const css = await fs.readFile(new URL('../public/styles.css', import.meta.url), 'utf8');
-  assert.match(css, /\.header-actions \.coupon-toggle,[\s\S]*?font: inherit;/);
-});
-
-/** §REQ:CPN-DI-SCNT-QAD-030 */
-test('CPN-030: subtotale <= 50 € il pulsante coupon non è visibile', () => {
+/** §REQ:CPN-DI-SCNT-QAD-060 */
+test('CPN-060: con subtotale <= 50 € il coupon non è applicabile (soglia usata per togliere un coupon salvato)', () => {
   assert.equal(typeof coupon.isCouponButtonVisible, 'function');
   assert.equal(coupon.isCouponButtonVisible(5000), false);
   assert.equal(coupon.isCouponButtonVisible(0), false);
   assert.equal(coupon.isCouponButtonVisible(4500), false);
 });
 
-/** §REQ:CPN-DI-SCNT-QAD-040 */
-test('CPN-040: toccare il pulsante copia "FirstPurchase" negli appunti', async () => {
-  assert.equal(typeof coupon.copyCouponCode, 'function');
-  const copied = [];
-  const result = await coupon.copyCouponCode({ writeText: async (text) => { copied.push(text); } });
-  assert.deepEqual(copied, ['FirstPurchase']);
-  assert.equal(result.copied, true);
-
-  const failed = await coupon.copyCouponCode({ writeText: async () => { throw new Error('negato'); } });
-  assert.equal(failed.copied, false);
-  assert.match(failed.message, /FirstPurchase/);
-});
+// CPN-020, CPN-030 e CPN-040 (messaggio nella barra superiore, codice, copia) sono in testata-e-aspetto.test.js
 
 /** §REQ:CPN-DI-SCNT-QAD-050 */
 test('CPN-050: pagamento con Lampada Lume e FirstPurchase: sconto 10% e nuovo totale nel riepilogo', () => {

@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: lingua.feature
-  updatedAt: '2026-11-25T20:35:28.253Z'
+  updatedAt: '2026-11-25T21:29:51.447Z'
 changes:
   - changedAt: '2026-11-25T20:35:28.253Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -80,3 +80,129 @@ changes:
     offset: 0
     before: null
     after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:55:12.078Z'
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Il pulsante sta in alto a sinistra sopra il logo'
+    after: '  Scenario: Il pulsante sta a destra nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:12.078Z'
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 3
+    before: '    When guardo l''intestazione'
+    after: '    When guardo la barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:12.078Z'
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 4
+    before: '    Then il pulsante della lingua è in alto a sinistra'
+    after: '    Then il pulsante della lingua sta a destra nella barra superiore, accanto al pulsante giorno/notte'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:12.078Z'
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 5
+    before: '    And il pulsante della lingua sta sopra il logo "E"'
+    after: '    And l''area che si può toccare è alta e larga almeno 44 pixel'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:13.286Z'
+    ref: LNG-9HRNHM
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Il pulsante è verde come i pulsanti della landing page'
+    after: '  Scenario: Il pulsante usa i colori panna e nessun verde'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:13.286Z'
+    ref: LNG-9HRNHM
+    constructType: Scenario
+    offset: 4
+    before: '    Then il pulsante è verde'
+    after: '    Then il pulsante ha sfondo trasparente, bordo e testo nei colori della palette panna'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:13.286Z'
+    ref: LNG-9HRNHM
+    constructType: Scenario
+    offset: 5
+    before: '    And ha lo stesso verde degli altri pulsanti della landing page'
+    after: '    And nel sito non c''è nessun verde'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-7ZCWHN
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-7T2YSF
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-9HRNHM
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-674RJD
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-9ERFZM
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-7WEBWK
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-3Q3RDZ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-6A3P6V
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-5R75GQ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-9NBEVB
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:51.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: LNG-6AEYMD
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
