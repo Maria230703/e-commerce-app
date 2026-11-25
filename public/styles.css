@@ -12,6 +12,38 @@
   --shadow: 0 8px 24px rgba(31, 30, 27, 0.06);
 }
 
+/* §REQ:MDLT-GRN-NTT-9ANCZM — modalità notte: sfondo e testi cambiano, il verde dei pulsanti no */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121410;
+  --panel: #1C201A;
+  --panel-alt: #283024;
+  --text: #ECEAE3;
+  --muted: #A9A89F;
+  --border: #343B2E;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .favorite-button {
+  border-radius: 50%;
+  background: #ECEAE3;
+  color: #1F1E1B;
+}
+
+html[data-theme="dark"] .free-shipping-bar {
+  color: #CDBBA7;
+}
+
+html[data-theme="dark"] .free-shipping-bar.is-unlocked {
+  color: #86C795;
+}
+
+html[data-theme="dark"] .payment-field-error,
+html[data-theme="dark"] .frame-photo-error,
+html[data-theme="dark"] .payment-request-error {
+  color: #FF9B91;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -89,6 +121,21 @@ legend,
   padding: 6px 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
+}
+
+/* §REQ:MDLT-GRN-NTT-8TY6QK, §REQ:MDLT-GRN-NTT-7QA35Y — pulsante giorno/notte: verde come gli altri, sotto il logo */
+.checkout-button.theme-button {
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.theme-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .language-menu {
@@ -300,7 +347,7 @@ body.landing-page #coupon-container[hidden] {
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 50%;
-  background: white;
+  background: var(--panel);
   color: var(--text);
   font-size: 1.4rem;
   line-height: 1;

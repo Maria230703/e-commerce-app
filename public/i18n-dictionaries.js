@@ -28,6 +28,8 @@ export const PHRASES = [
   ['Spagnolo', 'Spanish', 'Español'],
   ['Lingua del sito', 'Site language', 'Idioma del sitio'],
   ['Scegli la lingua', 'Choose the language', 'Elige el idioma'],
+  ['Passa alla modalità notte', 'Switch to night mode', 'Cambiar al modo noche'],
+  ['Passa alla modalità giorno', 'Switch to day mode', 'Cambiar al modo día'],
 
   // Categorie e prodotti
   ['Tutti', 'All', 'Todos'],

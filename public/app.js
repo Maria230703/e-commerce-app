@@ -44,6 +44,7 @@ import {
   toggleFavoriteId
 } from '/favorites.js?v=20261026-favorites-list-images-1';
 import { initLanguage } from '/language.js';
+import { initTheme } from '/theme.js';
 
 const state = {
   products: PRODUCTS,
@@ -839,6 +840,9 @@ couponCopy.addEventListener('click', async () => {
   couponCopyFeedback.textContent = message;
   couponCopyFeedback.hidden = false;
 });
+
+// §REQ:MDLT-GRN-NTT-9ANCZM, §REQ:MDLT-GRN-NTT-29KNY6 — modalità giorno/notte, prima della traduzione così l'etichetta del pulsante viene tradotta
+initTheme();
 
 // §REQ:LNG-7ZCWHN, §REQ:LNG-6A3P6V, §REQ:LNG-9NBEVB, §REQ:LNG-6AEYMD — selettore e traduzione automatica di tutto il sito
 initLanguage({ isLandingPage });

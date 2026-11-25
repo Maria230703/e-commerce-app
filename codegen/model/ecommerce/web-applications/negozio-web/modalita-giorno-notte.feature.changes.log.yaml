@@ -1,0 +1,47 @@
+version: 1
+document:
+  sourceFeature: modalita-giorno-notte.feature
+  updatedAt: '2026-11-25T20:38:16.256Z'
+changes:
+  - changedAt: '2026-11-25T20:38:16.256Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:38:16.256Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:38:16.256Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-72YRBW
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:38:16.256Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-9ANCZM
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:38:16.256Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-7J2URW
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:38:16.256Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: MDLT-GRN-NTT-29KNY6
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1

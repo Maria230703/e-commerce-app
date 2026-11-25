@@ -1,0 +1,187 @@
+version: 1
+document:
+  sourceFeature: modalita-giorno-notte.feature
+  generatedAt: '2026-11-25T20:36:28.858Z'
+  copilotSessionId: 21cbf18373a553cca1524d3bdda28e07
+feature:
+  id: 56b9c2bd-09c1-4f02-a6a5-2ddb22b242a8
+  createdAt: '2026-11-25T20:36:28.826Z'
+  updatedAt: '2026-11-25T20:36:28.827Z'
+  title: Modalità giorno e notte
+  description:
+    - As a cliente del negozio
+    - I want passare dalla modalità giorno (chiara) alla modalità notte (scura) e viceversa
+    - So that leggere il sito con i colori che mi affaticano meno gli occhi
+  tags:
+    - c4-id:c01292a7-a13a-2c8a-5335-9de968150c57
+  scenarios:
+    - id: MDLT-GRN-NTT-8TY6QK
+      title: Il pulsante giorno/notte sta sotto il logo
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:36:28.826Z'
+        updatedAt: '2026-11-25T20:36:28.826Z'
+        aiGeneratedAt: '2026-11-25T20:38:16.256Z'
+        aiStartedAt: '2026-11-25T20:36:36.913Z'
+        aiEndedAt: '2026-11-25T20:38:16.256Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono su una pagina del sito
+        - keyword: When
+          text: guardo l'intestazione
+        - keyword: Then
+          text: vedo il pulsante giorno/notte subito sotto il logo "E"
+    - id: MDLT-GRN-NTT-7QA35Y
+      title: Il pulsante giorno/notte è verde come gli altri pulsanti
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:36:28.826Z'
+        updatedAt: '2026-11-25T20:36:28.826Z'
+        aiGeneratedAt: '2026-11-25T20:38:16.256Z'
+        aiStartedAt: '2026-11-25T20:36:36.913Z'
+        aiEndedAt: '2026-11-25T20:38:16.256Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: sono su una pagina del sito
+        - keyword: When
+          text: guardo il pulsante giorno/notte
+        - keyword: Then
+          text: il pulsante è verde
+        - keyword: And
+          text: ha lo stesso verde degli altri pulsanti del sito
+    - id: MDLT-GRN-NTT-72YRBW
+      title: In modalità giorno il pulsante mostra un sole bianco
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:36:28.826Z'
+        updatedAt: '2026-11-25T20:36:28.826Z'
+        aiGeneratedAt: '2026-11-25T20:38:16.256Z'
+        aiStartedAt: '2026-11-25T20:36:36.913Z'
+        aiEndedAt: '2026-11-25T20:38:16.256Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: il sito è in modalità giorno
+        - keyword: When
+          text: guardo il pulsante giorno/notte
+        - keyword: Then
+          text: vedo un sole stilizzato bianco
+    - id: MDLT-GRN-NTT-9ANCZM
+      title: Passare alla modalità notte
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:36:28.826Z'
+        updatedAt: '2026-11-25T20:36:28.826Z'
+        aiGeneratedAt: '2026-11-25T20:38:16.256Z'
+        aiStartedAt: '2026-11-25T20:36:36.913Z'
+        aiEndedAt: '2026-11-25T20:38:16.256Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: il sito è in modalità giorno
+        - keyword: When
+          text: tocco il pulsante giorno/notte
+        - keyword: Then
+          text: il sito diventa scuro con testi chiari ancora leggibili
+        - keyword: And
+          text: il pulsante mostra uno spicchio di luna bianco al posto del sole
+    - id: MDLT-GRN-NTT-7J2URW
+      title: Tornare alla modalità giorno
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:36:28.826Z'
+        updatedAt: '2026-11-25T20:36:28.826Z'
+        aiGeneratedAt: '2026-11-25T20:38:16.256Z'
+        aiStartedAt: '2026-11-25T20:36:36.913Z'
+        aiEndedAt: '2026-11-25T20:38:16.256Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: il sito è in modalità notte
+        - keyword: When
+          text: tocco il pulsante giorno/notte
+        - keyword: Then
+          text: il sito torna ai colori chiari
+        - keyword: And
+          text: il pulsante mostra di nuovo il sole bianco
+    - id: MDLT-GRN-NTT-29KNY6
+      title: La modalità scelta resta dopo aver ricaricato la pagina e cambiato pagina
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+      metadata:
+        createdAt: '2026-11-25T20:36:28.826Z'
+        updatedAt: '2026-11-25T20:36:28.826Z'
+        aiGeneratedAt: '2026-11-25T20:38:16.256Z'
+        aiStartedAt: '2026-11-25T20:36:36.913Z'
+        aiEndedAt: '2026-11-25T20:38:16.256Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        author: Maria <mcmorgese@codearchitects.com>
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+      steps:
+        - keyword: Given
+          text: ho scelto la modalità notte
+        - keyword: When
+          text: ricarico la pagina oppure apro il Carrello
+        - keyword: Then
+          text: il sito resta in modalità notte
+        - keyword: And
+          text: il pulsante mostra lo spicchio di luna

@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalogo E-commerce</title>
+    <script>try { if (localStorage.getItem('e-commerce-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (error) {}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=20261026-back-button-standard-1" />
+    <link rel="stylesheet" href="/styles.css?v=20261125-theme-1" />
   </head>
   <body>
     <header class="topbar">
@@ -23,6 +24,10 @@
             <p class="eyebrow">Shop</p>
           </div>
         </div>
+        <!-- §REQ:MDLT-GRN-NTT-8TY6QK — il pulsante giorno/notte sta subito sotto il logo -->
+        <button id="theme-button" class="checkout-button theme-button" type="button" aria-label="Passa alla modalità notte">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="5" x2="12" y2="2.5"/><line x1="16.95" y1="7.05" x2="18.72" y2="5.28"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="16.95" y1="16.95" x2="18.72" y2="18.72"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="7.05" y1="16.95" x2="5.28" y2="18.72"/><line x1="5" y1="12" x2="2.5" y2="12"/><line x1="7.05" y1="7.05" x2="5.28" y2="5.28"/></svg>
+        </button>
       </div>
       <div class="header-actions">
         <a class="cart-pill cart-link" href="/carrello">
