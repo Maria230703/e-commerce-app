@@ -1,0 +1,152 @@
+version: 1
+document:
+  sourceFeature: personalizzazione-cornice.feature
+  updatedAt: '2026-11-25T21:41:48.479Z'
+changes:
+  - changedAt: '2026-11-23T17:22:19.343Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-23T17:22:19.343Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-23T17:22:19.343Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 6
+    before: ''
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:52:28.011Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:17:35.572Z'
+    ref: PRSN-CRNC-TMM-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-010) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-010) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.594Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-020) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-020) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.619Z'
+    ref: PRSN-CRNC-TMM-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-030) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-030) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.638Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-040) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-040) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.656Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-050) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-050) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.675Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-060) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-060) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.692Z'
+    ref: PRSN-CRNC-TMM-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-070) @functional @c4-component'
+    after: '  @id(PRSN-CRNC-TMM-070) @functional @c4-component @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:54.123Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 2
+    before: '    Given che il negozio ha 6 articoli'
+    after: '    Given il negozio ha 6 articoli'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:54.123Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 5
+    before: '    And il collegamento appare sotto il titolo "Scopri"'
+    after: '    And il collegamento appare sotto il titolo "Scopri", accanto alla categoria "Cornici"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:54.123Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: '    And il testo "Crea la tua cornice" si legge dentro il pulsante, chiaro sia in modalità giorno sia in modalità notte'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:48.479Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2

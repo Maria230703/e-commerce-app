@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: compra_il_look.feature
-  generatedAt: '2026-11-24T18:43:22.776Z'
+  generatedAt: '2026-11-25T21:27:31.356Z'
   copilotSessionId: f14eaeff7d7d7ec0ba1d58bb63f014d7
 feature:
   id: 9872e750-b6b3-4a90-85d0-4a0302bd4094
@@ -21,17 +21,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
       metadata:
         createdAt: '2026-11-24T18:43:22.776Z'
         updatedAt: '2026-11-24T18:43:22.776Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:23:27.568Z'
+        aiStartedAt: '2026-11-25T12:23:16.046Z'
+        aiEndedAt: '2026-11-25T12:23:27.568Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il negozio ha 6 articoli
@@ -42,22 +45,25 @@ feature:
         - keyword: And
           text: la scena compare sopra l'elenco degli articoli
     - id: CMPR-IL-LOOK-JMT-020
-      title: Vedere il titolo sopra la ricerca
+      title: Vedere il titolo sotto la scena e prima dell'ordinamento
       type: scenario
       tags:
         - functional
         - c4-container
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
       metadata:
         createdAt: '2026-11-24T18:43:22.776Z'
-        updatedAt: '2026-11-24T18:43:22.776Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        updatedAt: '2026-11-25T21:27:31.363Z'
+        aiGeneratedAt: '2026-11-25T21:29:55.666Z'
+        aiStartedAt: '2026-11-25T21:27:40.373Z'
+        aiEndedAt: '2026-11-25T21:29:55.666Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il negozio ha 6 articoli
@@ -66,24 +72,29 @@ feature:
         - keyword: Then
           text: vedo "Scopri" sotto la scena "Compra il look"
         - keyword: And
-          text: vedo "Scopri" prima del campo di ricerca
+          text: vedo "Scopri" prima del campo "Ordina per"
+        - keyword: And
+          text: la ricerca sta nella testata fissa in alto, non più sotto il titolo
     - id: CMPR-IL-LOOK-JMT-030
       title: Aprire un articolo dalla scena
       type: scenarioOutline
       tags:
         - functional
         - c4-container
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
       metadata:
         createdAt: '2026-11-24T18:43:22.776Z'
         updatedAt: '2026-11-24T18:43:22.776Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:23:29.573Z'
+        aiStartedAt: '2026-11-25T12:23:16.046Z'
+        aiEndedAt: '2026-11-25T12:23:29.573Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina Scopri
@@ -109,17 +120,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
       metadata:
         createdAt: '2026-11-24T18:43:22.776Z'
         updatedAt: '2026-11-24T18:43:22.776Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:23:30.471Z'
+        aiStartedAt: '2026-11-25T12:23:16.046Z'
+        aiEndedAt: '2026-11-25T12:23:30.471Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho aperto la scheda di "Lampada Lume" dalla scena
@@ -133,17 +147,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
       metadata:
         createdAt: '2026-11-24T18:43:22.776Z'
         updatedAt: '2026-11-24T18:43:22.776Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:23:31.447Z'
+        aiStartedAt: '2026-11-25T12:23:16.046Z'
+        aiEndedAt: '2026-11-25T12:23:31.447Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il negozio ha 6 articoli

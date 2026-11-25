@@ -1,0 +1,325 @@
+runs:
+  - claimId: '2026-11-23T19:27:18.643Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: '11/12 green, verified: full; 1 decision (CRRL-RGH-E-QNTT-KWT-050) awaiting a person.'
+    documento: misc/carrello-righe-e-quantita
+    tentativo: 2
+    requisiti:
+      - CRRL-RGH-E-QNTT-KWT-010
+      - CRRL-RGH-E-QNTT-KWT-020
+      - CRRL-RGH-E-QNTT-KWT-030
+      - CRRL-RGH-E-QNTT-KWT-040
+      - CRRL-RGH-E-QNTT-KWT-050
+      - CRRL-RGH-E-QNTT-KWT-060
+      - CRRL-RGH-E-QNTT-KWT-070
+      - CRRL-RGH-E-QNTT-KWT-080
+      - CRRL-RGH-E-QNTT-KWT-090
+      - CRRL-RGH-E-QNTT-KWT-100
+      - CRRL-RGH-E-QNTT-KWT-110
+      - CRRL-RGH-E-QNTT-KWT-120
+    tokenIn: 2557334
+    tokenOut: 5590
+    tokenGrado: estimated
+    tracciaSessione: 20261123T192718Z-claude-code-20636b6f
+    conversazione: conv-mwtnqni0-8ikb
+    traccia: carrello-righe-e-quantita.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:27:18.643Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:27:22.986Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-23T19:27:22.986Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:27:34.022Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 8
+        tokenIn: 253836
+        tokenOut: 397
+        tokenGrado: estimated
+        durataSec: 11
+      - passo: preflight
+        at: '2026-11-23T19:27:37.669Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-23T19:27:41.519Z'
+        esito: ok
+        dettaglio: >-
+          gherkin+pipeline tools loaded; no other driver; foreign-dirty: .vscode/settings.json, codegen/model/*,
+          analysis-notes/ (not touched)
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 97566
+        tokenOut: 61
+        tokenGrado: estimated
+        durataSec: 4
+      - passo: intake
+        at: '2026-11-23T19:27:45.563Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-23T19:27:53.700Z'
+        esito: ok
+        dettaglio: >-
+          12 reqs all eligible (aiGeneratedAt null, counters 0). Code exists (cart-logic.js, cart-ui.js, app.js,
+          payment-ui.js), zero §REQ:CRRL-RGH citations → attribution+verification. Code lane. targets.json: web-client
+          declared.
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 109742
+        tokenOut: 128
+        tokenGrado: estimated
+        durataSec: 8
+      - passo: open-stamp
+        at: '2026-11-23T19:27:54.275Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-23T19:30:49.130Z'
+        esito: ok
+        dettaglio: aiStartedAt set on all 12
+        eventi: 9
+        modello: claude-sonnet-5-5
+        tokenIn: 710975
+        tokenOut: 2120
+        tokenGrado: estimated
+        durataSec: 175
+      - passo: implement
+        at: '2026-11-23T19:30:49.860Z'
+        esito: avviato
+      - passo: implement
+        at: '2026-11-23T19:31:43.199Z'
+        esito: ok
+        dettaglio: >-
+          RED: 040,060,070,100,110,120 TypeError before helpers; 010,020,030,080,090 by mutation 9/9 killed (M010 re-run
+          after anchor fix). 050 decision.
+        eventi: 9
+        modello: claude-sonnet-5-5
+        tokenIn: 775825
+        tokenOut: 2345
+        tokenGrado: estimated
+        durataSec: 53
+      - passo: verify
+        at: '2026-11-23T19:31:43.856Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-23T19:31:45.196Z'
+        esito: ok
+        dettaglio: >-
+          verified: full (web-client, 1 target). build exit=0; node --test tests/ → 62 tests, 62 pass, 0 fail (baseline
+          51/0). Log /tmp/req-final.log. No red debt.
+        eventi: 2
+        modello: claude-sonnet-5-5
+        durataSec: 1
+      - passo: close-stamp
+        at: '2026-11-23T19:31:45.793Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-23T19:32:05.308Z'
+        esito: ok
+        dettaglio: >-
+          11 green (010,020,030,040,060-120); 050 closed as decision (aiErrorCount unchanged, aiErrorTotal 1). Committed
+          653b91e.
+        eventi: 6
+        modello: claude-sonnet-5-5
+        tokenIn: 410339
+        tokenOut: 496
+        tokenGrado: estimated
+        durataSec: 20
+  - claimId: '2026-11-24T16:01:55.728Z'
+    origine: req-loop
+    host: Mac
+    pid: 1650
+    esito: blocked
+    dettaglio: >-
+      decision: KWT-050 (second add from product page → quantity 2) contradicts the toggle behaviour fixed by
+      KWT-100/110/120; needs a person's choice. No code written.
+    documento: misc/carrello-righe-e-quantita
+    tentativo: 2
+    requisiti:
+      - CRRL-RGH-E-QNTT-KWT-050
+    tokenIn: 439625
+    tokenOut: 532
+    tokenGrado: estimated
+    tracciaSessione: 20261124T160155Z-claude-code-a9af393f
+    conversazione: conv-mwuvudqs-mb0x
+    traccia: carrello-righe-e-quantita.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-24T16:01:55.728Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-24T16:02:01.136Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        tokenIn: 78552
+        tokenOut: 119
+        tokenGrado: estimated
+        durataSec: 5
+      - passo: driver
+        at: '2026-11-24T16:02:01.136Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-24T16:02:11.971Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 10
+        tokenIn: 177312
+        tokenOut: 195
+        tokenGrado: estimated
+        durataSec: 11
+  - claimId: '2026-11-24T16:15:37.232Z'
+    origine: req-loop
+    host: Mac
+    pid: 1650
+    esito: blocked
+    dettaglio: >-
+      decision — KWT-050 unchanged since the earlier decision block (updatedAt 2026-11-23 < aiEndedAt
+      2026-11-24T16:02:22Z); awaiting a person. No stamp written.
+    documento: misc/carrello-righe-e-quantita
+    tentativo: 2
+    requisiti:
+      - CRRL-RGH-E-QNTT-KWT-050
+    conversazione: conv-mwuwbzml-0wsw
+    traccia: carrello-righe-e-quantita.feature.ai.trace.jsonl
+    passi:
+      - passo: launch
+        at: '2026-11-24T16:15:37.232Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-24T16:15:41.702Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-24T16:15:41.702Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-24T16:15:52.299Z'
+        esito: interrupted
+        dettaglio: >-
+          working — the driver has not declared its stages — decision — KWT-050 unchanged since the earlier decision
+          block (updatedAt 2026-11-23 < aiEndedAt 2026-11-24T16:02:22Z); awaiting a person. No stamp written.
+        eventi: 6
+        durataSec: 11
+  - claimId: '2026-11-24T16:16:47.445Z'
+    origine: req-loop
+    host: Mac
+    pid: 1650
+    esito: blocked
+    dettaglio: >-
+      decision — KWT-050 (quantità 2 da scheda) contraddice il toggle KWT-100/110/120; in attesa della scelta A/B.
+      Nessun codice scritto, nessuno stamp nuovo.
+    documento: misc/carrello-righe-e-quantita
+    tentativo: 3
+    requisiti:
+      - CRRL-RGH-E-QNTT-KWT-050
+    conversazione: conv-mwuwdhsp-90sv
+    traccia: carrello-righe-e-quantita.feature.ai.trace.jsonl
+    passi:
+      - passo: launch
+        at: '2026-11-24T16:16:47.445Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-24T16:16:52.427Z'
+        esito: ok
+        dettaglio: >-
+          attempt 2 · handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver —
+          driver observed at work
+        durataSec: 5
+      - passo: driver
+        at: '2026-11-24T16:16:52.427Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-24T16:17:14.339Z'
+        esito: interrupted
+        dettaglio: >-
+          working — the driver has not declared its stages — decision — KWT-050 (quantità 2 da scheda) contraddice il
+          toggle KWT-100/110/120; in attesa della scelta A/B. Nessun codice scritto, nessuno stamp nuovo.
+        eventi: 7
+        durataSec: 22
+  - claimId: '2026-11-24T16:18:07.632Z'
+    origine: req-loop
+    host: Mac
+    pid: 1650
+    esito: blocked
+    dettaglio: >-
+      decision: KWT-050 (add twice from product page → qty 2) contradicts the toggle behaviour of KWT-100/110/120. No
+      code written. See BLOCKED-CRRL-RGH-E-QNTT-KWT-050.md
+    documento: misc/carrello-righe-e-quantita
+    tentativo: 4
+    requisiti:
+      - CRRL-RGH-E-QNTT-KWT-050
+    tokenIn: 539120
+    tokenOut: 924
+    tokenGrado: estimated
+    tracciaSessione: 20261124T161807Z-claude-code-7196e191
+    conversazione: conv-mwuwf7o5-cc4u
+    traccia: carrello-righe-e-quantita.feature.ai.trace.jsonl
+    piano:
+      - passo: intake
+      - passo: open-stamp
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-24T16:18:07.632Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-24T16:18:11.760Z'
+        esito: ok
+        dettaglio: >-
+          attempt 3 · handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver —
+          driver observed at work
+        tokenIn: 78512
+        tokenOut: 111
+        tokenGrado: estimated
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-24T16:18:11.761Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-24T16:18:25.041Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 11
+        tokenIn: 365266
+        tokenOut: 235
+        tokenGrado: estimated
+        durataSec: 13

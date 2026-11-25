@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: preferiti.feature
-  updatedAt: '2026-11-24T18:43:17.675Z'
+  updatedAt: '2026-11-25T12:38:17.375Z'
 changes:
   - changedAt: '2026-11-24T18:43:17.675Z'
     ref: feature:preferiti
@@ -10,3 +10,115 @@ changes:
     before: null
     after: '@c4-id:7d40d91f-0bed-f5f3-4479-83b4d838c2ee'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.556Z'
+    ref: PRFR-BSO-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-010) @functional @c4-container'
+    after: '  @id(PRFR-BSO-010) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.578Z'
+    ref: PRFR-BSO-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-020) @functional @c4-container'
+    after: '  @id(PRFR-BSO-020) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.604Z'
+    ref: PRFR-BSO-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-030) @functional @c4-container'
+    after: '  @id(PRFR-BSO-030) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.627Z'
+    ref: PRFR-BSO-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-040) @functional @c4-container'
+    after: '  @id(PRFR-BSO-040) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.649Z'
+    ref: PRFR-BSO-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-050) @functional @c4-container'
+    after: '  @id(PRFR-BSO-050) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.668Z'
+    ref: PRFR-BSO-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-060) @functional @c4-container'
+    after: '  @id(PRFR-BSO-060) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.687Z'
+    ref: PRFR-BSO-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-070) @functional @c4-container'
+    after: '  @id(PRFR-BSO-070) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.705Z'
+    ref: PRFR-BSO-080
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRFR-BSO-080) @functional @c4-container'
+    after: '  @id(PRFR-BSO-080) @functional @c4-container @wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:38:17.375Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRFR-BSO-080
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1

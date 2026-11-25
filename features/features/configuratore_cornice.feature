@@ -5,21 +5,22 @@ Feature: Personalizzazione della cornice
   I want scegliere misura, profilo e passe-partout della mia cornice
   So that vedere il risultato e il prezzo prima di acquistare
 
-  @id(PRSN-CRNC-TMM-010) @functional @c4-container
+  @id(PRSN-CRNC-TMM-010) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario: Aprire il configuratore dalla pagina Scopri
     Given sono sulla pagina Scopri
     When tocco "Crea la tua cornice"
     Then vedo la pagina "Crea la tua cornice" con l'anteprima
     And vedo il pulsante "Indietro"
 
-  @id(PRSN-CRNC-TMM-020) @functional @c4-container
+  @id(PRSN-CRNC-TMM-020) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario: Il collegamento alla cornice appare una volta sotto Scopri
     Given il negozio ha 6 articoli
     When apro la pagina Scopri
     Then vedo una sola volta "Crea la tua cornice"
-    And il collegamento appare sotto il titolo "Scopri"
+    And il collegamento appare sotto il titolo "Scopri", accanto alla categoria "Cornici"
+    And il testo "Crea la tua cornice" si legge dentro il pulsante, chiaro sia in modalità giorno sia in modalità notte
 
-  @id(PRSN-CRNC-TMM-030) @functional @c4-container
+  @id(PRSN-CRNC-TMM-030) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario: Selezione iniziale
     Given non ho ancora fatto nessuna scelta
     When apro il configuratore
@@ -27,7 +28,7 @@ Feature: Personalizzazione della cornice
     And la cornice ha l'aspetto Noce standard senza una scelta di finitura
     And il prezzo è 30,90 euro
 
-  @id(PRSN-CRNC-TMM-040) @functional @c4-container
+  @id(PRSN-CRNC-TMM-040) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario Outline: Cambiare la misura
     Given sto configurando una cornice con profilo "Classico" e passe-partout "Bianco"
     When scelgo la misura <misura>
@@ -40,7 +41,7 @@ Feature: Personalizzazione della cornice
     | 30x30  | 50,90  |
     | 50x70  | 90,90  |
 
-  @id(PRSN-CRNC-TMM-050) @functional @c4-container
+  @id(PRSN-CRNC-TMM-050) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario Outline: Cambiare il profilo
     Given sto configurando una cornice 13x18 con passe-partout "Bianco"
     When scelgo il profilo "<profilo>"
@@ -51,7 +52,7 @@ Feature: Personalizzazione della cornice
     | Classico      | 30,90  |
     | Contemporaneo | 32,90  |
 
-  @id(PRSN-CRNC-TMM-060) @functional @c4-container
+  @id(PRSN-CRNC-TMM-060) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario Outline: Cambiare il passe-partout
     Given sto configurando una cornice 13x18 con profilo "Classico"
     When scelgo il passe-partout "<passepartout>"
@@ -64,7 +65,7 @@ Feature: Personalizzazione della cornice
     | Verde smeraldo | 30,90  |
     | Rosso carminio | 30,90  |
 
-  @id(PRSN-CRNC-TMM-070) @functional @c4-container
+  @id(PRSN-CRNC-TMM-070) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
   Scenario: Combinare più scelte
     Given sono nel configuratore della cornice
     When scelgo la misura 50x70, il profilo "Contemporaneo" e il passe-partout "Rosso carminio"

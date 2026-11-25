@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: spedizionegratuita.feature
-  generatedAt: '2026-11-24T18:43:19.983Z'
+  generatedAt: '2026-11-25T12:17:35.335Z'
   copilotSessionId: 7519f2ab0e7acd2b1e6abcc910b5fb0d
 feature:
   id: cdd4cb3a-526f-48e8-b747-0ad15e395fbb
@@ -29,17 +29,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-94d6dcb5-3ead-b352-1700-b2185272c021)
       metadata:
         createdAt: '2026-11-24T18:43:19.983Z'
         updatedAt: '2026-11-24T18:43:19.983Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:37:05.828Z'
+        aiStartedAt: '2026-11-25T12:36:57.435Z'
+        aiEndedAt: '2026-11-25T12:37:05.828Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 'Specchio Orbita' a 119,00 euro
@@ -55,17 +58,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-94d6dcb5-3ead-b352-1700-b2185272c021)
       metadata:
         createdAt: '2026-11-24T18:43:19.983Z'
         updatedAt: '2026-11-24T18:43:19.983Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:37:06.761Z'
+        aiStartedAt: '2026-11-25T12:36:57.994Z'
+        aiEndedAt: '2026-11-25T12:37:06.761Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 'Vaso Duna' a 34,00 euro

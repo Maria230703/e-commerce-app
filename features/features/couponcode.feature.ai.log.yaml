@@ -1,0 +1,157 @@
+runs:
+  - claimId: '2026-11-25T12:30:43.264Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: 'couponcode: 7/7 green, verified full (141/141). No code changes; nothing to commit.'
+    documento: features/couponcode
+    tentativo: 2
+    requisiti:
+      - CPN-DI-SCNT-QAD-010
+      - CPN-DI-SCNT-QAD-020
+      - CPN-DI-SCNT-QAD-030
+      - CPN-DI-SCNT-QAD-040
+      - CPN-DI-SCNT-QAD-050
+      - CPN-DI-SCNT-QAD-060
+      - CPN-DI-SCNT-QAD-070
+    tokenIn: 1178296
+    tokenOut: 915
+    tokenGrado: estimated
+    tracciaSessione: 20261125T123043Z-claude-code-fa072d26
+    conversazione: conv-mww3qm9v-brzl
+    traccia: couponcode.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:30:43.264Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:30:47.005Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        tokenIn: 76629
+        tokenOut: 119
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-25T12:30:47.005Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:30:55.161Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 8
+        tokenIn: 180175
+        tokenOut: 168
+        tokenGrado: estimated
+        costoListinoUsd: 0.0383257
+        chiamateNonPrezzate: 1
+        durataSec: 8
+      - passo: preflight
+        at: '2026-11-25T12:31:02.494Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-25T12:31:06.442Z'
+        esito: ok
+        dettaglio: >-
+          gherkin+pipeline tools loaded; no other driver (pgrep empty, lock = this dispatch). Foreign-dirty:
+          .claude/.github rule files + feature mirrors; none are files this run edits (tests/coupon.test.js,
+          public/coupon-logic.js clean).
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 98917
+        tokenOut: 85
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: intake
+        at: '2026-11-25T12:31:06.920Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-25T12:31:09.721Z'
+        esito: ok
+        dettaglio: >-
+          7/7 eligible (aiGeneratedAt null, counters 0). Code+citations already exist (public/coupon-logic.js,
+          tests/coupon.test.js) -> attribution/re-verification job, code lane. DoD from .caep/targets.json (web-client).
+        eventi: 2
+        modello: claude-sonnet-5-5
+        tokenIn: 99714
+        tokenOut: 109
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 3
+      - passo: open-stamp
+        at: '2026-11-25T12:31:10.352Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:31:13.531Z'
+        esito: ok
+        eventi: 5
+        modello: claude-sonnet-5-5
+        tokenIn: 100783
+        tokenOut: 63
+        tokenGrado: exact
+        costoListinoUsd: 0.0132777
+        durataSec: 3
+      - passo: implement
+        at: '2026-11-25T12:31:17.792Z'
+        esito: avviato
+      - passo: implement
+        at: '2026-11-25T12:31:26.293Z'
+        esito: ok
+        dettaglio: >-
+          No code written (already implemented, commit d7e9623). Mutation RED: killed 6, survived 0 (M1..M6 over
+          -010,-020,-030,-040,-050,-060); -070 covered by same discount path tests. Files restored, public/tests clean.
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 107324
+        tokenOut: 81
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 9
+      - passo: verify
+        at: '2026-11-25T12:31:26.798Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-25T12:31:33.672Z'
+        esito: ok
+        dettaglio: >-
+          verified: full web-client. build exit 0; node --test tests/ exit 0: 141 tests, 141 pass, 0 fail, 0 skipped
+          (log /tmp/req-loop-web-test.log). No red debt.
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 108441
+        tokenOut: 66
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 7
+      - passo: close-stamp
+        at: '2026-11-25T12:31:34.260Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-25T12:31:37.244Z'
+        esito: ok
+        dettaglio: '7/7 green stamped; verified: full'
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 109841
+        tokenOut: 40
+        tokenGrado: exact
+        costoListinoUsd: 0.0147479
+        durataSec: 3

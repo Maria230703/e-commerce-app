@@ -1,0 +1,3 @@
+# CAIP FinOps: the ledger and the workspace identity stay local; prices.json and billing.json are shared.
+ledger-*.jsonl
+identity.json

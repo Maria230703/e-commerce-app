@@ -1,0 +1,376 @@
+version: 1
+document:
+  sourceFeature: carrello-righe-e-quantita.feature
+  generatedAt: '2026-11-25T21:27:29.905Z'
+  copilotSessionId: d402f1cc4dcf45d65353908caa5cd11d
+  nextRequirementSeq: 130
+feature:
+  id: 380595e2-7fda-471b-ad60-b4e351e55155
+  createdAt: '2026-11-23T17:21:54.053Z'
+  updatedAt: '2026-11-23T17:21:54.055Z'
+  title: 'Carrello: righe, quantità e persistenza'
+  description:
+    - As a cliente del negozio
+    - I want raccogliere gli articoli che voglio comprare e vedere il totale
+    - So that decidere cosa acquistare
+  tags:
+    - c4-id:24c5e321-e194-8b73-99c5-cf13f4e84793
+  scenarios:
+    - id: CRRL-RGH-E-QNTT-KWT-010
+      title: Carrello vuoto
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che non ho aggiunto nulla
+        - keyword: When
+          text: apro il carrello
+        - keyword: Then
+          text: vedo il messaggio "Il carrello è vuoto"
+        - keyword: And
+          text: non vedo il pulsante "Vai al pagamento"
+    - id: CRRL-RGH-E-QNTT-KWT-020
+      title: Il riepilogo non appare nella pagina Scopri
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina Scopri
+        - keyword: When
+          text: non ho ancora toccato il pulsante Carrello
+        - keyword: Then
+          text: non vedo il riepilogo del carrello
+        - keyword: And
+          text: il pulsante Carrello resta visibile nell'intestazione
+    - id: CRRL-RGH-E-QNTT-KWT-030
+      title: Aprire il carrello dal pulsante
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina Scopri
+        - keyword: When
+          text: tocco il pulsante Carrello
+        - keyword: Then
+          text: si apre la pagina del carrello
+        - keyword: And
+          text: posso vedere il riepilogo e il totale
+        - keyword: And
+          text: vedo il pulsante "Indietro"
+    - id: CRRL-RGH-E-QNTT-KWT-040
+      title: Aggiungere un articolo dalla scheda
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che il carrello è vuoto
+        - keyword: And
+          text: sto guardando la scheda di "Vaso Duna"
+        - keyword: When
+          text: tocco "Aggiungi"
+        - keyword: Then
+          text: il carrello contiene 1 articolo "Vaso Duna" a 34,00 euro
+        - keyword: And
+          text: l'icona del carrello mostra 1
+    - id: CRRL-RGH-E-QNTT-KWT-050
+      title: Aumentare di uno la quantità dal carrello
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-24T17:17:20.411Z'
+        aiGeneratedAt: '2026-11-24T17:18:01.068Z'
+        aiStartedAt: '2026-11-24T17:17:38.290Z'
+        aiEndedAt: '2026-11-24T17:18:01.068Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 3
+        aiRevisionCount: 3
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna"
+        - keyword: When
+          text: tocco "+" sulla riga "Vaso Duna"
+        - keyword: Then
+          text: il carrello ha una sola riga "Vaso Duna" con quantità 2
+        - keyword: And
+          text: l'icona del carrello mostra 2
+    - id: CRRL-RGH-E-QNTT-KWT-060
+      title: Aumentare la quantità
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna"
+        - keyword: When
+          text: aumento la quantità di "Vaso Duna" a 3
+        - keyword: Then
+          text: la riga "Vaso Duna" mostra 102,00 euro
+    - id: CRRL-RGH-E-QNTT-KWT-070
+      title: Togliere un articolo diminuendo la quantità
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna"
+        - keyword: When
+          text: diminuisco la quantità di "Vaso Duna"
+        - keyword: Then
+          text: '"Vaso Duna" non è più nel carrello'
+        - keyword: And
+          text: vedo il messaggio "Il carrello è vuoto"
+    - id: CRRL-RGH-E-QNTT-KWT-080
+      title: I pulsanti quantità sono ordinati in verticale
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna"
+        - keyword: When
+          text: apro il carrello
+        - keyword: Then
+          text: il pulsante "+" appare sopra il pulsante "-"
+    - id: CRRL-RGH-E-QNTT-KWT-090
+      title: Il carrello resta dopo la ricarica
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna"
+        - keyword: When
+          text: ricarico la pagina
+        - keyword: Then
+          text: il carrello contiene ancora 1 articolo "Vaso Duna"
+    - id: CRRL-RGH-E-QNTT-KWT-100
+      title: Il pulsante Aggiungi diventa Aggiunto mantenendo la posizione
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-25T21:27:29.912Z'
+        aiGeneratedAt: '2026-11-25T21:29:54.628Z'
+        aiStartedAt: '2026-11-25T21:27:39.649Z'
+        aiEndedAt: '2026-11-25T21:29:54.628Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina Scopri e il carrello è vuoto
+        - keyword: When
+          text: tocco "Aggiungi" su "Lampada Lume"
+        - keyword: Then
+          text: il pulsante di "Lampada Lume" diventa panna e mostra "Aggiunto"
+        - keyword: And
+          text: il pulsante resta nella stessa posizione
+        - keyword: And
+          text: gli altri articoli mantengono il pulsante "Aggiungi"
+    - id: CRRL-RGH-E-QNTT-KWT-110
+      title: Il secondo tocco rimuove l'articolo dal carrello
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che "Lampada Lume" è nel carrello e il suo pulsante mostra "Aggiunto"
+        - keyword: When
+          text: tocco di nuovo il pulsante di "Lampada Lume"
+        - keyword: Then
+          text: '"Lampada Lume" non è più nel carrello'
+        - keyword: And
+          text: il pulsante di "Lampada Lume" torna "Aggiungi"
+    - id: CRRL-RGH-E-QNTT-KWT-120
+      title: Il pulsante torna normale se l'articolo esce dal carrello
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:54.053Z'
+        updatedAt: '2026-11-23T17:21:54.053Z'
+        aiGeneratedAt: '2026-11-23T19:31:46.915Z'
+        aiStartedAt: '2026-11-23T19:27:55.070Z'
+        aiEndedAt: '2026-11-23T19:31:46.915Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che "Lampada Lume" è nel carrello
+        - keyword: When
+          text: tolgo "Lampada Lume" dal carrello
+        - keyword: Then
+          text: il pulsante di "Lampada Lume" torna "Aggiungi"

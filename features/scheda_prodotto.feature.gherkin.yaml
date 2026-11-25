@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: scheda_prodotto.feature
-  generatedAt: '2026-11-24T18:43:17.102Z'
+  generatedAt: '2026-11-25T12:17:35.552Z'
   copilotSessionId: f6226223f59a4ba59d6ebc5b1a866ba1
 feature:
   id: d474b260-1ce3-48b1-885e-33e63b4277c4
@@ -21,17 +21,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
       metadata:
         createdAt: '2026-11-24T18:43:17.102Z'
         updatedAt: '2026-11-24T18:43:17.102Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:22:21.107Z'
+        aiStartedAt: '2026-11-25T12:22:04.764Z'
+        aiEndedAt: '2026-11-25T12:22:21.107Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina Scopri
@@ -61,17 +64,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
       metadata:
         createdAt: '2026-11-24T18:43:17.102Z'
         updatedAt: '2026-11-24T18:43:17.102Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:22:22.093Z'
+        aiStartedAt: '2026-11-25T12:22:05.444Z'
+        aiEndedAt: '2026-11-25T12:22:22.093Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sto guardando la scheda di "Lampada Lume"
@@ -85,17 +91,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
       metadata:
         createdAt: '2026-11-24T18:43:17.102Z'
         updatedAt: '2026-11-24T18:43:17.102Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:22:23.075Z'
+        aiStartedAt: '2026-11-25T12:22:06.120Z'
+        aiEndedAt: '2026-11-25T12:22:23.075Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho scelto la categoria "Cornici"
@@ -111,17 +120,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
       metadata:
         createdAt: '2026-11-24T18:43:17.102Z'
         updatedAt: '2026-11-24T18:43:17.102Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:22:24.013Z'
+        aiStartedAt: '2026-11-25T12:22:06.699Z'
+        aiEndedAt: '2026-11-25T12:22:24.013Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla scheda di "<articolo>"

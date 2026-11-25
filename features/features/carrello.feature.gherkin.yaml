@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: carrello.feature
-  generatedAt: '2026-11-24T18:43:18.876Z'
+  generatedAt: '2026-11-25T21:27:28.622Z'
   copilotSessionId: 1a7e30a006c29a489655e53f767471db
 feature:
   id: c34b6493-d9b9-4d8d-b687-6edf891dd136
@@ -23,17 +23,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:28.655Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:28.655Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: non ho aggiunto nulla
@@ -49,17 +52,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:29.683Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:29.683Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina Scopri
@@ -75,17 +81,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:30.683Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:30.683Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina Scopri
@@ -103,17 +112,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:31.707Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:31.707Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il carrello è vuoto
@@ -131,17 +143,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:32.743Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:32.743Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Vaso Duna"
@@ -157,17 +172,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:33.763Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:33.763Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Vaso Duna"
@@ -181,17 +199,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:34.770Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:34.770Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Vaso Duna"
@@ -207,17 +228,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:35.803Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:35.803Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Vaso Duna"
@@ -231,17 +255,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:40.964Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:40.964Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il carrello è vuoto
@@ -259,17 +286,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:41.936Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:41.936Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
@@ -287,17 +317,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:42.984Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:42.984Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è una cornice 13x18 "Classico", passe-partout "Bianco"
@@ -314,17 +347,20 @@ feature:
         - functional
         - c4-container
         - c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:43.981Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:43.981Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il subtotale del carrello è <subtotale> euro
@@ -353,17 +389,20 @@ feature:
         - functional
         - c4-container
         - c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:44.936Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:44.936Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Vaso Duna"
@@ -378,17 +417,20 @@ feature:
         - functional
         - c4-container
         - c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:45.793Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:45.793Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Lampada Lume"
@@ -402,17 +444,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:36.825Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:36.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è 1 articolo "Vaso Duna"
@@ -426,24 +471,27 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
-        updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        updatedAt: '2026-11-25T21:27:28.629Z'
+        aiGeneratedAt: '2026-11-25T21:29:53.470Z'
+        aiStartedAt: '2026-11-25T21:27:38.875Z'
+        aiEndedAt: '2026-11-25T21:29:53.470Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina Scopri e il carrello è vuoto
         - keyword: When
           text: tocco "Aggiungi" su "Lampada Lume"
         - keyword: Then
-          text: il pulsante di "Lampada Lume" diventa verde e mostra "Aggiunto"
+          text: il pulsante di "Lampada Lume" diventa panna e mostra "Aggiunto"
         - keyword: And
           text: il pulsante resta nella stessa posizione
         - keyword: And
@@ -454,17 +502,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:38.881Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:38.881Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: '"Lampada Lume" è nel carrello'
@@ -480,17 +531,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
       metadata:
         createdAt: '2026-11-24T18:43:18.876Z'
         updatedAt: '2026-11-24T18:43:18.876Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:24:39.919Z'
+        aiStartedAt: '2026-11-25T12:24:18.954Z'
+        aiEndedAt: '2026-11-25T12:24:39.919Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: '"Lampada Lume" è nel carrello'

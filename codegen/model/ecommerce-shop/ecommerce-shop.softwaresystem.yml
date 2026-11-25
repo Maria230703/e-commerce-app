@@ -1,0 +1,45 @@
+type: software-system
+name: EcommerceShop
+title: E-commerce Shop
+description: >-
+  Negozio online di arredo e oggettistica: catalogo, carrello, preferiti,
+  configuratore cornice, pagamento e ordini.
+id: 9e560ec4-c8e4-34f6-441c-66e68f9058d9
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      e-commerce:
+        x: 90.5
+        'y': 459.5
+  - namespace: c4modeler
+    name: boundary
+    value:
+      x: 190.5
+      'y': 200.5
+      width: 400
+      height: 434
+configuration:
+  ports:
+    sqlServer: 5433
+    postgres: 5432
+    oracle:
+      listener: 1521
+      emExpress: 5500
+    rabbit: 5672
+    redis: 5379
+    jaeger:
+      agentCompactUdp: 5775
+      agentConfigHttp: 5778
+      agentThriftCompactUdp: 6831
+      agentThriftBinaryUdp: 6832
+      zipkinHttp: 9411
+      collectorHttp: 14268
+      uiHttp: 16686
+  orchestrator:
+    provider: docker
+children:
+  - id: 4e85147e-db97-a0a6-a4c1-64c6111646fb
+    type: web-application
+  - id: 40a0daa0-5bc2-e50f-2764-62fd55dd011f
+    type: service

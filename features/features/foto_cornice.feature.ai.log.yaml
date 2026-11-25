@@ -1,0 +1,149 @@
+runs:
+  - claimId: '2026-11-25T12:32:27.247Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: 10/10 green. No code written; re-verification of work committed in 946ef7a.
+    documento: features/foto_cornice
+    tentativo: 2
+    requisiti:
+      - STMP-DLL-PRPR-FOTO-JUL-010
+      - STMP-DLL-PRPR-FOTO-JUL-020
+      - STMP-DLL-PRPR-FOTO-JUL-030
+      - STMP-DLL-PRPR-FOTO-JUL-040
+      - STMP-DLL-PRPR-FOTO-JUL-050
+      - STMP-DLL-PRPR-FOTO-JUL-060
+      - STMP-DLL-PRPR-FOTO-JUL-070
+      - STMP-DLL-PRPR-FOTO-JUL-080
+      - STMP-DLL-PRPR-FOTO-JUL-090
+      - STMP-DLL-PRPR-FOTO-JUL-100
+    tokenIn: 990757
+    tokenOut: 801
+    tokenGrado: estimated
+    tracciaSessione: 20261125T123227Z-claude-code-62ff5db3
+    conversazione: conv-mww3suia-65gk
+    traccia: foto_cornice.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:32:27.247Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:32:30.964Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-25T12:32:30.964Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:32:40.903Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 8
+        tokenIn: 258753
+        tokenOut: 426
+        tokenGrado: estimated
+        costoListinoUsd: 0.0365407
+        chiamateNonPrezzate: 2
+        durataSec: 10
+      - passo: preflight
+        at: '2026-11-25T12:32:42.737Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-25T12:32:47.339Z'
+        esito: ok
+        dettaglio: caipGherkin/caipPipeline loaded; no other driver (lock = this dispatch); Agent not needed (inline)
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 102591
+        tokenOut: 53
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 5
+      - passo: intake
+        at: '2026-11-25T12:32:47.940Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-25T12:32:49.445Z'
+        esito: ok
+        dettaglio: >-
+          10/10 eligible (aiGeneratedAt null, 0 errors). Code lane. Files exist with §REQ citations (commit 946ef7a:
+          public/*.js + tests/stampa-foto.test.js) → re-verification; target web-client declared in .caep/targets.json.
+          Dropped 0.
+        eventi: 2
+        modello: claude-sonnet-5-5
+        durataSec: 2
+      - passo: open-stamp
+        at: '2026-11-25T12:32:49.862Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:32:54.039Z'
+        esito: ok
+        dettaglio: 10 opened
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 208552
+        tokenOut: 101
+        tokenGrado: exact
+        costoListinoUsd: 0.0265024
+        durataSec: 4
+      - passo: implement
+        at: '2026-11-25T12:32:54.749Z'
+        esito: avviato
+      - passo: implement
+        at: '2026-11-25T12:32:59.536Z'
+        esito: skipped
+        dettaglio: >-
+          No files written: every id cited in ≥1 code file and exactly 1 test file; tree for public/tests clean at HEAD
+          24313c3
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 105536
+        tokenOut: 59
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 5
+      - passo: verify
+        at: '2026-11-25T12:32:59.963Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-25T12:33:04.862Z'
+        esito: ok
+        dettaglio: >-
+          web-client: build exit 0; node --test tests/ exit 0 — 141 pass / 0 fail / 0 skipped (full scope). Re-verified
+          by suite, not re-observed (no RED possible).
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 107523
+        tokenOut: 87
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 5
+      - passo: close-stamp
+        at: '2026-11-25T12:33:05.444Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-25T12:33:19.525Z'
+        esito: ok
+        dettaglio: '10 green stamps (010–100), verified: full web-client suite, re-verified by suite not re-observed'
+        eventi: 12
+        modello: claude-sonnet-5-5
+        tokenIn: 111732
+        tokenOut: 53
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 14

@@ -5,7 +5,7 @@ Feature: Scheda prodotto
   I want vedere i dettagli di un articolo
   So that decidere se mi interessa
 
-  @id(SCHD-PRDT-MQI-010) @functional @c4-container
+  @id(SCHD-PRDT-MQI-010) @functional @c4-container @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
   Scenario Outline: Aprire la scheda di un articolo
     Given sono sulla pagina Scopri
     When tocco l'articolo "<articolo>"
@@ -19,20 +19,20 @@ Feature: Scheda prodotto
     | Candela Vaniglia| 22     | Cera vegetale in vasetto di vetro riutilizzabile.               |
     | Cornice Atelier | 29     | Profilo in plastica con vetro antiriflesso.                        |
 
-  @id(SCHD-PRDT-MQI-020) @functional @c4-container
+  @id(SCHD-PRDT-MQI-020) @functional @c4-container @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
   Scenario: Tornare al catalogo
     Given sto guardando la scheda di "Lampada Lume"
     When torno indietro
     Then mi ritrovo sulla pagina Scopri
 
-  @id(SCHD-PRDT-MQI-030) @functional @c4-container
+  @id(SCHD-PRDT-MQI-030) @functional @c4-container @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
   Scenario: Tornare al catalogo mantenendo il filtro
     Given ho scelto la categoria "Cornici"
     And sto guardando la scheda di "Cornice Atelier"
     When torno indietro
     Then vedo la pagina Scopri con la categoria "Cornici" selezionata e 1 articolo
 
-  @id(SCHD-PRDT-MQI-040) @functional @c4-container
+  @id(SCHD-PRDT-MQI-040) @functional @c4-container @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)
   Scenario Outline: Leggere le informazioni di un articolo
     Given sono sulla scheda di "<articolo>"
     When guardo le informazioni dell'articolo

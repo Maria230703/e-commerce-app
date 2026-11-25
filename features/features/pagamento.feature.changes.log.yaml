@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: pagamento.feature
-  updatedAt: '2026-11-24T18:43:20.573Z'
+  updatedAt: '2026-11-25T12:36:22.825Z'
 changes:
   - changedAt: '2026-11-24T18:43:20.566Z'
     ref: feature:pagamento
@@ -80,3 +80,227 @@ changes:
     before: '      | Email              | Inserisci l''email                |'
     after: '    | Email              | Inserisci l''email                |'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.618Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-010) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-010) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.638Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-020) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-020) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.657Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-030) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-030) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.676Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-040) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-040) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.694Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-050) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-050) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.713Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-060) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-060) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.739Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-070) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-070) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.759Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-080
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-080) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-080) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.778Z'
+    ref: PGMN-DATI-DI-SPDZ-ICN-090
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-DATI-DI-SPDZ-ICN-090) @functional @c4-container'
+    after: '  @id(PGMN-DATI-DI-SPDZ-ICN-090) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.795Z'
+    ref: PGMN-EST-ORDN-PEC-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-010) @functional @c4-container'
+    after: '  @id(PGMN-EST-ORDN-PEC-010) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.817Z'
+    ref: PGMN-EST-ORDN-PEC-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-020) @functional @c4-container'
+    after: '  @id(PGMN-EST-ORDN-PEC-020) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.839Z'
+    ref: PGMN-EST-ORDN-PEC-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-030) @functional @c4-container'
+    after: '  @id(PGMN-EST-ORDN-PEC-030) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.884Z'
+    ref: PGMN-EST-ORDN-PEC-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-040) @functional @c4-container'
+    after: '  @id(PGMN-EST-ORDN-PEC-040) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.929Z'
+    ref: PGMN-EST-ORDN-PEC-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-050) @functional @c4-container'
+    after: '  @id(PGMN-EST-ORDN-PEC-050) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.957Z'
+    ref: PGMN-EST-ORDN-PEC-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-060) @functional @c4-container'
+    after: '  @id(PGMN-EST-ORDN-PEC-060) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.981Z'
+    ref: PGMN-EST-ORDN-PEC-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-070) @functional @c4-container @foto'
+    after: '  @id(PGMN-EST-ORDN-PEC-070) @functional @c4-container @foto @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-080
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-DATI-DI-SPDZ-ICN-090
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:36:22.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1

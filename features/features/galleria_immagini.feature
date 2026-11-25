@@ -10,7 +10,7 @@ Feature: Galleria di immagini della scheda prodotto
     And sono disponibili tutte le foto fornite per quell'articolo
     And posso navigare sia con le frecce sia con le miniature
 
-  @id(GLLR-IMMG-NNT-010) @functional @c4-container
+  @id(GLLR-IMMG-NNT-010) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Aprire la scheda prodotto e vedere la prima foto
     Given sono sulla scheda prodotto "<articolo>"
     When guardo la scheda
@@ -26,7 +26,7 @@ Feature: Galleria di immagini della scheda prodotto
     | Candela Vaniglia | 3           |
     | Cornice Atelier  | 2           |
 
-  @id(GLLR-IMMG-NNT-020) @functional @c4-container
+  @id(GLLR-IMMG-NNT-020) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Avanzare alla foto successiva
     Given sto guardando la foto 1 dell'articolo "<articolo>"
     When tocco la freccia a destra
@@ -41,7 +41,7 @@ Feature: Galleria di immagini della scheda prodotto
     | Candela Vaniglia |
     | Cornice Atelier  |
 
-  @id(GLLR-IMMG-NNT-030) @functional @c4-container
+  @id(GLLR-IMMG-NNT-030) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Scorrere le foto in successione
     Given sto guardando la foto 2 dell'articolo "<articolo>"
     When tocco la freccia a destra
@@ -54,7 +54,7 @@ Feature: Galleria di immagini della scheda prodotto
     | Vaso Duna        |
     | Candela Vaniglia |
 
-  @id(GLLR-IMMG-NNT-040) @functional @c4-container
+  @id(GLLR-IMMG-NNT-040) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Ricominciare dalla prima foto dopo l'ultima
     Given sto guardando la foto <ultima_foto> di <numero_foto> nella scheda di "<articolo>"
     When tocco la freccia a destra
@@ -69,7 +69,7 @@ Feature: Galleria di immagini della scheda prodotto
     | Candela Vaniglia | 3           | 3           |
     | Cornice Atelier  | 2           | 2           |
 
-  @id(GLLR-IMMG-NNT-050) @functional @c4-container
+  @id(GLLR-IMMG-NNT-050) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Tornare alla foto precedente
     Given sto guardando la foto 2 dell'articolo "<articolo>"
     When tocco la freccia a sinistra
@@ -84,7 +84,7 @@ Feature: Galleria di immagini della scheda prodotto
     | Candela Vaniglia |
     | Cornice Atelier  |
 
-  @id(GLLR-IMMG-NNT-060) @functional @c4-container
+  @id(GLLR-IMMG-NNT-060) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Selezionare una foto con le miniature
     Given sto guardando la foto 2 dell'articolo "<articolo>"
     When tocco la miniatura della foto 1
@@ -100,7 +100,7 @@ Feature: Galleria di immagini della scheda prodotto
     | Candela Vaniglia |
     | Cornice Atelier  |
 
-  @id(GLLR-IMMG-NNT-070) @functional @c4-container
+  @id(GLLR-IMMG-NNT-070) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)
   Scenario Outline: Vedere frecce nere in cerchi color panna
     Given sto guardando una foto dell'articolo "<articolo>"
     When guardo le frecce di navigazione

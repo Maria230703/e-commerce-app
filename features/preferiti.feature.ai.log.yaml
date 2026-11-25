@@ -1,0 +1,141 @@
+runs:
+  - claimId: '2026-11-25T12:37:19.724Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: PRFR-BSO-010..080 green by re-verification + mutation RED; no code written
+    documento: features/preferiti
+    tentativo: 2
+    requisiti:
+      - PRFR-BSO-010
+      - PRFR-BSO-020
+      - PRFR-BSO-030
+      - PRFR-BSO-040
+      - PRFR-BSO-050
+      - PRFR-BSO-060
+      - PRFR-BSO-070
+      - PRFR-BSO-080
+    tokenIn: 1344464
+    tokenOut: 1291
+    tokenGrado: estimated
+    tracciaSessione: 20261125T123719Z-claude-code-395c7b69
+    conversazione: conv-mww3z46n-4vlo
+    traccia: preferiti.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: context
+        opzionale: true
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:37:19.724Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:37:23.116Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        tokenIn: 76629
+        tokenOut: 115
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-25T12:37:23.116Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:37:31.527Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 9
+        tokenIn: 182699
+        tokenOut: 153
+        tokenGrado: estimated
+        costoListinoUsd: 0.0348157
+        chiamateNonPrezzate: 1
+        durataSec: 8
+      - passo: preflight
+        at: '2026-11-25T12:37:36.897Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-25T12:37:41.603Z'
+        esito: ok
+        dettaglio: gherkin+pipeline loaded; one driver (26742); targets.json has web-client build/test
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 204966
+        tokenOut: 94
+        tokenGrado: estimated
+        chiamateNonPrezzate: 2
+        durataSec: 5
+      - passo: intake
+        at: '2026-11-25T12:37:42.187Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-25T12:37:46.091Z'
+        esito: ok
+        dettaglio: >-
+          8 eligible (aiGeneratedAt null, counters 0/0/0). Code lane. Code+citations exist (favorites.js, app.js,
+          tests/preferiti.test.js, commit 927a476); scenario text unchanged (only @wiki tag added) -> re-verification by
+          suite
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 104344
+        tokenOut: 83
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: open-stamp
+        at: '2026-11-25T12:37:46.706Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:37:50.424Z'
+        esito: ok
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 105420
+        tokenOut: 26
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: verify
+        at: '2026-11-25T12:37:53.400Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-25T12:38:15.968Z'
+        esito: ok
+        dettaglio: >-
+          verified: full (web-client). build exit 0; node --test tests/ 141 pass 0 fail (log
+          /tmp/req-loop-web-test.log). Mutation RED evidence: 8 killed 0 survived (M1-M8, one per requirement), files
+          restored, tree clean in public/ tests/.
+        eventi: 5
+        modello: claude-sonnet-5-5
+        tokenIn: 342653
+        tokenOut: 642
+        tokenGrado: estimated
+        chiamateNonPrezzate: 3
+        durataSec: 23
+      - passo: close-stamp
+        at: '2026-11-25T12:38:16.592Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-25T12:38:20.022Z'
+        esito: ok
+        dettaglio: '8 requirements closed green, verified: full; no commit (mirrors were foreign-dirty)'
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 118123
+        tokenOut: 50
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 3

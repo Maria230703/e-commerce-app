@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: compra_il_look.feature
-  updatedAt: '2026-11-24T18:43:22.800Z'
+  updatedAt: '2026-11-25T21:29:55.666Z'
 changes:
   - changedAt: '2026-11-24T18:43:22.794Z'
     ref: feature:compra-il-look
@@ -52,3 +52,101 @@ changes:
     before: '      | Portavaso Trama | 45     |'
     after: '    | Portavaso Trama | 45     |'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.369Z'
+    ref: CMPR-IL-LOOK-JMT-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CMPR-IL-LOOK-JMT-010) @functional @c4-container'
+    after: '  @id(CMPR-IL-LOOK-JMT-010) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.410Z'
+    ref: CMPR-IL-LOOK-JMT-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CMPR-IL-LOOK-JMT-020) @functional @c4-container'
+    after: '  @id(CMPR-IL-LOOK-JMT-020) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.438Z'
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CMPR-IL-LOOK-JMT-030) @functional @c4-container'
+    after: '  @id(CMPR-IL-LOOK-JMT-030) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.454Z'
+    ref: CMPR-IL-LOOK-JMT-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CMPR-IL-LOOK-JMT-040) @functional @c4-container'
+    after: '  @id(CMPR-IL-LOOK-JMT-040) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.472Z'
+    ref: CMPR-IL-LOOK-JMT-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CMPR-IL-LOOK-JMT-050) @functional @c4-container'
+    after: '  @id(CMPR-IL-LOOK-JMT-050) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:23:27.568Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CMPR-IL-LOOK-JMT-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:23:28.488Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CMPR-IL-LOOK-JMT-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:23:29.573Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CMPR-IL-LOOK-JMT-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:23:30.471Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CMPR-IL-LOOK-JMT-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:23:31.447Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CMPR-IL-LOOK-JMT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:27:31.379Z'
+    ref: CMPR-IL-LOOK-JMT-020
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Vedere il titolo sopra la ricerca'
+    after: '  Scenario: Vedere il titolo sotto la scena e prima dell''ordinamento'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:27:31.379Z'
+    ref: CMPR-IL-LOOK-JMT-020
+    constructType: Scenario
+    offset: 5
+    before: '    And vedo "Scopri" prima del campo di ricerca'
+    after: '    And vedo "Scopri" prima del campo "Ordina per"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:27:31.379Z'
+    ref: CMPR-IL-LOOK-JMT-020
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: '    And la ricerca sta nella testata fissa in alto, non più sotto il titolo'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:29:55.666Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CMPR-IL-LOOK-JMT-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2

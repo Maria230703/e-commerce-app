@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: modalita-giorno-notte.feature
-  generatedAt: '2026-11-25T21:35:49.473Z'
+  generatedAt: '2026-11-25T21:41:53.748Z'
   copilotSessionId: 21cbf18373a553cca1524d3bdda28e07
 feature:
   id: 56b9c2bd-09c1-4f02-a6a5-2ddb22b242a8
@@ -22,7 +22,7 @@ feature:
       tags:
         - functional
         - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
+        - wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)
       metadata:
         createdAt: '2026-11-25T20:36:28.826Z'
         updatedAt: '2026-11-25T20:55:14.567Z'
@@ -52,7 +52,7 @@ feature:
       tags:
         - functional
         - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
+        - wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)
       metadata:
         createdAt: '2026-11-25T20:36:28.826Z'
         updatedAt: '2026-11-25T20:55:15.780Z'
@@ -82,7 +82,7 @@ feature:
       tags:
         - functional
         - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
+        - wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)
       metadata:
         createdAt: '2026-11-25T20:36:28.826Z'
         updatedAt: '2026-11-25T20:55:17.053Z'
@@ -110,7 +110,7 @@ feature:
       tags:
         - functional
         - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
+        - wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)
       metadata:
         createdAt: '2026-11-25T20:36:28.826Z'
         updatedAt: '2026-11-25T20:55:18.100Z'
@@ -140,7 +140,7 @@ feature:
       tags:
         - functional
         - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
+        - wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)
       metadata:
         createdAt: '2026-11-25T20:36:28.826Z'
         updatedAt: '2026-11-25T20:55:18.870Z'
@@ -170,7 +170,7 @@ feature:
       tags:
         - functional
         - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
+        - wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)
       metadata:
         createdAt: '2026-11-25T20:36:28.826Z'
         updatedAt: '2026-11-25T20:36:28.826Z'

@@ -1,0 +1,15 @@
+type: abstract-component
+name: CompraIlLook
+description: Scena Angolo soggiorno con punti cliccabili (look-scene.js).
+id: 876e857c-9998-8a9a-9403-f33e270abf76
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 802.5
+        'y': 88.5
+interactions:
+  - targetId: c41acd62-7a8d-0d07-6aa1-3a2038cbeb16
+    type: abstract-component
+    level: component

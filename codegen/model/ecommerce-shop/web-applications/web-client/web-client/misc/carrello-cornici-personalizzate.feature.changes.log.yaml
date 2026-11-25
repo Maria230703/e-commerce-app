@@ -1,0 +1,47 @@
+version: 1
+document:
+  sourceFeature: carrello-cornici-personalizzate.feature
+  updatedAt: '2026-11-25T12:17:36.270Z'
+changes:
+  - changedAt: '2026-11-23T17:25:24.706Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-CRNC-PRSN-BCS-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T17:25:25.842Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-CRNC-PRSN-BCS-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T17:25:27.048Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-CRNC-PRSN-BCS-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:17:36.238Z'
+    ref: CRRL-CRNC-PRSN-BCS-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-CRNC-PRSN-BCS-010) @functional @c4-component'
+    after: '  @id(CRRL-CRNC-PRSN-BCS-010) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.255Z'
+    ref: CRRL-CRNC-PRSN-BCS-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-CRNC-PRSN-BCS-020) @functional @c4-component'
+    after: '  @id(CRRL-CRNC-PRSN-BCS-020) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.270Z'
+    ref: CRRL-CRNC-PRSN-BCS-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-CRNC-PRSN-BCS-030) @functional @c4-component'
+    after: '  @id(CRRL-CRNC-PRSN-BCS-030) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>

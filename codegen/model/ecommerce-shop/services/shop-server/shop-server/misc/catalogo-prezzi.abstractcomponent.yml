@@ -1,0 +1,13 @@
+type: abstract-component
+name: CatalogoPrezzi
+description: >-
+  Catalogo prodotti e calcolo totali/spedizione (catalog-logic.js); GET
+  /api/products.
+id: cba00828-02f5-543f-4e9d-a1d805ac2e28
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      40a0daa0-5bc2-e50f-2764-62fd55dd011f:
+        x: 461.5
+        'y': 345.5

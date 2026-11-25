@@ -1,0 +1,42 @@
+runs:
+  - claimId: '2026-11-25T12:21:35.006Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: >-
+      Re-verified by suite: build exit 0; node --test tests/ 141/141 pass (full scope). Not re-observed (no RED
+      possible).
+    documento: features/catalogo
+    tentativo: 2
+    requisiti:
+      - CTLG-PRDT-GSE-010
+      - CTLG-PRDT-GSE-020
+    tokenIn: 864455
+    tokenOut: 871
+    tokenGrado: estimated
+    tracciaSessione: 20261125T122135Z-claude-code-3d02f0b2
+    conversazione: conv-mww3ev8m-slfu
+    traccia: catalogo.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: verify
+      - passo: close-stamp
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:21:35.006Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:22:00.084Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          connected
+        tokenIn: 450672
+        tokenOut: 538
+        tokenGrado: estimated
+        costoListinoUsd: 0.0350947
+        chiamateNonPrezzate: 4
+        durataSec: 25

@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: pagamento.feature
-  generatedAt: '2026-11-24T18:43:20.544Z'
+  generatedAt: '2026-11-25T12:17:34.975Z'
   copilotSessionId: de58da2b5fd7c769e9498b6f4f76b0a2
 feature:
   id: 5875f14a-49d1-45eb-af78-7029b56525ba
@@ -30,17 +30,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: When
           text: tocco "Vai al pagamento"
@@ -52,17 +55,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: svuoto il carrello
@@ -76,17 +82,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: When
           text: sono sulla pagina del pagamento
@@ -100,17 +109,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina del pagamento
@@ -146,17 +158,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina del pagamento
@@ -172,17 +187,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina del pagamento
@@ -196,17 +214,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina del pagamento
@@ -220,17 +241,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho compilato correttamente i dati di spedizione
@@ -246,17 +270,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: When
           text: sono sulla pagina del pagamento
@@ -268,17 +295,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho compilato correttamente i dati di spedizione
@@ -300,17 +330,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho compilato correttamente i dati di spedizione
@@ -332,17 +365,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho compilato correttamente i dati di spedizione
@@ -362,17 +398,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho compilato correttamente i dati di spedizione
@@ -390,17 +429,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho compilato correttamente i dati di spedizione
@@ -418,17 +460,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: ho pagato con carta
@@ -443,17 +488,20 @@ feature:
         - functional
         - c4-container
         - foto
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
       metadata:
         createdAt: '2026-11-24T18:43:20.544Z'
         updatedAt: '2026-11-24T18:43:20.544Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:36:22.825Z'
+        aiStartedAt: '2026-11-25T12:36:08.315Z'
+        aiEndedAt: '2026-11-25T12:36:22.825Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è una cornice con la foto "mare.jpg"

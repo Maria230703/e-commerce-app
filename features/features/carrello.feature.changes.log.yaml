@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: carrello.feature
-  updatedAt: '2026-11-24T18:43:18.902Z'
+  updatedAt: '2026-11-25T21:29:53.470Z'
 changes:
   - changedAt: '2026-11-24T18:43:18.894Z'
     ref: feature:carrello
@@ -80,3 +80,269 @@ changes:
     before: '      | 123,00    | 0,00       | 123,00 |'
     after: '    | 123,00    | 0,00       | 123,00 |'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.803Z'
+    ref: CRRL-RGH-E-QNTT-KWT-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-010) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-010) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.823Z'
+    ref: CRRL-RGH-E-QNTT-KWT-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-020) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-020) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.845Z'
+    ref: CRRL-RGH-E-QNTT-KWT-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-030) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-030) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.868Z'
+    ref: CRRL-RGH-E-QNTT-KWT-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-040) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-040) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.889Z'
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-050) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-050) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.908Z'
+    ref: CRRL-RGH-E-QNTT-KWT-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-060) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-060) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.928Z'
+    ref: CRRL-RGH-E-QNTT-KWT-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-070) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-070) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.949Z'
+    ref: CRRL-RGH-E-QNTT-KWT-080
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-080) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-080) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.969Z'
+    ref: CRRL-CRNC-PRSN-BCS-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-CRNC-PRSN-BCS-010) @functional @c4-container'
+    after: '  @id(CRRL-CRNC-PRSN-BCS-010) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:33.989Z'
+    ref: CRRL-CRNC-PRSN-BCS-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-CRNC-PRSN-BCS-020) @functional @c4-container'
+    after: '  @id(CRRL-CRNC-PRSN-BCS-020) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.010Z'
+    ref: CRRL-CRNC-PRSN-BCS-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-CRNC-PRSN-BCS-030) @functional @c4-container'
+    after: '  @id(CRRL-CRNC-PRSN-BCS-030) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.029Z'
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-010) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)'
+    after: '  @id(SPDZ-STP-010) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021) @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.053Z'
+    ref: SPDZ-STP-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-020) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)'
+    after: '  @id(SPDZ-STP-020) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021) @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.073Z'
+    ref: SPDZ-STP-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-030) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021)'
+    after: '  @id(SPDZ-STP-030) @functional @c4-container @c4-primary(94d6dcb5-3ead-b352-1700-b2185272c021) @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.100Z'
+    ref: CRRL-RGH-E-QNTT-KWT-090
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-090) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-090) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.122Z'
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-100) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-100) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.143Z'
+    ref: CRRL-RGH-E-QNTT-KWT-110
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-110) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-110) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.162Z'
+    ref: CRRL-RGH-E-QNTT-KWT-120
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-120) @functional @c4-container'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-120) @functional @c4-container @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:24:28.655Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:29.683Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:30.683Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:31.707Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:32.743Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:33.763Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:34.770Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:35.803Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-080
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:36.825Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-090
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:37.852Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:38.881Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-110
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:39.919Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-120
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:40.964Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-CRNC-PRSN-BCS-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:41.936Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-CRNC-PRSN-BCS-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:42.984Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-CRNC-PRSN-BCS-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:43.981Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SPDZ-STP-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:44.936Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SPDZ-STP-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:24:45.793Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SPDZ-STP-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:27:28.653Z'
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 4
+    before: '    Then il pulsante di "Lampada Lume" diventa verde e mostra "Aggiunto"'
+    after: '    Then il pulsante di "Lampada Lume" diventa panna e mostra "Aggiunto"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:29:53.470Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2

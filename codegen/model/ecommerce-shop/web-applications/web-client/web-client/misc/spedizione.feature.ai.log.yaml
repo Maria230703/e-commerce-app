@@ -1,0 +1,114 @@
+runs:
+  - claimId: '2026-11-23T19:57:46.875Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: >-
+      SPDZ-STP-010..050 green; build exit 0; 128/128 tests; RED: 020/030 failed pre-code, 010/040/050 via mutation 5/5
+      killed
+    documento: misc/spedizione
+    tentativo: 2
+    requisiti:
+      - SPDZ-STP-010
+      - SPDZ-STP-020
+      - SPDZ-STP-030
+      - SPDZ-STP-040
+      - SPDZ-STP-050
+    tokenIn: 2272538
+    tokenOut: 4119
+    tokenGrado: estimated
+    tracciaSessione: 20261123T195747Z-claude-code-53a601eb
+    conversazione: conv-mwtotu67-e2l0
+    traccia: spedizione.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:57:46.875Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:57:51.088Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-23T19:57:51.088Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:57:58.338Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 7
+        tokenIn: 253567
+        tokenOut: 324
+        tokenGrado: estimated
+        durataSec: 7
+      - passo: preflight
+        at: '2026-11-23T19:58:01.589Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-23T19:58:18.859Z'
+        esito: ok
+        dettaglio: >-
+          gherkin+pipeline tools live; no other driver; baseline node --test: 123 pass / 0 fail; target web-client
+          declared in .caep/targets.json
+        eventi: 6
+        modello: claude-sonnet-5-5
+        tokenIn: 406820
+        tokenOut: 341
+        tokenGrado: estimated
+        durataSec: 17
+      - passo: intake
+        at: '2026-11-23T19:58:19.264Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-23T19:58:25.699Z'
+        esito: ok
+        dettaglio: >-
+          5 reqs eligible (never elaborated, 0 errors), code lane. Model: anchor 9d114334 CouponPromozioni
+          (abstract-component) live, description covers free shipping; no gaps. Logic for 010/040/050 exists in
+          catalog-logic.js (cited by none); bar (020/030) absent.
+        eventi: 5
+        modello: claude-sonnet-5-5
+        tokenIn: 215624
+        tokenOut: 138
+        tokenGrado: estimated
+        durataSec: 6
+      - passo: open-stamp
+        at: '2026-11-23T19:58:26.066Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-23T19:59:21.573Z'
+        esito: ok
+        dettaglio: 5 open stamps written
+        eventi: 17
+        modello: claude-sonnet-5-5
+        tokenIn: 930063
+        tokenOut: 2983
+        tokenGrado: estimated
+        durataSec: 56
+      - passo: close-stamp
+        at: '2026-11-23T19:59:21.582Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-23T19:59:35.140Z'
+        esito: ok
+        dettaglio: '5 green close stamps; commit 774e386; verified: full (node --test tests/ 128/128)'
+        eventi: 8
+        modello: claude-sonnet-5-5
+        tokenIn: 372044
+        tokenOut: 294
+        tokenGrado: estimated
+        durataSec: 14

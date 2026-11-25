@@ -1,0 +1,77 @@
+runs:
+  - claimId: '2026-11-23T19:59:47.105Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: >-
+      10/10 green. verified: full (web-client build exit 0; node --test tests/ 140 pass / 0 fail, baseline 128). RED by
+      mutation 10/10 killed. Commit 946ef7a.
+    documento: misc/stampa-della-propria-foto
+    tentativo: 2
+    requisiti:
+      - STMP-DLL-PRPR-FOTO-JUL-010
+      - STMP-DLL-PRPR-FOTO-JUL-020
+      - STMP-DLL-PRPR-FOTO-JUL-030
+      - STMP-DLL-PRPR-FOTO-JUL-040
+      - STMP-DLL-PRPR-FOTO-JUL-050
+      - STMP-DLL-PRPR-FOTO-JUL-060
+      - STMP-DLL-PRPR-FOTO-JUL-070
+      - STMP-DLL-PRPR-FOTO-JUL-080
+      - STMP-DLL-PRPR-FOTO-JUL-090
+      - STMP-DLL-PRPR-FOTO-JUL-100
+    tokenIn: 1066368
+    tokenOut: 3770
+    tokenGrado: estimated
+    tracciaSessione: 20261123T195947Z-claude-code-0ae3dbec
+    conversazione: conv-mwtowexz-wg84
+    traccia: stampa-della-propria-foto.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: context
+        opzionale: true
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:59:47.105Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:59:50.712Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-23T19:59:50.712Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:59:59.400Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 9
+        tokenIn: 257152
+        tokenOut: 374
+        tokenGrado: estimated
+        durataSec: 9
+      - passo: open-stamp
+        at: '2026-11-23T20:00:07.115Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-23T20:00:59.882Z'
+        esito: ok
+        dettaglio: 10 open stamps written
+        eventi: 27
+        modello: claude-sonnet-5-5
+        tokenIn: 477206
+        tokenOut: 3243
+        tokenGrado: estimated
+        durataSec: 53

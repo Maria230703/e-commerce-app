@@ -52,22 +52,29 @@ deleted or renamed ids are errors).
 ## Canonical id form — for every NEW requirement
 
 ```
-<DOMAIN>-<SCENARIO>-<SCOPE>-<NNN>     e.g. BILLING-INVOICES-KQZ-010
+<DOMAIN>-<SCENARIO>-<TAIL>     e.g. BILLING-INVOICES-7X4MQK
 ```
 
 | Segment | Rule |
 |---|---|
 | `DOMAIN` | UPPERCASE mnemonic of the functional domain / owning container (letters only); `SYS` for system-level and cross-cutting |
 | `SCENARIO` | UPPERCASE mnemonic of the capability — never omitted: a two-segment id is invalid |
-| `SCOPE` | short random UPPERCASE token drawn by the mint tool per batch, so ids minted in parallel merge without collisions; omit when minting manually |
-| `NNN` | zero-padded incremental, one sequence per domain-scenario pair; never reused, never renumbered — a deleted scenario retires its number for good |
+| `TAIL` | 6 random characters the mint tool draws for each id from `23456789ABCDEFGHJKMNPQRSTUVWXYZ` (no look-alikes 0/O, 1/I/L), always starting with a digit — so it is never read as a segment, and ids minted in parallel merge without collisions; never reused, never renumbered — a deleted scenario retires its id for good |
+
+Ids minted earlier as `<DOMAIN>-<SCENARIO>[-<SCOPE>]-<NNN>` (a sequence number, optionally after a
+random scope token) are legacy ids: they stay valid and fall under rule 4. In every form, **the full id
+is never reused**. In a legacy id, `NNN` serves order and readability only: the same number under
+different scopes (`BILLING-INVOICES-KQZ-010` and `BILLING-INVOICES-MFV-010`) is legitimate — two
+distinct ids, not a collision, and never a reason to renumber. A collision is the same FULL id on two
+scenarios; it is repaired by giving ONE of them a new id with `caipGherkinRemintScenarioId` (dry run
+first), never by hand.
 
 Rules:
 
-1. **Mint, don't invent.** Obtain every new id from `caipGherkinMintRequirementId` (it owns
-   the sequence and the scope token, and may step numbers by 10). Only when no minting tool
-   is available: read the ids already assigned for that pair and take the next free number —
-   never reclaim a deleted scenario's number.
+1. **Mint, don't invent.** Obtain every new id from `caipGherkinMintRequirementId` (it draws
+   the tail and checks it against the ids already in the document). Only when no minting tool
+   is available: draw a tail of the same shape at random — never a sequence, never a word — and
+   check that no id in the workspace already uses it.
 2. **The C4 level is NOT part of the id** — it lives in the `@c4-context | @c4-container |
    @c4-component | @c4-code` tag; the id form is the same at every level.
 3. **The refined parent goes in `@traces(<parent id>)`, never in `@id`.**

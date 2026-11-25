@@ -204,7 +204,7 @@ code areas.
 
 **Packs.** One sub-agent works the members in document order, sharing one read of the feature
 and the code — sharing the pass, never the evidence: per member, its own tests RED-gated, its
-own `§REQ:<id>` citations, its own targeted run, and **one explicit verdict line**
+own `§REQ:<id>` citations (the tests run once per slice, in Stage 5), and **one explicit verdict line**
 (`<id>: ok | failed <why> | decision <clause> — <why> · options <…>`). A pack pass that ends WITHOUT per-member verdicts (timeout, crash)
 is an infrastructure outcome of the PASS, not of its members: re-run them one by one — never
 stamp a requirement red because its pack died around it. Split before you time out; a demotion
@@ -702,8 +702,9 @@ Delegate a pack to a fresh sub-agent (Batch rule 2) with a self-contained brief 
 provisioned **`universal-developer`** agent where the delegation tool can target agents by
 name, a generic sub-agent otherwise; inline when no delegation tool exists. When the pack's members land in disjoint targets with disjoint write
 scopes, the halves may run concurrently — both delegations in one message, both awaited; what
-is forbidden is a delegate nobody awaits, never two awaited together. Verdict-bearing suites
-belong to Stage 5, after the join; a half's own targeted tests are its cheap gate.
+is forbidden is a delegate nobody awaits, never two awaited together. Apart from the RED tests
+that could already pass, no test runs during the implementation: the tests run once, in Stage 5,
+after the join.
 
 **Two gates before writing anything:**
 
@@ -717,8 +718,9 @@ belong to Stage 5, after the join; a half's own targeted tests are its cheap gat
   found, belonging to a **different** requirement → cause `contradiction`, both assertions
   quoted with file:line and `§REQ:` ids. One minute of grep against meeting it later as a red
   you will read as your own regression.
-- **C — the pilot, whenever the edit repeats** over N similar elements: apply to ONE, run the
-  targeted tests, compare the delta against the prediction; only on a match apply the N−1.
+- **C — the pilot, whenever the edit repeats** over N similar elements: apply to ONE, build and
+  type-check it, compare it against the prediction — no test run, the tests of all N run once in
+  Stage 5; only on a match apply the N−1.
 - **D — the baseline gate.** A first implementation landing in a deployable unit whose
   declared technology (the container's target profile — `targetProfile.*`, or
   `target.framework` + `target.version`) has no recognizable project base in the unit's
@@ -765,9 +767,11 @@ Then, per member, in document order:
    in the file is not yours to delete** — if your work makes the test prove your requirement
    too, ADD your id beside the existing one (`§REQ:A, §REQ:B`); removing an id is legitimate
    only when the test genuinely no longer proves it, said explicitly in the report.
-2. **RED gate**: run the new tests before the production code exists and show they fail for the
-   intended reason — quote the failing ids. A test green at RED tests nothing. (Not applicable
-   on a re-verification run; say so.)
+2. **RED gate**: a new test that calls code that does not exist yet, or a stub that only
+   throws, is **red by construction** — do not run it; name it with the missing symbol or the
+   stub. Run before the production code only the tests that could already pass, and show they
+   fail for the intended reason — quote the failing ids. A test green at RED tests nothing. (Not
+   applicable on a re-verification run; say so.)
 
    **When the code already exists** (step 7's attribution and verification, or a member a
    sibling's pass already built), a new test cannot be seen red before the code — so its RED is
@@ -857,8 +861,8 @@ verbatim from the specialist. A recommendation is never a verdict and never a st
 
 ## Stage 5 — Verify: the touched targets, whole
 
-Per requirement, inside its pack: its own tests, targeted. Per slice, once, after the last
-pack, the **verification scope** — every touched target's `build` always, then its tests:
+No requirement runs its tests inside its pack. Per slice, once, after the last pack, the
+**verification scope** — every touched target's `build` always, then its tests:
 
 - **default — impacted scope**: the tests citing the `§REQ:` ids processed in this slice, PLUS
   the tests that depend on the files this slice wrote — the runner's own selection
@@ -945,13 +949,10 @@ nothing to observe there, and a green suite licenses nothing about the model.
 
 ## Stage 6 — Repair loop, capped at 5
 
-Classify (compile / assertion / runtime) → failing test → scenario → fix → re-run **only the
-tests that are red** (the regressed set), repeating until that set is green. Then ONE
-**confirmation run** of the Stage 5 scope — under `--full` the whole battery of every touched
-target, otherwise the impacted scope: a repair can break what was green. A new red there joins
-the regressed set and the loop goes on, until the confirmation run exits clean. Each pass
-starts from the previous report. **Cap: 5 passes per slice**, confirmation runs included; then
-stop and report — attribute what is still red, never blame collectively.
+Classify (compile / assertion / runtime) → failing test → scenario → fix → re-run only the tests
+that failed (the regressed set), repeating until that set is green. No second run of the Stage 5
+scope follows: a red a repair causes outside that set is found by the next run. Each pass starts
+from the previous report. **Cap: 5 passes per slice**; then stop and report — attribute what is still red, never blame collectively.
 
 **Never disable, delete, weaken or skip a test to reach green** — the one unrecoverable failure
 mode: it converts a red suite into a false green with a passing stamp. The one narrow

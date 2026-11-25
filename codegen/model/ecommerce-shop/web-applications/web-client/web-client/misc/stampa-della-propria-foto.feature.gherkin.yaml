@@ -1,0 +1,330 @@
+version: 1
+document:
+  sourceFeature: stampa-della-propria-foto.feature
+  generatedAt: '2026-11-25T12:17:36.624Z'
+  copilotSessionId: cfec936fcbb5a8871c2c9268cc35979e
+  nextRequirementSeq: 110
+feature:
+  id: bc5303e6-880f-473c-94d9-99ab8868279a
+  createdAt: '2026-11-23T17:22:28.164Z'
+  updatedAt: '2026-11-23T17:22:28.165Z'
+  title: Stampa della propria foto
+  description:
+    - As a cliente del negozio
+    - I want caricare la mia foto e riceverla stampata nella cornice
+    - So that avere un ricordo mio senza costi di stampa
+  tags:
+    - c4-id:9a58fe02-2101-9446-7d8d-c994a3c67b42
+  scenarios:
+    - id: STMP-DLL-PRPR-FOTO-JUL-010
+      title: Anteprima prima del caricamento
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:01.967Z'
+        aiStartedAt: '2026-11-23T20:00:08.851Z'
+        aiEndedAt: '2026-11-23T20:01:01.967Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: guardo l'anteprima senza aver caricato una foto
+        - keyword: Then
+          text: l'anteprima mostra il segnaposto "La tua foto"
+        - keyword: And
+          text: vedo il pulsante "Carica la tua foto"
+        - keyword: And
+          text: vedo la frase "Stampa su carta fotografica inclusa nel prezzo"
+    - id: STMP-DLL-PRPR-FOTO-JUL-020
+      title: Caricare una foto valida
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.191Z'
+        aiGeneratedAt: '2026-11-23T20:01:02.881Z'
+        aiStartedAt: '2026-11-23T20:00:10.213Z'
+        aiEndedAt: '2026-11-23T20:01:02.881Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: carico il file "<file>"
+        - keyword: Then
+          text: l'anteprima mostra la mia foto dentro la cornice
+        - keyword: And
+          text: il segnaposto "La tua foto" non è più visibile
+        - keyword: And
+          text: vedo il nome del file "<file>"
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| file |'
+        - keyword: __raw__
+          text: '| mare.jpg |'
+        - keyword: __raw__
+          text: '| mare.png |'
+        - keyword: __raw__
+          text: '| mare.webp |'
+    - id: STMP-DLL-PRPR-FOTO-JUL-030
+      title: File di formato non accettato
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:03.701Z'
+        aiStartedAt: '2026-11-23T20:00:10.264Z'
+        aiEndedAt: '2026-11-23T20:01:03.701Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: carico il file "documento.pdf"
+        - keyword: Then
+          text: vedo il messaggio "Formato non supportato. Carica un'immagine JPG, PNG o WebP."
+        - keyword: And
+          text: l'anteprima mostra ancora il segnaposto "La tua foto"
+    - id: STMP-DLL-PRPR-FOTO-JUL-040
+      title: Foto troppo pesante
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:04.463Z'
+        aiStartedAt: '2026-11-23T20:00:10.310Z'
+        aiEndedAt: '2026-11-23T20:01:04.463Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: carico il file "panorama.jpg" da 12 MB
+        - keyword: Then
+          text: vedo il messaggio "La foto supera i 10 MB. Scegline una più leggera."
+        - keyword: And
+          text: l'anteprima mostra ancora il segnaposto "La tua foto"
+    - id: STMP-DLL-PRPR-FOTO-JUL-050
+      title: La stampa è un omaggio e non cambia il prezzo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:05.321Z'
+        aiStartedAt: '2026-11-23T20:00:10.359Z'
+        aiEndedAt: '2026-11-23T20:01:05.321Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: carico il file "mare.jpg"
+        - keyword: Then
+          text: 'il riepilogo mostra "Stampa foto su carta fotografica: omaggio"'
+        - keyword: And
+          text: il prezzo è 30,90 euro
+    - id: STMP-DLL-PRPR-FOTO-JUL-060
+      title: La carta fotografica è l'unico tipo di stampa
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:06.174Z'
+        aiStartedAt: '2026-11-23T20:00:10.508Z'
+        aiEndedAt: '2026-11-23T20:01:06.174Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho caricato il file "mare.jpg"
+        - keyword: When
+          text: guardo il tipo di stampa
+        - keyword: Then
+          text: vedo "Carta fotografica" come tipo di stampa
+        - keyword: And
+          text: non vedo nessuna scelta del tipo di carta
+    - id: STMP-DLL-PRPR-FOTO-JUL-070
+      title: Senza foto non c'è la stampa
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:07.051Z'
+        aiStartedAt: '2026-11-23T20:00:11.079Z'
+        aiEndedAt: '2026-11-23T20:01:07.051Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: guardo il riepilogo senza aver caricato una foto
+        - keyword: Then
+          text: il riepilogo non mostra la voce di stampa
+    - id: STMP-DLL-PRPR-FOTO-JUL-080
+      title: La foto resta cambiando le scelte
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:07.832Z'
+        aiStartedAt: '2026-11-23T20:00:11.710Z'
+        aiEndedAt: '2026-11-23T20:01:07.832Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho caricato il file "mare.jpg"
+        - keyword: When
+          text: scelgo il profilo "Contemporaneo" e il passe-partout "Rosso carminio"
+        - keyword: Then
+          text: l'anteprima mostra ancora la mia foto, con il nuovo profilo e il nuovo passe-partout
+        - keyword: And
+          text: il prezzo è 32,90 euro
+    - id: STMP-DLL-PRPR-FOTO-JUL-090
+      title: Sostituire la foto
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:08.656Z'
+        aiStartedAt: '2026-11-23T20:00:12.203Z'
+        aiEndedAt: '2026-11-23T20:01:08.656Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho caricato il file "mare.jpg"
+        - keyword: When
+          text: carico il file "montagna.jpg"
+        - keyword: Then
+          text: l'anteprima mostra la nuova foto
+        - keyword: And
+          text: vedo il nome del file "montagna.jpg"
+    - id: STMP-DLL-PRPR-FOTO-JUL-100
+      title: Togliere la foto
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)
+      metadata:
+        createdAt: '2026-11-23T17:22:28.164Z'
+        updatedAt: '2026-11-23T17:22:28.164Z'
+        aiGeneratedAt: '2026-11-23T20:01:09.533Z'
+        aiStartedAt: '2026-11-23T20:00:13.860Z'
+        aiEndedAt: '2026-11-23T20:01:09.533Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho caricato il file "mare.jpg"
+        - keyword: When
+          text: tocco "Rimuovi foto"
+        - keyword: Then
+          text: l'anteprima mostra di nuovo il segnaposto "La tua foto"
+        - keyword: And
+          text: il riepilogo non mostra la voce di stampa

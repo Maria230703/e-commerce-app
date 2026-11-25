@@ -5,21 +5,22 @@ Feature: Compra il look
   I want vedere gli oggetti abbinati in una stanza
   So that trovare ispirazione e arrivare agli articoli che mi piacciono
 
-  @id(CMPR-IL-LOOK-JMT-010) @functional @c4-container
+  @id(CMPR-IL-LOOK-JMT-010) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
   Scenario: Vedere la scena prima del catalogo
     Given il negozio ha 6 articoli
     When apro la pagina Scopri
     Then vedo la scena "Angolo soggiorno" con 4 punti cliccabili
     And la scena compare sopra l'elenco degli articoli
 
-  @id(CMPR-IL-LOOK-JMT-020) @functional @c4-container
-  Scenario: Vedere il titolo sopra la ricerca
+  @id(CMPR-IL-LOOK-JMT-020) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
+  Scenario: Vedere il titolo sotto la scena e prima dell'ordinamento
     Given il negozio ha 6 articoli
     When apro la pagina Scopri
     Then vedo "Scopri" sotto la scena "Compra il look"
-    And vedo "Scopri" prima del campo di ricerca
+    And vedo "Scopri" prima del campo "Ordina per"
+    And la ricerca sta nella testata fissa in alto, non più sotto il titolo
 
-  @id(CMPR-IL-LOOK-JMT-030) @functional @c4-container
+  @id(CMPR-IL-LOOK-JMT-030) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
   Scenario Outline: Aprire un articolo dalla scena
     Given sono sulla pagina Scopri
     When tocco il punto di "<articolo>" sulla scena
@@ -31,13 +32,13 @@ Feature: Compra il look
     | Vaso Duna       | 34     |
     | Portavaso Trama | 45     |
 
-  @id(CMPR-IL-LOOK-JMT-040) @functional @c4-container
+  @id(CMPR-IL-LOOK-JMT-040) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
   Scenario: Tornare alla scena dalla scheda
     Given ho aperto la scheda di "Lampada Lume" dalla scena
     When torno indietro
     Then mi ritrovo sulla pagina Scopri con la scena visibile
 
-  @id(CMPR-IL-LOOK-JMT-050) @functional @c4-container
+  @id(CMPR-IL-LOOK-JMT-050) @functional @c4-container @wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
   Scenario: La scena non cambia il catalogo
     Given il negozio ha 6 articoli
     When apro la pagina Scopri

@@ -1,0 +1,56 @@
+---
+id: entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47
+kind: entity
+title: Coupon
+summary: The C4 component Coupon.
+createdAt: '2026-11-25T12:17:33.495Z'
+updatedAt: '2026-11-25T21:35:46.982Z'
+revision: 2
+sources: []
+requirements:
+  - CPN-DI-SCNT-QAD-010
+  - CPN-DI-SCNT-QAD-020
+  - CPN-DI-SCNT-QAD-030
+  - CPN-DI-SCNT-QAD-040
+  - CPN-DI-SCNT-QAD-050
+  - CPN-DI-SCNT-QAD-060
+  - CPN-DI-SCNT-QAD-070
+  - CPNC-2PMRGV
+  - CPNC-4MYF8T
+  - CPNC-4RG5VF
+  - CPNC-6SAFGZ
+links: []
+citedBy: []
+---
+
+Coupon is a C4 component of the model (c4 f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47 @1c545cf76176).
+
+Requirements anchored to it:
+- (req CPN-DI-SCNT-QAD-010 @2026-11-24T18:43:19.443Z)
+- (req CPN-DI-SCNT-QAD-020 @2026-11-25T20:55:22.987Z)
+- (req CPN-DI-SCNT-QAD-030 @2026-11-25T20:55:24.243Z)
+- (req CPN-DI-SCNT-QAD-040 @2026-11-25T20:55:25.573Z)
+- (req CPN-DI-SCNT-QAD-050 @2026-11-24T18:43:19.443Z)
+- (req CPN-DI-SCNT-QAD-060 @2026-11-24T18:43:19.443Z)
+- (req CPN-DI-SCNT-QAD-070 @2026-11-24T18:43:19.443Z)
+- (req CPNC-2PMRGV @2026-11-25T20:55:33.098Z)
+- (req CPNC-4MYF8T @2026-11-25T20:55:33.098Z)
+- (req CPNC-4RG5VF @2026-11-25T20:55:33.098Z)
+- (req CPNC-6SAFGZ @2026-11-25T20:55:33.098Z)
+
+<!-- references:start -->
+## References
+
+**Requirements**
+- §REQ:CPN-DI-SCNT-QAD-010
+- §REQ:CPN-DI-SCNT-QAD-020
+- §REQ:CPN-DI-SCNT-QAD-030
+- §REQ:CPN-DI-SCNT-QAD-040
+- §REQ:CPN-DI-SCNT-QAD-050
+- §REQ:CPN-DI-SCNT-QAD-060
+- §REQ:CPN-DI-SCNT-QAD-070
+- §REQ:CPNC-2PMRGV
+- §REQ:CPNC-4MYF8T
+- §REQ:CPNC-4RG5VF
+- §REQ:CPNC-6SAFGZ
+<!-- references:end -->

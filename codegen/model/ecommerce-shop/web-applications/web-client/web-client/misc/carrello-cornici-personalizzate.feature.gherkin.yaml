@@ -1,0 +1,112 @@
+version: 1
+document:
+  sourceFeature: carrello-cornici-personalizzate.feature
+  generatedAt: '2026-11-25T12:17:36.267Z'
+  copilotSessionId: f5f13b62af65853ebdf658ad6268cd7d
+  nextRequirementSeq: 40
+feature:
+  id: 200587d1-639f-4328-a954-de1127145014
+  createdAt: '2026-11-23T17:21:58.213Z'
+  updatedAt: '2026-11-23T17:21:58.214Z'
+  title: 'Carrello: cornici personalizzate'
+  description:
+    - As a cliente del negozio
+    - I want mettere nel carrello la cornice che ho configurato
+    - So that acquistarla con le mie scelte e la mia foto
+  tags:
+    - c4-id:24c5e321-e194-8b73-99c5-cf13f4e84793
+  scenarios:
+    - id: CRRL-CRNC-PRSN-BCS-010
+      title: Aggiungere una cornice personalizzata
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:58.213Z'
+        updatedAt: '2026-11-23T17:21:58.213Z'
+        aiGeneratedAt: '2026-11-23T17:25:24.706Z'
+        aiStartedAt: '2026-11-23T17:24:42.336Z'
+        aiEndedAt: '2026-11-23T17:25:24.706Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che il carrello è vuoto
+        - keyword: And
+          text: sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: When
+          text: tocco "Aggiungi al carrello"
+        - keyword: Then
+          text: il carrello contiene "Cornice su misura" a 30,90 euro
+        - keyword: And
+          text: la riga riporta "13x18 cm, Classico, passe-partout Bianco"
+    - id: CRRL-CRNC-PRSN-BCS-020
+      title: Cornice personalizzata con foto
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:58.213Z'
+        updatedAt: '2026-11-23T17:21:58.213Z'
+        aiGeneratedAt: '2026-11-23T17:25:25.842Z'
+        aiStartedAt: '2026-11-23T17:24:43.221Z'
+        aiEndedAt: '2026-11-23T17:25:25.842Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto configurando una cornice 13x18 con profilo "Classico" e passe-partout "Bianco"
+        - keyword: And
+          text: ho caricato il file "mare.jpg"
+        - keyword: When
+          text: tocco "Aggiungi al carrello"
+        - keyword: Then
+          text: 'la riga della cornice riporta "Stampa foto su carta fotografica: omaggio"'
+        - keyword: And
+          text: il prezzo della riga è 30,90 euro
+    - id: CRRL-CRNC-PRSN-BCS-030
+      title: Cornici con scelte diverse sono righe separate
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:21:58.213Z'
+        updatedAt: '2026-11-23T17:21:58.213Z'
+        aiGeneratedAt: '2026-11-23T17:25:27.048Z'
+        aiStartedAt: '2026-11-23T17:24:44.091Z'
+        aiEndedAt: '2026-11-23T17:25:27.048Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è una cornice 13x18 "Classico", passe-partout "Bianco"
+        - keyword: When
+          text: aggiungo una cornice 13x18 "Contemporaneo", passe-partout "Bianco"
+        - keyword: Then
+          text: il carrello ha due righe di cornice
+        - keyword: And
+          text: il subtotale è 63,80 euro

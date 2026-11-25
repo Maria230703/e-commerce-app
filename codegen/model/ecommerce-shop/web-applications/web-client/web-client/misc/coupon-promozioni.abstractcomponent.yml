@@ -1,0 +1,11 @@
+type: abstract-component
+name: CouponPromozioni
+description: Coupon FirstPurchase e spedizione gratuita (coupon-logic.js).
+id: 9d114334-0c4d-443b-5fb6-bb2f27f4b365
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 461.5
+        'y': 859.5

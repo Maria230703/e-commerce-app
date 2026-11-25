@@ -52,6 +52,12 @@
   },
   "aspire.enableAspireDashboardAutoLaunch": "launch",
   "aspire.dashboardBrowser": "integratedBrowser",
-  "chat.subagents.allowInvocationsFromSubagents": true
+  "chat.subagents.allowInvocationsFromSubagents": true,
   // --endinject:ca-scarface
+  "caep.aiChat.externalMcpServers": [
+    "caep-mcp-ng-ui-kit"
+  ],
+  "caep.aiChat.externalMcpServers": [
+    "caep-mcp-ng-ui-kit"
+  ]
 }

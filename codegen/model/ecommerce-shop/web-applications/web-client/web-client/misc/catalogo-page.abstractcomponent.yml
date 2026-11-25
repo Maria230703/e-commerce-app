@@ -1,0 +1,17 @@
+type: abstract-component
+name: CatalogoPage
+description: >-
+  Pagina Scopri (app.js, catalog-logic.js): elenco articoli, ricerca, categorie,
+  ordinamento.
+id: 4fb38d21-892a-dfc1-734c-eda054bcb0f8
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 291
+        'y': 88.5
+interactions:
+  - targetId: c41acd62-7a8d-0d07-6aa1-3a2038cbeb16
+    type: abstract-component
+    level: component

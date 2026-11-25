@@ -1,0 +1,131 @@
+runs:
+  - claimId: '2026-11-23T19:53:54.542Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: PRFR-BSO-010..080 green; 119/119 tests, build exit 0; commit 927a476
+    documento: misc/preferiti
+    tentativo: 2
+    requisiti:
+      - PRFR-BSO-010
+      - PRFR-BSO-020
+      - PRFR-BSO-030
+      - PRFR-BSO-040
+      - PRFR-BSO-050
+      - PRFR-BSO-060
+      - PRFR-BSO-070
+      - PRFR-BSO-080
+    tokenIn: 1742294
+    tokenOut: 4094
+    tokenGrado: estimated
+    tracciaSessione: 20261123T195354Z-claude-code-b46f05ba
+    conversazione: conv-mwtoouwj-b8as
+    traccia: preferiti.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: context
+        opzionale: true
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:53:54.542Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:53:58.421Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-23T19:53:58.421Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:54:05.898Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 8
+        tokenIn: 255248
+        tokenOut: 319
+        tokenGrado: estimated
+        durataSec: 7
+      - passo: preflight
+        at: '2026-11-23T19:54:10.396Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-23T19:54:14.975Z'
+        esito: ok
+        dettaglio: gherkin+pipeline tools loaded; no other driver; targets.json web-client declared (node --test tests/)
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 100015
+        tokenOut: 54
+        tokenGrado: estimated
+        durataSec: 5
+      - passo: intake
+        at: '2026-11-23T19:54:15.498Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-23T19:54:19.654Z'
+        esito: ok
+        dettaglio: >-
+          8 reqs eligible (never elaborated, 0 errors, revisions 0). Code exists (public/favorites.js, app.js) with zero
+          §REQ:PRFR citations -> attribution+verification job. Baseline: node --test tests/ 110 pass 0 fail. Model lane
+          n/a (c4-component, behaviour steps).
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 105516
+        tokenOut: 92
+        tokenGrado: estimated
+        durataSec: 4
+      - passo: open-stamp
+        at: '2026-11-23T19:54:20.429Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-23T19:54:29.248Z'
+        esito: ok
+        dettaglio: aiStartedAt set on PRFR-BSO-010..080
+        eventi: 17
+        modello: claude-sonnet-5-5
+        tokenIn: 108324
+        tokenOut: 38
+        tokenGrado: estimated
+        durataSec: 9
+      - passo: verify
+        at: '2026-11-23T19:55:14.717Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-23T19:55:21.610Z'
+        esito: ok
+        dettaglio: >-
+          web-client build exit 0; node --test tests/ whole battery: 119 pass / 0 fail (baseline 110 + 9 new). Mutation
+          RED: 8/8 killed (baseline green first). verified: full (single target, whole suite). Logs
+          /tmp/req-loop-web-*.log
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 121270
+        tokenOut: 237
+        tokenGrado: estimated
+        durataSec: 7
+      - passo: close-stamp
+        at: '2026-11-23T19:55:23.223Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-23T19:55:35.220Z'
+        esito: ok
+        dettaglio: 8 requirements closed green; committed 927a476
+        eventi: 11
+        modello: claude-sonnet-5-5
+        tokenIn: 125761
+        tokenOut: 40
+        tokenGrado: exact
+        durataSec: 12

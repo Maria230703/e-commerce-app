@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: modalita-giorno-notte.feature
-  updatedAt: '2026-11-25T21:35:49.478Z'
+  updatedAt: '2026-11-25T21:41:53.754Z'
 changes:
   - changedAt: '2026-11-25T20:38:16.256Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -212,4 +212,46 @@ changes:
     offset: 0
     before: '@c4-id:c01292a7-a13a-2c8a-5335-9de968150c57'
     after: '@c4-id:4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb @c4-related(c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.621Z'
+    ref: MDLT-GRN-NTT-8TY6QK
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-8TY6QK) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(MDLT-GRN-NTT-8TY6QK) @functional @c4-container @wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.650Z'
+    ref: MDLT-GRN-NTT-7QA35Y
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-7QA35Y) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(MDLT-GRN-NTT-7QA35Y) @functional @c4-container @wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.670Z'
+    ref: MDLT-GRN-NTT-72YRBW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-72YRBW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(MDLT-GRN-NTT-72YRBW) @functional @c4-container @wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.695Z'
+    ref: MDLT-GRN-NTT-9ANCZM
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-9ANCZM) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(MDLT-GRN-NTT-9ANCZM) @functional @c4-container @wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.721Z'
+    ref: MDLT-GRN-NTT-7J2URW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-7J2URW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(MDLT-GRN-NTT-7J2URW) @functional @c4-container @wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.754Z'
+    ref: MDLT-GRN-NTT-29KNY6
+    constructType: Scenario
+    offset: 0
+    before: '  @id(MDLT-GRN-NTT-29KNY6) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(MDLT-GRN-NTT-29KNY6) @functional @c4-container @wiki(entity-4aacdf16-f4ed-6ac7-42f7-d78fb318ffdb)'
     author: Maria <mcmorgese@codearchitects.com>

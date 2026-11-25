@@ -1,0 +1,50 @@
+runs:
+  - claimId: '2026-11-23T19:55:55.469Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: 4/4 green; web-client build ok, node --test tests/ 123/123 (full target); commit 44715a5
+    documento: misc/scheda-prodotto
+    tentativo: 2
+    requisiti:
+      - SCHD-PRDT-MQI-010
+      - SCHD-PRDT-MQI-020
+      - SCHD-PRDT-MQI-030
+      - SCHD-PRDT-MQI-040
+    tokenIn: 1542011
+    tokenOut: 3179
+    tokenGrado: estimated
+    tracciaSessione: 20261123T195555Z-claude-code-c1f632e2
+    conversazione: conv-mwtorg7n-4p8r
+    traccia: scheda-prodotto.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: close-stamp
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:55:55.469Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:55:58.459Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-23T19:55:58.459Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:56:06.088Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 28
+        tokenIn: 254023
+        tokenOut: 280
+        tokenGrado: estimated
+        durataSec: 8

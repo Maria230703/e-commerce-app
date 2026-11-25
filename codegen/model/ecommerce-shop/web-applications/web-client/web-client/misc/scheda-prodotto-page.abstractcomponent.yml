@@ -1,0 +1,17 @@
+type: abstract-component
+name: SchedaProdottoPage
+description: >-
+  Scheda articolo e galleria immagini (product-detail.js): materiali,
+  dimensioni, foto.
+id: c41acd62-7a8d-0d07-6aa1-3a2038cbeb16
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 291
+        'y': 345.5
+interactions:
+  - targetId: 24c5e321-e194-8b73-99c5-cf13f4e84793
+    type: abstract-component
+    level: component

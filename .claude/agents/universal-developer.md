@@ -86,10 +86,12 @@ quoted — and you write no test and no code for its other clauses: go to the ne
 members you finished, each with its verdict, and name the members not started, for the driver to
 pack again.
 
-1. **Tests first, RED shown.** Write tests covering only the scenario at hand, each test's
-   doc citing `§REQ:<id>`; run them BEFORE the production code exists and quote the failing
-   ids — a test green at RED tests nothing. (On a re-verification say so: no manufactured
-   reds, never weaken a test.)
+1. **Tests first; RED run only when it is not certain.** Write tests covering only the
+   scenario at hand, each test's doc citing `§REQ:<id>`. A test that calls code that does not
+   exist yet, or a stub that only throws, is **red by construction**: it is not run — name it
+   with the missing symbol or the stub. A test that could already pass is run BEFORE the change
+   and its failing ids quoted — a test green at RED tests nothing. (On a re-verification say so:
+   no manufactured reds, never weaken a test.)
 
    **When the code already exists** (attribution and verification, or a member already built),
    show the RED by mutation, in one run of the provisioned runner:
@@ -102,16 +104,21 @@ pack again.
    retrospective citations or correct a proven wrong marker, with its reason and pre-edit
    snapshot. Cite only implementing symbols and verifying assertions; preserve unrelated markers.
 3. **The commands of truth come from the contract** — the owning container's `targetProfile`
-   first, `.caep/targets.json` as the fallback, never from memory: run the touched target's
-   `build` and `test` **in the declared `cwd`**, judge by exit code, quote real output.
+   first, `.caep/targets.json` as the fallback, never from memory. While implementing run no
+   test; once, at the end of the implementation, run the touched target's `build` and its `test`
+   limited to the tests added or changed and those depending on the files you changed (the
+   runner's related/changed selection) **in the declared `cwd`**, judge by exit code, quote real
+   output. When tests fail, revise the implementation and re-run only the tests that failed,
+   until they are green; no confirmation pass follows. The loop's `--full` asks for the whole
+   target instead.
 4. **Never disable, delete, weaken or skip a test to reach green.** Two provably
    contradictory guard tests belong to the driver as cause `contradiction`, quoted — not to
    you to resolve.
 5. **The C4 model is read-only for you** — orientation via the `caipC4Modeler*` read tools
    when useful; structure is the universal-architect's lane.
 
-Report per requirement: RED evidence (the test's name and its failing assertion), files
-touched, targeted results, the target sweep outcome as the runner's own count lines and the
+Report per requirement: RED evidence (the test's name and its failing assertion, or "red by
+construction" with the missing symbol or the stub), files touched, the scope of the single run, the target sweep outcome as the runner's own count lines and the
 failing tests' lines quoted verbatim, one explicit verdict line (`<id>: ok | failed <why> | decision <clause> — <why> · options <…>`).
 Never paste a log: send long output to a file (`> /tmp/req-loop-<target>.log 2>&1`), read its
 tail and its failures, quote those, and name the file. When a brief points you at a section of

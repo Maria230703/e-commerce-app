@@ -1,0 +1,68 @@
+runs:
+  - claimId: '2026-11-23T19:35:50.993Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: >-
+      5/5 green: attribution+verification; 8/8 mutations killed; web-client build exit 0, node --test tests/ 69/69
+      (full); commit 03e7111
+    documento: misc/compra-il-look
+    tentativo: 2
+    requisiti:
+      - CMPR-IL-LOOK-JMT-010
+      - CMPR-IL-LOOK-JMT-020
+      - CMPR-IL-LOOK-JMT-030
+      - CMPR-IL-LOOK-JMT-040
+      - CMPR-IL-LOOK-JMT-050
+    tokenIn: 1152354
+    tokenOut: 2910
+    tokenGrado: estimated
+    tracciaSessione: 20261123T193551Z-claude-code-433a7bff
+    conversazione: conv-mwto1mtz-wz34
+    traccia: compra-il-look.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:35:50.993Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:35:54.162Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-23T19:35:54.162Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:36:01.540Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 9
+        tokenIn: 249371
+        tokenOut: 349
+        tokenGrado: estimated
+        durataSec: 7
+      - passo: preflight
+        at: '2026-11-23T19:36:07.304Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-23T19:36:07.304Z'
+        esito: ok
+        eventi: 20
+        modello: claude-sonnet-5-5
+        durataSec: 0

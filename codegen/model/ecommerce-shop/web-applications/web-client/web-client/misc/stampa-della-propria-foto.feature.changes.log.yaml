@@ -1,0 +1,152 @@
+version: 1
+document:
+  sourceFeature: stampa-della-propria-foto.feature
+  updatedAt: '2026-11-25T12:17:36.632Z'
+changes:
+  - changedAt: '2026-11-23T17:22:28.235Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-020
+    constructType: Scenario
+    offset: 7
+    before: ''
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-23T20:01:01.967Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:02.881Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:03.701Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:04.463Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:05.321Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:06.174Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:07.051Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:07.832Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-080
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:08.656Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-090
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T20:01:09.533Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: STMP-DLL-PRPR-FOTO-JUL-100
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:17:36.441Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-010) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-010) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.477Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-020) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-020) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.497Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-030) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-030) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.516Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-040) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-040) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.532Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-050) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-050) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.549Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-060) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-060) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.568Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-070) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-070) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.588Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-080
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-080) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-080) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.608Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-090
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-090) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-090) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.632Z'
+    ref: STMP-DLL-PRPR-FOTO-JUL-100
+    constructType: Scenario
+    offset: 0
+    before: '  @id(STMP-DLL-PRPR-FOTO-JUL-100) @functional @c4-component'
+    after: '  @id(STMP-DLL-PRPR-FOTO-JUL-100) @functional @c4-component @wiki(entity-dc487e23-0a3f-05ad-a17e-92db88a7daab)'
+    author: Maria <mcmorgese@codearchitects.com>

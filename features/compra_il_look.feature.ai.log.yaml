@@ -1,0 +1,61 @@
+runs:
+  - claimId: '2026-11-25T12:22:58.423Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: >-
+      Re-verification, 5/5 green. build exit 0; node --test tests/: 141 pass, 0 fail (full web-client suite). verified:
+      full. No code written.
+    documento: features/compra_il_look
+    tentativo: 2
+    requisiti:
+      - CMPR-IL-LOOK-JMT-010
+      - CMPR-IL-LOOK-JMT-020
+      - CMPR-IL-LOOK-JMT-030
+      - CMPR-IL-LOOK-JMT-040
+      - CMPR-IL-LOOK-JMT-050
+    tokenIn: 540654
+    tokenOut: 593
+    tokenGrado: estimated
+    tracciaSessione: 20261125T122258Z-claude-code-2b3f0f38
+    conversazione: conv-mww3gnll-z30v
+    traccia: compra_il_look.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: context
+        opzionale: true
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:22:58.423Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:23:02.693Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-25T12:23:02.694Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:23:12.047Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 16
+        tokenIn: 254551
+        tokenOut: 334
+        tokenGrado: estimated
+        costoListinoUsd: 0.0350107
+        chiamateNonPrezzate: 2
+        durataSec: 9

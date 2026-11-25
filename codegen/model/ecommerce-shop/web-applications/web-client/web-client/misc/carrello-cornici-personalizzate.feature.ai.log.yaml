@@ -1,0 +1,55 @@
+runs:
+  - claimId: '2026-11-23T17:24:12.894Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: '3/3 closed green. verified: full web-client (build exit 0, node --test 51/51). Mutation RED 5/5 killed.'
+    documento: misc/carrello-cornici-personalizzate
+    tentativo: 2
+    requisiti:
+      - CRRL-CRNC-PRSN-BCS-010
+      - CRRL-CRNC-PRSN-BCS-020
+      - CRRL-CRNC-PRSN-BCS-030
+    tokenIn: 1474572
+    tokenOut: 2750
+    tokenGrado: estimated
+    tracciaSessione: 20261123T172413Z-claude-code-6b836491
+    conversazione: conv-mwtjccmr-06d9
+    traccia: carrello-cornici-personalizzate.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T17:24:12.894Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T17:24:16.784Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-23T17:24:16.784Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T17:24:24.513Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 25
+        tokenIn: 246580
+        tokenOut: 320
+        tokenGrado: estimated
+        durataSec: 8

@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: couponcode.feature
-  updatedAt: '2026-11-24T18:43:19.468Z'
+  updatedAt: '2026-11-25T21:35:47.704Z'
 changes:
   - changedAt: '2026-11-24T18:43:19.462Z'
     ref: feature:coupon-di-sconto
@@ -80,3 +80,496 @@ changes:
     before: '      | Cornice Atelier  | non può       |'
     after: '    | Cornice Atelier  | non può       |'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.468Z'
+    ref: CPN-DI-SCNT-QAD-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-010) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-010) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.489Z'
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-020) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-020) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.512Z'
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-030) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-030) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.533Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-040) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-040) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.552Z'
+    ref: CPN-DI-SCNT-QAD-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-050) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-050) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.572Z'
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-060) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-060) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:34.599Z'
+    ref: CPN-DI-SCNT-QAD-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPN-DI-SCNT-QAD-070) @functional @c4-container'
+    after: '  @id(CPN-DI-SCNT-QAD-070) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:31:35.313Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T20:55:23.008Z'
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Mostrare il pulsante coupon per un carrello superiore a 50,00 euro'
+    after: '  Scenario: Mostrare il messaggio del coupon nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:23.008Z'
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 2
+    before: '    Given il subtotale del carrello è superiore a 50,00 €'
+    after: '    Given sono sulla pagina iniziale'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:23.008Z'
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 3
+    before: '    When sono sulla pagina iniziale'
+    after: '    When guardo la barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:23.008Z'
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 4
+    before: '    Then vedo "Coupon per te disponibile" sotto "Preferiti" in alto a destra'
+    after: '    Then vedo al centro il messaggio "Primo acquisto: -10% con" seguito dal codice del coupon'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:23.008Z'
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 5
+    before: '    And il pulsante ha lo stesso font e la stessa dimensione di "Vai al pagamento"'
+    after: '    And il messaggio c''è con qualunque subtotale del carrello, al posto del pulsante "Coupon per te disponibile"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:24.250Z'
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Nascondere il pulsante coupon per un carrello di 50,00 euro o meno'
+    after: '  Scenario: Il codice nella barra è lo stesso del campo coupon nel carrello'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:24.250Z'
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 2
+    before: '    Given il subtotale del carrello è pari o inferiore a 50,00 €'
+    after: '    Given il sito conosce un solo codice coupon'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:24.250Z'
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 3
+    before: '    When sono sulla pagina iniziale'
+    after: '    When guardo il codice nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:24.250Z'
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 4
+    before: '    Then non vedo "Coupon per te disponibile"'
+    after: '    Then è lo stesso codice che il campo "Inserisci qui il tuo codice sconto" accetta al pagamento'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:25.588Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Copiare il coupon dalla pagina iniziale'
+    after: '  Scenario: Copiare il codice dalla barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:25.588Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 2
+    before: '    Given il subtotale del carrello è superiore a 50,00 €'
+    after: '    Given sono sulla pagina iniziale'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:25.588Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 3
+    before: '    When tocco "Coupon per te disponibile"'
+    after: '    When tocco il codice nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:25.588Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 4
+    before: '    Then il codice "FirstPurchase" viene copiato negli appunti'
+    after: '    Then il codice viene copiato negli appunti'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:25.588Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    And la finestra sotto il codice mostra una spunta e "Copiato"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:25.588Z'
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: '    And un annuncio per chi non vede dice "Codice copiato"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: '  @id(CPNC-6SAFGZ) @functional @c4-container'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 1
+    before: null
+    after: '  Scenario: Il codice è un pulsante e non c''è più "Copia codice" come pulsante'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 2
+    before: null
+    after: '    Given sono sulla pagina iniziale'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 3
+    before: null
+    after: '    When guardo il codice nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 4
+    before: null
+    after: '    Then il codice è un pulsante sottolineato con un tratteggio'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    And non c''è nessun altro pulsante "Copia codice" nella pagina'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: '  @id(CPNC-4RG5VF) @functional @c4-container'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 1
+    before: null
+    after: '  Scenario: La finestra "Copia codice" compare al passaggio del mouse e al focus'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 2
+    before: null
+    after: '    Given sono sulla pagina iniziale'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 3
+    before: null
+    after: '    When passo il mouse sul codice oppure lo raggiungo con la tastiera'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 4
+    before: null
+    after: '    Then sotto il codice compare una finestra con la scritta "Copia codice"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    And la finestra ha sfondo scuro, testo bianco da 12 pixel e una freccia verso l''alto'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: '  @id(CPNC-2PMRGV) @functional @c4-container'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 1
+    before: null
+    after: '  Scenario: Copiare il codice con Invio, Spazio, clic o tocco'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 2
+    before: null
+    after: '    Given il codice nella barra superiore ha il focus'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 3
+    before: null
+    after: '    When premo Invio oppure Spazio, oppure faccio clic o tocco'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 4
+    before: null
+    after: '    Then il codice viene copiato negli appunti, con un metodo alternativo se gli appunti non sono disponibili'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: '  @id(CPNC-4MYF8T) @functional @c4-container'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 1
+    before: null
+    after: '  Scenario: Copia non riuscita'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 2
+    before: null
+    after: '    Given gli appunti rifiutano la copia e il metodo alternativo non funziona'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 3
+    before: null
+    after: '    When tocco il codice nella barra superiore'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 4
+    before: null
+    after: '    Then la finestra sotto il codice mostra "Copia non riuscita"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    And il codice del sito non cambia'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:33.154Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:36.596Z'
+    ref: feature:coupon-di-sconto
+    constructType: Feature
+    offset: 0
+    before: null
+    after: '# Il coupon è simulato: nessuno sconto reale applicato su nessuna spesa reale effettuata'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:36.596Z'
+    ref: feature:coupon-di-sconto
+    constructType: Feature
+    offset: 1
+    before: null
+    after: '# Metodo di applicazione: su una spesa minima di 50,00 € , applicato coupon del valore di 10%'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T20:55:36.596Z'
+    ref: feature:coupon-di-sconto
+    constructType: Feature
+    offset: 2
+    before: null
+    after: >-
+      # Il messaggio "Primo acquisto: -10% con <codice>" sta al centro della barra superiore della pagina iniziale,
+      sempre visibile; il codice è un pulsante che lo copia negli appunti. Il codice è quello di coupon-logic.js, lo
+      stesso del campo coupon al pagamento.
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:29:48.108Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:48.108Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:48.108Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPN-DI-SCNT-QAD-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2
+  - changedAt: '2026-11-25T21:29:49.336Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:49.336Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:49.336Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:29:49.336Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:35:47.621Z'
+    ref: CPNC-6SAFGZ
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPNC-6SAFGZ) @functional @c4-container'
+    after: '  @id(CPNC-6SAFGZ) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.655Z'
+    ref: CPNC-4RG5VF
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPNC-4RG5VF) @functional @c4-container'
+    after: '  @id(CPNC-4RG5VF) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.680Z'
+    ref: CPNC-2PMRGV
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPNC-2PMRGV) @functional @c4-container'
+    after: '  @id(CPNC-2PMRGV) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:35:47.704Z'
+    ref: CPNC-4MYF8T
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CPNC-4MYF8T) @functional @c4-container'
+    after: '  @id(CPNC-4MYF8T) @functional @c4-container @wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)'
+    author: Maria <mcmorgese@codearchitects.com>

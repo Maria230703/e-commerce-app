@@ -1,0 +1,296 @@
+version: 1
+document:
+  sourceFeature: pagamento-dati-di-spedizione.feature
+  generatedAt: '2026-11-25T12:17:37.217Z'
+  copilotSessionId: e6c8661fc13fe7f8d1a6e22479e67d64
+  nextRequirementSeq: 100
+feature:
+  id: 78b05a83-4caf-49a9-9373-d8de8fc9c3dd
+  createdAt: '2026-11-23T17:22:35.923Z'
+  updatedAt: '2026-11-23T17:22:35.923Z'
+  title: 'Pagamento: dati di spedizione e metodi'
+  description:
+    - As a cliente del negozio
+    - I want inserire i dati di spedizione e scegliere come pagare
+    - So that completare il mio acquisto
+  tags:
+    - c4-id:7179f7b5-6801-975d-df2b-d72171a79702
+  scenarios:
+    - id: PGMN-DATI-DI-SPDZ-ICN-010
+      title: Andare al pagamento dal carrello
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna" e il totale è 38,90 euro
+        - keyword: When
+          text: tocco "Vai al pagamento"
+        - keyword: Then
+          text: vedo la pagina con i dati di spedizione e la scelta del metodo di pagamento
+    - id: PGMN-DATI-DI-SPDZ-ICN-020
+      title: Pagamento non disponibile con il carrello vuoto
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho svuotato il carrello
+        - keyword: When
+          text: apro il carrello
+        - keyword: Then
+          text: non vedo il pulsante "Vai al pagamento"
+    - id: PGMN-DATI-DI-SPDZ-ICN-030
+      title: Metodi di pagamento disponibili
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna" e il totale è 38,90 euro
+        - keyword: When
+          text: apro la pagina del pagamento
+        - keyword: Then
+          text: vedo i metodi "Carta di credito", "PayPal" e "Bonifico bancario"
+        - keyword: And
+          text: nessun metodo è già selezionato
+    - id: PGMN-DATI-DI-SPDZ-ICN-040
+      title: Dati di spedizione obbligatori
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.957Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina del pagamento
+        - keyword: And
+          text: compilo tutti i dati di spedizione tranne "<campo>"
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo il messaggio "<messaggio>"
+        - keyword: And
+          text: l'ordine non viene confermato
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| campo | messaggio |'
+        - keyword: __raw__
+          text: '| Nome | Inserisci il nome |'
+        - keyword: __raw__
+          text: '| Cognome | Inserisci il cognome |'
+        - keyword: __raw__
+          text: '| Indirizzo | Inserisci l''indirizzo |'
+        - keyword: __raw__
+          text: '| Città | Inserisci la città |'
+        - keyword: __raw__
+          text: '| CAP | Inserisci il CAP |'
+        - keyword: __raw__
+          text: '| Numero di telefono | Inserisci il numero di telefono |'
+        - keyword: __raw__
+          text: '| Email | Inserisci l''email |'
+    - id: PGMN-DATI-DI-SPDZ-ICN-050
+      title: Inserire un numero di telefono con prefisso europeo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina del pagamento
+        - keyword: When
+          text: inserisco il numero di telefono "3331234567" e seleziono il prefisso "+33"
+        - keyword: Then
+          text: il prefisso "+33" è selezionato per il numero di telefono
+    - id: PGMN-DATI-DI-SPDZ-ICN-060
+      title: CAP non valido
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina del pagamento
+        - keyword: When
+          text: inserisco il CAP "123"
+        - keyword: Then
+          text: vedo il messaggio "Il CAP deve avere 5 cifre"
+    - id: PGMN-DATI-DI-SPDZ-ICN-070
+      title: Email non valida
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina del pagamento
+        - keyword: When
+          text: inserisco l'email "maria.esempio.it"
+        - keyword: Then
+          text: vedo il messaggio "Inserisci un'email valida"
+    - id: PGMN-DATI-DI-SPDZ-ICN-080
+      title: Nessun metodo di pagamento scelto
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho compilato correttamente i dati di spedizione
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo il messaggio "Scegli un metodo di pagamento"
+        - keyword: And
+          text: l'ordine non viene confermato
+    - id: PGMN-DATI-DI-SPDZ-ICN-090
+      title: Riepilogo dell'ordine
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:35.923Z'
+        updatedAt: '2026-11-23T17:22:35.923Z'
+        aiGeneratedAt: '2026-11-23T19:45:41.434Z'
+        aiStartedAt: '2026-11-23T19:44:52.242Z'
+        aiEndedAt: '2026-11-23T19:45:41.434Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna" e il totale è 38,90 euro
+        - keyword: When
+          text: sono sulla pagina del pagamento
+        - keyword: Then
+          text: vedo il riepilogo con "Vaso Duna" a 34,00 euro, spedizione 4,90 euro e totale 38,90 euro

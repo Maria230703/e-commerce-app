@@ -1,0 +1,41 @@
+type: service
+name: ShopServer
+description: >-
+  Server Node (server.js): file statici, GET /api/products, POST /api/orders;
+  salva gli ordini in orders.json.
+id: 40a0daa0-5bc2-e50f-2764-62fd55dd011f
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      9e560ec4-c8e4-34f6-441c-66e68f9058d9:
+        x: 200
+        'y': 345.5
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 0
+        'y': 826
+  - namespace: c4modeler
+    name: boundary
+    value:
+      x: 571.5
+      'y': 297
+      width: 923
+      height: 434
+target:
+  framework: net
+  version: 10
+generationMode: default
+data:
+  orm: EntityFrameworkCore
+namespace: ECommerce.ShopServer
+sidecar: true
+mapperProvider: mapster
+children:
+  - id: 41469bab-96c4-a967-5497-e2f69e8e88f2
+    type: abstract-component
+  - id: cba00828-02f5-543f-4e9d-a1d805ac2e28
+    type: abstract-component
+  - id: 1d1be5d5-d1ec-5763-a394-61c59edf7537
+    type: abstract-component
+  - id: 01451cad-1f8f-88c0-e074-030f5fad91e8
+    type: abstract-component

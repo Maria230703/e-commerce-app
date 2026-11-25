@@ -1,0 +1,116 @@
+runs:
+  - claimId: '2026-11-25T12:34:32.161Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: GLLR-IMMG-NNT-010..070 green by re-verification; web-client build exit 0, 141/141 tests pass
+    documento: features/galleria_immagini
+    tentativo: 2
+    requisiti:
+      - GLLR-IMMG-NNT-010
+      - GLLR-IMMG-NNT-020
+      - GLLR-IMMG-NNT-030
+      - GLLR-IMMG-NNT-040
+      - GLLR-IMMG-NNT-050
+      - GLLR-IMMG-NNT-060
+      - GLLR-IMMG-NNT-070
+    tokenIn: 786905
+    tokenOut: 429
+    tokenGrado: estimated
+    tracciaSessione: 20261125T123432Z-claude-code-d2125bca
+    conversazione: conv-mww3viw5-1ave
+    traccia: galleria_immagini.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:34:32.161Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:34:35.904Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        tokenIn: 76629
+        tokenOut: 90
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-25T12:34:35.904Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:34:43.864Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 8
+        tokenIn: 181399
+        tokenOut: 163
+        tokenGrado: estimated
+        costoListinoUsd: 0.0342457
+        chiamateNonPrezzate: 1
+        durataSec: 8
+      - passo: driver
+        at: '2026-11-25T12:34:46.753Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:34:46.753Z'
+        esito: ok
+        eventi: 2
+        durataSec: 0
+      - passo: open-stamp
+        at: '2026-11-25T12:34:50.029Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:34:54.301Z'
+        esito: ok
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 106362
+        tokenOut: 26
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: verify
+        at: '2026-11-25T12:34:54.982Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-25T12:34:59.469Z'
+        esito: ok
+        dettaglio: >-
+          build exit 0; node --test tests/ full: 141 pass, 0 fail (verified: full); re-verified by suite, not
+          re-observed
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 107959
+        tokenOut: 70
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: close-stamp
+        at: '2026-11-25T12:35:00.111Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-25T12:35:08.782Z'
+        esito: ok
+        dettaglio: '7 requirements closed green; verified: full'
+        eventi: 9
+        modello: claude-sonnet-5-5
+        tokenIn: 110932
+        tokenOut: 40
+        tokenGrado: exact
+        costoListinoUsd: 0.0186322
+        durataSec: 9

@@ -1,0 +1,217 @@
+version: 1
+document:
+  sourceFeature: spedizionegratuita.feature
+  updatedAt: '2026-11-24T18:00:38.805Z'
+changes:
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 1
+    before: null
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 3
+    before: >-
+      Come cliente del negozio voglio usufruire della spedizione gratuita prevista per ordini a partire  da 79 euro per
+      risparmiare sull'ordine totale
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 4
+    before: ' # Spedizione 4,90 euro, gratuita da 79,00 euro di subtotale'
+    after: '  # Spedizione 4,90 euro, gratuita da 79,00 euro di subtotale'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 5
+    before: ' '
+    after: '  Contesto:'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 6
+    before: ' Contesto:'
+    after: '    Dato che tocco ''Vai al pagamento'' e voglio acquistare dal negozio'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 7
+    before: ' Dato che tocco ''Vai al pagamento'' e voglio acquistare dal negozio'
+    after: '    Dato che il carrello è vuoto'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 0
+    before: ' Dato che il carrello è vuoto'
+    after: '  @id(SPDZ-SWZ-010)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 1
+    before: null
+    after: '  Scenario: Spedizione gratuita da 79,00 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 2
+    before: null
+    after: '    Dato che nel carrello c''è ''Specchio Orbita'' a 119,00 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 3
+    before: null
+    after: '    Quando tocco ''Vai al pagamento'''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 4
+    before: null
+    after: '    Allora la spedizione costa 0,00 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    E il totale è di 119,00'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 0
+    before: 'Scenario: Spedizione gratuita da 79,00 euro'
+    after: '  @id(SPDZ-SWZ-020)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 1
+    before: Dato che nel carrello c'è 'Specchio Orbita' a 119,00 euro
+    after: '  Scenario: Spedizione a pagamento a 4,90 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 2
+    before: Quando tocco 'Vai al pagamento'
+    after: '    Dato che nel carrello c''è ''Vaso Duna'' a 34,00 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 3
+    before: Allora la spedizione costa 0,00 euro
+    after: '    Quando tocco ''Vai al pagamento'''
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 4
+    before: E il totale è di 119,00
+    after: '    Allora la spedizione costa 4,90 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 5
+    before: null
+    after: '    E il totale è di 38,90 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 0
+    before: 'Scenario: Spedizione a pagamento a 4,90 euro'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 1
+    before: 'Dato che nel carrello c''è ''Vaso Duna'' a 34,00 euro '
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 2
+    before: Quando tocco 'Vai al pagamento'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 3
+    before: Allora la spedizione costa 4,90 euro
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:59:37.212Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 4
+    before: E il totale è di 38,90 euro
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:27.126Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 2
+    before: null
+    after: '@c4-id:9d114334-0c4d-443b-5fb6-bb2f27f4b365'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:31.903Z'
+    ref: SPDZ-SWZ-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-SWZ-010)'
+    after: '  @id(SPDZ-SWZ-010) @functional @c4-component'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:32.420Z'
+    ref: SPDZ-SWZ-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-SWZ-020)'
+    after: '  @id(SPDZ-SWZ-020) @functional @c4-component'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:38.805Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 5
+    before: null
+    after: '  As a cliente del negozio'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:38.805Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 6
+    before: null
+    after: '  I want usufruire della spedizione gratuita prevista per ordini a partire da 79 euro'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:38.805Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 7
+    before: null
+    after: '  So that risparmiare sull''ordine totale'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T18:00:38.805Z'
+    ref: feature:untitled-feature
+    constructType: Feature
+    offset: 8
+    before: null
+    after: ''
+    author: Maria <mcmorgese@codearchitects.com>

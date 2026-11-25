@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: catalogo.feature
-  generatedAt: '2026-11-24T18:43:16.655Z'
+  generatedAt: '2026-11-25T12:17:33.782Z'
   copilotSessionId: 738c80c9ea866dd51f45af22880d455f
 feature:
   id: cb9617ae-1ef7-4415-9ee2-3b752121ebbd
@@ -21,17 +21,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-6a3feb6a-aab2-b194-12ce-55e1586f95be)
       metadata:
         createdAt: '2026-11-24T18:43:16.655Z'
         updatedAt: '2026-11-24T18:43:16.655Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:22:19.289Z'
+        aiStartedAt: '2026-11-25T12:22:03.435Z'
+        aiEndedAt: '2026-11-25T12:22:19.289Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il negozio ha 6 articoli
@@ -45,17 +48,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-6a3feb6a-aab2-b194-12ce-55e1586f95be)
       metadata:
         createdAt: '2026-11-24T18:43:16.655Z'
         updatedAt: '2026-11-24T18:43:16.655Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:22:20.147Z'
+        aiStartedAt: '2026-11-25T12:22:04.107Z'
+        aiEndedAt: '2026-11-25T12:22:20.147Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il negozio ha 1 cornice su 6 articoli

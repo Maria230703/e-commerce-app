@@ -11,24 +11,24 @@ Feature: Pagamento
     Given nel carrello c'è 1 articolo "Vaso Duna"
     And il totale è 38,90 euro
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-010) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-010) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Andare al pagamento dal carrello
     When tocco "Vai al pagamento"
     Then vedo la pagina con i dati di spedizione e la scelta del metodo di pagamento
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-020) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-020) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Pagamento non disponibile con il carrello vuoto
     Given svuoto il carrello
     When apro il carrello
     Then non vedo il pulsante "Vai al pagamento"
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-030) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-030) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Metodi di pagamento disponibili
     When sono sulla pagina del pagamento
     Then vedo i metodi "Carta di credito", "PayPal" e "Bonifico bancario"
     And nessun metodo è già selezionato
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-040) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-040) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario Outline: Dati di spedizione obbligatori
     Given sono sulla pagina del pagamento
     And compilo tutti i dati di spedizione tranne "<campo>"
@@ -45,38 +45,38 @@ Feature: Pagamento
     | Numero di telefono | Inserisci il numero di telefono |
     | Email              | Inserisci l'email                |
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-050) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-050) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Inserire un numero di telefono con prefisso europeo
     Given sono sulla pagina del pagamento
     When inserisco il numero di telefono "3331234567"
     And seleziono il prefisso "+33"
     Then il prefisso "+33" è selezionato per il numero di telefono
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-060) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-060) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: CAP non valido
     Given sono sulla pagina del pagamento
     When inserisco il CAP "123"
     Then vedo il messaggio "Il CAP deve avere 5 cifre"
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-070) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-070) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Email non valida
     Given sono sulla pagina del pagamento
     When inserisco l'email "maria.esempio.it"
     Then vedo il messaggio "Inserisci un'email valida"
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-080) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-080) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Nessun metodo di pagamento scelto
     Given ho compilato correttamente i dati di spedizione
     When tocco "Conferma ordine"
     Then vedo il messaggio "Scegli un metodo di pagamento"
     And l'ordine non viene confermato
 
-  @id(PGMN-DATI-DI-SPDZ-ICN-090) @functional @c4-container
+  @id(PGMN-DATI-DI-SPDZ-ICN-090) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Riepilogo dell'ordine
     When sono sulla pagina del pagamento
     Then vedo il riepilogo con "Vaso Duna" a 34,00 euro, spedizione 4,90 euro e totale 38,90 euro
 
-  @id(PGMN-EST-ORDN-PEC-010) @functional @c4-container
+  @id(PGMN-EST-ORDN-PEC-010) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Pagamento con carta riuscito
     Given ho compilato correttamente i dati di spedizione
     And ho scelto "Carta di credito"
@@ -86,7 +86,7 @@ Feature: Pagamento
     And il totale pagato è 38,90 euro
     And il carrello è vuoto
 
-  @id(PGMN-EST-ORDN-PEC-020) @functional @c4-container
+  @id(PGMN-EST-ORDN-PEC-020) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Carta rifiutata
     Given ho compilato correttamente i dati di spedizione
     And ho scelto "Carta di credito"
@@ -96,7 +96,7 @@ Feature: Pagamento
     And l'ordine non viene confermato
     And il carrello contiene ancora 1 articolo "Vaso Duna"
 
-  @id(PGMN-EST-ORDN-PEC-030) @functional @c4-container
+  @id(PGMN-EST-ORDN-PEC-030) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Carta scaduta
     Given ho compilato correttamente i dati di spedizione
     And ho scelto "Carta di credito"
@@ -105,7 +105,7 @@ Feature: Pagamento
     Then vedo il messaggio "La carta è scaduta"
     And l'ordine non viene confermato
 
-  @id(PGMN-EST-ORDN-PEC-040) @functional @c4-container
+  @id(PGMN-EST-ORDN-PEC-040) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Pagamento con PayPal
     Given ho compilato correttamente i dati di spedizione
     And ho scelto "PayPal"
@@ -113,7 +113,7 @@ Feature: Pagamento
     Then vedo la schermata simulata di PayPal
     And dopo l'approvazione vedo "Ordine confermato" con un numero d'ordine
 
-  @id(PGMN-EST-ORDN-PEC-050) @functional @c4-container
+  @id(PGMN-EST-ORDN-PEC-050) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: Pagamento con bonifico
     Given ho compilato correttamente i dati di spedizione
     And ho scelto "Bonifico bancario"
@@ -121,13 +121,13 @@ Feature: Pagamento
     Then vedo l'IBAN di prova e la causale con il numero d'ordine
     And lo stato dell'ordine è "In attesa di pagamento"
 
-  @id(PGMN-EST-ORDN-PEC-060) @functional @c4-container
+  @id(PGMN-EST-ORDN-PEC-060) @functional @c4-container @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: I dati della carta non vengono salvati
     Given ho pagato con carta
     When riapro la pagina del pagamento
     Then i campi della carta sono vuoti
 
-  @id(PGMN-EST-ORDN-PEC-070) @functional @c4-container @foto
+  @id(PGMN-EST-ORDN-PEC-070) @functional @c4-container @foto @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
   Scenario: La foto da stampare arriva al negozio
     Given nel carrello c'è una cornice con la foto "mare.jpg"
     And ho pagato con successo

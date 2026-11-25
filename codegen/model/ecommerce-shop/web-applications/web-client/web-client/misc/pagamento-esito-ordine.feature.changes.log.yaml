@@ -1,0 +1,103 @@
+version: 1
+document:
+  sourceFeature: pagamento-esito-ordine.feature
+  updatedAt: '2026-11-25T12:17:37.044Z'
+changes:
+  - changedAt: '2026-11-23T19:50:13.006Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:50:14.034Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:50:15.035Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:50:16.094Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:50:17.109Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:50:18.352Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:50:19.005Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PGMN-EST-ORDN-PEC-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:17:36.925Z'
+    ref: PGMN-EST-ORDN-PEC-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-010) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-010) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.952Z'
+    ref: PGMN-EST-ORDN-PEC-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-020) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-020) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.974Z'
+    ref: PGMN-EST-ORDN-PEC-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-030) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-030) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.991Z'
+    ref: PGMN-EST-ORDN-PEC-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-040) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-040) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:37.009Z'
+    ref: PGMN-EST-ORDN-PEC-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-050) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-050) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:37.026Z'
+    ref: PGMN-EST-ORDN-PEC-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-060) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-060) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:37.044Z'
+    ref: PGMN-EST-ORDN-PEC-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PGMN-EST-ORDN-PEC-070) @functional @c4-component'
+    after: '  @id(PGMN-EST-ORDN-PEC-070) @functional @c4-component @wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)'
+    author: Maria <mcmorgese@codearchitects.com>

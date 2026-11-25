@@ -1,0 +1,15 @@
+type: abstract-component
+name: PreferitiPage
+description: Preferiti salvati in localStorage (favorites.js).
+id: 9747bdcb-e28a-69c9-6085-5b91896d7437
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 1018.25
+        'y': 1116.5
+interactions:
+  - targetId: c41acd62-7a8d-0d07-6aa1-3a2038cbeb16
+    type: abstract-component
+    level: component

@@ -40,7 +40,9 @@ this is their authoring application):
    round, and only what would materially change scope.
 2. **Atomic, observable, English + two comments.** One verifiable behaviour per scenario; no
    vague words (`fast`, `properly`, `correctly`); English Gherkin with the English synthesis
-   AND the author's informal line; `Scenario Outline` for parametric variants.
+   AND the author's informal line, passed in each draft's `comments` of the same
+   `caipGherkinAddScenarios` call (never a `caipGherkinSetComments` per new scenario);
+   `Scenario Outline` for parametric variants.
 3. **Mint, tag, anchor.** Every scenario: `@id` from the mint tool (never invented), exactly
    one `@functional`/`@non-functional`, exactly one `@c4-<level>` (the most specific that
    matches), parents in `@traces`. EventStorm-born scenarios keep their round-trip refs and

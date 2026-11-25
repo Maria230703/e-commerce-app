@@ -1,0 +1,254 @@
+version: 1
+document:
+  sourceFeature: preferiti.feature
+  generatedAt: '2026-11-25T12:17:36.217Z'
+  copilotSessionId: d1d566528ae66ea6e58e849662b7193b
+  nextRequirementSeq: 90
+feature:
+  id: a778dc72-6432-4709-bdf5-8c260c78fd6b
+  createdAt: '2026-11-23T17:21:13.991Z'
+  updatedAt: '2026-11-23T17:21:13.993Z'
+  title: Preferiti
+  description:
+    - As a cliente del negozio
+    - I want salvare gli articoli che mi piacciono
+    - So that ritrovarli facilmente più tardi
+  tags:
+    - c4-id:9747bdcb-e28a-69c9-6085-5b91896d7437
+  scenarios:
+    - id: PRFR-BSO-010
+      title: Aggiungere un articolo ai preferiti dal catalogo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:24.194Z'
+        aiStartedAt: '2026-11-23T19:54:20.952Z'
+        aiEndedAt: '2026-11-23T19:55:24.194Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina Scopri e non ho preferiti
+        - keyword: When
+          text: tocco il cuore di "Vaso Duna"
+        - keyword: Then
+          text: il cuore di "Vaso Duna" risulta attivo
+        - keyword: And
+          text: il cuore è nero pece senza spunta
+    - id: PRFR-BSO-020
+      title: Aggiungere un articolo ai preferiti dalla scheda
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:25.185Z'
+        aiStartedAt: '2026-11-23T19:54:21.622Z'
+        aiEndedAt: '2026-11-23T19:55:25.185Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sto guardando la scheda di "Lampada Lume"
+        - keyword: When
+          text: tocco il cuore
+        - keyword: Then
+          text: il cuore risulta attivo
+        - keyword: And
+          text: il cuore è nero pece senza spunta
+        - keyword: And
+          text: '"Lampada Lume" compare nella pagina Preferiti'
+    - id: PRFR-BSO-030
+      title: Togliere un articolo dai preferiti
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:26.254Z'
+        aiStartedAt: '2026-11-23T19:54:22.292Z'
+        aiEndedAt: '2026-11-23T19:55:26.254Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che "Vaso Duna" è tra i preferiti
+        - keyword: When
+          text: tocco di nuovo il cuore di "Vaso Duna"
+        - keyword: Then
+          text: il cuore di "Vaso Duna" non è più attivo
+        - keyword: And
+          text: '"Vaso Duna" non compare nella pagina Preferiti'
+    - id: PRFR-BSO-040
+      title: Vedere l'elenco dei preferiti
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:27.070Z'
+        aiStartedAt: '2026-11-23T19:54:22.914Z'
+        aiEndedAt: '2026-11-23T19:55:27.070Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho tra i preferiti "Vaso Duna" e "Cornice Atelier"
+        - keyword: When
+          text: apro la pagina Preferiti
+        - keyword: Then
+          text: vedo 2 articoli
+        - keyword: And
+          text: vedo "Vaso Duna" a 34 euro e "Cornice Atelier" a 29 euro
+        - keyword: And
+          text: ogni articolo mostra la propria immagine accanto al nome
+    - id: PRFR-BSO-050
+      title: Aprire un articolo dai preferiti
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:28.033Z'
+        aiStartedAt: '2026-11-23T19:54:23.560Z'
+        aiEndedAt: '2026-11-23T19:55:28.033Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che "Vaso Duna" è tra i preferiti
+        - keyword: When
+          text: tocco l'articolo "Vaso Duna" nella pagina Preferiti
+        - keyword: Then
+          text: vedo la scheda di "Vaso Duna"
+    - id: PRFR-BSO-060
+      title: Tornare ai preferiti dalla scheda di un articolo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:28.981Z'
+        aiStartedAt: '2026-11-23T19:54:24.235Z'
+        aiEndedAt: '2026-11-23T19:55:28.981Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho aperto la scheda di "Vaso Duna" dalla pagina Preferiti
+        - keyword: When
+          text: torno indietro
+        - keyword: Then
+          text: torno alla pagina Preferiti
+    - id: PRFR-BSO-070
+      title: Nessun preferito
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:29.918Z'
+        aiStartedAt: '2026-11-23T19:54:24.905Z'
+        aiEndedAt: '2026-11-23T19:55:29.918Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che non ho preferiti
+        - keyword: When
+          text: apro la pagina Preferiti
+        - keyword: Then
+          text: 'vedo il messaggio "Tocca il cuore sugli oggetti che ti piacciono: li ritrovi tutti qui."'
+    - id: PRFR-BSO-080
+      title: I preferiti restano dopo aver ricaricato la pagina
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-7d40d91f-0bed-f5f3-4479-83b4d838c2ee)
+      metadata:
+        createdAt: '2026-11-23T17:21:13.991Z'
+        updatedAt: '2026-11-23T17:21:13.991Z'
+        aiGeneratedAt: '2026-11-23T19:55:30.830Z'
+        aiStartedAt: '2026-11-23T19:54:25.429Z'
+        aiEndedAt: '2026-11-23T19:55:30.830Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho tra i preferiti "Vaso Duna"
+        - keyword: When
+          text: ricarico la pagina
+        - keyword: Then
+          text: il cuore di "Vaso Duna" è ancora attivo

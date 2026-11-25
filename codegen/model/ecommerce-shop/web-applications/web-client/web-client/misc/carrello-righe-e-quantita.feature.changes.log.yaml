@@ -1,0 +1,231 @@
+version: 1
+document:
+  sourceFeature: carrello-righe-e-quantita.feature
+  updatedAt: '2026-11-25T21:29:54.628Z'
+changes:
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-080
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-090
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-110
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:31:46.915Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-120
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-24T16:02:22.835Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: >-
+      AI elaboration failed · provider anthropic · model claude-sonnet-5-5 · revision 2 · error: <decision>: 'aggiungo
+      di nuovo dalla sua scheda' → quantità 2 contraddice il toggle della scheda (tests/catalogo.test.js:146-147,
+      KWT-100/110/120). Opzioni: A) la scheda incrementa se già nel carrello (da riscrivere 100/110/120); B) la scheda
+      resta toggle e KWT-050 viene riscritto/rimosso (raccomandato). Vedi BLOCKED-CRRL-RGH-E-QNTT-KWT-050.md
+  - changedAt: '2026-11-24T16:18:34.459Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: >-
+      AI elaboration failed · provider anthropic · model claude-sonnet-5-5 · revision 3 · error: <decision>: 'aggiungo
+      di nuovo dalla sua scheda' → quantità 2 contraddice il toggle della scheda (KWT-100/110/120;
+      tests/carrello-righe-quantita.test.js:110). Opzioni: A) la scheda incrementa se già nel carrello (da riscrivere
+      100/110/120); B) la scheda resta toggle e KWT-050 viene riscritto/rimosso (raccomandato). Vedi
+      BLOCKED-CRRL-RGH-E-QNTT-KWT-050.md
+  - changedAt: '2026-11-24T17:17:20.446Z'
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Aggiungere due volte lo stesso articolo'
+    after: '  Scenario: Aumentare di uno la quantità dal carrello'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:17:20.446Z'
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 3
+    before: '    When aggiungo di nuovo "Vaso Duna" dalla sua scheda'
+    after: '    When tocco "+" sulla riga "Vaso Duna"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-24T17:18:01.068Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 3
+  - changedAt: '2026-11-25T12:17:35.708Z'
+    ref: CRRL-RGH-E-QNTT-KWT-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-010) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-010) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.726Z'
+    ref: CRRL-RGH-E-QNTT-KWT-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-020) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-020) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.749Z'
+    ref: CRRL-RGH-E-QNTT-KWT-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-030) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-030) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.766Z'
+    ref: CRRL-RGH-E-QNTT-KWT-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-040) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-040) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.784Z'
+    ref: CRRL-RGH-E-QNTT-KWT-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-050) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-050) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.803Z'
+    ref: CRRL-RGH-E-QNTT-KWT-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-060) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-060) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.822Z'
+    ref: CRRL-RGH-E-QNTT-KWT-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-070) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-070) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.838Z'
+    ref: CRRL-RGH-E-QNTT-KWT-080
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-080) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-080) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.854Z'
+    ref: CRRL-RGH-E-QNTT-KWT-090
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-090) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-090) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.895Z'
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-100) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-100) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.931Z'
+    ref: CRRL-RGH-E-QNTT-KWT-110
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-110) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-110) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.957Z'
+    ref: CRRL-RGH-E-QNTT-KWT-120
+    constructType: Scenario
+    offset: 0
+    before: '  @id(CRRL-RGH-E-QNTT-KWT-120) @functional @c4-component'
+    after: '  @id(CRRL-RGH-E-QNTT-KWT-120) @functional @c4-component @wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:27:29.927Z'
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 4
+    before: '    Then il pulsante di "Lampada Lume" diventa verde e mostra "Aggiunto"'
+    after: '    Then il pulsante di "Lampada Lume" diventa panna e mostra "Aggiunto"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:29:54.628Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: CRRL-RGH-E-QNTT-KWT-100
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2

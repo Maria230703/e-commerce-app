@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: configuratore_cornice.feature
-  generatedAt: '2026-11-24T18:43:21.145Z'
+  generatedAt: '2026-11-25T21:40:52.788Z'
   copilotSessionId: e4bcb2951f0d227578e853d68fb767f4
 feature:
   id: e8a12100-8331-4369-bdc9-5f134304ec0b
@@ -21,17 +21,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
         updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:30:15.732Z'
+        aiStartedAt: '2026-11-25T12:29:45.144Z'
+        aiEndedAt: '2026-11-25T12:30:15.732Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina Scopri
@@ -47,17 +50,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
-        updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        updatedAt: '2026-11-25T21:40:52.794Z'
+        aiGeneratedAt: '2026-11-25T21:41:47.331Z'
+        aiStartedAt: '2026-11-25T21:40:59.455Z'
+        aiEndedAt: '2026-11-25T21:41:47.331Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: il negozio ha 6 articoli
@@ -66,24 +72,31 @@ feature:
         - keyword: Then
           text: vedo una sola volta "Crea la tua cornice"
         - keyword: And
-          text: il collegamento appare sotto il titolo "Scopri"
+          text: il collegamento appare sotto il titolo "Scopri", accanto alla categoria "Cornici"
+        - keyword: And
+          text: >-
+            il testo "Crea la tua cornice" si legge dentro il pulsante, chiaro sia in modalità giorno sia in modalità
+            notte
     - id: PRSN-CRNC-TMM-030
       title: Selezione iniziale
       type: scenario
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
         updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:30:17.741Z'
+        aiStartedAt: '2026-11-25T12:29:45.144Z'
+        aiEndedAt: '2026-11-25T12:30:17.741Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: non ho ancora fatto nessuna scelta
@@ -101,17 +114,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
         updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:30:18.786Z'
+        aiStartedAt: '2026-11-25T12:29:45.144Z'
+        aiEndedAt: '2026-11-25T12:30:18.786Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sto configurando una cornice con profilo "Classico" e passe-partout "Bianco"
@@ -139,17 +155,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
         updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:30:19.782Z'
+        aiStartedAt: '2026-11-25T12:29:45.144Z'
+        aiEndedAt: '2026-11-25T12:30:19.782Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sto configurando una cornice 13x18 con passe-partout "Bianco"
@@ -173,17 +192,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
         updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:30:20.805Z'
+        aiStartedAt: '2026-11-25T12:29:45.144Z'
+        aiEndedAt: '2026-11-25T12:30:20.805Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sto configurando una cornice 13x18 con profilo "Classico"
@@ -211,17 +233,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)
       metadata:
         createdAt: '2026-11-24T18:43:21.145Z'
         updatedAt: '2026-11-24T18:43:21.145Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:30:21.642Z'
+        aiStartedAt: '2026-11-25T12:29:45.144Z'
+        aiEndedAt: '2026-11-25T12:30:21.642Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono nel configuratore della cornice

@@ -1,0 +1,176 @@
+version: 1
+document:
+  sourceFeature: compra-il-look.feature
+  generatedAt: '2026-11-25T21:27:32.564Z'
+  copilotSessionId: f14eaeff7d7d7ec0ba1d58bb63f014d7
+  nextRequirementSeq: 60
+feature:
+  id: 1ea711c0-be03-4309-b92e-816a414a9379
+  createdAt: '2026-11-23T17:21:27.500Z'
+  updatedAt: '2026-11-23T17:21:27.501Z'
+  title: Compra il look
+  description:
+    - As a cliente del negozio
+    - I want vedere gli oggetti abbinati in una stanza
+    - So that trovare ispirazione e arrivare agli articoli che mi piacciono
+  tags:
+    - c4-id:876e857c-9998-8a9a-9403-f33e270abf76
+  scenarios:
+    - id: CMPR-IL-LOOK-JMT-010
+      title: Vedere la scena prima del catalogo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
+      metadata:
+        createdAt: '2026-11-23T17:21:27.500Z'
+        updatedAt: '2026-11-23T17:21:27.500Z'
+        aiGeneratedAt: '2026-11-23T19:36:58.135Z'
+        aiStartedAt: '2026-11-23T19:36:08.152Z'
+        aiEndedAt: '2026-11-23T19:36:58.135Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che il negozio ha 6 articoli
+        - keyword: When
+          text: apro la pagina Scopri
+        - keyword: Then
+          text: vedo la scena "Angolo soggiorno" con 4 punti cliccabili
+        - keyword: And
+          text: la scena compare sopra l'elenco degli articoli
+    - id: CMPR-IL-LOOK-JMT-020
+      title: Vedere il titolo sotto la scena e prima dell'ordinamento
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
+      metadata:
+        createdAt: '2026-11-23T17:21:27.500Z'
+        updatedAt: '2026-11-25T21:27:32.570Z'
+        aiGeneratedAt: '2026-11-25T21:29:56.588Z'
+        aiStartedAt: '2026-11-25T21:27:40.994Z'
+        aiEndedAt: '2026-11-25T21:29:56.588Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: il negozio ha 6 articoli
+        - keyword: When
+          text: apro la pagina Scopri
+        - keyword: Then
+          text: vedo "Scopri" sotto la scena "Compra il look"
+        - keyword: And
+          text: vedo "Scopri" prima del campo "Ordina per"
+        - keyword: And
+          text: la ricerca sta nella testata fissa in alto, non più sotto il titolo
+    - id: CMPR-IL-LOOK-JMT-030
+      title: Aprire un articolo dalla scena
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
+      metadata:
+        createdAt: '2026-11-23T17:21:27.500Z'
+        updatedAt: '2026-11-23T17:21:27.535Z'
+        aiGeneratedAt: '2026-11-23T19:37:00.423Z'
+        aiStartedAt: '2026-11-23T19:36:09.894Z'
+        aiEndedAt: '2026-11-23T19:37:00.423Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina Scopri
+        - keyword: When
+          text: tocco il punto di "<articolo>" sulla scena
+        - keyword: Then
+          text: vedo la scheda con nome "<articolo>" e prezzo <prezzo> euro
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo | prezzo |'
+        - keyword: __raw__
+          text: '| Cornice Atelier | 29 |'
+        - keyword: __raw__
+          text: '| Lampada Lume | 89 |'
+        - keyword: __raw__
+          text: '| Vaso Duna | 34 |'
+        - keyword: __raw__
+          text: '| Portavaso Trama | 45 |'
+    - id: CMPR-IL-LOOK-JMT-040
+      title: Tornare alla scena dalla scheda
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
+      metadata:
+        createdAt: '2026-11-23T17:21:27.500Z'
+        updatedAt: '2026-11-23T17:21:27.500Z'
+        aiGeneratedAt: '2026-11-23T19:37:01.547Z'
+        aiStartedAt: '2026-11-23T19:36:10.676Z'
+        aiEndedAt: '2026-11-23T19:37:01.547Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho aperto la scheda di "Lampada Lume" dalla scena
+        - keyword: When
+          text: torno indietro
+        - keyword: Then
+          text: mi ritrovo sulla pagina Scopri con la scena visibile
+    - id: CMPR-IL-LOOK-JMT-050
+      title: La scena non cambia il catalogo
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-98f295c7-ba88-5b12-290b-815a8c0ac139)
+      metadata:
+        createdAt: '2026-11-23T17:21:27.500Z'
+        updatedAt: '2026-11-23T17:21:27.500Z'
+        aiGeneratedAt: '2026-11-23T19:37:02.655Z'
+        aiStartedAt: '2026-11-23T19:36:11.462Z'
+        aiEndedAt: '2026-11-23T19:37:02.655Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che il negozio ha 6 articoli
+        - keyword: When
+          text: apro la pagina Scopri
+        - keyword: Then
+          text: sotto la scena vedo ancora 6 articoli

@@ -1,0 +1,56 @@
+type: web-application
+name: WebClient
+description: >-
+  Client web (public/*): pagine /scopri, /carrello, /pagamento, /preferiti,
+  /configuratore-cornice. Stato in localStorage (carrello, preferiti).
+id: 4e85147e-db97-a0a6-a4c1-64c6111646fb
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      9e560ec4-c8e4-34f6-441c-66e68f9058d9:
+        x: 200
+        'y': 88.5
+      40a0daa0-5bc2-e50f-2764-62fd55dd011f:
+        x: 571.5
+        'y': 737.5
+  - namespace: c4modeler
+    name: boundary
+    value:
+      x: 0
+      'y': 0
+      width: 1138.75
+      height: 1205
+prefix: app
+author: CodeArchitects
+target: angular@19
+architecture: single-page-application
+strict: false
+port: 4200
+mode: standalone
+designSystem:
+  kit: caep
+  theme:
+    - cupertino
+  icons: fontAwesomeV5Free
+interactions:
+  - targetId: 40a0daa0-5bc2-e50f-2764-62fd55dd011f
+    type: service
+    level: container
+children:
+  - id: 4fb38d21-892a-dfc1-734c-eda054bcb0f8
+    type: abstract-component
+  - id: c41acd62-7a8d-0d07-6aa1-3a2038cbeb16
+    type: abstract-component
+  - id: 876e857c-9998-8a9a-9403-f33e270abf76
+    type: abstract-component
+  - id: 24c5e321-e194-8b73-99c5-cf13f4e84793
+    type: abstract-component
+  - id: 9747bdcb-e28a-69c9-6085-5b91896d7437
+    type: abstract-component
+  - id: 9a58fe02-2101-9446-7d8d-c994a3c67b42
+    type: abstract-component
+  - id: 9d114334-0c4d-443b-5fb6-bb2f27f4b365
+    type: abstract-component
+  - id: 7179f7b5-6801-975d-df2b-d72171a79702
+    type: abstract-component

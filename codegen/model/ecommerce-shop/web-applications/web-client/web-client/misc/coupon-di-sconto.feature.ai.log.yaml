@@ -1,0 +1,53 @@
+runs:
+  - claimId: '2026-11-23T19:39:58.561Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: '7/7 green; build exit 0; node --test tests/ 81/81 (whole battery, verified: full); commit d7e9623'
+    documento: misc/coupon-di-sconto
+    tentativo: 2
+    requisiti:
+      - CPN-DI-SCNT-QAD-010
+      - CPN-DI-SCNT-QAD-020
+      - CPN-DI-SCNT-QAD-030
+      - CPN-DI-SCNT-QAD-040
+      - CPN-DI-SCNT-QAD-050
+      - CPN-DI-SCNT-QAD-060
+      - CPN-DI-SCNT-QAD-070
+    tokenIn: 1094789
+    tokenOut: 2133
+    tokenGrado: estimated
+    tracciaSessione: 20261123T193958Z-claude-code-20b8fdc4
+    conversazione: conv-mwto6xut-ohjz
+    traccia: coupon-di-sconto.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: close-stamp
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:39:58.561Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:40:01.821Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-23T19:40:01.821Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:40:09.259Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 19
+        tokenIn: 253401
+        tokenOut: 305
+        tokenGrado: estimated
+        durataSec: 7

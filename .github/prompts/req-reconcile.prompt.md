@@ -37,7 +37,8 @@ future implementation or a contract change needs a separate task. Tests may be a
 Discover applicable roles, commands and skills with `skill_list`, then load them with
 `skill_read`. Follow the workspace's requirements-hardening guidance when available, together
 with the requirement-ID, generation-strategy and Gherkin metadata rules. Use the installed
-CAIP Developer for source/assertion analysis and CAIP Analyst for requirement relations;
+CAIP Developer Backend, Client or Craft (the one owning the code) for source/assertion analysis
+and CAIP Analyst for requirement relations;
 Universal workspaces use universal-developer and universal-analyst. Preserve their role
 boundaries: a delegated reader returns evidence; no reconciliation role writes pipeline metadata.
 

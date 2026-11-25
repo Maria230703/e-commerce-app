@@ -53,15 +53,17 @@ Every Feature and every Scenario carries TWO `#` comments immediately above its 
    requirement). When the author's language IS English, add the informal line only when it
    captures nuance the synthesis omits.
 
-They are not translations of each other; when the requirement changes, both change. Attach
-them with `caipGherkinSetComments`.
+They are not translations of each other; when the requirement changes, both change. Write
+them in the creating call: each scenario draft's `comments` in `caipGherkinAddScenarios` /
+`caipGherkinCreateRequirementsFeature`, the Feature's in `featureComments` / `comments`. Use
+`caipGherkinSetComments` only to change comments that already exist.
 
 ## Tags — mandatory on every Scenario
 
 On the tag line above the scenario keyword, in this order:
 
 1. **`@id(<ID>)` — minted, never invented** (see the requirement-ids rule: the mint tool owns
-   sequences and scope tokens). A scenario without `@id` is outside the traceability graph:
+   the tail of every new id). A scenario without `@id` is outside the traceability graph:
    the loop cannot select it, code cannot cite it. Upstream requirements it derives from go
    in `@traces(<ID>)`.
 2. exactly one of **`@functional`** / **`@non-functional`** (quality attributes — performance,

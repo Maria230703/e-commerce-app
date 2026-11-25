@@ -1,0 +1,57 @@
+runs:
+  - claimId: '2026-11-23T19:41:23.728Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: '7/7 green, verified: impacted+whole target (87 tests pass), commit 8ba3285'
+    documento: misc/galleria-immagini
+    tentativo: 2
+    requisiti:
+      - GLLR-IMMG-NNT-010
+      - GLLR-IMMG-NNT-020
+      - GLLR-IMMG-NNT-030
+      - GLLR-IMMG-NNT-040
+      - GLLR-IMMG-NNT-050
+      - GLLR-IMMG-NNT-060
+      - GLLR-IMMG-NNT-070
+    tokenIn: 1101359
+    tokenOut: 2688
+    tokenGrado: estimated
+    tracciaSessione: 20261123T194123Z-claude-code-f6b07f30
+    conversazione: conv-mwto8rkl-unuz
+    traccia: galleria-immagini.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:41:23.728Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:41:26.724Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-23T19:41:26.725Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:41:34.580Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 32
+        tokenIn: 254332
+        tokenOut: 305
+        tokenGrado: estimated
+        durataSec: 8

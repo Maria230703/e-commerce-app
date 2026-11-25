@@ -1,0 +1,129 @@
+runs:
+  - claimId: '2026-11-23T19:50:48.287Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: 'personalizzazione-cornice: 7/7 green, verified: full (web-client 110/110), commit 608d8a8'
+    documento: misc/personalizzazione-cornice
+    tentativo: 2
+    requisiti:
+      - PRSN-CRNC-TMM-010
+      - PRSN-CRNC-TMM-020
+      - PRSN-CRNC-TMM-030
+      - PRSN-CRNC-TMM-040
+      - PRSN-CRNC-TMM-050
+      - PRSN-CRNC-TMM-060
+      - PRSN-CRNC-TMM-070
+    tokenIn: 2053968
+    tokenOut: 4202
+    tokenGrado: estimated
+    tracciaSessione: 20261123T195048Z-claude-code-cb03b80f
+    conversazione: conv-mwtokv6z-98qh
+    traccia: personalizzazione-cornice.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:50:48.287Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:50:52.849Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 5
+      - passo: driver
+        at: '2026-11-23T19:50:52.849Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:51:02.635Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 8
+        tokenIn: 254459
+        tokenOut: 350
+        tokenGrado: estimated
+        durataSec: 10
+      - passo: preflight
+        at: '2026-11-23T19:51:06.716Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-23T19:51:12.545Z'
+        esito: ok
+        dettaglio: 'gherkin+pipeline loaded; no other driver; baseline node --test: 103/103 green'
+        eventi: 11
+        modello: claude-sonnet-5-5
+        tokenIn: 95983
+        tokenOut: 18
+        tokenGrado: estimated
+        durataSec: 6
+      - passo: open-stamp
+        at: '2026-11-23T19:51:33.762Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-23T19:51:53.831Z'
+        esito: ok
+        dettaglio: aiStartedAt set on 7 requirements
+        eventi: 5
+        modello: claude-sonnet-5-5
+        tokenIn: 112018
+        tokenOut: 1726
+        tokenGrado: estimated
+        durataSec: 20
+      - passo: implement
+        at: '2026-11-23T19:51:53.845Z'
+        esito: avviato
+      - passo: implement
+        at: '2026-11-23T19:52:15.795Z'
+        esito: ok
+        dettaglio: >-
+          code already implemented (uncited); added tests/personalizzazione-cornice.test.js (7 tests), 10 mutations all
+          killed, §REQ citations added to frame-logic.js, frame-configurator.js, index.html. No production logic
+          changed.
+        eventi: 8
+        modello: claude-sonnet-5-5
+        tokenIn: 354928
+        tokenOut: 1102
+        tokenGrado: estimated
+        durataSec: 22
+      - passo: verify
+        at: '2026-11-23T19:52:16.087Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-23T19:52:24.866Z'
+        esito: ok
+        dettaglio: >-
+          web-client build exit 0; node --test tests/ whole: 110 pass / 0 fail (baseline 103/103 before edit, +7 new).
+          verified: full for the single target; no citation lost.
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 121345
+        tokenOut: 280
+        tokenGrado: estimated
+        durataSec: 9
+      - passo: close-stamp
+        at: '2026-11-23T19:52:24.878Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-23T19:52:36.367Z'
+        esito: ok
+        dettaglio: 7 closed green (aiGeneratedAt set, errorCount 0, revision 1, anthropic/claude-sonnet-5-5); committed 608d8a8
+        eventi: 5
+        modello: claude-sonnet-5-5
+        tokenIn: 369865
+        tokenOut: 330
+        tokenGrado: estimated
+        durataSec: 11

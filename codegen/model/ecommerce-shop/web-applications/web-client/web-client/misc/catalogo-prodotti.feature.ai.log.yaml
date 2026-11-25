@@ -1,0 +1,54 @@
+runs:
+  - claimId: '2026-11-23T19:33:02.924Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: >-
+      Both requirements closed green. Verified: full web-client suite 64/64, build ok; RED shown by mutation (5 of 5
+      killed).
+    documento: misc/catalogo-prodotti
+    tentativo: 2
+    requisiti:
+      - CTLG-PRDT-GSE-010
+      - CTLG-PRDT-GSE-020
+    tokenIn: 752115
+    tokenOut: 1322
+    tokenGrado: estimated
+    tracciaSessione: 20261123T193303Z-claude-code-012debe2
+    conversazione: conv-mwtny15k-ulb2
+    traccia: catalogo-prodotti.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:33:02.924Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:33:08.500Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 6
+      - passo: driver
+        at: '2026-11-23T19:33:08.500Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:33:16.911Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 18
+        tokenIn: 248892
+        tokenOut: 292
+        tokenGrado: estimated
+        durataSec: 8

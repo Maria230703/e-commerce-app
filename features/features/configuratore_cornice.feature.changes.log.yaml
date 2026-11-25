@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: configuratore_cornice.feature
-  updatedAt: '2026-11-24T18:43:21.179Z'
+  updatedAt: '2026-11-25T21:41:47.331Z'
 changes:
   - changedAt: '2026-11-24T18:43:21.166Z'
     ref: feature:personalizzazione-della-cornice
@@ -129,3 +129,122 @@ changes:
     before: '      | Rosso carminio | 30,90  |'
     after: '    | Rosso carminio | 30,90  |'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.203Z'
+    ref: PRSN-CRNC-TMM-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-010) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-010) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.222Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-020) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-020) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.238Z'
+    ref: PRSN-CRNC-TMM-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-030) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-030) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.255Z'
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-040) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-040) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.272Z'
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-050) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-050) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.289Z'
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-060) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-060) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.307Z'
+    ref: PRSN-CRNC-TMM-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(PRSN-CRNC-TMM-070) @functional @c4-container'
+    after: '  @id(PRSN-CRNC-TMM-070) @functional @c4-container @wiki(entity-d4ed3df2-88bc-7f7e-6fdd-a185fc8ff39b)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:30:15.732Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:30:16.709Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:30:17.741Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:30:18.786Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:30:19.782Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:30:20.805Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:30:21.642Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T21:40:52.809Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 5
+    before: '    And il collegamento appare sotto il titolo "Scopri"'
+    after: '    And il collegamento appare sotto il titolo "Scopri", accanto alla categoria "Cornici"'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:52.809Z'
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 6
+    before: null
+    after: '    And il testo "Crea la tua cornice" si legge dentro il pulsante, chiaro sia in modalità giorno sia in modalità notte'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:47.331Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: PRSN-CRNC-TMM-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 2

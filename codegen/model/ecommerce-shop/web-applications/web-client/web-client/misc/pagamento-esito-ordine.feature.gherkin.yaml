@@ -1,0 +1,252 @@
+version: 1
+document:
+  sourceFeature: pagamento-esito-ordine.feature
+  generatedAt: '2026-11-25T12:17:37.039Z'
+  copilotSessionId: 0b076ba35158d2d0bbaa4543cbcd0085
+  nextRequirementSeq: 80
+feature:
+  id: 3b5b1b8f-f425-49a2-8409-5eb6a3fdd49a
+  createdAt: '2026-11-23T17:22:43.353Z'
+  updatedAt: '2026-11-23T17:22:43.354Z'
+  title: 'Pagamento: esito dell''ordine per metodo'
+  description:
+    - As a cliente del negozio
+    - I want pagare con carta, PayPal o bonifico e vedere l'esito dell'ordine
+    - So that completare il mio acquisto
+  tags:
+    - c4-id:7179f7b5-6801-975d-df2b-d72171a79702
+  scenarios:
+    - id: PGMN-EST-ORDN-PEC-010
+      title: Pagamento con carta riuscito
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:13.006Z'
+        aiStartedAt: '2026-11-23T19:49:09.802Z'
+        aiEndedAt: '2026-11-23T19:50:13.006Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna" e il totale è 38,90 euro
+        - keyword: And
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Carta di credito"
+        - keyword: When
+          text: >-
+            inserisco il numero di prova "4242 4242 4242 4242", scadenza "12/30" e codice CVV "123" e tocco "Conferma
+            ordine"
+        - keyword: Then
+          text: vedo "Ordine confermato" con un numero d'ordine
+        - keyword: And
+          text: il totale pagato è 38,90 euro
+        - keyword: And
+          text: il carrello è vuoto
+    - id: PGMN-EST-ORDN-PEC-020
+      title: Carta rifiutata
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:14.034Z'
+        aiStartedAt: '2026-11-23T19:49:10.460Z'
+        aiEndedAt: '2026-11-23T19:50:14.034Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna" e il totale è 38,90 euro
+        - keyword: And
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Carta di credito"
+        - keyword: When
+          text: >-
+            inserisco il numero di prova "4000 0000 0000 0002", scadenza "12/30" e codice CVV "123" e tocco "Conferma
+            ordine"
+        - keyword: Then
+          text: vedo il messaggio "Pagamento rifiutato. Prova con un'altra carta."
+        - keyword: And
+          text: l'ordine non viene confermato
+        - keyword: And
+          text: il carrello contiene ancora 1 articolo "Vaso Duna"
+    - id: PGMN-EST-ORDN-PEC-030
+      title: Carta scaduta
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:15.035Z'
+        aiStartedAt: '2026-11-23T19:49:11.243Z'
+        aiEndedAt: '2026-11-23T19:50:15.035Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna" e il totale è 38,90 euro
+        - keyword: And
+          text: ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Carta di credito"
+        - keyword: When
+          text: >-
+            inserisco il numero di prova "4242 4242 4242 4242", scadenza "01/20" e codice CVV "123" e tocco "Conferma
+            ordine"
+        - keyword: Then
+          text: vedo il messaggio "La carta è scaduta"
+        - keyword: And
+          text: l'ordine non viene confermato
+    - id: PGMN-EST-ORDN-PEC-040
+      title: Pagamento con PayPal
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:16.094Z'
+        aiStartedAt: '2026-11-23T19:49:11.898Z'
+        aiEndedAt: '2026-11-23T19:50:16.094Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "PayPal"
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo la schermata simulata di PayPal
+        - keyword: And
+          text: dopo l'approvazione vedo "Ordine confermato" con un numero d'ordine
+    - id: PGMN-EST-ORDN-PEC-050
+      title: Pagamento con bonifico
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:17.109Z'
+        aiStartedAt: '2026-11-23T19:49:12.592Z'
+        aiEndedAt: '2026-11-23T19:50:17.109Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho compilato correttamente i dati di spedizione
+        - keyword: And
+          text: ho scelto "Bonifico bancario"
+        - keyword: When
+          text: tocco "Conferma ordine"
+        - keyword: Then
+          text: vedo l'IBAN di prova e la causale con il numero d'ordine
+        - keyword: And
+          text: lo stato dell'ordine è "In attesa di pagamento"
+    - id: PGMN-EST-ORDN-PEC-060
+      title: I dati della carta non vengono salvati
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:18.352Z'
+        aiStartedAt: '2026-11-23T19:49:13.338Z'
+        aiEndedAt: '2026-11-23T19:50:18.352Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che ho pagato con carta
+        - keyword: When
+          text: riapro la pagina del pagamento
+        - keyword: Then
+          text: i campi della carta sono vuoti
+    - id: PGMN-EST-ORDN-PEC-070
+      title: La foto da stampare arriva al negozio
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-bd43ab9c-56da-6742-9ed3-b1f2db1b2019)
+      metadata:
+        createdAt: '2026-11-23T17:22:43.353Z'
+        updatedAt: '2026-11-23T17:22:43.353Z'
+        aiGeneratedAt: '2026-11-23T19:50:19.005Z'
+        aiStartedAt: '2026-11-23T19:49:14.033Z'
+        aiEndedAt: '2026-11-23T19:50:19.005Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è una cornice con la foto "mare.jpg"
+        - keyword: And
+          text: ho pagato con successo
+        - keyword: When
+          text: guardo l'ordine
+        - keyword: Then
+          text: l'ordine riporta la foto "mare.jpg" da stampare su carta fotografica

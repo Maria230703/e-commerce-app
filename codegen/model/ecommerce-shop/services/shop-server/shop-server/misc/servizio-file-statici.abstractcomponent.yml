@@ -1,0 +1,13 @@
+type: abstract-component
+name: ServizioFileStatici
+description: >-
+  Serve public/ con protezione path traversal (403), fallback a index.html
+  (server.js).
+id: 1d1be5d5-d1ec-5763-a394-61c59edf7537
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      40a0daa0-5bc2-e50f-2764-62fd55dd011f:
+        x: 802.5
+        'y': 88.5

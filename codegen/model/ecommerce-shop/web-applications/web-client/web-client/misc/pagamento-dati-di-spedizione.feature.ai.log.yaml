@@ -1,0 +1,73 @@
+runs:
+  - claimId: '2026-11-23T19:44:32.526Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: '9/9 green. verified: impacted+whole web-client suite (96/96). Commit fae50a6.'
+    documento: misc/pagamento-dati-di-spedizione
+    tentativo: 2
+    requisiti:
+      - PGMN-DATI-DI-SPDZ-ICN-010
+      - PGMN-DATI-DI-SPDZ-ICN-020
+      - PGMN-DATI-DI-SPDZ-ICN-030
+      - PGMN-DATI-DI-SPDZ-ICN-040
+      - PGMN-DATI-DI-SPDZ-ICN-050
+      - PGMN-DATI-DI-SPDZ-ICN-060
+      - PGMN-DATI-DI-SPDZ-ICN-070
+      - PGMN-DATI-DI-SPDZ-ICN-080
+      - PGMN-DATI-DI-SPDZ-ICN-090
+    tokenIn: 1363807
+    tokenOut: 3795
+    tokenGrado: estimated
+    tracciaSessione: 20261123T194432Z-claude-code-751adc58
+    conversazione: conv-mwtoct94-aggc
+    traccia: pagamento-dati-di-spedizione.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: context
+        opzionale: true
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:44:32.526Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:44:35.793Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-23T19:44:35.793Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:44:43.554Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 10
+        tokenIn: 255822
+        tokenOut: 349
+        tokenGrado: estimated
+        durataSec: 8
+      - passo: open-stamp
+        at: '2026-11-23T19:44:50.076Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-23T19:45:38.974Z'
+        esito: ok
+        eventi: 12
+        modello: claude-sonnet-5-5
+        tokenIn: 791360
+        tokenOut: 3193
+        tokenGrado: estimated
+        durataSec: 49

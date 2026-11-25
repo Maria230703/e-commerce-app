@@ -1,0 +1,57 @@
+runs:
+  - claimId: '2026-11-25T12:36:42.678Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: >-
+      SPDZ-STP-040/050 re-verified by suite, not re-observed: web-client build exit 0, node --test tests/ 141/141 pass
+      (full target, SPDZ-040 and SPDZ-050 green). No files written beyond stamps.
+    documento: features/spedizionegratuita
+    tentativo: 2
+    requisiti:
+      - SPDZ-STP-040
+      - SPDZ-STP-050
+    tokenIn: 552271
+    tokenOut: 450
+    tokenGrado: estimated
+    tracciaSessione: 20261125T123642Z-claude-code-84d09733
+    conversazione: conv-mww3yblm-q35i
+    traccia: spedizionegratuita.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: implement
+        opzionale: true
+      - passo: verify
+      - passo: close-stamp
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:36:42.678Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:36:46.466Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        tokenIn: 76629
+        tokenOut: 116
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-25T12:36:46.466Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:36:54.696Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 15
+        tokenIn: 183226
+        tokenOut: 85
+        tokenGrado: estimated
+        costoListinoUsd: 0.0369507
+        chiamateNonPrezzate: 1
+        durataSec: 8

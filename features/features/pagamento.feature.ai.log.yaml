@@ -1,0 +1,138 @@
+runs:
+  - claimId: '2026-11-25T12:35:42.963Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: 16/16 green by re-verification (141/141 tests)
+    documento: features/pagamento
+    tentativo: 2
+    requisiti:
+      - PGMN-DATI-DI-SPDZ-ICN-010
+      - PGMN-DATI-DI-SPDZ-ICN-020
+      - PGMN-DATI-DI-SPDZ-ICN-030
+      - PGMN-DATI-DI-SPDZ-ICN-040
+      - PGMN-DATI-DI-SPDZ-ICN-050
+      - PGMN-DATI-DI-SPDZ-ICN-060
+      - PGMN-DATI-DI-SPDZ-ICN-070
+      - PGMN-DATI-DI-SPDZ-ICN-080
+      - PGMN-DATI-DI-SPDZ-ICN-090
+      - PGMN-EST-ORDN-PEC-010
+      - PGMN-EST-ORDN-PEC-020
+      - PGMN-EST-ORDN-PEC-030
+      - PGMN-EST-ORDN-PEC-040
+      - PGMN-EST-ORDN-PEC-050
+      - PGMN-EST-ORDN-PEC-060
+      - PGMN-EST-ORDN-PEC-070
+    tokenIn: 1100675
+    tokenOut: 890
+    tokenGrado: estimated
+    tracciaSessione: 20261125T123543Z-claude-code-24b3ec4b
+    conversazione: conv-mww3x1iv-0lvx
+    traccia: pagamento.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: verify
+      - passo: close-stamp
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:35:42.963Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:35:46.216Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-25T12:35:46.216Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:35:58.197Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 10
+        tokenIn: 365025
+        tokenOut: 423
+        tokenGrado: estimated
+        costoListinoUsd: 0.0378632
+        chiamateNonPrezzate: 3
+        durataSec: 12
+      - passo: preflight
+        at: '2026-11-25T12:36:01.924Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-25T12:36:03.809Z'
+        esito: ok
+        dettaglio: gherkin+pipeline tools loaded; I am the only driver (pid 25369 = lock driverPid)
+        eventi: 2
+        modello: claude-sonnet-5-5
+        tokenIn: 103161
+        tokenOut: 48
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 2
+      - passo: intake
+        at: '2026-11-25T12:36:04.341Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-25T12:36:07.175Z'
+        esito: ok
+        dettaglio: >-
+          16 eligible (aiGeneratedAt null, counters 0). Code+tests with §REQ citations exist -> re-verification, code
+          lane, target web-client from .caep/targets.json
+        eventi: 2
+        modello: claude-sonnet-5-5
+        tokenIn: 103769
+        tokenOut: 111
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 3
+      - passo: open-stamp
+        at: '2026-11-25T12:36:07.768Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:36:10.841Z'
+        esito: ok
+        dettaglio: aiStartedAt set on 16
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 105050
+        tokenOut: 40
+        tokenGrado: exact
+        costoListinoUsd: 0.0139832
+        durataSec: 3
+      - passo: verify
+        at: '2026-11-25T12:36:11.322Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-25T12:36:21.322Z'
+        esito: ok
+        dettaglio: >-
+          web-client build exit 0; node --test tests/ exit 0: 141 pass / 0 fail / 0 skipped (whole target, full scope;
+          re-verified by suite, not re-observed). All 16 ids cited in >=1 code and >=1 test file. Logs
+          /tmp/req-loop-build.log, /tmp/req-loop-test.log
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 212716
+        tokenOut: 180
+        tokenGrado: estimated
+        chiamateNonPrezzate: 2
+        durataSec: 10
+      - passo: close-stamp
+        at: '2026-11-25T12:36:21.932Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-25T12:36:25.336Z'
+        esito: ok
+        dettaglio: '16 closed green, verified: full web-client'
+        eventi: 3
+        modello: claude-sonnet-5-5
+        tokenIn: 108299
+        tokenOut: 40
+        tokenGrado: exact
+        costoListinoUsd: 0.0149873
+        durataSec: 3

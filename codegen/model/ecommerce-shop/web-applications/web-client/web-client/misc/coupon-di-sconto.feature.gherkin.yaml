@@ -1,0 +1,246 @@
+version: 1
+document:
+  sourceFeature: coupon-di-sconto.feature
+  generatedAt: '2026-11-25T20:55:29.283Z'
+  copilotSessionId: 63c56644b141485abdca1f16c9cccb34
+  nextRequirementSeq: 80
+feature:
+  id: e3af0366-8ec3-4c8c-b08e-609000290e2b
+  createdAt: '2026-11-23T17:22:10.580Z'
+  updatedAt: '2026-11-23T17:22:10.581Z'
+  title: Coupon di sconto
+  description:
+    - As a cliente del negozio
+    - I want inserire i dati del coupon per ottenere uno sconto sul valore totale della spesa nel carrello
+    - So that pagare meno per una spesa superiore a 50,00 euro
+  tags:
+    - c4-id:9d114334-0c4d-443b-5fb6-bb2f27f4b365
+  scenarios:
+    - id: CPN-DI-SCNT-QAD-010
+      title: Coupon non applicabile a un carrello sotto i 50,00 euro
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-23T17:22:10.580Z'
+        aiGeneratedAt: '2026-11-23T19:41:02.177Z'
+        aiStartedAt: '2026-11-23T19:40:24.368Z'
+        aiEndedAt: '2026-11-23T19:41:02.177Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che 'Portavaso Trama' costa meno di 50,00 euro
+        - keyword: When
+          text: '''Portavaso Trama'' è nel carrello'
+        - keyword: Then
+          text: il coupon non può essere applicato
+        - keyword: And
+          text: il valore totale della spesa resta invariato
+    - id: CPN-DI-SCNT-QAD-020
+      title: Mostrare il messaggio del coupon nella barra superiore
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-25T20:55:26.845Z'
+        aiGeneratedAt: '2026-11-25T21:29:50.478Z'
+        aiStartedAt: '2026-11-25T20:56:04.607Z'
+        aiEndedAt: '2026-11-25T21:29:50.478Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo la barra superiore
+        - keyword: Then
+          text: 'vedo al centro il messaggio "Primo acquisto: -10% con" seguito dal codice del coupon'
+        - keyword: And
+          text: il messaggio c'è con qualunque subtotale del carrello, al posto del pulsante "Coupon per te disponibile"
+    - id: CPN-DI-SCNT-QAD-030
+      title: Il codice nella barra è lo stesso del campo coupon nel carrello
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-25T20:55:28.047Z'
+        aiGeneratedAt: '2026-11-25T21:29:50.478Z'
+        aiStartedAt: '2026-11-25T20:56:04.607Z'
+        aiEndedAt: '2026-11-25T21:29:50.478Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: il sito conosce un solo codice coupon
+        - keyword: When
+          text: guardo il codice nella barra superiore
+        - keyword: Then
+          text: è lo stesso codice che il campo "Inserisci qui il tuo codice sconto" accetta al pagamento
+    - id: CPN-DI-SCNT-QAD-040
+      title: Copiare il codice dalla barra superiore
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-25T20:55:29.302Z'
+        aiGeneratedAt: '2026-11-25T21:29:50.478Z'
+        aiStartedAt: '2026-11-25T20:56:04.607Z'
+        aiEndedAt: '2026-11-25T21:29:50.478Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: tocco il codice nella barra superiore
+        - keyword: Then
+          text: il codice viene copiato negli appunti
+        - keyword: And
+          text: la finestra sotto il codice mostra una spunta e "Copiato"
+        - keyword: And
+          text: un annuncio per chi non vede dice "Codice copiato"
+    - id: CPN-DI-SCNT-QAD-050
+      title: Applicare il coupon al pagamento
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-23T17:22:10.580Z'
+        aiGeneratedAt: '2026-11-23T19:41:02.177Z'
+        aiStartedAt: '2026-11-23T19:40:24.368Z'
+        aiEndedAt: '2026-11-23T19:41:02.177Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che sono sulla pagina del Pagamento
+        - keyword: And
+          text: nel carrello c'è "Lampada Lume"
+        - keyword: When
+          text: inserisco "FirstPurchase" in "Inserisci qui il tuo codice sconto" e applico il coupon
+        - keyword: Then
+          text: vedo uno sconto pari al 10% del subtotale
+        - keyword: And
+          text: il nuovo totale viene mostrato nel riepilogo dell'ordine
+    - id: CPN-DI-SCNT-QAD-060
+      title: Il coupon è disponibile solo per acquisti superiori a 50,00 euro
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-23T17:22:10.612Z'
+        aiGeneratedAt: '2026-11-23T19:41:02.177Z'
+        aiStartedAt: '2026-11-23T19:40:24.368Z'
+        aiEndedAt: '2026-11-23T19:41:02.177Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è "<articolo>"
+        - keyword: When
+          text: apro la pagina di pagamento
+        - keyword: Then
+          text: il coupon "FirstPurchase" <disponibilità> essere applicato
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| articolo | disponibilità |'
+        - keyword: __raw__
+          text: '| Lampada Lume | può |'
+        - keyword: __raw__
+          text: '| Specchio Orbita | può |'
+        - keyword: __raw__
+          text: '| Portavaso Trama | non può |'
+        - keyword: __raw__
+          text: '| Vaso Duna | non può |'
+        - keyword: __raw__
+          text: '| Candela Vaniglia | non può |'
+        - keyword: __raw__
+          text: '| Cornice Atelier | non può |'
+    - id: CPN-DI-SCNT-QAD-070
+      title: Acquisto di più articoli oltre 50,00 euro
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-23T17:22:10.580Z'
+        updatedAt: '2026-11-23T17:22:10.580Z'
+        aiGeneratedAt: '2026-11-23T19:41:02.177Z'
+        aiStartedAt: '2026-11-23T19:40:24.368Z'
+        aiEndedAt: '2026-11-23T19:41:02.177Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello ci sono più articoli
+        - keyword: And
+          text: il valore totale della spesa è superiore a 50,00 euro
+        - keyword: When
+          text: tocco 'Vai al pagamento'
+        - keyword: Then
+          text: posso inserire il coupon 'FirstPurchase' del valore del 10%
+        - keyword: And
+          text: il valore totale della spesa si abbassa

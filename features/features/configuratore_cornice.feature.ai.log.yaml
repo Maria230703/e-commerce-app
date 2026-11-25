@@ -1,0 +1,105 @@
+runs:
+  - claimId: '2026-11-25T12:29:27.497Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: 7/7 green by re-verification + mutation RED; no code written
+    documento: features/configuratore_cornice
+    tentativo: 2
+    requisiti:
+      - PRSN-CRNC-TMM-010
+      - PRSN-CRNC-TMM-020
+      - PRSN-CRNC-TMM-030
+      - PRSN-CRNC-TMM-040
+      - PRSN-CRNC-TMM-050
+      - PRSN-CRNC-TMM-060
+      - PRSN-CRNC-TMM-070
+    tokenIn: 1070637
+    tokenOut: 1327
+    tokenGrado: estimated
+    tracciaSessione: 20261125T122927Z-claude-code-8028c9f3
+    conversazione: conv-mww3oztb-yifs
+    traccia: configuratore_cornice.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:29:27.497Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:29:31.437Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 4
+      - passo: driver
+        at: '2026-11-25T12:29:31.437Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:29:39.537Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 9
+        tokenIn: 256026
+        tokenOut: 336
+        tokenGrado: estimated
+        costoListinoUsd: 0.0355682
+        chiamateNonPrezzate: 2
+        durataSec: 8
+      - passo: open-stamp
+        at: '2026-11-25T12:29:44.493Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:29:48.392Z'
+        esito: ok
+        dettaglio: 7 requirements; code+citations exist for all → re-verification by suite
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 96628
+        tokenOut: 40
+        tokenGrado: exact
+        costoListinoUsd: 0.0117706
+        durataSec: 4
+      - passo: verify
+        at: '2026-11-25T12:29:52.296Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-25T12:30:14.125Z'
+        esito: ok
+        dettaglio: >-
+          web-client build exit 0; node --test tests/ 141/141 pass (whole target, 0 fail); PRSN tests 7/7; mutation RED
+          9 killed, 0 survived
+        eventi: 5
+        modello: claude-sonnet-5-5
+        tokenIn: 315041
+        tokenOut: 713
+        tokenGrado: estimated
+        chiamateNonPrezzate: 3
+        durataSec: 22
+      - passo: close-stamp
+        at: '2026-11-25T12:30:14.695Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-25T12:30:23.447Z'
+        esito: ok
+        dettaglio: '7 green stamps; verified: full target (web-client)'
+        eventi: 9
+        modello: claude-sonnet-5-5
+        tokenIn: 109985
+        tokenOut: 41
+        tokenGrado: estimated
+        chiamateNonPrezzate: 1
+        durataSec: 9

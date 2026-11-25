@@ -1,0 +1,17 @@
+type: abstract-component
+name: ConfiguratoreCornice
+description: >-
+  Configuratore cornice su misura e foto (frame-configurator.js,
+  frame-logic.js).
+id: 9a58fe02-2101-9446-7d8d-c994a3c67b42
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 506.75
+        'y': 1116.5
+interactions:
+  - targetId: 24c5e321-e194-8b73-99c5-cf13f4e84793
+    type: abstract-component
+    level: component

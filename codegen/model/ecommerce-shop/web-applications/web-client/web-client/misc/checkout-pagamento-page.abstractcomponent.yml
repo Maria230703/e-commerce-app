@@ -1,0 +1,17 @@
+type: abstract-component
+name: CheckoutPagamentoPage
+description: >-
+  Dati di spedizione, metodo di pagamento, carta, conferma ordine
+  (payment-ui.js, payment-logic.js).
+id: 7179f7b5-6801-975d-df2b-d72171a79702
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      4e85147e-db97-a0a6-a4c1-64c6111646fb:
+        x: 120.5
+        'y': 859.5
+interactions:
+  - targetId: 9d114334-0c4d-443b-5fb6-bb2f27f4b365
+    type: abstract-component
+    level: component

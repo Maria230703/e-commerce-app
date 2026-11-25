@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: spedizionegratuita.feature
-  updatedAt: '2026-11-24T18:43:20.037Z'
+  updatedAt: '2026-11-25T12:37:06.761Z'
 changes:
   - changedAt: '2026-11-24T18:43:20.002Z'
     ref: feature:spedizione-gratuita
@@ -17,3 +17,31 @@ changes:
     before: ''
     after: null
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.321Z'
+    ref: SPDZ-STP-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-040) @functional @c4-container'
+    after: '  @id(SPDZ-STP-040) @functional @c4-container @wiki(entity-94d6dcb5-3ead-b352-1700-b2185272c021)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.339Z'
+    ref: SPDZ-STP-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SPDZ-STP-050) @functional @c4-container'
+    after: '  @id(SPDZ-STP-050) @functional @c4-container @wiki(entity-94d6dcb5-3ead-b352-1700-b2185272c021)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:37:05.828Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SPDZ-STP-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:37:06.761Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SPDZ-STP-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1

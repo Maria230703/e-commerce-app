@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: testata.feature
-  updatedAt: '2026-11-25T21:40:51.377Z'
+  updatedAt: '2026-11-25T21:41:53.984Z'
 changes:
   - changedAt: '2026-11-25T21:29:45.936Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -177,4 +177,60 @@ changes:
     offset: 5
     before: ''
     after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.777Z'
+    ref: TSTT-2RHMB5
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-2RHMB5) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-2RHMB5) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.806Z'
+    ref: TSTT-5YBZQW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-5YBZQW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-5YBZQW) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.849Z'
+    ref: TSTT-4JJJG3
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-4JJJG3) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-4JJJG3) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.873Z'
+    ref: TSTT-5BGBBG
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-5BGBBG) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-5BGBBG) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.897Z'
+    ref: TSTT-25XBT9
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-25XBT9) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-25XBT9) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.921Z'
+    ref: TSTT-5PU7GW
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-5PU7GW) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-5PU7GW) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.950Z'
+    ref: TSTT-8VJC9V
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-8VJC9V) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-8VJC9V) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:41:53.984Z'
+    ref: TSTT-27HF7V
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-27HF7V) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: '  @id(TSTT-27HF7V) @functional @c4-container @wiki(entity-b73eb991-9966-db35-cc3d-4d91af013e6e)'
     author: Maria <mcmorgese@codearchitects.com>

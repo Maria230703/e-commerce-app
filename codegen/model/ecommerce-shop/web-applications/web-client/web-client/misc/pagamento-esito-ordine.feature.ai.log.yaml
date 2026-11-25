@@ -1,0 +1,127 @@
+runs:
+  - claimId: '2026-11-23T19:48:29.161Z'
+    origine: req-loop
+    host: Mac
+    pid: 18014
+    esito: ok
+    dettaglio: PGMN-EST-ORDN-PEC-010..070 green; commit 9a74b2f; 103/103 tests
+    documento: misc/pagamento-esito-ordine
+    tentativo: 2
+    requisiti:
+      - PGMN-EST-ORDN-PEC-010
+      - PGMN-EST-ORDN-PEC-020
+      - PGMN-EST-ORDN-PEC-030
+      - PGMN-EST-ORDN-PEC-040
+      - PGMN-EST-ORDN-PEC-050
+      - PGMN-EST-ORDN-PEC-060
+      - PGMN-EST-ORDN-PEC-070
+    tokenIn: 2083004
+    tokenOut: 4858
+    tokenGrado: estimated
+    tracciaSessione: 20261123T194829Z-claude-code-74656c1e
+    conversazione: conv-mwtohvu8-1l6e
+    traccia: pagamento-esito-ordine.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-23T19:48:29.161Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-23T19:48:32.131Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-23T19:48:32.131Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-23T19:48:42.107Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 9
+        tokenIn: 255453
+        tokenOut: 422
+        tokenGrado: estimated
+        durataSec: 10
+      - passo: preflight
+        at: '2026-11-23T19:48:44.593Z'
+        esito: avviato
+      - passo: preflight
+        at: '2026-11-23T19:48:44.593Z'
+        esito: ok
+        eventi: 1
+        modello: claude-sonnet-5-5
+        durataSec: 0
+      - passo: intake
+        at: '2026-11-23T19:48:46.458Z'
+        esito: avviato
+      - passo: intake
+        at: '2026-11-23T19:49:09.056Z'
+        esito: ok
+        dettaglio: >-
+          7 reqs eligible (aiGeneratedAt null), no queue drift. Lane: code. Contract: .caep/targets.json web-client
+          (node --test tests/). Baseline 96/96 green. Code exists w/o PGMN-EST citations → attribution+verification; 070
+          (photo name in order) genuinely absent.
+        eventi: 14
+        modello: claude-sonnet-5-5
+        tokenIn: 449831
+        tokenOut: 373
+        tokenGrado: estimated
+        durataSec: 23
+      - passo: implement
+        at: '2026-11-23T19:49:32.352Z'
+        esito: avviato
+      - passo: implement
+        at: '2026-11-23T19:50:00.518Z'
+        esito: ok
+        dettaglio: >-
+          PEC-070 seen RED (framePhotoName undefined) then green; 010-060 mutation-RED: 6/6 killed + M4 survived then
+          killed after targeting aria-label. Citations preserved.
+        eventi: 6
+        modello: claude-sonnet-5-5
+        tokenIn: 644899
+        tokenOut: 1835
+        tokenGrado: estimated
+        durataSec: 28
+      - passo: verify
+        at: '2026-11-23T19:50:01.174Z'
+        esito: avviato
+      - passo: verify
+        at: '2026-11-23T19:50:11.279Z'
+        esito: ok
+        dettaglio: >-
+          verified: full. web-client build exit 0; node --test tests/ exit 0: 103 pass / 0 fail (baseline 96). Log
+          /tmp/req-loop-web-client.log
+        eventi: 4
+        modello: claude-sonnet-5-5
+        tokenIn: 270397
+        tokenOut: 437
+        tokenGrado: estimated
+        durataSec: 10
+      - passo: close-stamp
+        at: '2026-11-23T19:50:11.956Z'
+        esito: avviato
+      - passo: close-stamp
+        at: '2026-11-23T19:50:20.797Z'
+        esito: ok
+        dettaglio: '7 reqs closed green, verified: full'
+        eventi: 9
+        modello: claude-sonnet-5-5
+        tokenIn: 139008
+        tokenOut: 40
+        tokenGrado: exact
+        durataSec: 9

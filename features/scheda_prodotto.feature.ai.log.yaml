@@ -1,0 +1,42 @@
+runs:
+  - claimId: '2026-11-25T12:21:35.009Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: >-
+      Re-verified by suite: build exit 0; node --test tests/ 141/141 pass (full scope). Not re-observed (no RED
+      possible).
+    documento: features/scheda_prodotto
+    tentativo: 2
+    requisiti:
+      - SCHD-PRDT-MQI-010
+      - SCHD-PRDT-MQI-020
+      - SCHD-PRDT-MQI-030
+      - SCHD-PRDT-MQI-040
+    conversazione: conv-mww3ev8m-slfu
+    traccia: scheda_prodotto.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: open-stamp
+      - passo: verify
+      - passo: close-stamp
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:21:35.009Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:22:01.181Z'
+        esito: ok
+        dettaglio: queued — feature 2 of 2 — driver observed at work
+        durataSec: 26
+      - passo: driver
+        at: '2026-11-25T12:22:01.181Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:22:01.201Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 1
+        durataSec: 0

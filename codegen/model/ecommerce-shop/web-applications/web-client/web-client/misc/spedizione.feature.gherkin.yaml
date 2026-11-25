@@ -1,0 +1,176 @@
+version: 1
+document:
+  sourceFeature: spedizione.feature
+  generatedAt: '2026-11-25T12:17:36.874Z'
+  copilotSessionId: d14e47d3123b08232b2fef1a0c47ddf3
+  nextRequirementSeq: 60
+feature:
+  id: 7139cf28-67c6-4a02-a1b8-cbe02b1cb4ff
+  createdAt: '2026-11-23T17:22:03.190Z'
+  updatedAt: '2026-11-23T17:22:03.190Z'
+  title: 'Spedizione: costo e soglia gratuita'
+  description:
+    - As a cliente del negozio
+    - I want usufruire della spedizione gratuita prevista per ordini a partire da 79 euro
+    - So that risparmiare sull'ordine totale
+  tags:
+    - c4-id:9d114334-0c4d-443b-5fb6-bb2f27f4b365
+  scenarios:
+    - id: SPDZ-STP-010
+      title: Costo della spedizione
+      type: scenarioOutline
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:22:03.190Z'
+        updatedAt: '2026-11-23T17:22:03.229Z'
+        aiGeneratedAt: '2026-11-23T19:59:24.012Z'
+        aiStartedAt: '2026-11-23T19:58:26.855Z'
+        aiEndedAt: '2026-11-23T19:59:24.012Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che il subtotale del carrello è <subtotale> euro
+        - keyword: When
+          text: guardo il riepilogo del carrello
+        - keyword: Then
+          text: la spedizione costa <spedizione> euro
+        - keyword: And
+          text: il totale è <totale> euro
+        - keyword: __raw__
+          text: 'Examples:'
+        - keyword: __raw__
+          text: '| subtotale | spedizione | totale |'
+        - keyword: __raw__
+          text: '| 34,00 | 4,90 | 38,90 |'
+        - keyword: __raw__
+          text: '| 78,90 | 4,90 | 83,80 |'
+        - keyword: __raw__
+          text: '| 79,00 | 0,00 | 79,00 |'
+        - keyword: __raw__
+          text: '| 123,00 | 0,00 | 123,00 |'
+    - id: SPDZ-STP-020
+      title: Barra della spedizione gratuita
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:22:03.190Z'
+        updatedAt: '2026-11-23T17:22:03.190Z'
+        aiGeneratedAt: '2026-11-23T19:59:24.790Z'
+        aiStartedAt: '2026-11-23T19:58:27.317Z'
+        aiEndedAt: '2026-11-23T19:59:24.790Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Vaso Duna"
+        - keyword: When
+          text: guardo il riepilogo del carrello
+        - keyword: Then
+          text: vedo "Ti mancano 45,00 euro per la spedizione gratuita"
+    - id: SPDZ-STP-030
+      title: Spedizione gratuita raggiunta
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-32be3296-6b21-5964-8815-ef0bf817c0ab)
+      metadata:
+        createdAt: '2026-11-23T17:22:03.190Z'
+        updatedAt: '2026-11-23T17:22:03.190Z'
+        aiGeneratedAt: '2026-11-23T19:59:25.606Z'
+        aiStartedAt: '2026-11-23T19:58:28.038Z'
+        aiEndedAt: '2026-11-23T19:59:25.606Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 1 articolo "Lampada Lume"
+        - keyword: When
+          text: guardo il riepilogo del carrello
+        - keyword: Then
+          text: vedo "Spedizione gratuita sbloccata"
+    - id: SPDZ-STP-040
+      title: Spedizione gratuita da 79,00 euro al pagamento
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-94d6dcb5-3ead-b352-1700-b2185272c021)
+      metadata:
+        createdAt: '2026-11-23T17:22:03.190Z'
+        updatedAt: '2026-11-23T17:22:03.190Z'
+        aiGeneratedAt: '2026-11-23T19:59:26.491Z'
+        aiStartedAt: '2026-11-23T19:58:28.561Z'
+        aiEndedAt: '2026-11-23T19:59:26.491Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 'Specchio Orbita' a 119,00 euro
+        - keyword: When
+          text: tocco 'Vai al pagamento'
+        - keyword: Then
+          text: la spedizione costa 0,00 euro
+        - keyword: And
+          text: il totale è di 119,00 euro
+    - id: SPDZ-STP-050
+      title: Spedizione a pagamento a 4,90 euro al pagamento
+      type: scenario
+      tags:
+        - functional
+        - c4-component
+        - wiki(entity-94d6dcb5-3ead-b352-1700-b2185272c021)
+      metadata:
+        createdAt: '2026-11-23T17:22:03.190Z'
+        updatedAt: '2026-11-23T17:22:03.190Z'
+        aiGeneratedAt: '2026-11-23T19:59:27.824Z'
+        aiStartedAt: '2026-11-23T19:58:29.071Z'
+        aiEndedAt: '2026-11-23T19:59:27.824Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: che nel carrello c'è 'Vaso Duna' a 34,00 euro
+        - keyword: When
+          text: tocco 'Vai al pagamento'
+        - keyword: Then
+          text: la spedizione costa 4,90 euro
+        - keyword: And
+          text: il totale è di 38,90 euro

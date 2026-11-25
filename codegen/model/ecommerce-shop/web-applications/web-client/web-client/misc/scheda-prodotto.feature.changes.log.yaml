@@ -1,0 +1,75 @@
+version: 1
+document:
+  sourceFeature: scheda-prodotto.feature
+  updatedAt: '2026-11-25T12:17:36.369Z'
+changes:
+  - changedAt: '2026-11-23T17:20:51.227Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-23T17:20:51.227Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-23T19:57:08.568Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:57:10.444Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SCHD-PRDT-MQI-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:57:11.271Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SCHD-PRDT-MQI-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-23T19:57:11.953Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:17:36.286Z'
+    ref: SCHD-PRDT-MQI-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SCHD-PRDT-MQI-010) @functional @c4-component'
+    after: '  @id(SCHD-PRDT-MQI-010) @functional @c4-component @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.305Z'
+    ref: SCHD-PRDT-MQI-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SCHD-PRDT-MQI-020) @functional @c4-component'
+    after: '  @id(SCHD-PRDT-MQI-020) @functional @c4-component @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.325Z'
+    ref: SCHD-PRDT-MQI-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SCHD-PRDT-MQI-030) @functional @c4-component'
+    after: '  @id(SCHD-PRDT-MQI-030) @functional @c4-component @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:36.369Z'
+    ref: SCHD-PRDT-MQI-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(SCHD-PRDT-MQI-040) @functional @c4-component'
+    after: '  @id(SCHD-PRDT-MQI-040) @functional @c4-component @wiki(entity-dd29197b-b9a5-8ffc-6e16-66ad6720d572)'
+    author: Maria <mcmorgese@codearchitects.com>

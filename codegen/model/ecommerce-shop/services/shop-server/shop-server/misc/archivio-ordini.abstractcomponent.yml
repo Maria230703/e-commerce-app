@@ -1,0 +1,13 @@
+type: abstract-component
+name: ArchivioOrdini
+description: >-
+  Persistenza degli ordini in orders.json con scritture serializzate da una coda
+  (orders.js).
+id: 01451cad-1f8f-88c0-e074-030f5fad91e8
+annotations:
+  - namespace: c4modeler
+    name: position
+    value:
+      40a0daa0-5bc2-e50f-2764-62fd55dd011f:
+        x: 120.5
+        'y': 345.5

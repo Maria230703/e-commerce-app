@@ -1,0 +1,97 @@
+runs:
+  - claimId: '2026-11-25T12:23:51.416Z'
+    origine: req-loop
+    host: Mac
+    pid: 4763
+    esito: ok
+    dettaglio: >-
+      18 requirements re-verified green by suite (web-client build exit 0, node --test 141/141, full target); no code
+      changes
+    documento: features/carrello
+    tentativo: 2
+    requisiti:
+      - CRRL-CRNC-PRSN-BCS-010
+      - CRRL-CRNC-PRSN-BCS-020
+      - CRRL-CRNC-PRSN-BCS-030
+      - CRRL-RGH-E-QNTT-KWT-010
+      - CRRL-RGH-E-QNTT-KWT-020
+      - CRRL-RGH-E-QNTT-KWT-030
+      - CRRL-RGH-E-QNTT-KWT-040
+      - CRRL-RGH-E-QNTT-KWT-050
+      - CRRL-RGH-E-QNTT-KWT-060
+      - CRRL-RGH-E-QNTT-KWT-070
+      - CRRL-RGH-E-QNTT-KWT-080
+      - CRRL-RGH-E-QNTT-KWT-090
+      - CRRL-RGH-E-QNTT-KWT-100
+      - CRRL-RGH-E-QNTT-KWT-110
+      - CRRL-RGH-E-QNTT-KWT-120
+      - SPDZ-STP-010
+      - SPDZ-STP-020
+      - SPDZ-STP-030
+    tokenIn: 900405
+    tokenOut: 811
+    tokenGrado: estimated
+    tracciaSessione: 20261125T122351Z-claude-code-85ebe21a
+    conversazione: conv-mww3hshn-86ps
+    traccia: carrello.feature.ai.trace.jsonl
+    piano:
+      - passo: preflight
+      - passo: intake
+      - passo: context
+        opzionale: true
+      - passo: open-stamp
+      - passo: implement
+      - passo: verify
+      - passo: repair
+        opzionale: true
+      - passo: close-stamp
+      - passo: blocked
+        opzionale: true
+    passi:
+      - passo: launch
+        at: '2026-11-25T12:23:51.416Z'
+        esito: avviato
+      - passo: launch
+        at: '2026-11-25T12:23:54.849Z'
+        esito: ok
+        dettaglio: >-
+          handed to the AI Assistant on claude-cli:sonnet (tier ladder skipped) — waiting for the driver — driver
+          observed at work
+        durataSec: 3
+      - passo: driver
+        at: '2026-11-25T12:23:54.849Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:24:04.544Z'
+        esito: ok
+        dettaglio: working — the driver has not declared its stages — driver connected
+        eventi: 10
+        tokenIn: 261884
+        tokenOut: 409
+        tokenGrado: estimated
+        costoListinoUsd: 0.0381682
+        chiamateNonPrezzate: 2
+        durataSec: 10
+      - passo: driver
+        at: '2026-11-25T12:24:14.756Z'
+        esito: avviato
+      - passo: driver
+        at: '2026-11-25T12:24:14.757Z'
+        esito: ok
+        dettaglio: adopted by the loop's own plan
+        eventi: 2
+        durataSec: 0
+      - passo: open-stamp
+        at: '2026-11-25T12:24:18.173Z'
+        esito: avviato
+      - passo: open-stamp
+        at: '2026-11-25T12:24:21.737Z'
+        esito: ok
+        dettaglio: open stamps for 18 requirements; re-verification (code + tests already cite all ids)
+        eventi: 22
+        modello: claude-sonnet-5-5
+        tokenIn: 110319
+        tokenOut: 70
+        tokenGrado: exact
+        costoListinoUsd: 0.0142293
+        durataSec: 4

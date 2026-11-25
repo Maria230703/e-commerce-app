@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: couponcode.feature
-  generatedAt: '2026-11-24T18:43:19.443Z'
+  generatedAt: '2026-11-25T21:35:47.698Z'
   copilotSessionId: 63c56644b141485abdca1f16c9cccb34
 feature:
   id: 5a6d75fe-7487-4805-b855-5cc16ddefdd2
@@ -12,6 +12,13 @@ feature:
     - As a cliente del negozio
     - I want inserire i dati del Coupon
     - So that ottenere uno sconto sul valore totale della spesa nel carrello
+  comments:
+    - 'Il coupon è simulato: nessuno sconto reale applicato su nessuna spesa reale effettuata'
+    - 'Metodo di applicazione: su una spesa minima di 50,00 € , applicato coupon del valore di 10%'
+    - >-
+      Il messaggio "Primo acquisto: -10% con <codice>" sta al centro della barra superiore della pagina iniziale, sempre
+      visibile; il codice è un pulsante che lo copia negli appunti. Il codice è quello di coupon-logic.js, lo stesso del
+      campo coupon al pagamento.
   tags:
     - c4-id:f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47
   background:
@@ -32,17 +39,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
         updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:31:35.313Z'
+        aiStartedAt: '2026-11-25T12:31:10.892Z'
+        aiEndedAt: '2026-11-25T12:31:35.313Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: '''Portavaso Trama'' costa meno di 50,00 €'
@@ -53,96 +63,112 @@ feature:
         - keyword: And
           text: il valore totale della spesa resta invariato
     - id: CPN-DI-SCNT-QAD-020
-      title: Mostrare il pulsante coupon per un carrello superiore a 50,00 euro
+      title: Mostrare il messaggio del coupon nella barra superiore
       type: scenario
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
-        updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        updatedAt: '2026-11-25T20:55:22.987Z'
+        aiGeneratedAt: '2026-11-25T21:29:48.108Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:48.108Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
-          text: il subtotale del carrello è superiore a 50,00 €
-        - keyword: When
           text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo la barra superiore
         - keyword: Then
-          text: vedo "Coupon per te disponibile" sotto "Preferiti" in alto a destra
+          text: 'vedo al centro il messaggio "Primo acquisto: -10% con" seguito dal codice del coupon'
         - keyword: And
-          text: il pulsante ha lo stesso font e la stessa dimensione di "Vai al pagamento"
+          text: il messaggio c'è con qualunque subtotale del carrello, al posto del pulsante "Coupon per te disponibile"
     - id: CPN-DI-SCNT-QAD-030
-      title: Nascondere il pulsante coupon per un carrello di 50,00 euro o meno
+      title: Il codice nella barra è lo stesso del campo coupon nel carrello
       type: scenario
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
-        updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        updatedAt: '2026-11-25T20:55:24.243Z'
+        aiGeneratedAt: '2026-11-25T21:29:48.108Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:48.108Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
-          text: il subtotale del carrello è pari o inferiore a 50,00 €
+          text: il sito conosce un solo codice coupon
         - keyword: When
-          text: sono sulla pagina iniziale
+          text: guardo il codice nella barra superiore
         - keyword: Then
-          text: non vedo "Coupon per te disponibile"
+          text: è lo stesso codice che il campo "Inserisci qui il tuo codice sconto" accetta al pagamento
     - id: CPN-DI-SCNT-QAD-040
-      title: Copiare il coupon dalla pagina iniziale
+      title: Copiare il codice dalla barra superiore
       type: scenario
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
-        updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        updatedAt: '2026-11-25T20:55:25.573Z'
+        aiGeneratedAt: '2026-11-25T21:29:48.108Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:48.108Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 2
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
-          text: il subtotale del carrello è superiore a 50,00 €
+          text: sono sulla pagina iniziale
         - keyword: When
-          text: tocco "Coupon per te disponibile"
+          text: tocco il codice nella barra superiore
         - keyword: Then
-          text: il codice "FirstPurchase" viene copiato negli appunti
+          text: il codice viene copiato negli appunti
+        - keyword: And
+          text: la finestra sotto il codice mostra una spunta e "Copiato"
+        - keyword: And
+          text: un annuncio per chi non vede dice "Codice copiato"
     - id: CPN-DI-SCNT-QAD-050
       title: Applicare il coupon al pagamento
       type: scenario
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
         updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:31:35.313Z'
+        aiStartedAt: '2026-11-25T12:31:10.892Z'
+        aiEndedAt: '2026-11-25T12:31:35.313Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: sono sulla pagina del Pagamento
@@ -162,17 +188,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
         updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:31:35.313Z'
+        aiStartedAt: '2026-11-25T12:31:10.892Z'
+        aiEndedAt: '2026-11-25T12:31:35.313Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello c'è "<articolo>"
@@ -202,17 +231,20 @@ feature:
       tags:
         - functional
         - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
       metadata:
         createdAt: '2026-11-24T18:43:19.443Z'
         updatedAt: '2026-11-24T18:43:19.443Z'
-        aiGeneratedAt: null
-        aiStartedAt: null
-        aiEndedAt: null
+        aiGeneratedAt: '2026-11-25T12:31:35.313Z'
+        aiStartedAt: '2026-11-25T12:31:10.892Z'
+        aiEndedAt: '2026-11-25T12:31:35.313Z'
         aiEnabled: true
         errorMessage: null
         aiErrorCount: 0
         aiErrorTotal: 0
-        aiRevisionCount: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
       steps:
         - keyword: Given
           text: nel carrello ci sono più articoli
@@ -224,3 +256,121 @@ feature:
           text: posso inserire il coupon 'FirstPurchase' del valore del 10%
         - keyword: And
           text: il valore totale della spesa si abbassa
+    - id: CPNC-6SAFGZ
+      title: Il codice è un pulsante e non c'è più "Copia codice" come pulsante
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-25T20:55:33.098Z'
+        updatedAt: '2026-11-25T20:55:33.098Z'
+        aiGeneratedAt: '2026-11-25T21:29:49.336Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:49.336Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: guardo il codice nella barra superiore
+        - keyword: Then
+          text: il codice è un pulsante sottolineato con un tratteggio
+        - keyword: And
+          text: non c'è nessun altro pulsante "Copia codice" nella pagina
+    - id: CPNC-4RG5VF
+      title: La finestra "Copia codice" compare al passaggio del mouse e al focus
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-25T20:55:33.098Z'
+        updatedAt: '2026-11-25T20:55:33.098Z'
+        aiGeneratedAt: '2026-11-25T21:29:49.336Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:49.336Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: sono sulla pagina iniziale
+        - keyword: When
+          text: passo il mouse sul codice oppure lo raggiungo con la tastiera
+        - keyword: Then
+          text: sotto il codice compare una finestra con la scritta "Copia codice"
+        - keyword: And
+          text: la finestra ha sfondo scuro, testo bianco da 12 pixel e una freccia verso l'alto
+    - id: CPNC-2PMRGV
+      title: Copiare il codice con Invio, Spazio, clic o tocco
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-25T20:55:33.098Z'
+        updatedAt: '2026-11-25T20:55:33.098Z'
+        aiGeneratedAt: '2026-11-25T21:29:49.336Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:49.336Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: il codice nella barra superiore ha il focus
+        - keyword: When
+          text: premo Invio oppure Spazio, oppure faccio clic o tocco
+        - keyword: Then
+          text: il codice viene copiato negli appunti, con un metodo alternativo se gli appunti non sono disponibili
+    - id: CPNC-4MYF8T
+      title: Copia non riuscita
+      type: scenario
+      tags:
+        - functional
+        - c4-container
+        - wiki(entity-f1faedaf-6a9e-0d5d-7a34-fe0d32fcbe47)
+      metadata:
+        createdAt: '2026-11-25T20:55:33.098Z'
+        updatedAt: '2026-11-25T20:55:33.098Z'
+        aiGeneratedAt: '2026-11-25T21:29:49.336Z'
+        aiStartedAt: '2026-11-25T20:56:03.888Z'
+        aiEndedAt: '2026-11-25T21:29:49.336Z'
+        aiEnabled: true
+        errorMessage: null
+        aiErrorCount: 0
+        aiErrorTotal: 0
+        aiRevisionCount: 1
+        aiProvider: anthropic
+        aiModel: claude-sonnet-5-5
+        author: Maria <mcmorgese@codearchitects.com>
+      steps:
+        - keyword: Given
+          text: gli appunti rifiutano la copia e il metodo alternativo non funziona
+        - keyword: When
+          text: tocco il codice nella barra superiore
+        - keyword: Then
+          text: la finestra sotto il codice mostra "Copia non riuscita"
+        - keyword: And
+          text: il codice del sito non cambia

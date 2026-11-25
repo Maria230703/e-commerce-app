@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: galleria_immagini.feature
-  updatedAt: '2026-11-24T18:43:22.382Z'
+  updatedAt: '2026-11-25T12:35:06.869Z'
 changes:
   - changedAt: '2026-11-24T18:43:22.374Z'
     ref: feature:galleria-di-immagini-della-scheda-prodotto
@@ -388,3 +388,101 @@ changes:
     before: '      | Cornice Atelier  |'
     after: '    | Cornice Atelier  |'
     author: Gianluca Maggio <gmaggio@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.000Z'
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-010) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-010) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.020Z'
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-020) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-020) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.045Z'
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-030) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-030) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.062Z'
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-040) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-040) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.083Z'
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-050) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-050) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.147Z'
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-060) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-060) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:17:35.186Z'
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 0
+    before: '  @id(GLLR-IMMG-NNT-070) @functional @c4-container'
+    after: '  @id(GLLR-IMMG-NNT-070) @functional @c4-container @wiki(entity-37f816a0-7bf6-7916-6560-d364f7a06cd1)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T12:35:01.088Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-010
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:35:02.088Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-020
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:35:03.105Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-030
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:35:04.068Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-040
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:35:05.060Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-050
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:35:06.022Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-060
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
+  - changedAt: '2026-11-25T12:35:06.869Z'
+    author: AI:anthropic/claude-sonnet-5-5
+    ref: GLLR-IMMG-NNT-070
+    constructType: Scenario
+    offset: 0
+    before: null
+    after: AI elaboration green · provider anthropic · model claude-sonnet-5-5 · revision 1
