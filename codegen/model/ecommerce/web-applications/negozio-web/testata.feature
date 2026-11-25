@@ -46,12 +46,6 @@ Feature: Testata della pagina iniziale
     When guardo la testata a destra
     Then vedo "Carrello" come pulsante a pillola con icona, testo e un pallino con il numero degli articoli
 
-  @id(TSTT-9E8T7D) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
-  Scenario: Il pulsante Vedi tutti gli articoli porta all'elenco
-    Given sono sulla pagina iniziale e vedo la scena "Compra il look"
-    When tocco "Vedi tutti gli articoli" sotto la scena
-    Then la pagina scorre fino all'elenco dei prodotti
-
   @id(TSTT-8VJC9V) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
   Scenario: Tutti i controlli della testata sono veri pulsanti o link con nome e area di 44 pixel
     Given sono su una pagina del sito

@@ -26,7 +26,6 @@ export const PHRASES = [
   ['Inglese', 'English', 'Inglés'],
   ['Spagnolo', 'Spanish', 'Español'],
   ['Primo acquisto: -10% con', 'First purchase: -10% with', 'Primera compra: -10% con'],
-  ['Vedi tutti gli articoli', 'View all items', 'Ver todos los artículos'],
   ['Copia codice', 'Copy code', 'Copiar código'],
   ['Copia codice sconto', 'Copy discount code', 'Copiar código de descuento'],
   ['Copiato', 'Copied', 'Copiado'],

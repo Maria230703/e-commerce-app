@@ -881,13 +881,6 @@ couponCodeEl.addEventListener('click', async () => {
   }, 2500);
 });
 
-// §REQ:TSTT-9E8T7D — "Vedi tutti gli articoli" scorre fino all'elenco dei prodotti
-lookSceneContainer.addEventListener('click', (event) => {
-  if (event.target.closest('#see-all-button')) {
-    productList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-});
-
 // §REQ:MDLT-GRN-NTT-9ANCZM, §REQ:MDLT-GRN-NTT-29KNY6 — modalità giorno/notte, prima della traduzione così l'etichetta del pulsante viene tradotta
 initTheme();
 

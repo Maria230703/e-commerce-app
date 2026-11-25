@@ -1,9 +1,7 @@
 type: abstract-component
 name: SiteHeaderMarkup
 title: index.html (testata)
-description: >-
-  Markup della barra superiore e della testata fissa; look-scene.js aggiunge
-  "Vedi tutti gli articoli" sotto la scena.
+description: Markup della barra superiore e della testata fissa in index.html.
 id: fee81539-bd14-c940-4bb2-b926826f07b8
 annotations:
   - namespace: c4modeler

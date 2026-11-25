@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: testata.feature
-  generatedAt: '2026-11-25T21:35:50.226Z'
+  generatedAt: '2026-11-25T21:40:51.373Z'
   copilotSessionId: ac5cf7b707f45e5fa76524ead403647d
 feature:
   id: 5752be1f-757d-4059-82f8-92c5761ca2ab
@@ -194,34 +194,6 @@ feature:
           text: guardo la testata a destra
         - keyword: Then
           text: vedo "Carrello" come pulsante a pillola con icona, testo e un pallino con il numero degli articoli
-    - id: TSTT-9E8T7D
-      title: Il pulsante Vedi tutti gli articoli porta all'elenco
-      type: scenario
-      tags:
-        - functional
-        - c4-container
-        - wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)
-      metadata:
-        createdAt: '2026-11-25T20:55:45.356Z'
-        updatedAt: '2026-11-25T20:55:45.356Z'
-        aiGeneratedAt: '2026-11-25T21:29:45.936Z'
-        aiStartedAt: '2026-11-25T20:56:02.462Z'
-        aiEndedAt: '2026-11-25T21:29:45.936Z'
-        aiEnabled: true
-        errorMessage: null
-        aiErrorCount: 0
-        aiErrorTotal: 0
-        aiRevisionCount: 1
-        aiProvider: anthropic
-        aiModel: claude-sonnet-5-5
-        author: Maria <mcmorgese@codearchitects.com>
-      steps:
-        - keyword: Given
-          text: sono sulla pagina iniziale e vedo la scena "Compra il look"
-        - keyword: When
-          text: tocco "Vedi tutti gli articoli" sotto la scena
-        - keyword: Then
-          text: la pagina scorre fino all'elenco dei prodotti
     - id: TSTT-8VJC9V
       title: Tutti i controlli della testata sono veri pulsanti o link con nome e area di 44 pixel
       type: scenario

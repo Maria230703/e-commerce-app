@@ -3,9 +3,9 @@ name: Testata
 title: Testata
 description: >-
   Barra superiore (messaggio del coupon al centro, lingua e tema a destra) e
-  testata fissa (logo E Shop, ricerca, Preferiti, Carrello), con il pulsante
-  "Vedi tutti gli articoli" sotto la scena; palette panna e font unico. Moduli:
-  index.html (markup), coupon-logic.js e app.js (copia del codice).
+  testata fissa (logo E Shop, ricerca, Preferiti, Carrello); palette panna e
+  font unico. Moduli: index.html (markup), coupon-logic.js e app.js (copia del
+  codice).
 id: b73eb991-9966-db35-cc3d-4d91af013e6e
 annotations:
   - namespace: c4modeler

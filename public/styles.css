@@ -366,7 +366,6 @@ input[type="radio"] {
 }
 
 .product-list {
-  scroll-margin-top: 96px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 18px;
@@ -850,12 +849,14 @@ button.add-button.is-added:hover {
   border: 1.5px solid var(--button-border);
   border-radius: 999px;
   background: transparent;
-  color: white;
+  color: var(--button-text);
   font-weight: 700;
   text-decoration: none;
 }
 
-.frame-configurator-link:focus-visible {
+.frame-configurator-link:hover {
+  background: var(--cream-hover);
+  color: var(--ink);
 }
 
 .frame-configurator-layout {
@@ -1586,30 +1587,8 @@ select:focus-visible {
   line-height: 1;
 }
 
-.look-scene-actions {
-  display: flex;
-  justify-content: center;
-  margin: 14px 0 6px;
-}
 
-.see-all-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 22px;
-  border: 1.5px solid var(--button-border);
-  border-radius: 12px;
-  background: transparent;
-  color: var(--button-text);
-  font-weight: 700;
-  cursor: pointer;
-}
 
-.see-all-button:hover {
-  background: var(--cream-hover);
-  color: var(--ink);
-}
 
 
 @media (max-width: 700px) {

@@ -1,7 +1,7 @@
 version: 1
 document:
   sourceFeature: testata.feature
-  updatedAt: '2026-11-25T21:35:50.234Z'
+  updatedAt: '2026-11-25T21:40:51.377Z'
 changes:
   - changedAt: '2026-11-25T21:29:45.936Z'
     author: AI:anthropic/claude-sonnet-5-5
@@ -135,4 +135,46 @@ changes:
     offset: 0
     before: '@c4-id:c01292a7-a13a-2c8a-5335-9de968150c57'
     after: '@c4-id:b73eb991-9966-db35-cc3d-4d91af013e6e @c4-related(c01292a7-a13a-2c8a-5335-9de968150c57)'
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:51.377Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 0
+    before: '  @id(TSTT-9E8T7D) @functional @c4-container @wiki(entity-c01292a7-a13a-2c8a-5335-9de968150c57)'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:51.377Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 1
+    before: '  Scenario: Il pulsante Vedi tutti gli articoli porta all''elenco'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:51.377Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 2
+    before: '    Given sono sulla pagina iniziale e vedo la scena "Compra il look"'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:51.377Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 3
+    before: '    When tocco "Vedi tutti gli articoli" sotto la scena'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:51.377Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 4
+    before: '    Then la pagina scorre fino all''elenco dei prodotti'
+    after: null
+    author: Maria <mcmorgese@codearchitects.com>
+  - changedAt: '2026-11-25T21:40:51.377Z'
+    ref: TSTT-9E8T7D
+    constructType: Scenario
+    offset: 5
+    before: ''
+    after: null
     author: Maria <mcmorgese@codearchitects.com>

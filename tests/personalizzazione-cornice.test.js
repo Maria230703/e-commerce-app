@@ -47,6 +47,41 @@ test('PRSN-CRNC-TMM-020: il collegamento appare una sola volta, sotto il titolo 
   assert.match(indexHtml, /<h1 id="page-title" class="catalog-title">Scopri<\/h1>/);
 });
 
+/** §REQ:PRSN-CRNC-TMM-020 — il testo "Crea la tua cornice" si legge dentro il pulsante, in modalità giorno e notte. */
+test('PRSN-CRNC-TMM-020: il testo del collegamento è leggibile sul suo sfondo, in giorno e in notte', () => {
+  const css = readFileSync(new URL('../public/styles.css', import.meta.url), 'utf8');
+  const block = (selector) => css.slice(css.indexOf(`${selector} {`), css.indexOf('}', css.indexOf(`${selector} {`)));
+  const variables = (selector) => Object.fromEntries([...block(selector).matchAll(/(--[\w-]+): ([^;]+);/g)].map((m) => [m[1], m[2].trim()]));
+  const resolve = (value, scope) => {
+    const reference = value.match(/^var\((--[\w-]+)\)$/);
+    return reference ? resolve(scope[reference[1]], scope) : value;
+  };
+  const luminance = (hex) => {
+    const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
+      .map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const contrast = (a, b) => {
+    const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+    return (hi + 0.05) / (lo + 0.05);
+  };
+
+  const rule = block('.frame-configurator-link');
+  assert.match(rule, /background: transparent/);
+  const color = rule.match(/color: ([^;]+);/)[1];
+  assert.doesNotMatch(color, /white|#fff/i, 'testo bianco su sfondo trasparente: il pulsante sembra vuoto');
+  assert.equal(color, 'var(--button-text)');
+  assert.match(css, /\.frame-configurator-link:hover \{[^}]*background: var\(--cream-hover\);[^}]*color: var\(--ink\)/);
+
+  const light = variables(':root');
+  const dark = { ...light, ...variables('html[data-theme="dark"]') };
+  for (const [name, scope] of [['giorno', light], ['notte', dark]]) {
+    const text = resolve(scope['--button-text'], scope);
+    const panel = resolve(scope['--panel'], scope);
+    assert.ok(contrast(text, panel) >= 7, `${name}: testo ${text} su ${panel} non abbastanza leggibile`);
+  }
+});
+
 /** §REQ:PRSN-CRNC-TMM-030 — selezione iniziale 13x18, Classico, Bianco, nessuna finitura, 30,90 €. */
 test('PRSN-CRNC-TMM-030: selezione iniziale e prezzo', () => {
   assert.deepEqual(INITIAL_FRAME_SELECTION, { measure: '13x18', profile: 'classico', mat: 'bianco' });

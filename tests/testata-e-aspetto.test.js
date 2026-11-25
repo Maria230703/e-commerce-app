@@ -74,14 +74,6 @@ test('TSTT-5PU7GW: Carrello è un pulsante a pillola con icona, testo e pallino 
   assert.match(rule('.cart-pill'), /border-radius: 999px/);
 });
 
-/** §REQ:TSTT-9E8T7D */
-test('TSTT-9E8T7D: sotto la scena "Compra il look" il pulsante "Vedi tutti gli articoli" scorre all\'elenco', () => {
-  const scene = renderLookScene();
-  assert.match(scene, /<\/section>\s*<div class="look-scene-actions">\s*<button id="see-all-button" class="see-all-button" type="button" aria-label="Vedi tutti gli articoli">Vedi tutti gli articoli<\/button>/);
-  assert.match(appJs, /#see-all-button[\s\S]{0,200}productList\.scrollIntoView\(\{ behavior: 'smooth', block: 'start' \}\)/);
-  assert.match(rule('.product-list'), /scroll-margin-top: \d+px/);
-});
-
 /** §REQ:TSTT-8VJC9V */
 test('TSTT-8VJC9V: i controlli della barra e della testata sono button o a con nome e area di almeno 44 pixel', () => {
   const controls = [...(bar + header).matchAll(/<(button|a|input)\b[^>]*>/g)].map((match) => match[0]);
@@ -100,7 +92,7 @@ test('TSTT-8VJC9V: i controlli della barra e della testata sono button o a con n
 
 /** §REQ:TSTT-27HF7V */
 test('TSTT-27HF7V: i nuovi testi sono tradotti in inglese e in spagnolo', () => {
-  for (const text of ['Primo acquisto: -10% con', 'Vedi tutti gli articoli', 'Copia codice', 'Copia codice sconto', 'Copiato', 'Copia non riuscita', 'Codice copiato', 'E Shop, vai alla home', 'Lingua del sito']) {
+  for (const text of ['Primo acquisto: -10% con', 'Copia codice', 'Copia codice sconto', 'Copiato', 'Copia non riuscita', 'Codice copiato', 'E Shop, vai alla home', 'Lingua del sito']) {
     assert.ok(hasTranslation(text), `"${text}" senza traduzione`);
     for (const language of ['eng', 'esp']) {
       assert.notEqual(translateText(text, language), text, `"${text}" non tradotto in ${language}`);
